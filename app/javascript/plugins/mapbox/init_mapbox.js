@@ -1,5 +1,8 @@
 import mapboxgl from 'mapbox-gl';
-import { point_of_interests_on_map } from 'point_of_interests_on_map';
+import { poiGeojson } from '../../plugins/mapbox/poi_geojson';
+
+const geojson =  poiGeojson();
+
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -24,10 +27,25 @@ const initMapbox = () => {
 
     });
 
-
     // drawing custom markers for POIS
-    pooiMarkersOnMap();
 
+    geojson.features.forEach(function(marker) {
+    // create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+      el.style.width = marker.properties.iconSize[0] + 'px';
+      el.style.height = marker.properties.iconSize[1] + 'px';
+
+      el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+      });
+
+      // add marker to map
+      new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .addTo(map);
+    });
 
 
     console.log(markers);
