@@ -15,5 +15,5 @@ class User < ApplicationRecord
 
   has_many :user_positions
 
-  mount_uploader :remote_photo_url, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 end
