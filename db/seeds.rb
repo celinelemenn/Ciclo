@@ -12,6 +12,19 @@ PointOfInterest.destroy_all
 
 puts "Seeds Destroyed"
 
+
+puts "Creating test user"
+
+test_user = User.create(
+  email: "test_user@gmail.com",
+  password: "1234567",
+  )
+
+puts "test user created"
+
+
+
+
 # ----- Point of interest seedings for map----
 puts "creeting PointOfInterest seeds..."
 
