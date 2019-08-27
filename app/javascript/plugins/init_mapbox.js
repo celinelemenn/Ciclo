@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import { point_of_interests_on_map } from 'point_of_interests_on_map';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -14,7 +15,7 @@ const initMapbox = () => {
       zoom: 10,
     });
 
-    // drawing markers on the map
+    // drawing markers on the map - simple version
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       new mapboxgl.Marker()
@@ -23,7 +24,13 @@ const initMapbox = () => {
 
     });
 
-    console.log(markers)
+
+    // drawing custom markers for POIS
+    pooiMarkersOnMap();
+
+
+
+    console.log(markers);
 
 
   }
