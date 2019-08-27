@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_08_27_132609) 
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2019_08_27_132609)
   end
 
   create_table "point_of_interests", force: :cascade do |t|
-    t.integer "lat"
-    t.integer "long"
+    t.decimal "lat", precision: 10, scale: 6
+    t.decimal "long", precision: 10, scale: 6
     t.integer "poi_type"
     t.string "description"
     t.bigint "user_id"
