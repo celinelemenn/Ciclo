@@ -6,14 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
 puts "Destroying previous seeds"
 
 PointOfInterest.destroy_all
 
 puts "Seeds Destroyed"
-
 
 # ----- Point of interest seedings for map----
 puts "creeting PointOfInterest seeds..."
@@ -53,28 +50,10 @@ set_of_geolocations.each_with_index do |item, index|
   PointOfInterest.create!(
     lat: set_of_geolocations[index][1], # set_of_geolocations[index_geolocation][lat]
     long: set_of_geolocations[index][0], # set_of_geolocations[index_geolocation][long]
-    poi_type: 1,
+    poi_type: set_of_poitypes.sample ,
     description: 'some poi description',
     user_id: 1
     )
 end
-
-
-
-# poi2 =  PointOfInterest.create!(
-#   lat: set_of_geolocations[1][1], # set_of_geolocations[index_geolocation][lat]
-#   long: set_of_geolocations[1][0], # set_of_geolocations[index_geolocation][long]
-#   poi_type: 2,
-#   description: 'some poi description',
-#   user_id: 1
-#   )
-
-# poi2 =  PointOfInterest.create!(
-#   lat: set_of_geolocations[2][1], # set_of_geolocations[index_geolocation][lat]
-#   long: set_of_geolocations[2][0], # set_of_geolocations[index_geolocation][long]
-#   poi_type: 2,
-#   description: 'some poi description',
-#   user_id: 1
-#   )
 
 puts "#{PointOfInterest.count} PointOfInterest created "
