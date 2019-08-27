@@ -13,13 +13,14 @@
 
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
   position: fixed;
   min-width: 100vw;
   bottom: 0;
   background-color: #ececec;
+  padding-bottom: 17px;
 }
 
 .navbar-item {
