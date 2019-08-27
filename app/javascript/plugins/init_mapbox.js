@@ -20,8 +20,10 @@ const initMapbox = () => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
+
     });
 
+    console.log(markers)
 
 
   }

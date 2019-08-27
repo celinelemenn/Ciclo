@@ -5,3 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
+
+
+
+import { point_of_interests_on_map } from '../plugins/point_of_interests_on_map';
