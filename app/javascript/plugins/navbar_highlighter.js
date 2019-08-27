@@ -18,8 +18,9 @@ const highlighter = () => {
   // })
 
   linksPath.forEach((link) => {
+    link.parentElement.classList.toggle('active')
     items.forEach((item) => {
-      item.classList.remove('active')
+      // item.classList.remove('active')
       if (path === link.pathname) {
         item.classList.add('active');
       }
