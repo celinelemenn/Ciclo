@@ -5,4 +5,6 @@ class PointOfInterest < ApplicationRecord
   has_many :downvotes
   has_many :comments
   has_many :reports
+
+  mount_uploader :photo, PhotoUploader
 end
