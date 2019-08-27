@@ -10,6 +10,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
     resize_to_fit 256, 256
   end
 
+  version :avatar do
+    cloudinary_transformation transformation: [ { width: 400, height: 400, gravity: :face, radius: :max, crop: :thumb }, { width: 200, height: 200, crop: :thumb } ]
+  end
+
   version :bright_face do
     cloudinary_transformation effect: "brightness:30", radius: 20,
       width: 150, height: 150, crop: :thumb, gravity: :face
