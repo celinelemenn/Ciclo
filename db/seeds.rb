@@ -8,6 +8,7 @@
 
 puts "Destroying previous seeds"
 PointOfInterest.destroy_all
+Trip.destroy_all
 User.destroy_all
 
 puts "Seeds Destroyed"
@@ -92,3 +93,15 @@ puts "#{PointOfInterest.count} PointOfInterest created "
 
 # -----------
 
+2.times do
+  trip1 = Trip.create(
+   start_date: DateTime.parse("09/01/2019 17:00"),
+   end_date: DateTime.parse("09/01/2020 19:00"),
+   name: "Cycling the South East of Asia",
+   km: 1000,
+   blog: "www.mylife.com",
+   user: test_user
+   )
+end
+
+puts "#{Trip.count} trips created"
