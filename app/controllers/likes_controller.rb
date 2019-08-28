@@ -1,19 +1,21 @@
 class LikesController < ApplicationController
   def create
     @like = Like.new
-    @like.user = User.find(params[:user])
-    @like.point_of_interest = PointOfInterest.find(params[:point_of_interest_id])
-    @poi = PointOfInterest.find(params[:point_of_interest_id])
 
-    if @like.save
+    @user = User.find(params[:user])
+    @like.user = @user
+
+    @poi = PointOfInterest.find(params[:point_of_interest_id])
+    @like.point_of_interest = @poi
+
+    @existing_like = Like.find_by user: @user, point_of_interest: @poi
+
+    if @existing_like.nil?
+      @like.save
+      render 'point_of_interests/show', point_of_interest: @poi
+    else
+      @existing_like.delete
       render 'point_of_interests/show', point_of_interest: @poi
     end
-
-  end
-
-private
-
-  def like_params
-    # params.requires(:like).permit(:)
   end
 end
