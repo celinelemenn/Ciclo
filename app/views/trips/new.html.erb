@@ -1,0 +1,9 @@
+
+<%= simple_form_for trips_new_path do |f| %>
+      <div class="form-input">
+        <%= f.input :name, label: "Where you were travelling?" %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :km, label: "How long was the way(km)?"%>
+        <%= f.input :blog,  label: "Share your blog with the world"  %>
+<% end %>
