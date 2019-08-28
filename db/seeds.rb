@@ -18,8 +18,15 @@ puts "Creating test user"
 test_user = User.create(
   email: "test_user@gmail.com",
   password: "1234567",
+  full_name: "Test McTest",
+  remote_photo_url: 'https://i.pravatar.cc/60',
+  bio: "Currently travelling in Asia",
+  description: "Being around the world with my bikie",
+  blog: "https://medium.com/",
+
   )
 
+puts "Individual user created"
 puts "test user created"
 
 

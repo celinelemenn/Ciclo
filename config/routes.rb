@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/show'
+  resources :cyclists, only: [:show]
   devise_for :users
   root to: 'pages#home', as: :homepage
-  resources :users, only: [:show]
 
   get '/profile', to: 'pages#profile', as: :profile
 
