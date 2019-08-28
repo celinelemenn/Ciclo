@@ -10,12 +10,14 @@ class PagesController < ApplicationController
     @markers = @point_of_interests.map do |poi|
       {
         lat: poi.lat,
-        lng: poi.long
+        lng: poi.long,
+        poi_type: poi.poi_type
       }
     end
   end
 
   def userprofile
     @user = User.find(params[:id])
+    @trips = Trip.where(user: @user)
   end
 end
