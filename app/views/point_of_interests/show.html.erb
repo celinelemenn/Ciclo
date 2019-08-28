@@ -1,6 +1,4 @@
 <h1>PointOfInterests#show</h1>
-<p>Find me in app/views/point_of_interests/show.html.erb</p>
-
 
 <!-- image block -->
 
@@ -30,8 +28,7 @@
   </div>
 
   <div>
-    Created by
-    <%= @poi.user.full_name %>, <%= @date %>
+    Created by <%= @poi.user.full_name %>, <%= @date %>
   </div>
 
 <!-- description block -->
@@ -41,3 +38,10 @@
   <p><%= @poi.description %></p>
 </div>
 
+
+<!-- comments block -->
+
+<div>
+  <button>Add a comment</button>
+  <button>Something wrong ?</button>
+</div>
