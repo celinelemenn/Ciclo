@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
 
+  # namespace :api, defaults: { format: :json } do
+  #   namespace :v1 do
+  #     resources :comments, only: [:create]
+  #   end
+
   resources :trips, only: [:new, :create]
   resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update] do
     resources :comments, only: [:new, :create]

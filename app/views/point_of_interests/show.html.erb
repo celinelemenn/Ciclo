@@ -25,7 +25,6 @@
 <!-- top details -->
 
 <div>
-
   <div>
     <h1> <%= @poi.title %></h1>
   </div>
@@ -38,18 +37,42 @@
   <div>
     Created by <%= @poi.user.full_name %>, <%= @date %>
   </div>
-
+</div>
+<!-- description block -->
+=======
   <!-- description block -->
+
 
   <div>
     <h3>Description</h3>
     <p><%= @poi.description %></p>
   </div>
 
+<div id="comments">
+  <% @poi.comments.each do |comment| %>
+    <h2><%= comment.user.full_name %></h2>
+    <p><%= comment.content %></p>
+  <% end %>
+</div>
 
+
+<!-- comments block -->
+<h1>Add a comment <%= @poi.title %></h1>
+
+<div id="new_comment">
+  <%= simple_form_for([@poi,@comment]) do |f| %>
+    <%= f.input :content %>
+    <%= f.input :user, :as => :hidden, input_html: { value: current_user.id } %>
+    <%= f.submit "Add comment" %>
+  <% end %>
+</div>
+
+<div>
+  <button>Something wrong ?</button>
+</div>
+=======
   <!-- comments block -->
 
   <div>
-    <button>Add a comment</button>
     <button>Something wrong ?</button>
   </div>
