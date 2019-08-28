@@ -1,0 +1,29 @@
+.top-menu {
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top:0;
+  height: 60px;
+  padding: 0.5rem 1rem;
+}
+
+
+.top-menu-item {
+  color: #FFFFFF;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  a {
+    color: inherit;
+  }
+}
+
+.justify-start {
+  justify-content: flex-start
+}
+
+.justify-between {
+  justify-content: space-between
+}
