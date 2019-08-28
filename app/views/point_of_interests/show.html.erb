@@ -1,7 +1,43 @@
 <h1>PointOfInterests#show</h1>
 <p>Find me in app/views/point_of_interests/show.html.erb</p>
 
-<p> <%= @poi.poi_type %></p>
-<p> <%= @poi.description %></p>
-<p><%= @poi.user.full_name %></p>
+
+<!-- image block -->
+
+<div>
+  <%= cl_image_tag @poi.photo %>
+
+  <div>
+    <i class="far fa-thumbs-down"></i>
+  </div>
+
+  <div>
+    <i class="fas fa-thumbs-up"></i>
+  </div>
+</div>
+
+<!-- top details -->
+
+<div>
+
+  <div>
+    <h1> <%= @poi.title %></h1>
+  </div>
+
+  <div class="d-flex ">
+    <i class="fas fa-tint"></i>
+    <div><%= @poi.poi_type %></div>
+  </div>
+
+  <div>
+    Created by
+    <%= @poi.user.full_name %>, <%= @date %>
+  </div>
+
+<!-- description block -->
+
+<div>
+  <h3>Description</h3>
+  <p><%= @poi.description %></p>
+</div>
 

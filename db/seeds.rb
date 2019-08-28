@@ -81,12 +81,12 @@ set_of_geolocations.each_with_index do |item, index|
     long: set_of_geolocations[index][0], # set_of_geolocations[index_geolocation][long]
     poi_type: set_of_poitypes.sample ,
     description: 'some poi description',
-    user: test_user
+    title: 'some title',
+    user: test_user,
+    remote_photo_url: 'https://source.unsplash.com/random/600x400'
     )
 end
 
 puts "#{PointOfInterest.count} PointOfInterest created "
 
 #-----------
-
-5.times.PastTrip.Create
