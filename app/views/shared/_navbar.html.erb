@@ -1,29 +1,29 @@
 <div class="navbar">
     <div class="navbar-item">
-      <%= link_to homepage_path do %>
+      <%= link_to homepage_path, class: "anchor_link" do %>
         <i class="fas fa-map-marked-alt"></i>
       <% end %>
       <p>Map</p>
     </div>
     <div class="navbar-item">
-      <%= link_to point_of_interests_path do %>
+      <%= link_to point_of_interests_path, class: "anchor_link" do %>
         <i class="far fa-bookmark"></i>
       <% end %>
       <p>My list</p>
     </div>
     <div class="navbar-item" id="navbar-item-plus">
-      <%= link_to new_point_of_interest_path do %>
+      <%= link_to new_point_of_interest_path, class: "anchor_link" do %>
         <i class="fas fa-plus"></i>
       <% end %>
     </div>
     <div class="navbar-item">
-      <%= link_to '#' do %>
+      <%= link_to '/thisisatest', class: "anchor_link" do %>
         <i class="fas fa-rss"></i>
       <% end %>
       <p>Feed</p>
     </div>
     <div class="navbar-item">
-      <%= link_to profile_path do %>
+      <%= link_to profile_path, class: "anchor_link" do %>
         <i class="fas fa-user"></i>
       <% end %>
       <p>Profile</p>
