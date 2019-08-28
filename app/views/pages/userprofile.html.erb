@@ -8,3 +8,12 @@
 <p><%= @user.description  %><p>
 <p><%= @user.blog %><p>
 
+<p> _______________________ <p>
+
+<h3>Past trips</h3>
+<% @trips.each do |trip| %>
+  <p><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %></p>
+  <p><%= trip.name %></p>
+  <p><%= trip.km %></p>
+  <p><%= trip.blog %></p>
+<% end %>
