@@ -16,11 +16,12 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  position: sticky;
+  position: fixed;
   min-width: 100vw;
   bottom: 0;
-  background-color: #ececec;
+  background-color: #F7F7F7;
   padding-bottom: 17px;
+  z-index: 2;
 }
 
 .navbar-item {
@@ -47,7 +48,7 @@
   color: rgb(254, 43, 83);
 }
 
-.navbar-item-plus {
+#navbar-item-plus {
   font-size: 36px;
   position: relative;
   bottom: 5px;
