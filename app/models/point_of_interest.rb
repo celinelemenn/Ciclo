@@ -7,4 +7,6 @@ class PointOfInterest < ApplicationRecord
   has_many :reports
 
   mount_uploader :photo, PhotoUploader
+
+  enum poi_type: [:water_refilll, :camping, :caution, :landmark]
 end

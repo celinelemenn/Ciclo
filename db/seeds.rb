@@ -31,7 +31,6 @@ puts "test user created"
 
 
 
-
 # ----- Point of interest seedings for map----
 puts "creeting PointOfInterest seeds..."
 
@@ -64,15 +63,19 @@ set_of_geolocations = [
 [4.56900393092186707, 52.27620700091733852]
 ]
 
-set_of_poitypes = [1, 2, 3, 4, 5]
+# set_of_poitypes = [1, 2, 3, 4, 5]
+poi_types = POINT_OF_INTEREST.values.map { |poi| poi[:label] }
+
+# POINT_OF_INTEREST[poi2.poi_type.to_sym]
+
 
 set_of_geolocations.each_with_index do |item, index|
   PointOfInterest.create!(
     lat: set_of_geolocations[index][1], # set_of_geolocations[index_geolocation][lat]
     long: set_of_geolocations[index][0], # set_of_geolocations[index_geolocation][long]
-    poi_type: set_of_poitypes.sample ,
+    poi_type: poi_types.sample,
     description: 'some poi description',
-    user_id: 1
+    user_id: test_user.id
     )
 end
 
