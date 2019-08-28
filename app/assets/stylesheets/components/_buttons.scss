@@ -1,39 +1,64 @@
 .btn-main {
-  background-color: #FE2A53;
+  background-color: $ciclo-pink;
   padding: 5px 10px;
-  border-radius: 3px;
+  border-radius: 50px;
   border-style: none;
   display: inline-block;
   color: #fff;
   margin: 5px;
+  min-height: 50px;
+  width: 150px;
   // margin-left: 0;
   a {
     text-decoration: none;
     color: white;
   }
   &:hover {
-    background-color: #C52140;
-    color: #fff;
+    background-color: #fff;
+    color: $ciclo-pink;
+    border: 1px solid $ciclo-pink;
     text-decoration: none;
   }
 }
 
 .btn-secondary {
   background-color: #fff;
-  border: 1px solid #26547C;
-  color: #26547C;
+  border: 1px solid $ciclo-pink;
+  color: $ciclo-pink;
   padding: 5px 10px;
-  border-radius: 3px;
+  border-radius: 50px;
   margin: 5px;
+  min-height: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // margin-left: 0;
   a {
     text-decoration: none;
-    color: #26547C;
+    color: $ciclo-pink;
   }
   &:hover {
     text-decoration: none;
-    background-color: #ececec;
-    color: #1B3B57;
-    border-color: #1B3B57;
+    background-color: $ciclo-pink;
+    color: #fff;
+    border: none;
+  }
+}
+
+.btn-secondary:active {
+  text-decoration: none;
+    background-color: $ciclo-pink !important;
+    color: #fff !important;
+    border: none;
+}
+
+.btn-minimal {
+  margin: 10px;
+  font-size: 14px;
+  color: #A9A9A9;
+  text-decoration-line: underline;
+  &:hover {
+    color: gray;
   }
 }
