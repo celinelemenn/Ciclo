@@ -14,7 +14,6 @@ class PointOfInterestsController < ApplicationController
     else
       @date = (@date / 1440).to_i
       @date = "#{@date} days ago"
-
     end
   end
 
