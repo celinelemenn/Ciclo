@@ -1,0 +1,19 @@
+.btn-main {
+  background-color: #FE2A53;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border-style: none;
+  color: #fff;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  &:hover {
+    background-color: #C52140;
+    text-decoration: none;
+  }
+}
+
+.btn-secondary {
+
+}
