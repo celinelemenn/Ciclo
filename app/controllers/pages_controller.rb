@@ -12,12 +12,16 @@ class PagesController < ApplicationController
         lat: poi.lat,
         lng: poi.long,
         poi_type: poi.poi_type
+
       }
     end
-    # raise
   end
 
   def userprofile
     @user = User.find(params[:id])
   end
 end
+
+
+
+# POINT_OF_INTEREST[testpoi.poi_type.to_sym][:marker]

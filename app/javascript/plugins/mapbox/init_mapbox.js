@@ -28,7 +28,6 @@ const initMapbox = () => {
 
     // });
 
-
     // markers test - POI's
 
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -39,10 +38,24 @@ const initMapbox = () => {
       el.className = 'marker poi-icon';
       // const url = 'https://placekitten.com/g/50/50';
       const url = 'https://i.imgur.com/KRowqX7.png';
-      el.style.backgroundImage = `url(${url})`;
 
-      el.style.width = '40px';
-      el.style.height = '40px';
+      // const poitype = marker.poi_type
+      // const url = <%= POINT_OF_INTEREST[marker.poi_type.to_sym][:marker]%>
+      // const url = <%= POINT_OF_INTEREST[:water_refill][:marker]%>
+
+      // console.log(url)
+      // console.log(poitype)
+
+
+
+
+
+
+      el.style.backgroundImage = `url(${url})`;
+      console.log(marker)
+
+      el.style.width = '30px';
+      el.style.height = '30px';
       console.log(el)
 
       new mapboxgl.Marker(el)
