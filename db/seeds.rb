@@ -27,6 +27,7 @@ test_user = User.create(
   bio: "Currently travelling in Asia",
   description: "Being around the world with my bikie",
   blog: "https://medium.com/",
+  terms: true,
 )
 
 
@@ -38,6 +39,7 @@ test_user2 = User.create(
   bio: "Currently travelling in Asia",
   description: "Being around the world with my bikie",
   blog: "https://medium.com/",
+  terms:true,
 )
 
 puts "Individual user created"
@@ -78,7 +80,6 @@ set_of_geolocations = [
 
 # set_of_poitypes = [1, 2, 3, 4, 5]
 poi_types = POINT_OF_INTEREST.values.map { |poi| poi[:label] }
-p poi_types
 
 # POINT_OF_INTEREST[poi2.poi_type.to_sym]
 
