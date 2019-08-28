@@ -2,30 +2,34 @@
     <div class="navbar-item">
       <%= link_to map_path, class: "anchor_link" do %>
         <i class="fas fa-map-marked-alt"></i>
+        <p>Map</p>
       <% end %>
-      <p>Map</p>
     </div>
     <div class="navbar-item">
       <%= link_to point_of_interests_path, class: "anchor_link" do %>
         <i class="far fa-bookmark"></i>
-      <% end %>
-      <p>My list</p>
-    </div>
-    <div class="navbar-item" id="navbar-item-plus">
-      <%= link_to new_point_of_interest_path, class: "anchor_link" do %>
-        <i class="fas fa-plus"></i>
+        <p>My list</p>
       <% end %>
     </div>
+
     <div class="navbar-item">
-      <%= link_to '/thisisatest', class: "anchor_link" do %>
+      <%= link_to feed_path, class: "anchor_link" do %>
         <i class="fas fa-rss"></i>
       <% end %>
       <p>Feed</p>
     </div>
     <div class="navbar-item">
+      <%= link_to conversations_path, class: "anchor_link" do %>
+        <i class="far fa-comments"></i>
+        <p>Messages</p>
+      <% end %>
+
+    </div>
+
+    <div class="navbar-item">
       <%= link_to profile_path, class: "anchor_link" do %>
         <i class="fas fa-user"></i>
+        <p>Profile</p>
       <% end %>
-      <p>Profile</p>
     </div>
 </div>
