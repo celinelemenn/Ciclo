@@ -14,7 +14,7 @@
   </div>
 
   <div>
-    <%= link_to point_of_interest_downvotes_path(@poi) do  %>
+    <%= link_to point_of_interest_downvotes_path(@poi, user: current_user), method: :post do  %>
       <i class="far fa-thumbs-down"></i>
       <%= @poi.downvotes.count %>
     <% end %>
