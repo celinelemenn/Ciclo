@@ -96,6 +96,8 @@ puts "#{PointOfInterest.count} PointOfInterest created "
 
 # -----------
 
+puts "Creating trips for test_user....."
+
 2.times do
   trip1 = Trip.create(
    start_date: DateTime.parse("09/01/2019 17:00"),
@@ -108,4 +110,25 @@ puts "#{PointOfInterest.count} PointOfInterest created "
 end
 
 puts "#{Trip.count} trips created"
+
+
+#-------------adding votes to the last POI ONLY (not all POI)--------------
+
+puts "Creating likes and downvotes for the last POI ...."
+
+5.times do
+  Like.create(
+    point_of_interest_id: PointOfInterest.last.id,
+    user_id: test_user.id
+    )
+end
+
+3.times do
+  Downvote.create(
+    point_of_interest_id: PointOfInterest.last.id,
+    user_id: test_user.id
+    )
+end
+
+puts " #{Like.count} likes #{Downvote.count} downvotes created"
 
