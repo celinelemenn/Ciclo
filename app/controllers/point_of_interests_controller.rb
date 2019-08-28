@@ -1,8 +1,11 @@
 class PointOfInterestsController < ApplicationController
+  before_action :find_poi, only: [:show]
+
   def index
   end
 
   def show
+    raise
   end
 
   def new
@@ -16,4 +19,15 @@ class PointOfInterestsController < ApplicationController
 
   def update
   end
+
+  private
+
+  def poi_params
+
+  end
+
+  def find_poi
+    @poi = PointOfInterest.find(params[:id])
+  end
+
 end
