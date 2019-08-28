@@ -6,16 +6,16 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
-    if @trip.save
+    if @trip.save!
       redirect_to profile_path
     else
-      render 'trips/new'
+      render trips_new_path
     end
   end
 
   private
 
   def trip_params
-    params.permit(:start_date, :end_date, :name, :km, :blog)
+    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog)
   end
 end
