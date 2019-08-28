@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying previous seeds"
-
 PointOfInterest.destroy_all
+User.destroy_all
 
 puts "Seeds Destroyed"
 
@@ -23,12 +23,21 @@ test_user = User.create(
   bio: "Currently travelling in Asia",
   description: "Being around the world with my bikie",
   blog: "https://medium.com/",
+)
 
-  )
+
+test_user2 = User.create(
+  email: "test_user2@gmail.com",
+  password: "1234567",
+  full_name: "Test McTest2",
+  remote_photo_url: 'https://i.pravatar.cc/60',
+  bio: "Currently travelling in Asia",
+  description: "Being around the world with my bikie",
+  blog: "https://medium.com/",
+)
 
 puts "Individual user created"
-puts "test user created"
-
+puts "We have now #{User.count} test user created"
 
 
 
@@ -72,7 +81,7 @@ set_of_geolocations.each_with_index do |item, index|
     long: set_of_geolocations[index][0], # set_of_geolocations[index_geolocation][long]
     poi_type: set_of_poitypes.sample ,
     description: 'some poi description',
-    user_id: 1
+    user: test_user
     )
 end
 

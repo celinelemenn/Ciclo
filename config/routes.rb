@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :cyclists, only: [:show]
   devise_for :users
   root to: 'pages#home', as: :homepage
 
   get '/profile', to: 'pages#profile', as: :profile
-
+  get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
 
   resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update] do
