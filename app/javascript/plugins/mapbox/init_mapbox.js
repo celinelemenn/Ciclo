@@ -35,9 +35,12 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       // create a DOM element for the marker
       const el = document.createElement('div');
-      el.className = 'marker';
-      // el.style.backgroundImage = 'url(https://source.unsplash.com/random/50x50)'
-      el.style.backgroundImage = 'url(https://placekitten.com/g/50/50)'
+
+      el.className = 'marker poi-icon';
+      // const url = 'https://placekitten.com/g/50/50';
+      const url = 'https://i.imgur.com/KRowqX7.png';
+      el.style.backgroundImage = `url(${url})`;
+
       el.style.width = '40px';
       el.style.height = '40px';
       console.log(el)
@@ -47,7 +50,6 @@ const initMapbox = () => {
         .addTo(map);
 
     });
-
 
 
     // CATS EXAMPLE drawing custom markers for POIS
@@ -69,7 +71,6 @@ const initMapbox = () => {
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
     });
-
 
 
   }

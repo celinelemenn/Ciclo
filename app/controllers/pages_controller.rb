@@ -14,6 +14,7 @@ class PagesController < ApplicationController
         poi_type: poi.poi_type
       }
     end
+    # raise
   end
 
   def userprofile
