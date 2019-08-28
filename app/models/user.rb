@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :preferences
 
   has_many :reports
+  has_many :trips
   has_many :bookmarks
   has_many :likes
   has_many :downvotes

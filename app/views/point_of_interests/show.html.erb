@@ -6,18 +6,25 @@
   <%= cl_image_tag @poi.photo %>
 
   <div>
-    <i class="far fa-thumbs-down"></i>
+    <%= link_to point_of_interest_likes_path(@poi, user: current_user), method: :post do %>
+      <i class="fas fa-thumbs-up"></i>
+      <%= @poi.likes.count %>
+    <% end %>
+
   </div>
 
   <div>
-    <i class="fas fa-thumbs-up"></i>
+    <%= link_to point_of_interest_downvotes_path(@poi, user: current_user), method: :post do  %>
+      <i class="far fa-thumbs-down"></i>
+      <%= @poi.downvotes.count %>
+    <% end %>
   </div>
+
 </div>
 
 <!-- top details -->
 
 <div>
-
   <div>
     <h1> <%= @poi.title %></h1>
   </div>
@@ -30,18 +37,42 @@
   <div>
     Created by <%= @poi.user.full_name %>, <%= @date %>
   </div>
-
+</div>
 <!-- description block -->
+=======
+  <!-- description block -->
 
-<div>
-  <h3>Description</h3>
-  <p><%= @poi.description %></p>
+
+  <div>
+    <h3>Description</h3>
+    <p><%= @poi.description %></p>
+  </div>
+
+<div id="comments">
+  <% @poi.comments.each do |comment| %>
+    <h2><%= comment.user.full_name %></h2>
+    <p><%= comment.content %></p>
+  <% end %>
 </div>
 
 
 <!-- comments block -->
+<h1>Add a comment <%= @poi.title %></h1>
+
+<div id="new_comment">
+  <%= simple_form_for([@poi,@comment]) do |f| %>
+    <%= f.input :content %>
+    <%= f.input :user, :as => :hidden, input_html: { value: current_user.id } %>
+    <%= f.submit "Add comment" %>
+  <% end %>
+</div>
 
 <div>
-  <button>Add a comment</button>
   <button>Something wrong ?</button>
 </div>
+=======
+  <!-- comments block -->
+
+  <div>
+    <button>Something wrong ?</button>
+  </div>
