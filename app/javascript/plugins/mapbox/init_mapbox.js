@@ -28,18 +28,34 @@ const initMapbox = () => {
 
     // });
 
-
     // markers test - POI's
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       // create a DOM element for the marker
       const el = document.createElement('div');
-      el.className = 'marker';
-      // el.style.backgroundImage = 'url(https://source.unsplash.com/random/50x50)'
-      el.style.backgroundImage = 'url(https://placekitten.com/g/50/50)'
-      el.style.width = '40px';
-      el.style.height = '40px';
+
+      el.className = 'marker poi-icon';
+      // const url = 'https://placekitten.com/g/50/50';
+      const url = 'https://i.imgur.com/KRowqX7.png';
+
+      // const poitype = marker.poi_type
+      // const url = <%= POINT_OF_INTEREST[marker.poi_type.to_sym][:marker]%>
+      // const url = <%= POINT_OF_INTEREST[:water_refill][:marker]%>
+
+      // console.log(url)
+      // console.log(poitype)
+
+
+
+
+
+
+      el.style.backgroundImage = `url(${url})`;
+      console.log(marker)
+
+      el.style.width = '30px';
+      el.style.height = '30px';
       console.log(el)
 
       new mapboxgl.Marker(el)
@@ -47,7 +63,6 @@ const initMapbox = () => {
         .addTo(map);
 
     });
-
 
 
     // CATS EXAMPLE drawing custom markers for POIS
@@ -69,7 +84,6 @@ const initMapbox = () => {
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
     });
-
 
 
   }

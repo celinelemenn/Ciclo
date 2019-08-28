@@ -12,6 +12,7 @@ class PagesController < ApplicationController
         lat: poi.lat,
         lng: poi.long,
         poi_type: poi.poi_type
+
       }
     end
   end
@@ -24,3 +25,7 @@ class PagesController < ApplicationController
     @trips = Trip.where(user: @user)
   end
 end
+
+
+
+# POINT_OF_INTEREST[testpoi.poi_type.to_sym][:marker]

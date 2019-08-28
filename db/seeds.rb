@@ -78,6 +78,7 @@ set_of_geolocations = [
 
 # set_of_poitypes = [1, 2, 3, 4, 5]
 poi_types = POINT_OF_INTEREST.values.map { |poi| poi[:label] }
+p poi_types
 
 # POINT_OF_INTEREST[poi2.poi_type.to_sym]
 

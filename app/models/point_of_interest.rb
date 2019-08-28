@@ -8,5 +8,5 @@ class PointOfInterest < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  enum poi_type: [:water_refilll, :camping, :caution, :landmark]
+  enum poi_type: [:water_refill, :camping, :caution, :landmark]
 end
