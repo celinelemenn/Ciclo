@@ -8,6 +8,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
 
@@ -15,7 +16,9 @@
     <%= render 'shared/topmenu' %>
 
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="uni-app-container">
+      <%= yield %>
+    </div>
     <%= render 'shared/navbar' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

@@ -18,16 +18,39 @@ const initMapbox = () => {
       zoom: 10,
     });
 
-    // drawing markers on the map - simple version
+    // // drawing markers on the map - simple version
+
+    // const markers = JSON.parse(mapElement.dataset.markers);
+    // markers.forEach((marker) => {
+    //   new mapboxgl.Marker()
+    //     .setLngLat([ marker.lng, marker.lat ])
+    //     .addTo(map);
+
+    // });
+
+
+    // markers test - POI's
+
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      // create a DOM element for the marker
+      const el = document.createElement('div');
+      el.className = 'marker';
+      // el.style.backgroundImage = 'url(https://source.unsplash.com/random/50x50)'
+      el.style.backgroundImage = 'url(https://placekitten.com/g/50/50)'
+      el.style.width = '40px';
+      el.style.height = '40px';
+      console.log(el)
+
+      new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
 
     });
 
-    // drawing custom markers for POIS
+
+
+    // CATS EXAMPLE drawing custom markers for POIS
 
     geojson.features.forEach(function(marker) {
     // create a DOM element for the marker
@@ -47,8 +70,6 @@ const initMapbox = () => {
           .addTo(map);
     });
 
-
-    console.log(markers);
 
 
   }
