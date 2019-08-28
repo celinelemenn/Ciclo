@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying previous seeds"
+
+Like.destroy_all
+Downvote.destroy_all
 PointOfInterest.destroy_all
 Trip.destroy_all
 User.destroy_all
