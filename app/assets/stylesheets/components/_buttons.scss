@@ -3,17 +3,37 @@
   padding: 5px 10px;
   border-radius: 3px;
   border-style: none;
+  display: inline-block;
   color: #fff;
+  margin: 5px;
+  margin-left: 0;
   a {
     text-decoration: none;
     color: white;
   }
   &:hover {
     background-color: #C52140;
+    color: #fff;
     text-decoration: none;
   }
 }
 
 .btn-secondary {
-
+  background-color: #fff;
+  border: 1px solid #26547C;
+  color: #26547C;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 5px;
+  margin-left: 0;
+  a {
+    text-decoration: none;
+    color: #26547C;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: #ececec;
+    color: #1B3B57;
+    border-color: #1B3B57;
+  }
 }

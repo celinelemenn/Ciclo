@@ -1,4 +1,44 @@
 .form-container {
-  max-width: 350px;
+  max-width: 300px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.form-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  hr {
+    width: 70px;
+    background-color: #FE2A53;
+    height: 2px;
+    margin-top: 0;
+  }
+}
+
+.form-input {
+  input {
+    background: transparent !important;
+    border: none;
+    border-bottom: 1px solid #ececec;
+    display: inline;
+    &:focus {
+      box-shadow: none;
+      border: none;
+      border-bottom: 1px solid #26547C;
+    }
+  }
+  label {
+    display: block;
+  }
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  a {
+
+  }
 }
