@@ -2,7 +2,11 @@
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
-.uni-app-container { // Don't use this container yet, it's not working properly.
+.uni-text-shadow {
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.uni-app-container {
   overflow: scroll;
   height: calc(100vh - 120px);
 }
