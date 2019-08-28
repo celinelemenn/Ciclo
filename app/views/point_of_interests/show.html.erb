@@ -6,12 +6,20 @@
   <%= cl_image_tag @poi.photo %>
 
   <div>
-    <i class="far fa-thumbs-down"></i>
+    <%= link_to point_of_interest_likes_path(@poi, user: current_user), method: :post do %>
+      <i class="fas fa-thumbs-up"></i>
+      <%= @poi.likes.count %>
+    <% end %>
+
   </div>
 
   <div>
-    <i class="fas fa-thumbs-up"></i>
+    <%= link_to point_of_interest_downvotes_path(@poi) do  %>
+      <i class="far fa-thumbs-down"></i>
+      <%= @poi.downvotes.count %>
+    <% end %>
   </div>
+
 </div>
 
 <!-- top details -->
@@ -31,17 +39,17 @@
     Created by <%= @poi.user.full_name %>, <%= @date %>
   </div>
 
-<!-- description block -->
+  <!-- description block -->
 
-<div>
-  <h3>Description</h3>
-  <p><%= @poi.description %></p>
-</div>
+  <div>
+    <h3>Description</h3>
+    <p><%= @poi.description %></p>
+  </div>
 
 
-<!-- comments block -->
+  <!-- comments block -->
 
-<div>
-  <button>Add a comment</button>
-  <button>Something wrong ?</button>
-</div>
+  <div>
+    <button>Add a comment</button>
+    <button>Something wrong ?</button>
+  </div>
