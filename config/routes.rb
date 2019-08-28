@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'pages#home', as: :homepage
 
   get '/profile', to: 'pages#profile', as: :profile
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
+  get '/feed', to: 'pages#feed', as: :feed
 
   resources :trips, only: [:new, :create]
   resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update] do
