@@ -86,3 +86,7 @@ set_of_geolocations.each_with_index do |item, index|
 end
 
 puts "#{PointOfInterest.count} PointOfInterest created "
+
+#-----------
+
+5.times.PastTrip.Create

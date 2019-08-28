@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'trips/new'
+  get 'trips/create'
   devise_for :users
   root to: 'pages#home', as: :homepage
 
