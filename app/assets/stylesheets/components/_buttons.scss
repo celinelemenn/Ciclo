@@ -14,8 +14,9 @@
     color: white;
   }
   &:hover {
-    background-color: #C52140;
-    color: #fff;
+    background-color: #fff;
+    color: $ciclo-pink;
+    border: 1px solid $ciclo-pink;
     text-decoration: none;
   }
 }
@@ -45,9 +46,19 @@
   }
 }
 
+.btn-secondary:active {
+  text-decoration: none;
+    background-color: $ciclo-pink !important;
+    color: #fff !important;
+    border: none;
+}
+
 .btn-minimal {
   margin: 10px;
   font-size: 14px;
   color: #A9A9A9;
   text-decoration-line: underline;
+  &:hover {
+    color: gray;
+  }
 }

@@ -15,5 +15,7 @@ class User < ApplicationRecord
 
   has_many :user_positions
 
+  validates :terms, presence: true
+
   mount_uploader :photo, PhotoUploader
 end

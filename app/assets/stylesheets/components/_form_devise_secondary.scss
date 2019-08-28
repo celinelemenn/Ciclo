@@ -60,17 +60,19 @@
   }
   label {
     font-size: 14px;
-    color: #A9A9A9;
+    color: $dark-blue;
   }
 }
 
 .form-buttons {
   display: flex;
   justify-content: center;
+  margin-top: 5%;
 }
 
 .form-buttons-login {
   margin: 0 auto;
+  margin-top: 15%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
