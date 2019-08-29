@@ -16,10 +16,12 @@
     <%= render 'shared/topmenu' %>
 
     <%= render 'shared/flashes' %>
+
     <div class="uni-app-container">
       <%= yield %>
     </div>
-    <%= render 'shared/navbar' %>
+
+    <%= render 'shared/navbar' if !devise_controller? %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
