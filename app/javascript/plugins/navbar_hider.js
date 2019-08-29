@@ -1,10 +1,14 @@
 const hider = () => {
-  const element = document.querySelector('.uni-app-container');
-  const pageUrl = window.location.href;
-  if (pageUrl.indexOf("users") > -1) {
-    element.classList.toggle("uni-app-container");
-    element.classList.toggle("uni-app-container-no-navbar")
+
+  const element = document.querySelector('#hidden-nav');
+  const navbar = document.querySelector('.navbar')
+
+  if (element) {
+    navbar.parentElement.removeChild(navbar);
   };
 };
 
 export { hider };
+
+
+// /profiles/324324/edit

@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :check_navbar_presence
+
+  def check_navbar_presence
+    @hide_nav = !!ROUTES_NO_NAV.find { |route| route[:controller] == controller_name and route[:action] == action_name }
+  end
 
   protected
 

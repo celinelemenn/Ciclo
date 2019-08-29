@@ -66,6 +66,17 @@
   }
 }
 
+.btn-destroy {
+  position: relative;
+  left: 70px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid $ciclo-pink;
+  text-decoration: none;
+  color: $dark-blue;
+}
+
 .btn-simple {
   color: $ciclo-pink;
   font-weight: bold;
