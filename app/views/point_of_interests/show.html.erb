@@ -41,6 +41,7 @@
   <div>
     <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
     <h2><%= @poi.user.full_name %></h2>
+    <p><%= @poi.date %></p>
     <p><%= @poi.description %></p>
   </div>
 
@@ -48,6 +49,7 @@
     <% @poi.comments.each do |comment| %>
       <%= cl_image_tag(comment.user.photo.url(:avatar), fetch_format: :auto) %>
       <h2><%= comment.user.full_name %></h2>
+      <p><%= comment.date %></p>
       <p><%= comment.content %></p>
     <% end %>
   </div>
