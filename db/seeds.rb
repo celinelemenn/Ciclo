@@ -8,6 +8,7 @@
 
 puts "Destroying previous seeds"
 
+Comment.destroy_all
 Like.destroy_all
 Downvote.destroy_all
 PointOfInterest.destroy_all
@@ -137,3 +138,16 @@ end
 
 puts " #{Like.count} likes #{Downvote.count} downvotes created"
 
+#-------------adding comments to the last POI ONLY (not all POI)--------------
+
+puts "Creating comments for the last POI ...."
+
+3.times do
+  Comment.create(
+    point_of_interest_id: PointOfInterest.last.id,
+    user_id: test_user.id,
+    content: 'this is an amazing content for this last POI of our database'
+    )
+end
+
+puts " #{Comment.count} comments created"
