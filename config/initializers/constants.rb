@@ -24,3 +24,8 @@ POINT_OF_INTEREST = {
     color: "#09D898"
   }
 }
+
+ROUTES_NO_NAV = [
+  { controller: 'registrations', action: 'new' },
+  { controller: 'pages', action: 'home' }
+]

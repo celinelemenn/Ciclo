@@ -8,7 +8,7 @@
 
 .uni-app-container {
   overflow: scroll;
-  height: calc(100vh - 120px);
+  height: 100%;
 }
 
 .uni-page-container {
@@ -19,6 +19,3 @@
   text-align: center;
 }
 
-.uni-app-container-no-navbar {
-  height: 100%;
-}
