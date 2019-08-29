@@ -31,13 +31,15 @@
 .banner-expand {
   height: 50px;
   width: 50px;
-  background: #26547C;
+  background: $dark-blue;
   line-height: 50px;
   border-radius: 50%;
-  color: #fff;
-  &:hover {
-  background: #fff;
-  color: #000;
-  border: 1px solid #FE2A53;
+  // color: #fff;
+  a {
+    text-decoration: none;
+    color: #fff;
   }
+
 }
+
+
