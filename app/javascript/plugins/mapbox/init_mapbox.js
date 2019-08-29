@@ -4,71 +4,76 @@ import { poiGeojson } from '../../plugins/mapbox/poi_geojson';
 const geojson =  poiGeojson();
 
 
-const initMapbox = () => {
+//**FETCHING JSON DATA FROM API LINE BY LINE AND CONVERT IT**//
+
+const api_execute = async () => {
+  const poiApiEndpoint = `${window.location.origin}` + `/api/v1/point_of_interests`   //to avoid getting http://localhost:3000/api/v1/point_of_interests on heroku
+  let response = await fetch(poiApiEndpoint)
+  let data = await response.json()
+  return data
+}
+
+const processData = async () => {
+  let objects = [];
+  let data = await api_execute();
+  console.log(data);
+  data.forEach((poi) => {
+    const temp_obj = new Object;
+    temp_obj.id = poi['id='];
+    temp_obj.lat = poi['lat='];
+    temp_obj.long = poi['long='];
+    temp_obj.poiType = poi['poi_type=']
+    temp_obj.markerLink = poi['marker_icon='];
+    objects.push(temp_obj);
+   })
+  return objects;
+}
+// ********************end*fetching********************************** //
+
+
+
+//**MAPBOX _ INITIALISE AND DATA ON MAP**//
+
+const initMapbox = (poi_array) => {
   const mapElement = document.getElementById('map');
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
-     // initialise map
+    //--- initialise map --- //
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/klingmap/cjztq9yns04ke1dny5m5o49bz',
       center: [4.925,52.375],
       zoom: 10,
     });
+    // ----------------------//
 
-    // // drawing markers on the map - simple version
 
-    // const markers = JSON.parse(mapElement.dataset.markers);
-    // markers.forEach((marker) => {
-    //   new mapboxgl.Marker()
-    //     .setLngLat([ marker.lng, marker.lat ])
-    //     .addTo(map);
-
-    // });
-
-    // markers test - POI's
-
+    // --- POI's as markers --- //
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      // create a DOM element for the marker
-      const el = document.createElement('div');
-
+      const el = document.createElement('div'); // create a DOM element for the marker
       el.className = 'marker poi-icon';
-      // const url = 'https://placekitten.com/g/50/50';
-      const url = 'https://i.imgur.com/KRowqX7.png';
 
-      // const poitype = marker.poi_type
-      // const url = <%= POINT_OF_INTEREST[marker.poi_type.to_sym][:marker]%>
-      // const url = <%= POINT_OF_INTEREST[:water_refill][:marker]%>
-
-      // console.log(url)
-      // console.log(poitype)
-
-
-
-
-
-
+      const url = marker.marker_link;
       el.style.backgroundImage = `url(${url})`;
-      console.log(marker)
-
       el.style.width = '30px';
       el.style.height = '30px';
-      console.log(el)
+
+      // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
       new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
-
+        // .setPopup(popup)
     });
+    // ------end pois --------//
 
 
-    // CATS EXAMPLE drawing custom markers for POIS
+    // --- CATS EXAMPLE drawing custom markers for POIS -- //
+      geojson.features.forEach(function(marker) {
 
-    geojson.features.forEach(function(marker) {
-    // create a DOM element for the marker
       var el = document.createElement('div');
       el.className = 'marker';
       el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
@@ -79,14 +84,23 @@ const initMapbox = () => {
           window.alert(marker.properties.message);
       });
 
-      // add marker to map
       new mapboxgl.Marker(el)
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
     });
+    // --- end cats ----- //
+
 
 
   }
 };
+// ********************end*mapbox********************************** //
 
-export { initMapbox };
+
+
+const run_mapbox_page = async () => {
+  const poi_array = await processData();
+  initMapbox(poi_array);
+}
+
+export { run_mapbox_page };

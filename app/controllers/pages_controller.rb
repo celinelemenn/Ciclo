@@ -9,10 +9,12 @@ class PagesController < ApplicationController
 
     @markers = @point_of_interests.map do |poi|
       {
+        id: poi.id,
         lat: poi.lat,
         lng: poi.long,
-        poi_type: poi.poi_type
-
+        poi_type: poi.poi_type,
+        marker_link: POINT_OF_INTEREST[poi.poi_type.to_sym][:marker_icon],
+        # infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
     end
   end
@@ -25,7 +27,5 @@ class PagesController < ApplicationController
     @trips = Trip.where(user: @user)
   end
 end
-
-
 
 # POINT_OF_INTEREST[testpoi.poi_type.to_sym][:marker]
