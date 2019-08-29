@@ -1,25 +1,42 @@
 .card-trip-header {
-  margin-top: 5px;
+  margin-top: 30px;
 }
 .container-card {
   display:flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  margin-left: -36px;
+  margin-bottom: 5px;
+  // position: absolute;
+  // bottom: 0;
 
+  p {
+  margin-bottom: 0px;
+ }
 }
 
 .card-trip {
-  min-height: 19rem;
+  min-height: 13rem;
   min-width: 10rem;
   color: white;
   overflow: hidden;
   background: white;
   box-shadow: -1px 0px 17px -1px rgba(0,0,0,0.19);
   margin: 1rem;
-  background-image: url("https://images.unsplash.com/photo-1452842290973-d0545e29bd18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80");
+  background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url("https://images.unsplash.com/photo-1452842290973-d0545e29bd18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80");
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;
-  align-self: flex-end;
+  position:relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding-top: 80px;
+  text-align: left;
+  padding-left: 20px;
+  border-radius: 1%;
 }
 
+.info-card {
+  margin-top: 10px;
+}
