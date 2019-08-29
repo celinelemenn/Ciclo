@@ -1,7 +1,7 @@
 class DownvotesController < ApplicationController
   def create
     @downvote = Downvote.new
-
+    @comment = Comment.new
     @user = User.find(params[:user])
     @downvote.user = @user
 
