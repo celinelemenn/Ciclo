@@ -4,13 +4,12 @@
 
   <div class="poi-show-top">
     <%= cl_image_tag @poi.photo %>
-    <div class="btn-like">
+    <div class="btn-container">
       <div class="btn-like-primary">
         <%= link_to point_of_interest_likes_path(@poi, user: current_user), method: :post do %>
           <i class="fas fa-thumbs-up"></i>
           <p><%= @poi.likes.count %></p>
         <% end %>
-
       </div>
 
       <div class="btn-like-secondary">
@@ -24,17 +23,13 @@
 
 <!-- top details -->
 
-  <div>
-    <div>
-      <h1> <%= @poi.title %></h1>
+  <div class="poi-show-details">
+    <h2> <%= @poi.title %></h2>
+    <div class="poi-show-details-category mb-2">
+      <img src=<%= @poi.icon %> alt="">
+      <div><%= @poi.name %></div>
     </div>
-
-    <div class="d-flex">
-      <%= image_tag "water_marker.png" %>
-      <div><%= @poi.poi_type %></div>
-    </div>
-
-    <div>
+    <div class="mb-3 uni-opacity40">
       Created by <%= @poi.user.full_name %>, <%= @poi.date %>
     </div>
   </div>
@@ -42,13 +37,16 @@
 
 <!-- description block -->
 
+  <h3>Comment</h3>
   <div>
-    <h3>Description</h3>
+    <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
+    <h2><%= @poi.user.full_name %></h2>
     <p><%= @poi.description %></p>
   </div>
 
   <div id="comments">
     <% @poi.comments.each do |comment| %>
+      <%= cl_image_tag(comment.user.photo.url(:avatar), fetch_format: :auto) %>
       <h2><%= comment.user.full_name %></h2>
       <p><%= comment.content %></p>
     <% end %>

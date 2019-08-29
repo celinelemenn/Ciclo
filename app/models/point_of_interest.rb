@@ -23,4 +23,11 @@ class PointOfInterest < ApplicationRecord
     end
     date
   end
+
+  def name
+    POINT_OF_INTEREST[self.poi_type.to_sym][:name]
+  end
+  def icon
+    POINT_OF_INTEREST[self.poi_type.to_sym][:marker_icon]
+  end
 end
