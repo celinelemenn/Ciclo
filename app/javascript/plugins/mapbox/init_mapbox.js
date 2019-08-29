@@ -61,17 +61,18 @@ const initMapbox = (poi_array) => {
       el.style.width = '30px';
       el.style.height = '30px';
 
-      // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
       new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(map);
-        // .setPopup(popup)
+
     });
     // ------end pois --------//
 
 
-    // --- CATS EXAMPLE drawing custom markers for POIS -- //
+    // --- picture example custom markers  -- //
       geojson.features.forEach(function(marker) {
 
       var el = document.createElement('div');
@@ -88,7 +89,7 @@ const initMapbox = (poi_array) => {
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
     });
-    // --- end cats ----- //
+    // --- end example ----- //
 
 
 

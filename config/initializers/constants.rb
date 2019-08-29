@@ -2,7 +2,7 @@ POINT_OF_INTEREST = {
   water_refill: {
     label: 'water_refill',
     name: "Water refill",
-    marker_icon: "https://i.imgur.com/OThKNfI.png",
+    marker_icon: "https://i.imgur.com/LOnp8YJ.png",
     color: "#41D5FF"
   },
   camping: {
