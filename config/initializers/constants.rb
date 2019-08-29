@@ -34,6 +34,6 @@ ROUTES_NO_NAV = [
   { controller: 'sessions', action: 'new' },
   { controller: 'pages', action: 'home' },
   { controller: 'pages', action: 'userprofile' },
-  { controller: 'point_of_interest', action: 'new' },
-  { controller: 'point_of_interest', action: 'show' }
+  { controller: 'point_of_interests', action: 'new' },
+  { controller: 'point_of_interests', action: 'show' }
 ]
