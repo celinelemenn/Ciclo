@@ -1,4 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner text-center">
+  <div class="banner-title">
+    <h1>Cycle better</h1>
+    <p><em>Discover the best route with real-time reports from fellow cyclists</em></p>
+    <hr>
+  </div>
+  <div class="banner-buttons">
+    <%= link_to "Start", new_user_registration_path, class: "btn-main uni-box-shadow"  %>
+    <a href="" target="features" class="btn-secondary uni-box-shadow">Learn More</a>
+  </div>
+  <div class="banner-expand uni-box-shadow">
+    <i class="fas fa-angle-down"></i>
+  </div>
+</div>
 
-<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+<div class="uni-page-container text-center">
+
+
+</div>
+  <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
