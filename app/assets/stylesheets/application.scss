@@ -11,3 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Application wide CSS styling
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #fff;
+}

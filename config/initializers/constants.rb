@@ -2,7 +2,7 @@ POINT_OF_INTEREST = {
   water_refill: {
     label: 'water_refill',
     name: "Water refill",
-    marker_icon: "https://i.imgur.com/OThKNfI.png",
+    marker_icon: "https://i.imgur.com/LOnp8YJ.png",
     color: "#41D5FF"
   },
   camping: {
@@ -24,3 +24,16 @@ POINT_OF_INTEREST = {
     color: "#09D898"
   }
 }
+
+ROUTES_NO_NAV = [
+  { controller: 'registrations', action: 'new' },
+  { controller: 'registrations', action: 'cancel' },
+  { controller: 'registrations', action: 'edit' },
+  { controller: 'passwords', action: 'edit' },
+  { controller: 'passwords', action: 'new' },
+  { controller: 'sessions', action: 'new' },
+  { controller: 'pages', action: 'home' },
+  { controller: 'pages', action: 'userprofile' },
+  { controller: 'point_of_interest', action: 'new' },
+  { controller: 'point_of_interest', action: 'show' }
+]

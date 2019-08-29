@@ -11,15 +11,19 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
-
+  <% if @hide_nav  %>
+    <input type="hidden" id="hidden-nav">
+  <% end %>
 
     <%= render 'shared/topmenu' %>
 
     <%= render 'shared/flashes' %>
+
     <div class="uni-app-container">
       <%= yield %>
     </div>
-    <%= render 'shared/navbar' %>
+
+    <%= render 'shared/navbar' if !devise_controller? %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
