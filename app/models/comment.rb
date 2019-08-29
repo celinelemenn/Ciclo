@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
     date = -(self.created_at - DateTime.now) / 60
 
     if date < 60
-      date = "#{date} min ago"
+      date = "#{date.round} min ago"
     elsif date > 60 || date < 1440
       date = "#{(date/60).round} hours ago"
     else
