@@ -1,28 +1,33 @@
+<div class="container-profile">
+
 <% if current_user.present? %>
     <% if current_user.photo %>
-      <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
+      <%= image_tag("dummy-profile.png") %>
     <% else %>
-      You ain't got no photo
+      No photo
     <% end %>
-    <h3><%= current_user.full_name  %></h3>
-    <p><%= current_user.bio  %><p>
-    <p><%= current_user.description  %><p>
-    <p><%= current_user.blog  %><p>
+        <h3><%= current_user.full_name  %></h3>
+          <p><%= current_user.bio  %><p>
+          <p><%= current_user.description  %><p>
+        <p><%= current_user.blog  %><p>
 <% end %>
+
+<%= link_to 'Edit', edit_user_registration_path, class: "btn-main" %>
+
+</div>
 
     <h3>Your past trips </h3>
     <% current_user.trips.each do |trip| %>
-      <p><%= trip.start_date %></p>
-      <p><%= trip.end_date %></p>
-      <p>I have travelled through <%= trip.name %></p>
-      <p><%= trip.km %>km</p>
-      <p>Check out my blog: <%= trip.blog %></p>
+          <p><%= trip.start_date %></p>
+              <p><%= trip.end_date %></p>
+                <p>I have travelled through <%= trip.name %></p>
+              <p><%= trip.km %>km</p>
+          <p>Check out my blog: <%= trip.blog %></p>
     <% end %>
 
-<%= link_to 'Edit', edit_user_registration_path %>
 
 
-<%= link_to 'Add trip', new_trip_path %>
+<%= link_to 'Add trip', new_trip_path, class: "btn-main" %>
 
 
 
