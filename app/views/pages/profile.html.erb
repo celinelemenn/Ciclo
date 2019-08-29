@@ -23,7 +23,7 @@
     <div class="card-trip-header"><h3>Your past trips </h3></div>
 
     <% current_user.trips.each do |trip| %>
-      <div class="card-trip mb-3">
+      <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
         <strong><h3><%= trip.name %></h3></strong>
          <div class="container-card">
             <div>
@@ -42,5 +42,5 @@
       </div>
     <% end %>
   </div>
-    <div><%= link_to 'Add trip', new_trip_path, class: "btn-main" %></div>
+    <div class="card-trip-btn"><%= link_to 'Add trip', new_trip_path, class: "btn-main" %></div>
 </div>
