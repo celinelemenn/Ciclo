@@ -36,40 +36,58 @@
 
 
 <!-- description block -->
+  <div class="margin20">
+    <h4 class="mb-3">Comments</h4>
+    <div class="comment-card">
+      <div class="comment-card-image">
+        <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
+      </div>
+      <div class="comment-card-text">
+        <h5><strong><%= @poi.user.full_name %></strong> </h5>
+        <p class= "uni-opacity40"><%= @poi.date %></p>
+        <p><%= @poi.description %></p>
+      </div>
+    </div>
 
-  <h3>Comment</h3>
-  <div>
-    <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
-    <h2><%= @poi.user.full_name %></h2>
-    <p><%= @poi.date %></p>
-    <p><%= @poi.description %></p>
+    <div id="comments">
+      <% @poi.comments.each do |comment| %>
+        <div class="comment-card">
+          <div class="comment-card-image">
+            <%= cl_image_tag(comment.user.photo.url(:avatar), fetch_format: :auto) %>
+          </div>
+          <div class="comment-card-text">
+            <h5><strong><%= comment.user.full_name %></strong></h5>
+            <p class= "uni-opacity40"><%= comment.date %></p>
+            <p><%= comment.content %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div id="comments">
-    <% @poi.comments.each do |comment| %>
-      <%= cl_image_tag(comment.user.photo.url(:avatar), fetch_format: :auto) %>
-      <h2><%= comment.user.full_name %></h2>
-      <p><%= comment.date %></p>
-      <p><%= comment.content %></p>
-    <% end %>
-  </div>
-
 
 <!-- comments block -->
-  <h1>Add a comment <%= @poi.title %></h1>
 
   <div id="new_comment">
     <%= simple_form_for([@poi, @comment]) do |f| %>
-      <%= f.input :content %>
-      <%= f.input :user, :as => :hidden, input_html: { value: current_user.id } %>
-      <%= f.submit "Add comment", class: "btn-main" %>
+      <div class="d-flex margin20 mt-3 flex-just-betw">
+        <div class="d-flex">
+          <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto, class: "avatar-height") %>
+          <div>
+            <%= f.input :content, placeholder: "Add your comment", label: false, class: "no-border" %>
+            <%= f.input :user, :as => :hidden, input_html: { value: current_user.id } %>
+          </div>
+        </div>
+        <div class="btn-poi">
+          <%= f.submit "Add" %>
+        </div>
+      </div>
     <% end %>
   </div>
 
   <!-- last button -->
 
   <div>
-    <button class="btn-main">Something wrong ?</button>
+    <p class="btn-poi">Something wrong ?</p>
   </div>
 
   <!-- end of the page -->
