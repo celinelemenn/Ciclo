@@ -6,16 +6,7 @@ class PointOfInterestsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @date = -(@poi.created_at - DateTime.now).to_i / 60
 
-    if @date < 60
-      @date = "#{@date} min ago"
-    elsif @date > 60 || @date < 1440
-      @date = "#{@date} hours ago"
-    else
-      @date = (@date / 1440).to_i
-      @date = "#{@date} days ago"
-    end
   end
 
   def new
