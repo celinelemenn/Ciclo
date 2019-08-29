@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def create
     @like = Like.new
-
+    @comment = Comment.new
     @user = User.find(params[:user])
     @like.user = @user
 
@@ -17,5 +17,6 @@ class LikesController < ApplicationController
       @existing_like.delete
       render 'point_of_interests/show', point_of_interest: @poi
     end
+
   end
 end
