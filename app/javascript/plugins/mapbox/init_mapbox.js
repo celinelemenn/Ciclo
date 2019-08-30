@@ -3,7 +3,14 @@ import { poiGeojson } from '../../plugins/mapbox/poi_geojson';
 
 const geojson =  poiGeojson();
 
-
+const generate_popdown = (object) => {
+  const appContainer = document.querySelector('.uni-app-container')
+  appContainer.insertAdjacentHTML('beforeend', `
+  <div class="popdown" id="modify-popdown">
+    <h1>Random</h1>
+  </div>
+  `);
+};
 //**FETCHING JSON DATA FROM API LINE BY LINE AND CONVERT IT**//
 
 const api_execute = async () => {
@@ -49,27 +56,34 @@ const initMapbox = (poi_array) => {
     });
     // ----------------------//
 
+    generate_popdown();
 
     // --- POI's as markers --- //
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const el = document.createElement('div'); // create a DOM element for the marker
-      el.className = 'marker poi-icon';
+      el.className = 'marker poi-icon ';
 
       const url = marker.marker_link;
       el.style.backgroundImage = `url(${url})`;
       el.style.width = '30px';
       el.style.height = '30px';
 
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      const popdown = document.querySelector('.popdown')
+      el.addEventListener('click', function() {
+        popdown.classList.toggle("popdown-visible");
+      });
 
       new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
         .addTo(map);
 
+
     });
-    // ------end pois --------//
+    // ------end pois --------
+
+
 
 
     // --- picture example custom markers  -- //
@@ -81,8 +95,10 @@ const initMapbox = (poi_array) => {
       el.style.width = marker.properties.iconSize[0] + 'px';
       el.style.height = marker.properties.iconSize[1] + 'px';
 
+      const popdown = document.querySelector('.popdown')
+
       el.addEventListener('click', function() {
-          window.alert(marker.properties.message);
+        popdown.style.display = "block";
       });
 
       new mapboxgl.Marker(el)
@@ -90,7 +106,6 @@ const initMapbox = (poi_array) => {
           .addTo(map);
     });
     // --- end example ----- //
-
 
 
   }
