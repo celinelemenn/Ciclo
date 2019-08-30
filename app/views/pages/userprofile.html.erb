@@ -2,16 +2,17 @@
   <% if @user.photo.file %>
       <%= cl_image_tag @user.photo.url(:avatar) %>
   <% else %>
-    <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
- <% end %>
+      <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
+  <% end %>
+
   <div class="info-card">
-    <h3><%= @user.full_name  %></h3>
-    <p><%= @user.bio  %><p>
+    <strong><h3><%= @user.full_name  %></h3></strong>
+    <font size="+1"><p><%= @user.bio  %></p></font>
     <p><%= @user.description  %><p>
-    <p><%= @user.blog %><p>
+    <font size="+1"><h5><%= @user.blog  %></h5></font>
   </div>
 
-  <% user.trips.each do |trip| %>
+  <% @user.trips.each do |trip| %>
       <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
         <strong><h3><%= trip.name %></h3></strong>
          <div class="container-card">
@@ -27,8 +28,8 @@
               <p><strong><%= trip.km %> </strong></p>
               <font size="1"><p>kilometers</p></font>
             </div>
-      </div>
+         </div>
       </div>
     <% end %>
 
-        </div>
+</div>
