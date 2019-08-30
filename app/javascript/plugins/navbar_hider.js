@@ -9,7 +9,17 @@ const hider = () => {
   };
 };
 
-export { hider };
+const menu_hider = () => {
+  const element = document.querySelector('#hidden-menu');
+  const topmenu = document.querySelector('.top-menu')
+
+  if (element) {
+    topmenu.parentElement.removeChild(topmenu);
+
+  };
+}
+
+export { hider, menu_hider };
 
 
 // /profiles/324324/edit

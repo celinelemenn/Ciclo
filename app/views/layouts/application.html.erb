@@ -15,6 +15,11 @@
     <input type="hidden" id="hidden-nav">
   <% end %>
 
+  <% if @hide_menu %>
+      <input type="hidden" id="hidden-menu">
+      <%= render 'shared/topmenu_secondary' %>
+  <% end %>
+
     <%= render 'shared/topmenu' %>
 
     <%= render 'shared/flashes' %>
