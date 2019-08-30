@@ -3,6 +3,10 @@
 background-size: contain;
 }
 
+#map {
+  position: relative;
+}
+
 .popdown {
   position: absolute;
   bottom: 60px;

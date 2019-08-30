@@ -46,6 +46,17 @@ const initMapbox = () => {
       zoom: 10,
     });
 
+    // ----------------------//
+
+    // Gets Users location
+
+    map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+      }));
+
     // --- POI's as markers --- //
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
