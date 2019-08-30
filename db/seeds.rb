@@ -232,8 +232,17 @@ puts "Creating trips for test_user....."
    )
 end
 
-puts "> #{Trip.count} trips created"
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/01/2019 17:00"),
+   end_date: DateTime.parse("09/01/2020 19:00"),
+   name: "Cycling the South East of Asia",
+   km: 1000,
+   remote_photo_url: "https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+   blog: "www.mylife.com",
+   user: test_user2
+   )
 
+puts ">#{Trip.count} trips created"
 
 #-------------adding votes to the last POI ONLY (not all POI)--------------
 
