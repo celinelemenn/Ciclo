@@ -2,3 +2,18 @@
 .poi-icon {
 background-size: contain;
 }
+
+.popdown {
+  position: absolute;
+  bottom: 60px;
+  background: #F7F7F7;
+  border-bottom: black solid 0.5px;
+  width: 100vw;
+  height: 80px;
+  display: none;
+}
+
+.popdown-visible {
+  display: block;
+}
+
