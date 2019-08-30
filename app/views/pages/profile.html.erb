@@ -1,28 +1,49 @@
+<div class="uni-page-container text-center">
+
 <% if current_user.present? %>
-    <% if current_user.photo %>
-      <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
-    <% else %>
-      You ain't got no photo
-    <% end %>
-    <h3><%= current_user.full_name  %></h3>
-    <p><%= current_user.bio  %><p>
-    <p><%= current_user.description  %><p>
-    <p><%= current_user.blog  %><p>
+  <% if current_user.photo %>
+    <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
+  <% else %>
+    <%= image_tag("dummy-profile.png") %>
+  <% end %>
+<div class="info-card">
+  <strong><h3><%= current_user.full_name  %></h3></strong>
+  <font size="+1"><p><%= current_user.bio  %></p></font>
+  <p><%= current_user.description  %><p>
+  <font size="+1"><h5><%= current_user.blog  %></h5></font>
 <% end %>
+</div>
 
-    <h3>Your past trips </h3>
+<div class="mt-3">
+  <i class="fas fa-pen pr-2"></i><%= link_to 'Edit', edit_user_registration_path, class: "btn-simple"%>
+</div>
+
+
+  <div class="parent-card">
+    <div class="card-trip-header"><h3>Your past trips </h3></div>
+
     <% current_user.trips.each do |trip| %>
-      <p><%= trip.start_date %></p>
-      <p><%= trip.end_date %></p>
-      <p>I have travelled through <%= trip.name %></p>
-      <p><%= trip.km %>km</p>
-      <p>Check out my blog: <%= trip.blog %></p>
+      <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+        <strong><h3><%= trip.name %></h3></strong>
+         <div class="container-card">
+            <div>
+              <p><strong><%= trip.start_date.year %></strong></p>
+              <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
+            </div>
+            <div>
+              <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
+              <font size="1"><p>days</p></font>
+            </div>
+            <div>
+              <p><strong><%= trip.km %> </strong></p>
+              <font size="1"><p>kilometers</p></font>
+            </div>
+      </div>
+      </div>
     <% end %>
+    <div class="card-trip-btn">
+      <%= link_to 'Add trip', new_trip_path, class: "btn-main" %>
 
-<%= link_to 'Edit', edit_user_registration_path %>
-
-
-<%= link_to 'Add trip', new_trip_path %>
-
-
-
+    </div>
+  </div>
+</div>

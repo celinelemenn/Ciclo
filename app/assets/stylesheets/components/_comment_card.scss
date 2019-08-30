@@ -1,0 +1,25 @@
+.comment-card {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.comment-card-image {
+  display: flex;
+  align-items:flex-start;
+  img {
+    height: 40px;
+  }
+}
+
+.comment-card-text {
+  flex-grow: 1;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ececec;
+  h5 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}

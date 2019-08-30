@@ -8,6 +8,9 @@
   margin: 5px;
   min-height: 50px;
   width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // margin-left: 0;
   a {
     text-decoration: none;
@@ -48,9 +51,9 @@
 
 .btn-secondary:active {
   text-decoration: none;
-    background-color: $ciclo-pink !important;
-    color: #fff !important;
-    border: none;
+  background-color: $ciclo-pink !important;
+  color: #fff !important;
+  border: none;
 }
 
 .btn-minimal {
@@ -62,3 +65,45 @@
     color: gray;
   }
 }
+
+.btn-destroy {
+  position: relative;
+  left: 70px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid $ciclo-pink;
+  text-decoration: none;
+  color: $dark-blue;
+}
+
+.btn-simple {
+  color: $ciclo-pink;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: $ciclo-pink;
+  }
+}
+
+.btn-simple:active {
+  text-decoration-line: underline;
+  }
+
+ .fa-pen {
+    color: $ciclo-pink;
+    font-weight: bold;
+    &:hover {
+    text-decoration: none;
+    color: $ciclo-pink;
+
+    .fa-pen:active{
+      text-decoration-line: underline;
+    }
+  }
+}
+
+.btn-edit-profile {
+     margin-left: 107px;
+}
+
