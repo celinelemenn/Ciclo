@@ -18,11 +18,17 @@ class PagesController < ApplicationController
       }
     end
 
-    @cyclists = Userpositions.all
-
-
-
+    @cyclists = UserPosition.all
+    @cyclist_avatars = @cyclists.map do |cyclist|
+      {
+        id: cyclist.user_id,
+        lat: cyclist.lat,
+        lng: cyclist.long
+        # user_link: render_to_string()
+      }
+    end
   end
+
 
   def feed
   end

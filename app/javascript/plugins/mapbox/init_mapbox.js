@@ -15,7 +15,7 @@ const api_execute = async () => {
 const processData = async () => {
   let objects = [];
   let data = await api_execute();
-  console.log(data);
+  // console.log(data);
   data.forEach((poi) => {
     const temp_obj = new Object;
     temp_obj.id = poi['id='];
@@ -55,6 +55,7 @@ const initMapbox = () => {
       el.style.backgroundImage = `url(${url})`;
       el.style.width = '30px';
       el.style.height = '30px';
+      // console.log(marker)
 
       // drop down
       el.addEventListener('click', function() {
@@ -68,6 +69,34 @@ const initMapbox = () => {
     });
 
     // cyclist on map
+    const cyclists = JSON.parse(mapElement.dataset.cyclists);
+    cyclists.forEach((cyclist) => {
+      const el = document.createElement('div');
+      el.className = 'marker cyclist-avatar';
+      const url = 'https://i.imgur.com/dEwa4Bt.png';
+      el.style.backgroundImage = `url(${url}`;
+      el.style.width = '50px';
+      el.style.height = '50px';
+
+      // el.addEventListener('click', function() {
+
+      // });
+
+
+
+      new mapboxgl.Marker(el)
+        .setLngLat([cyclist.lng, cyclist.lat])
+        .addTo(map);
+    });
+
+
+    // location
+    // map.addControl(new mapboxgl.GeolocateControl({
+    //   positionOptions: {
+    //   enableHighAccuracy: true
+    //   },
+    //   trackUserLocation: true
+    //   }));
 
 
   // --- picture example custom markers  -- //
