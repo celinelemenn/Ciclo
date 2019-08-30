@@ -17,6 +17,11 @@ class PagesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
     end
+
+    @cyclists = Userpositions.all
+
+
+
   end
 
   def feed

@@ -67,6 +67,8 @@ const initMapbox = () => {
 
     });
 
+    // cyclist on map
+
 
   // --- picture example custom markers  -- //
     geojson.features.forEach(function(object) {

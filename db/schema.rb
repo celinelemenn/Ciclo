@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_152015) do
+ActiveRecord::Schema.define(version: 2019_08_30_103901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_152015) do
   end
 
   create_table "user_positions", force: :cascade do |t|
-    t.integer "lat"
-    t.integer "long"
+    t.decimal "lat", precision: 10, scale: 6
+    t.decimal "long", precision: 10, scale: 6
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
