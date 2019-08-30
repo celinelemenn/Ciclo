@@ -13,6 +13,7 @@ gem 'redis'
 # our own gem added
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

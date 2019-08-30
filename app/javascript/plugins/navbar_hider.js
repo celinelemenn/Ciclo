@@ -3,7 +3,7 @@ const hider = () => {
   const element = document.querySelector('#hidden-nav');
   const navbar = document.querySelector('.navbar')
 
-  if (element) {
+  if (element && navbar) {
     navbar.parentElement.removeChild(navbar);
     document.querySelector('.uni-app-container').classList.add('no-nav')
   };
