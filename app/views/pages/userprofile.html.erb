@@ -1,7 +1,8 @@
-<% if @user.photo %>
+<% if @user.photo.file %>
+  <p>it's true</p>
   <%= cl_image_tag @user.photo.url(:avatar) %>
 <% else %>
-  You ain't got no photo
+  <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
 <% end %>
 <h3><%= @user.full_name  %></h3>
 <p><%= @user.bio  %><p>
