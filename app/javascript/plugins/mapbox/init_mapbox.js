@@ -1,8 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import { poiGeojson } from '../../plugins/mapbox/poi_geojson';
-
+import { createPopdown  } from '../../plugins/mapbox/create_popdown';
 const geojson =  poiGeojson();
-
 
 //**FETCHING JSON DATA FROM API LINE BY LINE AND CONVERT IT**//
 
@@ -31,10 +30,9 @@ const processData = async () => {
 // ********************end*fetching********************************** //
 
 
+//**** MAPBOX _ INITIALISE AND DATA ON MAP*****//
 
-//**MAPBOX _ INITIALISE AND DATA ON MAP**//
-
-const initMapbox = (poi_array) => {
+const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) {
@@ -47,50 +45,41 @@ const initMapbox = (poi_array) => {
       center: [4.925,52.375],
       zoom: 10,
     });
-    // ----------------------//
-
 
     // --- POI's as markers --- //
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const el = document.createElement('div'); // create a DOM element for the marker
       el.className = 'marker poi-icon';
-
       const url = marker.marker_link;
       el.style.backgroundImage = `url(${url})`;
       el.style.width = '30px';
       el.style.height = '30px';
 
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-
-      new mapboxgl.Marker(el)
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(map);
-
-    });
-    // ------end pois --------//
-
-
-    // --- picture example custom markers  -- //
-      geojson.features.forEach(function(marker) {
-
-      var el = document.createElement('div');
-      el.className = 'marker';
-      el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-      el.style.width = marker.properties.iconSize[0] + 'px';
-      el.style.height = marker.properties.iconSize[1] + 'px';
-
+      // drop down
       el.addEventListener('click', function() {
-          window.alert(marker.properties.message);
+        createPopdown(marker.infoWindow);
       });
 
       new mapboxgl.Marker(el)
-          .setLngLat(marker.geometry.coordinates)
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+
+    });
+
+
+  // --- picture example custom markers  -- //
+    geojson.features.forEach(function(object) {
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(https://placekitten.com/g/' + object.properties.iconSize.join('/') + '/)';
+      el.style.width = object.properties.iconSize[0] + 'px';
+      el.style.height = object.properties.iconSize[1] + 'px';
+
+      new mapboxgl.Marker(el)
+          .setLngLat(object.geometry.coordinates)
           .addTo(map);
     });
-    // --- end example ----- //
-
 
 
   }

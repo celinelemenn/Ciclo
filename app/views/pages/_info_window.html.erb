@@ -1,8 +1,6 @@
-<div>
-
+<div class="info_window_popdown">
   <%= link_to point_of_interest_path(poi) do %>
-    <%= cl_image_tag poi.photo, width: 50, height: 50  %>
+    <div><p> <%= poi.poi_type %> </p></div>
   <% end %>
 
 </div>
-
