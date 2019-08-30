@@ -15,9 +15,13 @@
     <input type="hidden" id="hidden-nav">
   <% end %>
 
-  <% if @hide_menu %>
+  <% if @hide_menu || @show_page %>
       <input type="hidden" id="hidden-menu">
-      <%= render 'shared/topmenu_secondary' %>
+      <% if @show_page %>
+        <%= render 'shared/topmenu_backmap' %>
+      <% else  %>
+        <%= render 'shared/topmenu_secondary' %>
+      <% end %>
   <% end %>
 
     <%= render 'shared/topmenu' %>
