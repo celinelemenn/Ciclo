@@ -8,6 +8,9 @@
 
 puts "Destroying previous seeds"
 
+Bookmark.destroy_all
+puts "> Bookmark table destroyed"
+
 Comment.destroy_all
 puts "> Comment table destroyed"
 
