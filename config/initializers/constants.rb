@@ -27,13 +27,18 @@ POINT_OF_INTEREST = {
 
 ROUTES_NO_NAV = [
   { controller: 'registrations', action: 'new' },
+  { controller: 'registrations', action: 'create' },
   { controller: 'registrations', action: 'cancel' },
   { controller: 'registrations', action: 'edit' },
   { controller: 'passwords', action: 'edit' },
   { controller: 'passwords', action: 'new' },
   { controller: 'sessions', action: 'new' },
+  { controller: 'sessions', action: 'create' },
   { controller: 'pages', action: 'home' },
   { controller: 'pages', action: 'userprofile' },
   { controller: 'point_of_interest', action: 'new' },
-  { controller: 'point_of_interest', action: 'show' }
+  { controller: 'point_of_interest', action: 'create' },
+  { controller: 'point_of_interest', action: 'show' },
+  { controller: 'likes', action: 'create' },
+  { controller: 'downvotes', action: 'create' }
 ]

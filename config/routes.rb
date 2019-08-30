@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  # match '/user' => "pages#permission", :as => :user_root
   root to: 'pages#home', as: :homepage
 
   get '/profile', to: 'pages#profile', as: :profile
