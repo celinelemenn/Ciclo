@@ -109,12 +109,14 @@ puts "> We have now #{User.count} test user created"
 
 puts "Creating one user position for each users"
 
+
 user_positions = [
-[4.647873, 52.331698],
-[4.589151, 52.289715],
-[4.856581, 52.294501],
-[4.758379, 52.404664],
-[4.795426, 52.460697],
+[4.63311798318442136, 52.22781546461253299],
+[4.8701169194470566, 52.31378997455897206],
+[4.84259835508827674, 52.3736725900286757],
+[4.68950668383535962, 52.33127787360739092],
+[4.88394770134858103, 52.45599899604990668],
+[4.60803550886977398, 52.09078574306185061]
 ]
 
 users = User.all
@@ -127,6 +129,8 @@ UserPosition.create(
   user: users[index]
   )
 end
+
+p UserPosition.all
 
 
 puts "> We have now 1 location for each user. We have created #{UserPosition.count} locations"
