@@ -40,7 +40,7 @@ ROUTES_NO_NAV = [
   { controller: 'point_of_interest', action: 'create' },
   { controller: 'point_of_interest', action: 'show' },
   { controller: 'likes', action: 'create' },
-  { controller: 'downvotes', action: 'create' }
+  { controller: 'downvotes', action: 'create' },
   { controller: 'point_of_interests', action: 'new' },
   { controller: 'point_of_interests', action: 'show' }
 ]
