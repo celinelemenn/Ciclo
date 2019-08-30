@@ -6,9 +6,18 @@
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
+.uni-app-container.no-nav {
+  overflow: scroll;
+  height: calc(100vh - 60px);
+}
+
 .uni-app-container {
   overflow: scroll;
-  height: 100%;
+  height: calc(100vh - 120px);
+}
+
+.uni-opacity40 {
+  opacity: 0.4;
 }
 
 .uni-page-container {
@@ -32,4 +41,3 @@
   height: 2px;
   margin-top: 0;
 }
-

@@ -1,0 +1,80 @@
+.poi-show-top {
+      position: relative;
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+
+  }
+}
+
+.btn-container {
+  position: absolute;
+  display:flex;
+  right: 0;
+  top: 168px;
+}
+
+
+.uni-page-container {
+ margin: 0 auto;
+
+}
+
+.poi-show-details {
+  margin: 30px 20px;
+  border-bottom: 1px solid #ececec;
+  img {
+    height: 30px;
+  }
+}
+
+.poi-show-details-category {
+  display:flex;
+  align-items: center;
+}
+
+
+
+body {
+  background-color: white;
+}
+
+
+.margin20 {
+  margin: 0 20px;
+}
+
+.avatar-height {
+  height: 30px;
+
+
+}
+
+.flex-just-betw {
+     justify-content: space-between;
+}
+
+.form-control {
+    border: 0;
+
+}
+
+.btn-poi {
+  margin: 10px;
+  font-size: 14px;
+  color: $ciclo-pink;
+  text-decoration-line: underline;
+  text-align: center;
+  &:hover {
+    color: gray;
+  }
+}
+
+
+.btn-poi button, input {
+    overflow: visible;
+    color: red;
+    background: white;
+    border: 0;
+}

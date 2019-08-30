@@ -5,6 +5,7 @@ const hider = () => {
 
   if (element) {
     navbar.parentElement.removeChild(navbar);
+    document.querySelector('.uni-app-container').classList.add('no-nav')
   };
 };
 
