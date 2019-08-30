@@ -1,0 +1,21 @@
+.btn-add {
+  position: absolute;
+  bottom: 85px;
+  left: 7px;
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  a {
+    color: $dark-blue;
+  }
+  &:hover {
+    background-color: $dark-blue;
+      a {
+      color: #fff;
+    }
+  }
+}
