@@ -49,20 +49,6 @@
   }
 }
 
-.btn-main-inverse {
-  text-decoration: none;
-  background-color: $ciclo-pink;
-  color: #fff;
-  border: none;
-}
-
-.btn-secondary-inverse {
-  background-color: #fff;
-  color: $ciclo-pink;
-  border: 1px solid $ciclo-pink;
-  text-decoration: none;
-}
-
 .btn-secondary:active {
   text-decoration: none;
   background-color: $ciclo-pink !important;
@@ -115,5 +101,9 @@
       text-decoration-line: underline;
     }
   }
+}
+
+.btn-edit-profile {
+     margin-left: 107px;
 }
 
