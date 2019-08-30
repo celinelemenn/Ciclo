@@ -17,7 +17,19 @@ class PagesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
     end
+
+    @cyclists = UserPosition.all
+    @cyclist_avatars = @cyclists.map do |cyclist|
+      {
+        id: cyclist.user_id,
+        lat: cyclist.lat,
+        lng: cyclist.long,
+        user_link: userprofile_path(cyclist)
+
+      }
+    end
   end
+
 
   def feed
   end
