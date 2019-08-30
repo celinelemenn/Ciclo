@@ -79,6 +79,7 @@ const initMapbox = () => {
       el.style.height = '50px';
 
       // el.addEventListener('click', function() {
+      //   el.
 
       // });
 
