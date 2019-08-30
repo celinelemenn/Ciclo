@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :check_navbar_presence
   before_action :check_topmenu_presence
+  before_action :check_on_show_poi
 
   def check_navbar_presence
     @hide_nav = !!ROUTES_NO_NAV.find { |route| route[:controller] == controller_name and route[:action] == action_name }
@@ -12,6 +13,10 @@ class ApplicationController < ActionController::Base
 
   def check_topmenu_presence
     @hide_menu = !!ROUTES_NO_MENU.find { |route| route[:controller] == controller_name and route[:action] == action_name }
+  end
+
+  def check_on_show_poi
+    @show_page = !!ROUTES_BACK_MAP.find { |route| route[:controller] == controller_name and route[:action] == action_name }
   end
 
   protected
