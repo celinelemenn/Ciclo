@@ -1,4 +1,4 @@
-<div class="uni-page-container">
+<div class="page-container-profile text-center">
 
 <% if current_user.present? %>
   <% if current_user.photo %>
@@ -41,6 +41,9 @@
       </div>
       </div>
     <% end %>
+    <div class="card-trip-btn">
+      <%= link_to 'Add trip', new_trip_path, class: "btn-main" %>
+
+    </div>
   </div>
-    <div class="card-trip-btn"><%= link_to 'Add trip', new_trip_path, class: "btn-main" %></div>
 </div>
