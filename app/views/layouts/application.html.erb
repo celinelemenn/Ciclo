@@ -19,6 +19,8 @@
 
     <div class="uni-app-container">
       <%= yield %>
+      <div class="popdown" id="modify-popdown">
+      </div>
     </div>
 
     <%= render 'shared/navbar' if !devise_controller? %>
