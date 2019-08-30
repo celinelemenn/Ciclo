@@ -41,6 +41,7 @@ ROUTES_NO_NAV = [
   { controller: 'point_of_interest', action: 'show' },
   { controller: 'likes', action: 'create' },
   { controller: 'downvotes', action: 'create' },
+  { controller: 'bookmarks', action: 'create' },
   { controller: 'point_of_interests', action: 'new' },
   { controller: 'point_of_interests', action: 'show' }
 ]
@@ -50,5 +51,8 @@ ROUTES_NO_MENU = [
   { controller: 'point_of_interests', action: 'show' },
   { controller: 'pages', action: 'userprofile' },
   { controller: 'registrations', action: 'edit' },
-  {controller: 'trips', action: 'new'}
+  {controller: 'trips', action: 'new'},
+  { controller: 'likes', action: 'create'},
+  { controller: 'downvotes', action: 'create' },
+  { controller: 'bookmarks', action: 'create' },
 ]
