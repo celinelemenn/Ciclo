@@ -1,13 +1,13 @@
 POINT_OF_INTEREST = {
   water_refill: {
     label: 'water_refill',
-    name: "Water refill",
+    name: "Water Refill",
     marker_icon: "https://i.imgur.com/LOnp8YJ.png",
     color: "#41D5FF"
   },
   camping: {
     label: "camping",
-    name: "A camping ",
+    name: "Camping ",
     marker_icon: "https://i.imgur.com/KRowqX7.png",
     color: "#F6CD03"
   },
