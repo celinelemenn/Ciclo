@@ -2,15 +2,17 @@
 <div class="uni-page-container">
 <!-- image block -->
 
-  <%= link_to point_of_interest_bookmarks_path(@poi, user: current_user), method: :post do %>
-     <i class="fas fa-heart"></i>
-     <p><%= @poi.bookmarks.count %></p>
-  <% end %>
 
 
   <div class="poi-show-top">
     <%= cl_image_tag @poi.photo %>
     <div class="btn-container">
+      <div>
+        <%= link_to point_of_interest_bookmarks_path(@poi, user: current_user), method: :post do %>
+          <i class="fas fa-heart btn-bookmark btn-bookmark-active"></i>
+          <p><%= @poi.bookmarks.count %></p>
+        <% end %>
+      </div>
       <div class="btn-like-primary">
         <%= link_to point_of_interest_likes_path(@poi, user: current_user), method: :post do %>
           <i class="fas fa-thumbs-up"></i>
@@ -28,6 +30,7 @@
   </div>
 
 <!-- top details -->
+
 
   <div class="poi-show-details">
     <h2> <%= @poi.title %></h2>

@@ -6,6 +6,7 @@ class BookmarksController < ApplicationController
 
     @poi = PointOfInterest.find(params[:point_of_interest_id])
     @bookmark.point_of_interest = @poi
+    @bookmark.user = @user
 
     @existing_bookmark = Bookmark.find_by user: @user, point_of_interest: @poi
 
