@@ -9,6 +9,16 @@
   z-index: 2;
 }
 
+.top-menu-bis {
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top:0;
+  height: 60px;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+}
 
 .top-menu-item {
   color: #FFFFFF;
