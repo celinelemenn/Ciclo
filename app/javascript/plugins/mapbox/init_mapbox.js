@@ -78,10 +78,11 @@ const initMapbox = () => {
       el.style.width = '50px';
       el.style.height = '50px';
 
-      // el.addEventListener('click', function() {
-      //   el.
-
-      // });
+      el.addEventListener('click', function() {
+        const url = `${window.location.origin}${cyclist.user_link}`
+        console.log(url);
+        window.location = url
+      });
 
 
 

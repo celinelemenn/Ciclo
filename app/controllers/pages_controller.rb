@@ -24,7 +24,7 @@ class PagesController < ApplicationController
         id: cyclist.user_id,
         lat: cyclist.lat,
         lng: cyclist.long,
-        # user_link: render "pages/profile"
+        user_link: userprofile_path(cyclist)
 
       }
     end
