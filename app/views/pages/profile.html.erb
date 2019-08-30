@@ -1,10 +1,10 @@
 <div class="uni-page-container text-center">
 
 <% if current_user.present? %>
-  <% if current_user.photo %>
+  <% if current_user.photo.file %>
     <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
   <% else %>
-    <%= image_tag("dummy-profile.png") %>
+    <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
   <% end %>
 <div class="info-card">
   <strong><h3><%= current_user.full_name  %></h3></strong>
@@ -41,6 +41,9 @@
       </div>
       </div>
     <% end %>
+    <div class="card-trip-btn">
+      <%= link_to 'Add trip', new_trip_path, class: "btn-main" %>
+
+    </div>
   </div>
-    <div class="card-trip-btn"><%= link_to 'Add trip', new_trip_path, class: "btn-main" %></div>
 </div>

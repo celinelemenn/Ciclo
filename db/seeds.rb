@@ -9,46 +9,130 @@
 puts "Destroying previous seeds"
 
 Comment.destroy_all
+puts "> Comment table destroyed"
+
 Like.destroy_all
+puts "> Like table destroyed"
+
 Downvote.destroy_all
+puts "> Downvote table destroyed"
+
 PointOfInterest.destroy_all
+puts "> PointOfInterest table destroyed"
+
 Trip.destroy_all
+puts "> Trip table destroyed"
+
+UserPosition.destroy_all
+puts "> UserPosition table destroyed"
+
 User.destroy_all
+puts "> User table destroyed"
 
 puts "Seeds Destroyed"
 
 
-puts "Creating test user"
+puts "Creating test users"
 
 test_user = User.create(
   email: "test_user@gmail.com",
   password: "1234567",
   full_name: "Test McTest",
   remote_photo_url: 'https://i.pravatar.cc/60',
-  bio: "Currently travelling in Asia",
+  bio: "🚲Travelling half world by 🚲.
+  25000KM | 20 MONTHS |
+📍current location: NORWAY",
   description: "Being around the world with my bikie",
   blog: "https://medium.com/",
   terms: true,
 )
 
+puts "> test_user created"
 
 test_user2 = User.create(
   email: "test_user2@gmail.com",
   password: "1234567",
   full_name: "Test McTest2",
   remote_photo_url: 'https://i.pravatar.cc/60',
-  bio: "Currently travelling in Asia",
-  description: "Being around the world with my bikie",
+  bio: "John and Teagan 🇦🇺Australians
+touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕.",
+  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
+📍: Currently in France 🥐🍷",
   blog: "https://medium.com/",
   terms:true,
 )
 
-puts "Individual user created"
-puts "We have now #{User.count} test user created"
 
+test_user3 = User.create(
+  email: "test_user3@gmail.com",
+  password: "1234567",
+  full_name: "Test McTest2",
+  remote_photo_url: 'https://i.pravatar.cc/60',
+  bio: "John and Teagan 🇦🇺 Australians
+touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕.",
+  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
+📍: Currently in France 🥐🍷",
+  blog: "https://medium.com/",
+  terms:true,
+)
+
+test_user4 = User.create(
+  email: "test_user4@gmail.com",
+  password: "1234567",
+  full_name: "Test McTest2",
+  remote_photo_url: 'https://i.pravatar.cc/60',
+  bio: "John and Teagan 🇦🇺 Australians
+touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕. ",
+  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
+📍: Currently in France 🥐🍷",
+  blog: "https://medium.com/",
+  terms:true,
+)
+
+test_user5 = User.create(
+  email: "test_user5@gmail.com",
+  password: "1234567",
+  full_name: "Test McTest2",
+  remote_photo_url: 'https://i.pravatar.cc/60',
+  bio: "John and Teagan 🇦🇺 Australians
+touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕. ",
+  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
+📍: Currently in France 🥐🍷",
+  blog: "https://medium.com/",
+  terms:true,
+)
+
+puts "> Individual user created"
+puts "> We have now #{User.count} test user created"
+
+# ----- Add location to users----
+
+puts "Creating one user position for each users"
+
+user_positions = [
+[4.647873, 52.331698],
+[4.589151, 52.289715],
+[4.856581, 52.294501],
+[4.758379, 52.404664],
+[4.795426, 52.460697],
+]
+
+users = User.all
+
+user_positions.each_with_index do |position, index|
+
+UserPosition.create(
+  lat: position[1],
+  long: position[0],
+  user: users[index]
+  )
+end
+
+
+puts "> We have now 1 location for each user. We have created #{UserPosition.count} locations"
 
 # ----- Point of interest seedings for map----
-puts "creeting PointOfInterest seeds..."
+puts "creating PointOfInterest seeds..."
 
 set_of_geolocations = [
 [4.65207310436278298, 52.29141180668530353],
@@ -129,7 +213,7 @@ set_of_geolocations.each_with_index do |item, index|
     )
 end
 
-puts "#{PointOfInterest.count} PointOfInterest created "
+puts "> #{PointOfInterest.count} PointOfInterest created "
 
 
 # -----------
@@ -148,12 +232,21 @@ puts "Creating trips for test_user....."
    )
 end
 
-puts "#{Trip.count} trips created"
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/01/2019 17:00"),
+   end_date: DateTime.parse("09/01/2020 19:00"),
+   name: "Cycling the South East of Asia",
+   km: 1000,
+   remote_photo_url: "https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+   blog: "www.mylife.com",
+   user: test_user2
+   )
 
+puts ">#{Trip.count} trips created"
 
 #-------------adding votes to the last POI ONLY (not all POI)--------------
 
-puts "Creating likes and downvotes for the last POI ...."
+puts "Creating likes and downvotes for the last POI from test_user4 ...."
 
 5.times do
   Like.create(
@@ -169,11 +262,11 @@ end
     )
 end
 
-puts " #{Like.count} likes #{Downvote.count} downvotes created"
+puts " > #{Like.count} likes #{Downvote.count} downvotes created"
 
 #-------------adding comments to the last POI ONLY (not all POI)--------------
 
-puts "Creating comments for the last POI ...."
+puts "Creating comments for the last POI from test_user...."
 
 3.times do
   Comment.create(
@@ -183,4 +276,4 @@ puts "Creating comments for the last POI ...."
     )
 end
 
-puts " #{Comment.count} comments created"
+puts "> #{Comment.count} comments created"
