@@ -1,8 +1,11 @@
   <div class="top-menu uni-box-shadow">
-    <div class="top-menu-item justify-start">
-      <%= link_to do %>
-        <i class="fas fa-bars"></i>
-      <% end %>
+    <div class="top-menu-item justify-start dropdown">
+      <button  class="btn-drop"><i class="fas fa-bars"></i></button>
+      <div id="dropdown-items" class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
     </div>
 
     <div class="top-menu-item">
