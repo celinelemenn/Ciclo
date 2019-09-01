@@ -7,13 +7,4 @@ const dropdown = () => {
   })
 }
 
-// const removeDropdown = () {
-
-//   window.onclick = () => {
-//     document.querySelector("#dropdown-items").classList.remove("show");
-//   }
-
-// }
-
-
 export { dropdown };
