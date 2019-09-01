@@ -1,6 +1,6 @@
 import { initMapbox } from '../plugins/mapbox/init_mapbox';
 import mapboxgl from 'mapbox-gl';
-
+// Have to add condition if mapElement
 const geolocator = () => {
 
   const locateButton = document.querySelector(".btn-on-map-right");
