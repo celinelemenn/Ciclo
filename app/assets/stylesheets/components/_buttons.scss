@@ -50,6 +50,10 @@
   }
 }
 
+.btn-box {
+  border-radius: 0;
+}
+
 .btn-secondary:active {
   text-decoration: none;
   background-color: $ciclo-pink !important;
