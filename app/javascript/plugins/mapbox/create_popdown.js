@@ -5,6 +5,6 @@ const createPopdown = (marker_infowindow) => {
   return popdown;
 }
 
-export { createPopdown }
+export { createPopdown };
 
 
