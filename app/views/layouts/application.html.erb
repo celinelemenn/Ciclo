@@ -11,9 +11,15 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
-  <% if @hide_nav  %>
-    <input type="hidden" id="hidden-nav">
-  <% end %>
+    <% if @hide_nav  %>
+      <input type="hidden" id="hidden-nav">
+    <% end %>
+
+
+    <% if @hide_menu %>
+        <input type="hidden" id="hidden-menu">
+        <%= render 'shared/topmenu_secondary' %>
+    <% end %>
 
   <% if @hide_menu || @show_page %>
       <input type="hidden" id="hidden-menu">
@@ -23,6 +29,7 @@
         <%= render 'shared/topmenu_secondary' %>
       <% end %>
   <% end %>
+
 
     <%= render 'shared/topmenu' %>
 

@@ -1,14 +1,16 @@
 <div class="banner text-center">
   <div class="banner-title">
     <h1>Cycle better</h1>
-    <p><em>Discover the best route with real-time reports from fellow cyclists</em></p>
-    <hr>
+    <p><span id="banner-typed-text"></span></p>
+    <!-- <hr> -->
   </div>
   <div class="banner-buttons">
-    <%= link_to "Start", map_path, class: "btn-main uni-box-shadow"  %>
-    <a href="#features" class="btn-secondary uni-box-shadow">Learn More</a>
+    <%= link_to "Start", map_path, class: "btn-main btn-box uni-box-shadow"  %>
+    <!-- The button below is commented out as it is not needed for now.
+  In the future it could link to a demo video or other material. -->
+    <!-- <a href="#features" class="btn-secondary uni-box-shadow">Learn More</a> -->
   </div>
-  <div class="banner-expand uni-box-shadow">
+  <div class="banner-expand">
     <a href="#features"><i class="fas fa-angle-down"></i></a>
   </div>
 </div>
@@ -18,19 +20,19 @@
     <h2>Why Ciclo?</h2>
     <hr class="line-divider">
     <div class="cards">
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-sm-12">
         <div class="card">
           <h4>Goodbye Bad Roads</h4>
           <p>Get most up-to-date route information and never run into a bad road again. Follow the trail of fellow Ciclo-ers</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-sm-12">
         <div class="card">
           <h4>Your Community</h4>
           <p>Get the useful tips from your community. Where are the landmarks? Water fountains? Hidden gems? Ciclo's got your back.</p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-sm-12">
         <div class="card">
           <h4>Say Hello</h4>
           <p> Ciclo makes it very convenient to get in touch with fellow cyclists around you. Got questions or just want some advice? Reach out through Ciclo.</p>
