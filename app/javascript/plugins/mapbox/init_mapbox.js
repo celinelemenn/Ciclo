@@ -5,7 +5,6 @@ import { addCyslistToMap } from '../../plugins/mapbox/add_cyclist_to_map';
 import { api_execute } from '../../plugins/mapbox/api_functions';
 import { processData } from '../../plugins/mapbox/api_functions';
 
-
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {

@@ -1,16 +1,21 @@
 <div class="info_window_popdown">
-  <%= link_to point_of_interest_path(poi) do %>
       <div class="info_window_popdown_text">
-        <div class="pb-2">
-          <img src=<%= poi.icon %> alt="" height=20>
-          <span><%= poi.name %></span>
-        </div>
         <div>
-          <p> <%= poi.description %> </p>
+          <div class="pb-2">
+            <img src=<%= poi.icon %> alt="" height=20>
+            <span><%= poi.name %></span>
+          </div>
+          <div>
+            <p> <%= poi.description %> </p>
+          </div>
+        </div>
+        <div class="info_window_popdown_btn ">
+          <%= link_to point_of_interest_path(poi) do %>
+            <p class="btn-main mr-3">View</p>
+          <% end %>
+          <a href="<%= "https://www.google.co.uk/maps?saddr=current+location&daddr="+"#{poi.lat}"+","+"#{poi.long}"%>" class="btn-simple" target="_blank">Direction</a>
         </div>
       </div>
-      <div> <p class="btn-main">View</p></div>
-
-  <% end %>
-
 </div>
+
+
