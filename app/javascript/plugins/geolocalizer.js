@@ -13,7 +13,7 @@ const geolocator = () => {
   const currentPosition = (position) => {
     const userCoordinates = position.coords
     console.log(`Current Latitude : ${userCoordinates.latitude}`);
-    console.log(`Current Longitude: ${user.Coordinates.longitude}`);
+    console.log(`Current Longitude: ${userCoordinates.longitude}`);
     console.log(`Current Accuracy: ${userCoordinates.accuracy} meters.`);
     console.log(userCoordinates);
   }
@@ -33,6 +33,7 @@ const geolocator = () => {
     locateButton.addEventListener("click", (event) => {
       event.preventDefault();
       navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+      locateButton.classList.toggle("btn-on-map-right-rotate")
     });
   } else {
     alert(`Error: ${error} Unable to access location`)
