@@ -1,65 +1,117 @@
 import { initMapbox } from '../plugins/mapbox/init_mapbox';
 import mapboxgl from 'mapbox-gl';
+import { map } from './mapbox/init_mapbox.js';
+import currentMarker from '../../assets/images/current_marker.png'
 
-  const locateButton = document.querySelector(".btn-on-map-right");
-  const options = { enableHighAccuracy: true };
+const locateButton = document.querySelector(".btn-on-map-right");
+const mapElement = document.getElementById("map");
 
-  // The currentPosition function is called as the first argument of
-  // the getCurrentPosition function and returns a Position object
-  // which contains a coordinates object.
+const options = {
+  maximumAge: 120000,
+  enableHighAccuracy: true
+};
+const userCurrentPosition = [];
 
-  const currentPosition = (position) => {
-    const userCoordinates = position.coords
-    console.log(`Current Latitude : ${userCoordinates.latitude}`);
-    console.log(`Current Longitude: ${userCoordinates.longitude}`);
-    console.log(`Current Accuracy: ${userCoordinates.accuracy} meters.`);
-    console.log(userCoordinates);
+// The currentPosition function is called as the first argument of
+// the getCurrentPosition function and returns a Position object
+// which contains a coordinates object.
+
+const currentPosition = (position) => {
+  const userCoordinates = position.coords;
+}
+
+// The function below is optional and holds an error message. It is an option
+// argument of the getCurrentPosition function.
+
+const error = (error) => {
+  console.warn(`ERROR(${error.code}): ${error.message}`);
+}
+
+// Below is the function to watch a user's position
+
+const watchUserPosition = (position) => {
+  // console.log('hola')
+  const watchedCoordinates = position.coords
+  const currentPosition = {
+    latitude: watchedCoordinates.latitude,
+    longitude: watchedCoordinates.longitude
   }
+  userCurrentPosition.push(currentPosition);
 
-  // The function below is optional and holds an error message. It is an option
-  // argument of the getCurrentPosition function.
+  localize();
+}
 
-  const error = (error) => {
-    console.warn(`ERROR(${error.code}): ${error.message}`);
-  }
+if (locateButton) {
+  locateButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
+    locateButton.classList.toggle("btn-on-map-right-rotate");
+    map.flyTo({
+      center: [longitude, latitude],
+      zoom: 12
+    })
+  })
+}
 
-  // Below is the function to watch a user's position
+const localize = () => {
+  if (mapElement && navigator.geolocation) {
 
-  const watchUserPosition = (position) => {
-    const watchedCoordinates = position.coords
-    console.log(`Watched Coordinates Latitude : ${watchedCoordinates.latitude}`);
-    console.log(`Watched Coordinates Longitude: ${watchedCoordinates.longitude}`);
-    console.log(`Watched Coordinates Accuracy: ${watchedCoordinates.accuracy} meters.`);
-  }
+    const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
+    console.log("User Current Position:", latitude, longitude)
 
-  // The condition below only runs the getCurrentPosition function
-  // if the locator button is present AND the browser is capable of using
-  // geolocation.
-
-  const geolocator = () => {
-    if (locateButton && navigator.geolocation) {
-      locateButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        navigator.geolocation.getCurrentPosition(currentPosition, error, options);
-        locateButton.classList.toggle("btn-on-map-right-rotate")
-        navigator.geolocation.watchPosition(watchUserPosition);
+    // Below, we build the marker and add it to the
+    map.loadImage('https://i.imgur.com/Vn4uERx.png', function(error, image) {
+      if (error) throw error;
+      map.addImage(`current_position_${userCurrentPosition.length}`, image);
+      map.addLayer({
+        "id": `current_position_layer_${userCurrentPosition.length}`,
+        "type": "symbol",
+        "source": {
+          "type": "geojson",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [{
+              "type": "Feature",
+              "geometry": {
+                "type": "Point",
+                "coordinates": [longitude, latitude]
+              }
+            }]
+          }
+        },
+        "layout": {
+          "icon-image": `current_position_${userCurrentPosition.length}`,
+          "icon-size": 0.04
+        }
       });
-    } else {
-        alert(`Error: ${error} Unable to access location`)
-    };
+    });
+
+    // Below we post to our user_positions API
+
+    const axios = require('axios');
+
+    axios.post('/api/v1/user_positions', {
+      user_position: {
+        lat: latitude,
+        long: longitude
+      }
+    })
+    .then((data) => {
+      console.log(data)
+    })
   }
+}
 
-    // Below is test code for adding a marker to the current position
+// The condition below only runs the getCurrentPosition function
+// if the locator button is present AND the browser is capable of using
+// geolocation.
 
-    //     console.log(currentUserPosition);
-    //     // const currentPositionMarker = document.createElement('div');
-    //     // currentPositionMarker.className = 'current-position-marker';
-
-    //     // new mapboxgl.Marker(currentPositionMarker)
-    //     // const map = document.querySelector("#map");
-    //     //   .setLngLat([ currentUserPosition.long, currentUserPosition.lat ]);
-    //     //   .addTo(map);
-    //   })
-
+const geolocator = () => {
+  window.addEventListener("load", (event) => {
+    console.log("This works");
+    navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+    navigator.geolocation.watchPosition(watchUserPosition);
+  });
+}
 
 export { geolocator };

@@ -18,7 +18,7 @@ class PagesController < ApplicationController
       }
     end
 
-    @cyclists = UserPosition.all
+    @cyclists = UserPosition.where.not(user_id: current_user.id)
     @cyclist_avatars = @cyclists.map do |cyclist|
       {
         id: cyclist.user_id,
