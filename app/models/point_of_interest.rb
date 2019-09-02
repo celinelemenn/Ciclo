@@ -25,9 +25,16 @@ class PointOfInterest < ApplicationRecord
   end
 
   def name
-    POINT_OF_INTEREST[self.poi_type.to_sym][:name]
+    if poi_type
+      POINT_OF_INTEREST[self.poi_type.to_sym][:name]
+    end
   end
+
   def icon
-    POINT_OF_INTEREST[self.poi_type.to_sym][:marker_icon]
+    if poi_type
+      POINT_OF_INTEREST[self.poi_type.to_sym][:marker_icon]
+    else
+      'https://i.imgur.com/D7Zyk2z.png'
+    end
   end
 end

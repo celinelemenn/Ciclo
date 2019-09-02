@@ -5,10 +5,14 @@
   data-cyclists="<%= @cyclist_avatars.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-<div class="btn-on-map-left uni-box-shadow">
-  <a href=""><i class="fas fa-plus"></i></a>
-</div>
-<div class="btn-on-map-right uni-box-shadow">
-  <button><i class="fas fa-location-arrow"></i></button>
-</div>
 
+
+  <div class="btn-on-map-left uni-box-shadow">
+    <a href="/point_of_interests/new"><i class="fas fa-plus"></i></a>
+  </div>
+
+
+<div class="btn-on-map-right uni-box-shadow">
+  <button><i class="fas fa-location-arrow"></i>
+  </button>
+</div>

@@ -25,6 +25,8 @@ POINT_OF_INTEREST = {
   }
 }
 
+ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
+
 ROUTES_NO_NAV = [
   { controller: 'registrations', action: 'new' },
   { controller: 'registrations', action: 'create' },
@@ -56,6 +58,7 @@ ROUTES_NO_MENU = [
 ROUTES_BACK_MAP = [
   { controller: 'point_of_interests', action: 'new' },
   { controller: 'point_of_interests', action: 'show' },
+  { controller: 'point_of_interests', action: 'index' },
   { controller: 'likes', action: 'create'},
   { controller: 'downvotes', action: 'create' },
   { controller: 'bookmarks', action: 'create' },

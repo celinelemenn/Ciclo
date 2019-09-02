@@ -1,55 +1,46 @@
-<h1>PointOfInterests#index</h1>
-<p>Find me in app/views/point_of_interests/index.html.erb</p>
+<h2 class="mt-3 mb-5 ml-3">My contribution to the Map</h2>
 
-<!-- All the <br> and the <p> at the bottom are for testing purposes. Whoever is working on this page can delete them. -->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p>Bottom</p>
+<% @user_poi.each do |poi| %>
+
+<!-- if the poi is unpublished / user clicked on later -->
+
+  <% if poi.published == false %>
+    <%= link_to edit_point_of_interest_path(poi), class: "comment-link" do %>
+      <div class="comment-card mx-3">
+
+        <div class="comment-card-image">
+          <img src=<%= poi.icon %> alt="" height=20>
+        </div>
+
+        <div class="comment-card-text">
+          <h5><strong><%= poi.title %></strong></h5>
+          <p><%= poi.description %></p>
+          <p class= "uni-opacity40">unpublished</p>
+        </div>
+        <div class="comment-edit-icon">
+          <i class="far fa-edit"></i>
+        </div>
+      </div>
+    <% end %>
+
+<!-- if the poi is published / user clicked on submit -->
+
+  <% else %>
+
+      <%= link_to point_of_interest_path(poi), class: "comment-link" do %>
+      <div class="comment-card mx-3">
+
+        <div class="comment-card-image">
+          <img src=<%= poi.icon %> alt="" height=20>
+        </div>
+
+        <div class="comment-card-text">
+          <h5><strong><%= poi.title %></strong></h5>
+          <p><%= poi.description %></p>
+          <p class= "uni-opacity40"><%= poi.date %></p>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+<% end %>

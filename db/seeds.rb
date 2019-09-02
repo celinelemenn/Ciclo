@@ -216,6 +216,7 @@ set_of_geolocations.each_with_index do |item, index|
     description: 'some poi description',
     title: 'some title',
     user: test_user,
+    published: true,
     remote_photo_url: 'https://source.unsplash.com/random/600x400'
     )
 end
