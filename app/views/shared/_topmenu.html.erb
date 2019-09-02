@@ -1,17 +1,22 @@
-  <div class="top-menu uni-box-shadow">
-    <div class="top-menu-item justify-start">
-      <%= link_to do %>
-        <i class="fas fa-bars"></i>
-      <% end %>
-    </div>
-
-    <div class="top-menu-item">
-      <h2>Ciclo</h2>
-    </div>
-
-    <div class="top-menu-item justify-end">
-      <%= link_to do %>
-        <i class="fas fa-filter"></i>
-      <% end %>
+<div class="top-menu uni-box-shadow">
+  <div class="top-menu-item dropdown">
+    <button  class="btn-drop"><i class="fas fa-bars"></i></button>
+    <div id="dropdown-items" class="dropdown-content">
+      <a href="#">Something</a>
+      <a href="#">Something</a>
+      <a href="#">Something</a>
     </div>
   </div>
+
+  <div class="top-menu-item">
+    <%= link_to homepage_path do %>
+      <h2>Ciclo</h2>
+    <% end %>
+  </div>
+
+  <div class="top-menu-item">
+    <%= link_to do %>
+      <i class="fas fa-filter"></i>
+    <% end %>
+  </div>
+</div>

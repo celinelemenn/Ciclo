@@ -1,12 +1,13 @@
 .top-menu {
   background-color: $dark-blue;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
-  position: sticky;
-  top:0;
-  height: 60px;
-  padding: 0.5rem 1rem;
-  z-index: 2;
+  align-items: center;
+  padding: 10px 10px;
 }
 
 .top-menu-bis {
@@ -16,7 +17,7 @@
   position: sticky;
   top:0;
   height: 60px;
-  padding: 0.5rem 1rem;
+  padding: 10px 10px;
   z-index: 2;
 }
 
@@ -32,12 +33,16 @@
 }
 .top-menu-item {
   color: #FFFFFF;
-  font-size: 32px;
+  font-size: 28px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  min-width: 100px;
+  h2 {
+    margin-bottom: 0;
+  }
   a {
     color: inherit;
+    text-decoration: none;
   }
 }
 
