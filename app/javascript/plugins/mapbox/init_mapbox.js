@@ -13,7 +13,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/klingmap/ck026un5s58d51co0xymdhlac',
+    style: 'mapbox://styles/klingmap/ck027tg7x04481cmu8e9wvrud',
     center: [4.925,52.375],
     zoom: 10,
   });
