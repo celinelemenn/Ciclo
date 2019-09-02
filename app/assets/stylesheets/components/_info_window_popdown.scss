@@ -7,9 +7,21 @@
     justify-content: space-between;
     text-decoration: none;
   }
-
 }
 
 .info_window_popdown_text {
   color: black;
+}
+
+.info_window_popdown_btn {
+  display: flex;
+  align-items: center;
+    .btn-main {
+  min-height: 30px;
+  width: 100px;
+  font-weight: bold;
+  }
+  p {
+    margin:0;
+  }
 }
