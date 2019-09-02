@@ -1,2 +1,15 @@
-<h1>Reports#new</h1>
-<p>Find me in app/views/reports/new.html.erb</p>
+<div class="uni-page-container text-center">
+  <div class="form-container">
+    <%= simple_form_for [@poi, @report] do |f| %>
+    <div class="form-input">
+      <div class="dropdown">
+      <%= f.input :issue_type, label: "What's wrong?", collection: ["It doesn't appear to be here", "Report a problem"], prompt: "Select"%>
+      </div>
+      <%= f.text_field :content %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit %>
+    </div>
+   <% end %>
+  </div>
+</div>
