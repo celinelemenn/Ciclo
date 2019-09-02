@@ -34,14 +34,62 @@ const watchUserPosition = (position) => {
     latitude: watchedCoordinates.latitude,
     longitude: watchedCoordinates.longitude
   }
-  console.log('Array: ', userCurrentPosition)
   userCurrentPosition.push(currentPosition);
 
-  // console.log(`Watched Coordinates Latitude : ${watchedCoordinates.latitude}`);
-  // console.log(`Watched Coordinates Longitude: ${watchedCoordinates.longitude}`);
-  // console.log(`Watched Coordinates Accuracy: ${watchedCoordinates.accuracy} meters.`);
-  console.log(`Watched Position: Lat: ${watchedCoordinates.latitude} Long: ${watchedCoordinates.longitude}`);
+  localize();
 }
+
+const localize = () => {
+  if (locateButton && navigator.geolocation) {
+
+    locateButton.classList.toggle("btn-on-map-right-rotate");
+
+    const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
+    console.log("User Current Position:", latitude, longitude)
+
+    const currentMarkerGeojson = {
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [longitude, latitude]
+        }
+      }]
+    };
+
+    const sourceName = `current_position_${userCurrentPosition.length}`
+
+    map.addSource(sourceName, {
+      "type": "geojson",
+      "data": currentMarkerGeojson
+    });
+
+    map.addLayer({
+      "id": `current_position_layer_${userCurrentPosition.length}`,
+      "type": "circle",
+      "source": sourceName,
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#26547C",
+        "circle-stroke-width": 3,
+        "circle-stroke-color": "#fff"
+      }
+    })
+    fetch('/api/v1/user_positions', {
+      method: 'POST',
+      body: JSON.stringify({
+        user_position: {
+          lat: latitude,
+          long: longitude
+        }
+      })
+    }).then((response) => {
+      return response.json();
+    }).then((data) => {
+      console.log(data);
+    });
+}}
 
 // The condition below only runs the getCurrentPosition function
 // if the locator button is present AND the browser is capable of using
@@ -51,45 +99,8 @@ const geolocator = () => {
     console.log("This works");
     navigator.geolocation.getCurrentPosition(currentPosition, error, options);
     navigator.geolocation.watchPosition(watchUserPosition);
+
   });
-
-  if (locateButton && navigator.geolocation) {
-    locateButton.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      locateButton.classList.toggle("btn-on-map-right-rotate");
-
-      console.log("User Current Position:", userCurrentPosition)
-
-      const currentMarkerGeojson = {
-        "type": "FeatureCollection",
-        "features": [{
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [userCurrentPosition.longitude, userCurrentPosition.latitude]
-          }
-        }]
-      };
-
-      map.addSource("current_position", {
-        "type": "geojson",
-        "data": currentMarkerGeojson
-      });
-
-      map.addLayer({
-        "id": "current_position",
-        "type": "circle",
-        "source": "current_position",
-        "paint": {
-          "circle-radius": 10,
-          "circle-color": "#26547C",
-          "circle-stroke-width": 3,
-          "circle-stroke-color": "#fff"
-        }
-      })
-    });
-  }
 }
 
 export { geolocator };

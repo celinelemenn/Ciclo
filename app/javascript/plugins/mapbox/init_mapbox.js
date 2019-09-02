@@ -20,7 +20,8 @@ const buildMap = () => {
   });
 };
 
-export const map = buildMap();
+export const map = mapElement ? buildMap() : null;
+
 
 const initMapbox = () => {
 
