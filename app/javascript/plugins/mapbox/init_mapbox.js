@@ -4,6 +4,8 @@ import { createPopdown  } from '../../plugins/mapbox/create_popdown';
 import { addCyslistToMap } from '../../plugins/mapbox/add_cyclist_to_map';
 import { api_execute } from '../../plugins/mapbox/api_functions';
 import { processData } from '../../plugins/mapbox/api_functions';
+// import { addCurrentPositionToMap } from '../../plugins/mapbox/add_current_position_to_map';
+
 
 
 const mapElement = document.getElementById('map');
@@ -18,11 +20,11 @@ const buildMap = () => {
   });
 };
 
+export const map = buildMap();
+
 const initMapbox = () => {
 
   if (mapElement) {
-    const map = buildMap();
-
     //pois on map
     const markers = JSON.parse(mapElement.dataset.markers);
     addPoisToMap(map, markers);
