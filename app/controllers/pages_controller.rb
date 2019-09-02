@@ -24,7 +24,7 @@ class PagesController < ApplicationController
         id: cyclist.user_id,
         lat: cyclist.lat,
         lng: cyclist.long,
-        user_link: userprofile_path(cyclist)
+        user_link: userprofile_path(cyclist.user_id)
 
       }
     end
