@@ -13,7 +13,6 @@ class PointOfInterestsController < ApplicationController
 
   def create
     @point_of_interest = PointOfInterest.new(poi_params)
-    raise
     @location = current_location
     if @point_of_interest.save
       redirect_to map_path
@@ -39,7 +38,7 @@ class PointOfInterestsController < ApplicationController
   end
 
   def poi_params
-    params.require(:point_of_interest).permit(:photo, :type, :description)
+    params.require(:point_of_interest).permit(:photo, :poi_type, :description)
   end
 
 end
