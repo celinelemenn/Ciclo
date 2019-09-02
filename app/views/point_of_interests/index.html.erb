@@ -5,7 +5,7 @@
 <!-- if the poi is unpublished / user clicked on later -->
 
   <% if poi.published == false %>
-    <%= link_to point_of_interest_path(poi), class: "comment-link" do %>
+    <%= link_to edit_point_of_interest_path(poi), class: "comment-link" do %>
       <div class="comment-card mx-3">
 
         <div class="comment-card-image">

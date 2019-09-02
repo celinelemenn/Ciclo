@@ -1,2 +1,16 @@
-<h1>PointOfInterests#edit</h1>
-<p>Find me in app/views/point_of_interests/edit.html.erb</p>
+<h1 class="mt-5 ml-3">Edit your contribution</h1>
+
+
+<div class="form-bottom ">
+  <%= simple_form_for(@poi) do |f|%>
+  <div class="form-inputs">
+    <%= f.input :photo %>
+    <%= f.input :poi_type, collection: POINT_OF_INTEREST %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+  </div>
+  <div class="form-actions">
+  <%= f.button :submit, "Update", class: "btn-main" %>
+  </div>
+  <% end %>
+</div>
