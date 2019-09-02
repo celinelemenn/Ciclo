@@ -1,13 +1,27 @@
 <h2 class="mt-5 ml-3">Add to the map</h2>
-  <div class="form-bottom">
+
+<div class="uni-page-container">
+  <div class="uni-page-container text-center">
+       <% if
+         @point_of_interest.photo.present? %>
+       <% else %>
+         <img src="https://image.flaticon.com/icons/png/512/3/3901.png" class="avatar-large">
+       <% end %>
+     </div>
+
+  <div class="form-container">
     <%= simple_form_for(@point_of_interest) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :photo %>
-      <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST %>
-      <%= f.input :description %>
-   </div>
+     <div class="form-input">
+        <%= f.input :photo %>
+        <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST, prompt: "Select"%>
+        <div><%= f.input :description, placeholder: "Enter you description here" %>
+        </div>
+     </div>
+
    <div class="form-actions">
      <%= f.submit "Add", class: "btn-main" %>
    </div>
+
      <% end %>
   </div>
+</div>
