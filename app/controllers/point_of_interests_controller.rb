@@ -8,6 +8,7 @@ class PointOfInterestsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @report = Report.new
   end
 
   def new
