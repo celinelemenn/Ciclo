@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: lighter;
   // margin-left: 0;
   a {
     text-decoration: none;
@@ -47,6 +48,10 @@
     color: #fff;
     border: none;
   }
+}
+
+.btn-box {
+  border-radius: 0;
 }
 
 .btn-secondary:active {
