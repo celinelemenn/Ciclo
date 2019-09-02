@@ -13,8 +13,11 @@ class PointOfInterestsController < ApplicationController
 
   def create
     @point_of_interest = PointOfInterest.new(poi_params)
-    @location = current_location
-    if @point_of_interest.save
+    @point_of_interest.user = current_user
+    @point_of_interest.lat = -29.4981176
+    @point_of_interest.long = -51.9925595
+    @point_of_interest.published = true
+    if @point_of_interest.save!
       redirect_to map_path
     else
       render :new

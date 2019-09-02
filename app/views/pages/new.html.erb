@@ -3,7 +3,7 @@
   <form id="new-poi-form"></form>
     <%= simple_form_for(@point_of_interest) do |f| %>
       <%= cl_image_tag(@point_of_interest.photo.url(), fetch_format: :auto, class: "avatar-square") %>
-      <%= f.input :poi_type %>
+      <%= f.input :poi_type, collection: POINT_OF_INTEREST %>
       <%= f.input :description %>
      <%= f.submit "Add" %>
      <% end %>
