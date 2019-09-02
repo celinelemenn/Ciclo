@@ -5,8 +5,6 @@ import { addCyslistToMap } from '../../plugins/mapbox/add_cyclist_to_map';
 import { api_execute } from '../../plugins/mapbox/api_functions';
 import { processData } from '../../plugins/mapbox/api_functions';
 
-
-
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
@@ -35,18 +33,8 @@ const initMapbox = () => {
     addCyslistToMap(map, cyclists);
 
 
-    // location
-    // map.addControl(new mapboxgl.GeolocateControl({
-    //   positionOptions: {
-    //   enableHighAccuracy: true
-    //   },
-    //   trackUserLocation: true
-    //   }));
-
-
   }
 };
-// ********************end*mapbox********************************** //
 
 
 // API functions

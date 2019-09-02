@@ -1,3 +1,5 @@
+// Add POI button
+
 .btn-on-map-left {
   position: absolute;
   bottom: 85px;
@@ -20,6 +22,8 @@
   }
 }
 
+// Location button
+
 .btn-on-map-right {
   position: absolute;
   bottom: 85px;
@@ -28,17 +32,31 @@
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  text-align: center;
-  line-height: 50px;
   text-decoration: none;
-  a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
     color: $dark-blue;
+    background: none;
+    border: none;
   }
-  &:hover {
+  button:focus {
+    outline: none;
+  }
+}
+
+.btn-on-map-right-rotate {
+  background-color: $dark-blue;
+  button {
+    outline: none;
+    transform: rotate(270deg);
+    transition: transform 1s;
     background-color: $dark-blue;
-      a {
-      color: #fff;
-    }
+    color: #fff;
+  }
+  button:focus {
+    outline: none;
   }
 }
 
