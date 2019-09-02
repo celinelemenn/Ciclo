@@ -4,7 +4,7 @@ class Api::V1::UserPositionsController < Api::V1::BaseController
     @user_position.user = current_user
 
     if @user_position.save
-      render @user_position, status: :created # What would i need to render in this case as it's not really front-end stuff
+      render json: { user_position: @user_position }, status: :created # What would i need to render in this case as it's not really front-end stuff
     else
       render_error
     end
