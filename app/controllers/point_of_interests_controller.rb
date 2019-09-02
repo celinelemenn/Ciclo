@@ -2,7 +2,7 @@ class PointOfInterestsController < ApplicationController
   before_action :find_poi, only: [:show, :edit, :update]
 
   def index
-    @user_poi = PointOfInterest.select { |poi| poi.user == current_user}
+    @user_poi = PointOfInterest.select { |poi| poi.user == current_user }
   end
 
   def show
