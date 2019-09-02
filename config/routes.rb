@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
   get '/feed', to: 'pages#feed', as: :feed
-  get '/new', to: 'pages#new', as: :new
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do

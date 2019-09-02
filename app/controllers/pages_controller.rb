@@ -28,10 +28,7 @@ class PagesController < ApplicationController
 
       }
     end
-  end
-
-  def new
-    @point_of_interest = PointOfInterest.new
+    @point_of_interest_new = PointOfInterest.new
   end
 
 
