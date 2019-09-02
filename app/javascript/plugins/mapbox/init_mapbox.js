@@ -6,22 +6,25 @@ import { api_execute } from '../../plugins/mapbox/api_functions';
 import { processData } from '../../plugins/mapbox/api_functions';
 
 
+
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/klingmap/cjztq9yns04ke1dny5m5o49bz',
+    style: 'mapbox://styles/klingmap/ck026un5s58d51co0xymdhlac',
     center: [4.925,52.375],
     zoom: 10,
   });
 };
 
+export const map = buildMap();
+
+
 const initMapbox = () => {
 
   if (mapElement) {
-    const map = buildMap();
 
     //pois on map
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -53,3 +56,4 @@ const run_mapbox_page = async () => {
 }
 
 export { run_mapbox_page };
+
