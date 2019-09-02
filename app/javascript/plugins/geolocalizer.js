@@ -1,8 +1,6 @@
 import { initMapbox } from '../plugins/mapbox/init_mapbox';
 import mapboxgl from 'mapbox-gl';
 
-const geolocator = () => {
-
   const locateButton = document.querySelector(".btn-on-map-right");
   const options = { enableHighAccuracy: true };
 
@@ -25,20 +23,31 @@ const geolocator = () => {
     console.warn(`ERROR(${error.code}): ${error.message}`);
   }
 
+  // Below is the function to watch a user's position
+
+  const watchUserPosition = (position) => {
+    const watchedCoordinates = position.coords
+    console.log(`Watched Coordinates Latitude : ${watchedCoordinates.latitude}`);
+    console.log(`Watched Coordinates Longitude: ${watchedCoordinates.longitude}`);
+    console.log(`Watched Coordinates Accuracy: ${watchedCoordinates.accuracy} meters.`);
+  }
+
   // The condition below only runs the getCurrentPosition function
   // if the locator button is present AND the browser is capable of using
   // geolocation.
 
-  if (locateButton && navigator.geolocation) {
-    locateButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      navigator.geolocation.getCurrentPosition(currentPosition, error, options);
-      locateButton.classList.toggle("btn-on-map-right-rotate")
-    });
-  } else {
-    alert(`Error: ${error} Unable to access location`)
+  const geolocator = () => {
+    if (locateButton && navigator.geolocation) {
+      locateButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+        locateButton.classList.toggle("btn-on-map-right-rotate")
+        navigator.geolocation.watchPosition(watchUserPosition);
+      });
+    } else {
+        alert(`Error: ${error} Unable to access location`)
+    };
   }
-};
 
     // Below is test code for adding a marker to the current position
 
