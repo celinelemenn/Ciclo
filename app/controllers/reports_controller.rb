@@ -10,6 +10,7 @@ class ReportsController < ApplicationController
     @poi = PointOfInterest.find(params["point_of_interest_id"])
     @report.point_of_interest = @poi
     if @report.save!
+      flash[:notice] = 'Success! Report submitted!'
       redirect_to point_of_interest_path(@poi)
     else
       render :new

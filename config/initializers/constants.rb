@@ -25,6 +25,8 @@ POINT_OF_INTEREST = {
   }
 }
 
+ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
+
 ROUTES_NO_NAV = [
   { controller: 'registrations', action: 'new' },
   { controller: 'registrations', action: 'create' },
