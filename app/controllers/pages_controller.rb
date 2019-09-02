@@ -30,6 +30,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def new
+    @point_of_interests = PointOfInterest.new
+  end
+
 
   def feed
   end
