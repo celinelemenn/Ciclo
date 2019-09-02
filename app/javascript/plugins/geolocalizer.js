@@ -5,26 +5,29 @@ const geolocator = () => {
 
   const locateButton = document.querySelector(".btn-on-map-right");
 
-  locateButton.addEventListener("click", (event) => {
+  if (locateButton) {
 
-    event.preventDefault();
+    locateButton.addEventListener("click", (event) => {
 
-    navigator.geolocation.getCurrentPosition((data) => {
-      console.log(data);
-      const currentUserPosition = {
-        lat: data.coords.latitude,
-        long: data.coords.longitude
-      }
-      console.log(currentUserPosition.lat);
-      // const currentPositionMarker = document.createElement('div');
-      // currentPositionMarker.className = 'current-position-marker';
+      event.preventDefault();
 
-      // new mapboxgl.Marker(currentPositionMarker)
-      // const map = document.querySelector("#map");
-      //   .setLngLat([ currentUserPosition.long, currentUserPosition.lat ]);
-      //   .addTo(map);
-    })
-  });
+      navigator.geolocation.getCurrentPosition((data) => {
+        console.log(data);
+        const currentUserPosition = {
+          lat: data.coords.latitude,
+          long: data.coords.longitude
+        }
+        console.log(currentUserPosition);
+        // const currentPositionMarker = document.createElement('div');
+        // currentPositionMarker.className = 'current-position-marker';
+
+        // new mapboxgl.Marker(currentPositionMarker)
+        // const map = document.querySelector("#map");
+        //   .setLngLat([ currentUserPosition.long, currentUserPosition.lat ]);
+        //   .addTo(map);
+      })
+    });
+  }
 }
 
 export { geolocator };

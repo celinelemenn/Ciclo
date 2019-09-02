@@ -6,7 +6,7 @@ import { run_mapbox_page } from '../plugins/mapbox/init_mapbox';
 import { hider } from '../plugins/navbar_hider';
 import { bookmark_highlighter } from '../plugins/bookmark_highlighter';
 import { menu_hider } from '../plugins/navbar_hider';
-// import { geolocator } from '../plugins/geolocalizer';
+import { geolocator } from '../plugins/geolocalizer';
 import { loadDynamicBannerTitle } from '../plugins/banner';
 
 run_mapbox_page();
@@ -14,5 +14,5 @@ highlighter();
 hider();
 bookmark_highlighter();
 menu_hider();
-// geolocator();
+geolocator();
 loadDynamicBannerTitle();
