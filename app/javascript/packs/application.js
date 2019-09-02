@@ -10,6 +10,7 @@ import { menu_hider } from '../plugins/navbar_hider';
 import { geolocator } from '../plugins/geolocalizer';
 import { loadDynamicBannerTitle } from '../plugins/banner';
 import { dropdown } from '../plugins/dropdown_menu';
+import { addCampingsToMap } from '../plugins/mapbox/add_campsites_to_map';
 
 run_mapbox_page();
 highlighter();
@@ -22,3 +23,4 @@ menu_hider();
 geolocator();
 loadDynamicBannerTitle();
 dropdown();
+addCampingsToMap();
