@@ -13,9 +13,9 @@
           <%= link_to point_of_interest_path(poi) do %>
             <p class="btn-main mr-3">View</p>
           <% end %>
-          <p class="btn-simple">Direction</p>
+          <a href=<%= "https://www.google.co.uk/maps?saddr=current+location&daddr="+"#{poi.lat}"+","+"#{poi.long}"%> class="btn-simple" target="_blank">Direction</a>
         </div>
       </div>
-
-
 </div>
+
+

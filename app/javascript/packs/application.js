@@ -22,4 +22,3 @@ menu_hider();
 geolocator();
 loadDynamicBannerTitle();
 dropdown();
-
