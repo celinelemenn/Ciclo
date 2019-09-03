@@ -6,6 +6,12 @@ class PointOfInterest < ApplicationRecord
   has_many :comments
   has_many :reports
 
+  scope :published, -> { where(published: true) }
+  scope :camping, -> { where(poi_type: :camping) }
+  scope :caution, -> { where(poi_type: :caution) }
+  scope :landmark, -> { where(poi_type: :landmark) }
+  scope :water, -> { where(poi_type: :water_refill) }
+
   validates :poi_type, :description, :title, presence: true, if: :published?
 
   mount_uploader :photo, PhotoUploader

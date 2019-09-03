@@ -5,7 +5,15 @@ class PagesController < ApplicationController
   end
 
   def map
-    @point_of_interests = PointOfInterest.where(published: true)
+    @point_of_interests = PointOfInterest.published
+    @user = current_user
+
+    unless !@user.preferences.empty? do
+
+      @point_of_interests = @point_of_interests.camping
+    end
+
+
     # raise
 
 
@@ -33,7 +41,7 @@ class PagesController < ApplicationController
       }
     end
     @point_of_interest_new = PointOfInterest.new
-    @user = current_user
+
   end
 
   def profile
