@@ -1,7 +1,6 @@
 import { initMapbox } from '../plugins/mapbox/init_mapbox';
 import mapboxgl from 'mapbox-gl';
 import { map } from './mapbox/init_mapbox.js';
-import currentMarker from '../../assets/images/current_marker.png'
 
 const locateButton = document.querySelector(".btn-on-map-right");
 const mapElement = document.getElementById("map");
@@ -14,21 +13,22 @@ const options = {
 };
 const userCurrentPosition = [];
 
-// The currentPosition function is called as the first argument of the getCurrentPosition
-// function and returns a Position object which contains a coordinates object.
+// The currentPosition function is called as the first argument of the getCurrentPosition function
+// and returns a Position object which contains a coordinates object.
 
 const currentPosition = (position) => {
   const userCoordinates = position.coords;
 }
 
-// The function below is optional and holds an error message. It is an option argument of the
-// getCurrentPosition function.
+// The function below is optional and holds an error message. It is an optional argument of the
+// getCurrentPosition/watchPosition functions.
 
 const error = (error) => {
   console.warn(`ERROR(${error.code}): ${error.message}`);
 }
 
-// Below is the function to watch a user's position
+// Below is the function to watch a user's position. It is called as the first argument of the
+// watchPosition function.
 
 const watchUserPosition = (position) => {
   // console.log('hola') - For testing
@@ -39,12 +39,12 @@ const watchUserPosition = (position) => {
   }
   userCurrentPosition.push(currentPosition);
 
-  // The localize() function checks whether the map is present before running
+  // The localize() function checks whether the map is present before running.
 
   localize();
 }
 
-// The if condition below implements the logic for the locate button on the map
+// The if condition below implements the logic for the locate button on the map.
 
 if (locateButton) {
   locateButton.addEventListener("click", (event) => {
@@ -65,7 +65,7 @@ const localize = () => {
     console.log("User Current Position:", latitude, longitude)
 
     // Below, we build the marker and add it to the map. We use a png image which prevents the
-    // marker from being propagated at one point
+    // marker from being propagated at one point. Check Add Icon to Map in Mpabox documentation.
 
     map.loadImage('https://i.imgur.com/Vn4uERx.png', function(error, image) {
       if (error) throw error;
@@ -106,6 +106,8 @@ const localize = () => {
     .then((data) => {
       console.log(data)
     })
+
+    // API-build ends here (axios is an alternative to fetch, it is a package)
   }
 }
 
