@@ -25,6 +25,12 @@ class Conversation < ApplicationRecord
     where("(conversations.author_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
   end
 
+  # below we define a scope that returns a conversation of two users.
+
+  scope :between, -> (sender_id, receiver_id) do
+    where(author_id: sender_id, receiver_id: receiver_id).or(where(author_id: receiver_id, receiver_id: sender_id)).limit(1)
+  end
+
   # The with method before is implemented in the shared view _conversation. It is a method which returns the OTHER
   # participant of a conversation. If you look at the if condition,
   # It basically says that if the current user is the author, return receiver. Like this we are able to associate the other
