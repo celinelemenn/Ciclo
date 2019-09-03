@@ -14,7 +14,9 @@ class User < ApplicationRecord
   has_many :comments
   has_many :user_positions
 
-  # The below have been added for messaging
+  # The below have been added for messaging. Again, both conditions belong to the same
+  # "Conversation" model, so we need to add the class_name. WE specify the foreign-key name
+  # because usually rails uses the association name as the default foreign-key name.
 
   has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
   has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'

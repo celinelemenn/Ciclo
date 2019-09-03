@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_102405) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
+    t.index ["author_id"], name: "index_conversations_on_author_id"
     t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
   end
 
