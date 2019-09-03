@@ -1,6 +1,5 @@
 class ConversationsController < ApplicationController
   # We want to make sure that the user is logged in before they are able to create a conversation
-
   before_action :authenticate_user!
 
   def index
@@ -16,4 +15,11 @@ class ConversationsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def find_conversation
+    @conversation = Conversation.find_by(id: params[:id])
+  end
+
 end
