@@ -24,4 +24,13 @@ class Conversation < ApplicationRecord
   scope :participating, -> (user) do
     where("(conversations.author_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
   end
+
+  # The with method before is implemented in the shared view _conversation. It is a method which returns the OTHER
+  # participant of a conversation. If you look at the if condition,
+  # It basically says that if the current user is the author, return receiver. Like this we are able to associate the other
+  # participant by dissassociating the current_user
+
+  def with(current_user)
+    author == current_user ? receiver : author
+  end
 end
