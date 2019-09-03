@@ -8,6 +8,8 @@
     <%= f.input :blog,  label: "Share your blog with the world"  %>
     <%= f.input :photo,  label: "Upload your picture"  %>
 
-    <%=f.submit "Submit" %>
   </div>
+    <div class="form-buttons">
+      <%=f.submit :Submit, class: "btn-main" %>
+    </div>
 <% end %>
