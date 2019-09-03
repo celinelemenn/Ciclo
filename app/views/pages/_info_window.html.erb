@@ -14,6 +14,11 @@
             <p class="btn-main mr-3">View</p>
           <% end %>
           <a href="<%= "https://www.google.co.uk/maps?saddr=current+location&daddr="+"#{poi.lat}"+","+"#{poi.long}"%>" class="btn-simple" target="_blank">Direction</a>
+          <p> <% coords_poi = [poi.lat, poi.long] %>
+            <% coords_user = [UserPosition.last[:lat], UserPosition.last[:long]] %>
+            <% distance =  Geocoder::Calculations.distance_between(coords_poi , coords_user, :units => :km ) %>
+<!--             <%= distance %> -->
+          </p>
         </div>
       </div>
 </div>
