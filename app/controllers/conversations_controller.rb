@@ -27,7 +27,14 @@ class ConversationsController < ApplicationController
   # The participates method checks if a user is an author or a reciever of a convo.
 
   def find_conversation
-    @conversation = Conversation.find_by(id: params[:id])
+    if params[:receiver_id]
+      @receiver = User.find_by(id: params[:receiver_id])
+      redirect_to conversations_path and return unless @reciever
+      @conversation = Conversation.between(current_user.id, @receiver.id)[0]
+    else
+      @conversation = Conversation.find_by(id: params[:id])
+      redirect_to conversations_path and return unless @conversation && @conversation.participates?(current_user)
+    end
   end
 
   def check_participating!

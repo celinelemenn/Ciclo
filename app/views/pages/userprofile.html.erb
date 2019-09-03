@@ -10,6 +10,7 @@
     <font size="+1"><p><%= @user.bio  %></p></font>
     <p><%= @user.description  %><p>
     <font size="+1"><h5><%= @user.blog  %></h5></font>
+    <%= link_to  "Send a message", new_conversation_personal_message_path(receiver_id: @user), class: "btn-main" %>
   </div>
 
   <% @user.trips.each do |trip| %>

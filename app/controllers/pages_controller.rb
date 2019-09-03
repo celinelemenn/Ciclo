@@ -37,6 +37,7 @@ class PagesController < ApplicationController
   end
 
   def userprofile
+    # @conversation = Conversation.find()
     @user = User.find(params[:id])
     @trips = Trip.where(user: @user)
   end
