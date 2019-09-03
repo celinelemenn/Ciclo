@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :point_of_interest
   belongs_to :user
 
+  validates :content, presence: true
+
   def date
     date = -(self.created_at - DateTime.now) / 60
 

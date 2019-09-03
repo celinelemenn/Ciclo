@@ -6,7 +6,7 @@ class PointOfInterest < ApplicationRecord
   has_many :comments
   has_many :reports
 
-  validates :poi_type, :description, presence: true, if: :published?
+  validates :poi_type, :description, :title, presence: true, if: :published?
 
   mount_uploader :photo, PhotoUploader
 
