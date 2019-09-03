@@ -15,7 +15,7 @@ class Conversation < ApplicationRecord
   # The validation below ensures that there cannot be more than on converation
   # between a pair of users
 
-  validates :author, uniqueness: { scope: :reciever }
+  validates :author, uniqueness: { scope: :receiver }
 
   # Below, we define a scope called participating. A scope basically makes a subset of a collection. So in this case
   # we are making a subset of conversation called participating in which we associate a user ID with both receiver ID
@@ -37,6 +37,6 @@ class Conversation < ApplicationRecord
   # The method below simply checks if a given user is part of a conversation or not.
 
   def participates?(user)
-    author == user || reciever == user
+    author == user || receiver == user
   end
 end

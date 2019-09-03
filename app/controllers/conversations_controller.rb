@@ -9,17 +9,35 @@ class ConversationsController < ApplicationController
   # Here we simply instantiate a personal message so we can use it in the view, nothing new.
 
   def show
-    # @conversation = Conversation.find params[:id]
+    @conversation = Conversation.find params[:id]
     @personal_message = PersonalMessage.new
   end
 
+  def new
+    redirect_to conversation_path(@conversation) and return if @conversation
+    @personal_message = current_user.personal_message.build
+  end
+
   def create
+    all_params = conversation_params.merge({ author_id: current_user.id })
+    @conversation = Conversation.new all_params
+
+    if @conversation.save
+      redirect_to conversation_path @conversation
+    else
+      byebug
+    end
   end
 
   def destroy
   end
 
   private
+
+  def conversation_params
+    params.require(:conversation).permit(:receiver_id)
+  end
+
 
   # The first private method simply returns the conversation based on the User's id
   # The second one checks if the current user is actually a participant in the given conversation
@@ -29,7 +47,7 @@ class ConversationsController < ApplicationController
   def find_conversation
     if params[:receiver_id]
       @receiver = User.find_by(id: params[:receiver_id])
-      redirect_to conversations_path and return unless @reciever
+      redirect_to conversations_path and return unless @receiver
       @conversation = Conversation.between(current_user.id, @receiver.id)[0]
     else
       @conversation = Conversation.find_by(id: params[:id])

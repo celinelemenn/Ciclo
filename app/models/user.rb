@@ -19,7 +19,7 @@ class User < ApplicationRecord
   # because usually rails uses the association name as the default foreign-key name.
 
   has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
-  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'receiver_id'
 
   # A user has many messages, but they should be deleted if the user is deleted:
 
@@ -30,7 +30,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def name
-    name = current_user.full_name
+    name = self.full_name
     @username = name.split.first.capitalize
   end
 end
