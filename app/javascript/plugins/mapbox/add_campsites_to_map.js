@@ -1,23 +1,25 @@
 import mapboxgl from 'mapbox-gl';
-import { campingGeojson } from '../../plugins/mapbox/campsites';
-import { campingPointGeojson } from '../../plugins/mapbox/campsites_points';
+// import { campingGeojson } from '../../plugins/mapbox/campsites';
+// import { campingPointGeojson } from '../../plugins/mapbox/campsites_points';
 import { map } from '../../plugins/mapbox/init_mapbox';
+
 
 const addCampingsToMap = () => {
 
-const geojson = campingGeojson();
-const geojson_points = campingPointGeojson();
+const geojson_campsites = require('./map_data/campsites.json')
+const geojson_campsites_points = require('./map_data/campsites_points.json')
+// console.log(geojson.features)
 
 map.on('load', function () {
 
   map.addSource('campings', {
     "type": "geojson",
-    "data": geojson
+    "data": geojson_campsites
   });
 
   map.addSource('campings_points', {
     "type": "geojson",
-    "data": geojson_points
+    "data": geojson_campsites_points
   });
 
 
