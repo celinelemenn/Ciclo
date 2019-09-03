@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def map
     @point_of_interests = PointOfInterest.all
 
+
     @markers = @point_of_interests.map do |poi|
       {
         id: poi.id,
