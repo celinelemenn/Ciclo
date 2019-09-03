@@ -8,7 +8,7 @@
     <%= cl_image_tag @poi.photo %>
     <div class="bookmark-position">
       <%= link_to point_of_interest_bookmarks_path(@poi, user: current_user), method: :post do %>
-        <i class="fas fa-heart btn-bookmark btn-bookmark-active"></i>
+        <i class="far fa-star btn-bookmark btn-bookmark-active"></i>
         <p hidden><%= @poi.bookmarks.count %></p>
       <% end %>
     </div>
