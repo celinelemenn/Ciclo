@@ -7,6 +7,10 @@ class ConversationsController < ApplicationController
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
   end
 
+  def show
+
+  end
+
   def create
   end
 
