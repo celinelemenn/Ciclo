@@ -21,6 +21,10 @@ class User < ApplicationRecord
   has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
   has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
 
+  # A user has many messages, but they should be deleted if the user is deleted:
+
+  has_many :personal_messages, dependent: :destroy
+
   validates :terms, presence: true
 
   mount_uploader :photo, PhotoUploader
