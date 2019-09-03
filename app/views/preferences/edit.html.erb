@@ -1,0 +1,43 @@
+<h1 class="my-5">Filter</h1>
+
+
+<%= form_tag(preferences_path, method: 'patch') do %>
+  <div>
+    <img src=<%= @camping_icon %> alt="" height=50>
+    <span>Camping</span>
+    <%= check_box_tag "camping", params[:query], @user_pref.camping %>
+  </div>
+
+  <div>
+    <img src=<%= @caution_icon %> alt="" height=50>
+    <span>Caution</span>
+    <%= check_box_tag "Caution", params[:query], @user_pref.caution %>
+  </div>
+
+  <div>
+    <img src=<%= @landmark_icon %> alt="" height=50>
+    <span>Landmark</span>
+    <%= check_box_tag "Landmark", params[:query], @user_pref.landmark %>
+  </div>
+
+  <div>
+    <img src=<%= @water_icon %> alt="" height=50>
+    <span>Water Refill</span>
+    <%= check_box_tag "Water_refill", params[:query], @user_pref.water_refill %>
+  </div>
+
+  <div >
+    <%= submit_tag "save", class: 'btn-main' %>
+  </div>
+<% end %>
+
+<!--
+  <%#= form_tag map_path do %>
+    <#% POINT_OF_INTEREST.each do |poi| %>
+      <%#= label_tag poi[:name] %>
+      <%#= check_box_tag "poi_type[]" poi[:name] %>
+    <#% end %>
+  <#% end %>
+ -->
+
+<!--   collection_check_boxes(:post, :author_ids, Author.all, :id, :name_with_initial) -->

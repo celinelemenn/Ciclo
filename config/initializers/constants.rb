@@ -62,4 +62,5 @@ ROUTES_BACK_MAP = [
   { controller: 'likes', action: 'create'},
   { controller: 'downvotes', action: 'create' },
   { controller: 'bookmarks', action: 'create' },
+  { controller: 'preferences', action: 'update' },
 ]

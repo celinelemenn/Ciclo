@@ -29,7 +29,7 @@ class PagesController < ApplicationController
       }
     end
     @point_of_interest_new = PointOfInterest.new
-
+    @user = current_user
   end
 
 
