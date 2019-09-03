@@ -1,6 +1,8 @@
 class ConversationsController < ApplicationController
   # We want to make sure that the user is logged in before they are able to create a conversation
   before_action :authenticate_user!
+  before_action :set_conversation, except: [:index]
+  before_action :check_participating!, except: [:index]
 
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
@@ -25,7 +27,7 @@ class ConversationsController < ApplicationController
     if @conversation.save
       redirect_to conversation_path @conversation
     else
-      byebug
+      redirect_back(fallback_location: homepage_path)
     end
   end
 
@@ -44,15 +46,8 @@ class ConversationsController < ApplicationController
   # it calls on the participates method which is defined in the conversation model.
   # The participates method checks if a user is an author or a reciever of a convo.
 
-  def find_conversation
-    if params[:receiver_id]
-      @receiver = User.find_by(id: params[:receiver_id])
-      redirect_to conversations_path and return unless @receiver
-      @conversation = Conversation.between(current_user.id, @receiver.id)[0]
-    else
-      @conversation = Conversation.find_by(id: params[:id])
-      redirect_to conversations_path and return unless @conversation && @conversation.participates?(current_user)
-    end
+  def set_conversation
+    @conversation = Conversation.find_by(id: params[:id])
   end
 
   def check_participating!

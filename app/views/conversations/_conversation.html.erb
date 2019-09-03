@@ -1,5 +1,5 @@
 <div>
-  <p>Chatting with <%= conversation.with(current_user.name) %></p>
+  <p>Chatting with <%= conversation.with(current_user).name %></p>
   <br>
   <p><em><%= conversation.personal_messages.last.body.truncate(50) %></em></p>
   <br>

@@ -4,11 +4,7 @@
 
 <div id="conversation-main">
   <div id="conversation-body">
-    <ul>
-      <% @conversation.personal_messages.each do |message| %>
-        <li>  <%= message.body %> - <%= message.user.name %> </li>
-      <% end %>
-    </ul>
+    <%= render @conversation.personal_messages %>
   </div>
 
 <!-- We need the hidden_field_tag in the form so that rails knows which conversation toupdate when someone rights a message -->
