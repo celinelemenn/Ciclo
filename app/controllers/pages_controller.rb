@@ -7,15 +7,16 @@ class PagesController < ApplicationController
   def map
     @point_of_interests = PointOfInterest.published
     @user = current_user
+    @user_pref = Preference.find_by(user_id: @user.id)
 
-    unless !@user.preferences.empty? do
+    if @user_pref
 
-      @point_of_interests = @point_of_interests.camping
+      @point_of_interests = @point_of_interests.camping if @user_pref.camping
+      @point_of_interests = @point_of_interests.landmark if @user_pref.landmark
+      @point_of_interests = @point_of_interests.water if @user_pref.water_refill
+      @point_of_interests = @point_of_interests.caution if @user_pref.caution
+
     end
-
-
-    # raise
-
 
     @markers = @point_of_interests.map do |poi|
       {
