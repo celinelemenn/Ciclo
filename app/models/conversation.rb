@@ -33,4 +33,10 @@ class Conversation < ApplicationRecord
   def with(current_user)
     author == current_user ? receiver : author
   end
+
+  # The method below simply checks if a given user is part of a conversation or not.
+
+  def participates?(user)
+    author == user || reciever == user
+  end
 end

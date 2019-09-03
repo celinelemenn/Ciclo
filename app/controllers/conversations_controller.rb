@@ -23,6 +23,7 @@ class ConversationsController < ApplicationController
   # The first private method simply returns the conversation based on the User's id
   # The second one checks if the current user is actually a participant in the given conversation
   # it calls on the participates method which is defined in the conversation model.
+  # The participates method checks if a user is an author or a reciever of a convo.
 
   def find_conversation
     @conversation = Conversation.find_by(id: params[:id])
