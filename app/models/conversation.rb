@@ -16,4 +16,12 @@ class Conversation < ApplicationRecord
   # between a pair of users
 
   validates :author, uniqueness: { scope: :reciever }
+
+  # Below, we define a scope called participating. A scope basically makes a subset of a collection. So in this case
+  # we are making a subset of conversation called participating in which we associate a user ID with both receiver ID
+  # and author ID. This link explains it well: https://stackoverflow.com/questions/4869994/what-is-scope-named-scope-in-rails
+
+  scope :participating, -> (user) do
+    where("(conversations.author_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
+  end
 end
