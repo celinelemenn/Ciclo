@@ -18,9 +18,9 @@ class PointOfInterestsController < ApplicationController
   def create
     @point_of_interest = PointOfInterest.new(poi_params)
     @point_of_interest.user = current_user
-    @user_position = UserPosition.where(user_id: current_user.id)
-    @point_of_interest.lat = @user_position[:lat.to_s.to_i].lat
-    @point_of_interest.long = @user_position[:long.to_s.to_i].long
+    @user_position = UserPosition.where(user_id: current_user.id).last
+    @point_of_interest.lat = @user_position.lat
+    @point_of_interest.long = @user_position.long
     if params[:commit] == "Add"
       @point_of_interest.published = true
       if @point_of_interest.save

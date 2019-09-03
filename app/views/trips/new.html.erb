@@ -1,3 +1,7 @@
+<div class="form-container uni-box-shadow">
+  <div class="form-title">
+    <h1 class="ml-2 mt-2">Add your trip</h1>
+  </div>
 
 <%= simple_form_for @trip do |f| %>
   <div class="form-input">
@@ -8,6 +12,9 @@
     <%= f.input :blog,  label: "Share your blog with the world"  %>
     <%= f.input :photo,  label: "Upload your picture"  %>
 
-    <%=f.submit "Submit" %>
   </div>
+    <div class="form-buttons">
+      <%=f.submit :Submit, class: "btn-main" %>
+    </div>
 <% end %>
+</div>
