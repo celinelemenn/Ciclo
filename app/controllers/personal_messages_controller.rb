@@ -1,6 +1,8 @@
 class PersonalMessagesController < ApplicationController
   before_action :find_conversation!
 
+  # Before any action, we find the conversation. If its found, the user can participate in it, build a message, and save it.
+
   def create
     @personal_message = current_user.personal_messages.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
@@ -8,6 +10,10 @@ class PersonalMessagesController < ApplicationController
 
     flash[:success] = "Delivered"
     redirect_to conversation_path(@conversation)
+  end
+
+  def new
+    @personal_message = current_user.personal_messages.build
   end
 
   private

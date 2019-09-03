@@ -9,6 +9,7 @@ class ConversationsController < ApplicationController
   # Here we simply instantiate a personal message so we can use it in the view, nothing new.
 
   def show
+    # @conversation = Conversation.find params[:id]
     @personal_message = PersonalMessage.new
   end
 

@@ -27,6 +27,9 @@ Rails.application.routes.draw do
       resources :personal_messages, only: [:index, :create]
   end
 
+  # resources :conversations, only: [:index, :show, :destroy]
+  # resources :personal_messages, only: [:create]
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :point_of_interests, only: [ :index ]
