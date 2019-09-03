@@ -19,4 +19,9 @@ class User < ApplicationRecord
   validates :terms, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def name
+    name = current_user.full_name
+    @username = name.split.first.capitalize
+  end
 end
