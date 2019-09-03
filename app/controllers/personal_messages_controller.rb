@@ -1,6 +1,15 @@
 class PersonalMessagesController < ApplicationController
   before_action :find_conversation!
 
+  def create
+    @personal_message = current_user.personal_messages.build(personal_message_params)
+    @personal_message.conversation_id = @conversation.id
+    @personal_message.save!
+
+    flash[:success] = "Delivered"
+    redirect_to conversation_path(@conversation)
+  end
+
   private
 
   # Whitelisting the params
