@@ -1,14 +1,16 @@
-<div class="uni-page-container ml-2 mt-2 mr-2">
+<div class="uni-page-container ml-2 mt-2 mr-">
   <div class="form-container">
     <%= simple_form_for [@poi, @report] do |f| %>
     <div class="form-input">
-      <div class="dropdown">
+      <div class="dropdown mt-2">
       <%= f.input :issue_type, label: "What's wrong?", collection: ["It doesn't appear to be here", "Report a problem"], prompt: "Select", required: :required, class: "form-control"%>
       </div>
-      <%= f.text_field :content %>
+      <div class="form-control h-50 d-inline-block"><%= f.text_field :content, placeholder: "Type here" %></div>
     </div>
+    <div class="row d-flex justify-content-center">
     <div class="form-actions">
       <%= f.submit %>
+    </div>
     </div>
    <% end %>
   </div>
