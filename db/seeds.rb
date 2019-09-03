@@ -26,6 +26,9 @@ puts "> PointOfInterest table destroyed"
 Trip.destroy_all
 puts "> Trip table destroyed"
 
+Preference.destroy_all
+puts "> Preference table destroyed"
+
 UserPosition.destroy_all
 puts "> UserPosition table destroyed"
 
