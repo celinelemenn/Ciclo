@@ -1,6 +1,7 @@
 class Api::V1::PointOfInterestsController < Api::V1::BaseController
   def index
-    pois = PointOfInterest.all
+    pois = PointOfInterest.where(published: true)
+    # raise
     @poi = []
     pois.each do |poi|
       temp_poi = {}

@@ -110,7 +110,7 @@ const geolocator = () => {
   window.addEventListener("load", (event) => {
     console.log("This works");
     navigator.geolocation.getCurrentPosition(currentPosition, error, options);
-    navigator.geolocation.watchPosition(watchUserPosition);
+    navigator.geolocation.watchPosition(watchUserPosition, error, options);
   });
 }
 

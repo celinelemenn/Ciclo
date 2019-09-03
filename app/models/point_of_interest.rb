@@ -6,6 +6,8 @@ class PointOfInterest < ApplicationRecord
   has_many :comments
   has_many :reports
 
+  # validates :poi_type, :description, presence: true
+
   mount_uploader :photo, PhotoUploader
 
   enum poi_type: [:water_refill, :camping, :caution, :landmark]
