@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_100529) do
+ActiveRecord::Schema.define(version: 2019_09_03_102405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2019_09_03_100529) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+  end
+
   create_table "downvotes", force: :cascade do |t|
     t.bigint "point_of_interest_id"
     t.bigint "user_id"
@@ -50,6 +59,16 @@ ActiveRecord::Schema.define(version: 2019_09_03_100529) do
     t.datetime "updated_at", null: false
     t.index ["point_of_interest_id"], name: "index_likes_on_point_of_interest_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "personal_messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_personal_messages_on_user_id"
   end
 
   create_table "point_of_interests", force: :cascade do |t|
@@ -139,6 +158,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_100529) do
   add_foreign_key "downvotes", "users"
   add_foreign_key "likes", "point_of_interests"
   add_foreign_key "likes", "users"
+  add_foreign_key "personal_messages", "conversations"
+  add_foreign_key "personal_messages", "users"
   add_foreign_key "point_of_interests", "users"
   add_foreign_key "preferences", "users"
   add_foreign_key "reports", "point_of_interests"
