@@ -1,4 +1,4 @@
-<div class="uni-page-container text-center p-3">
+<div class="uni-page-container text-center">
 
 <% if current_user.present? %>
   <% if current_user.photo.file %>
@@ -7,10 +7,10 @@
     <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
   <% end %>
 <div class="info-card">
-  <strong><h5><%= current_user.full_name  %></h5></strong>
-  <p><%= current_user.bio  %></p>
-  <p><%= current_user.description %><p>
-  <h6><%= current_user.blog  %></h6>
+  <strong><h3><%= current_user.full_name  %></h3></strong>
+  <font size="+1"><p><%= current_user.bio  %></p></font>
+  <p><%= current_user.description  %><p>
+  <font size="+1"><h5><%= current_user.blog  %></h5></font>
 <% end %>
 </div>
 
@@ -20,7 +20,7 @@
 
 
   <div class="parent-card">
-    <div class="card-trip-header"><h5>Your past trips </h5></div>
+    <div class="card-trip-header"><h3>Your past trips </h3></div>
 
     <% current_user.trips.each do |trip| %>
       <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
