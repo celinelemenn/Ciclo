@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def map
-    @point_of_interests = PointOfInterest.all
+    @point_of_interests = PointOfInterest.where(published: true)
+    # raise
 
     @markers = @point_of_interests.map do |poi|
       {
@@ -17,6 +18,8 @@ class PagesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
     end
+
+    # poi.poi_type.to_sym
 
     @cyclists = UserPosition.where.not(user_id: current_user.id)
     @cyclist_avatars = @cyclists.map do |cyclist|

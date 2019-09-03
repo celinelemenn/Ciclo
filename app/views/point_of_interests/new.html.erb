@@ -18,12 +18,10 @@
      </div>
 
    <div class="row d-flex justify-content-center">
-     <% if @point_of_interest.published? %>
-       <%= f.submit "Add", class: "btn-main" %>
-     <% else %>
-       <%= link_to "Later", point_of_interests_path, class: "btn-secondary"  %>
+     <%= f.submit "Later", class: "btn-secondary"  %>
+     <%= f.submit "Add", class: "btn-main" %>
    </div>
+
      <% end %>
-    <% end %>
   </div>
 </div>

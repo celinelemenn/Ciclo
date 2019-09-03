@@ -18,13 +18,24 @@ class PointOfInterestsController < ApplicationController
   def create
     @point_of_interest = PointOfInterest.new(poi_params)
     @point_of_interest.user = current_user
-    @point_of_interest.lat = -29.4981176
-    @point_of_interest.long = -51.9925595
-    @point_of_interest.published = true
-    if @point_of_interest.save!
-      redirect_to map_path
+    @user_position = UserPosition.where(user_id: current_user.id)
+    @point_of_interest.lat = @user_position[:lat.to_s.to_i].lat
+    @point_of_interest.long = @user_position[:long.to_s.to_i].long
+    if params[:commit] == "Add"
+      @point_of_interest.published = true
+      if @point_of_interest.save
+        redirect_to map_path
+      else
+        render :new
+      end
+
     else
-      render :new
+      @point_of_interest.published = false
+      if @point_of_interest.save
+        redirect_to map_path
+      else
+        render :new
+      end
     end
   end
 
