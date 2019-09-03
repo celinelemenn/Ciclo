@@ -3,6 +3,12 @@ class PersonalMessagesController < ApplicationController
 
   private
 
+  # Whitelisting the params
+
+  def personal_message_params
+    params.require(:personal_message).permit(:body)
+  end
+
   # The params of conversation_id comes from the hidden field tag in the conversations show page.
 
   def find_conversation
