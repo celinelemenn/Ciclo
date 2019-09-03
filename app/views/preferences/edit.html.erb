@@ -5,25 +5,25 @@
   <div>
     <img src=<%= @camping_icon %> alt="" height=50>
     <span>Camping</span>
-    <%= check_box_tag "camping", params[:query], @user_pref.camping %>
+    <%= check_box_tag :camping, params[:camping], @user_pref.camping %>
   </div>
 
   <div>
     <img src=<%= @caution_icon %> alt="" height=50>
     <span>Caution</span>
-    <%= check_box_tag "Caution", params[:query], @user_pref.caution %>
+    <%= check_box_tag :caution, params[:caution], @user_pref.caution %>
   </div>
 
   <div>
     <img src=<%= @landmark_icon %> alt="" height=50>
     <span>Landmark</span>
-    <%= check_box_tag "Landmark", params[:query], @user_pref.landmark %>
+    <%= check_box_tag :landmark, params[:landmark], @user_pref.landmark %>
   </div>
 
   <div>
     <img src=<%= @water_icon %> alt="" height=50>
     <span>Water Refill</span>
-    <%= check_box_tag "Water_refill", params[:query], @user_pref.water_refill %>
+    <%= check_box_tag :water_refill, params[:water_refill], @user_pref.water_refill %>
   </div>
 
   <div >

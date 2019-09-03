@@ -17,10 +17,11 @@ class PreferencesController < ApplicationController
       @user_pref.user = @user
     end
 
-    @user_pref.camping = params['camping'] == 'on'
-    @user_pref.caution = params['caution'] == 'on'
+    @user_pref.camping = params[:camping] == 'on'
+    @user_pref.caution = params[:caution] == 'on'
+    @user_pref.landmark = params[:landmark] == 'on'
+    @user_pref.water_refill = params[:water_refill] == 'on'
 
-    raise
     @user_pref.save
     redirect_to map_path
 
