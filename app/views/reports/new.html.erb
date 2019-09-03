@@ -1,9 +1,9 @@
-<div class="uni-page-container text-center">
+<div class="uni-page-container ml-2 mt-2 mr-2">
   <div class="form-container">
     <%= simple_form_for [@poi, @report] do |f| %>
     <div class="form-input">
       <div class="dropdown">
-      <%= f.input :issue_type, label: "What's wrong?", collection: ["It doesn't appear to be here", "Report a problem"], prompt: "Select"%>
+      <%= f.input :issue_type, label: "What's wrong?", collection: ["It doesn't appear to be here", "Report a problem"], prompt: "Select", required: :required, class: "form-control"%>
       </div>
       <%= f.text_field :content %>
     </div>
