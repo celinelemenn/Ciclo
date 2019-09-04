@@ -10,12 +10,12 @@ class PagesController < ApplicationController
     @user_pref = Preference.find_by(user_id: @user.id)
 
     if @user_pref
+      @camping = @user_pref.camping ? @point_of_interests.camping : []
+      @landmark = @user_pref.landmark ? @point_of_interests.landmark : []
+      @water = @user_pref.water_refill ? @point_of_interests.water : []
+      @caution = @user_pref.caution ? @point_of_interests.caution : []
 
-      @point_of_interests = @point_of_interests.camping if @user_pref.camping
-      @point_of_interests = @point_of_interests.landmark if @user_pref.landmark
-      @point_of_interests = @point_of_interests.water if @user_pref.water_refill
-      @point_of_interests = @point_of_interests.caution if @user_pref.caution
-
+      @point_of_interests = @camping + @landmark + @water + @caution
     end
 
     @markers = @point_of_interests.map do |poi|
