@@ -52,6 +52,12 @@ class PagesController < ApplicationController
   end
 
   def userprofile
+    if params[:receiver_id]
+      @conversation = Conversation.find_by(recevier_id: params[:id])
+    else
+      @conversation = Conversation.new
+      # binding.pry
+    end
     @user = User.find(params[:id])
     @trips = Trip.where(user: @user)
   end

@@ -1,0 +1,19 @@
+<div class="form-container text-center">
+  <div class="form-title">
+    <h2 id="new-message-title">New message to <%= @conversation.receiver.name %></h2>
+    <hr>
+  </div>
+
+  <%= form_for :personal_message, url: conversation_personal_messages_path(@conversation) do |f| %>
+    <%= hidden_field_tag 'receiver_id', @conversation.receiver.id %>
+
+    <div class="form-input-new-message">
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+
+    <div class="form-buttons">
+      <%= f.submit 'Send Message', class: 'btn-main' %>
+    </div>
+  <% end %>
+</div>

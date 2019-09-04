@@ -9,6 +9,11 @@
     <strong><h5><%= @user.full_name  %></h5></strong>
     <p><%= @user.bio  %></p>
     <p><%= @user.description  %><p>
+    <font size="+1"><h5><%= @user.blog  %></h5></font>
+    <%= form_for :conversation, url: conversations_path do |f| %>
+      <%= f.hidden_field :receiver_id, value: @user.id %>
+      <%= f.submit 'Send A Message', class: 'btn-main' %>
+    <% end %>
      <h6><%= @user.blog  %></h6>
   </div>
 

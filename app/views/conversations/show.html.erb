@@ -1,0 +1,23 @@
+<h1>Chatting with <%= @conversation.with(current_user).name %></h1>
+
+<!-- Quite a straigtforward view: in the body we render first the existing messages (which will be in ascending order), then we create a form for the user to send messages -->
+
+<div id="conversation-main">
+  <div id="conversation-body">
+    <%= render @conversation.personal_messages %>
+    <%= render 'shared/messenger_flashes' %>
+  </div>
+
+<!-- We need the hidden_field_tag in the form so that rails knows which conversation toupdate when someone rights a message -->
+
+  <%= form_for @personal_message, url: conversation_personal_messages_path(@conversation) do |f| %>
+    <div>
+      <%= hidden_field_tag 'conversation_id', @conversation.id%>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+    <div>
+      <%= f.submit :Submit %>
+    </div>
+  <% end %>
+</div>

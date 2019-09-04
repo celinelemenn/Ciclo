@@ -26,10 +26,8 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create]
   end
 
-  # resources :preferences, only: [:index, :new, :create, :edit, :update]
-
-  resources :conversations, only: [:index, :create, :destroy] do
-      resources :messages, only: [:index, :create]
+  resources :conversations, only: [:index, :show, :create, :destroy] do
+      resources :personal_messages, only: [:new, :create]
   end
 
   namespace :api, defaults: { format: :json } do
