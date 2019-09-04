@@ -1,12 +1,4 @@
 class PreferencesController < ApplicationController
-  def index
-  end
-
-  def new
-  end
-
-  def create
-  end
 
   def update
     @user = current_user
