@@ -61,15 +61,11 @@ class PointOfInterestsController < ApplicationController
   private
 
   def poi_params
-    params.require(:point_of_interest).permit(:poi_type, :title, :description, :photo)
+    params.require(:point_of_interest).permit(:poi_type, :title, :description, :photo, :title)
   end
 
   def find_poi
     @poi = PointOfInterest.find(params[:id])
-  end
-
-  def poi_params
-    params.require(:point_of_interest).permit(:photo, :poi_type, :description)
   end
 
 end
