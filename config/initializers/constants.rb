@@ -45,12 +45,14 @@ ROUTES_NO_NAV = [
   { controller: 'downvotes', action: 'create' },
   { controller: 'bookmarks', action: 'create' },
   { controller: 'point_of_interests', action: 'new' },
-  { controller: 'point_of_interests', action: 'show' }
+  { controller: 'point_of_interests', action: 'show' },
+  { controller: 'reports', action: 'new' },
 ]
 
 ROUTES_NO_MENU = [
   { controller: 'registrations', action: 'edit' },
   {controller: 'trips', action: 'new'},
+  { controller: 'reports', action: 'new' },
 
 ]
 
@@ -63,4 +65,5 @@ ROUTES_BACK_MAP = [
   { controller: 'downvotes', action: 'create' },
   { controller: 'bookmarks', action: 'create' },
   { controller: 'preferences', action: 'update' },
+
 ]
