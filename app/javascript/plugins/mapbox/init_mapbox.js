@@ -33,15 +33,15 @@ const initMapbox = () => {
     const cyclists = JSON.parse(mapElement.dataset.cyclists);
     addCyslistToMap(map, cyclists);
 
+    const bottom_left = document.querySelector(".mapboxgl-ctrl-bottom-left");
+    bottom_left.classList = 'mapboxgl-ctrl-top-left';
+
+    const bottom_right = document.querySelector(".mapboxgl-ctrl-bottom-right");
+    bottom_right.classList = 'mapboxgl-ctrl-top-right';
+
 
   }
 };
-
-const bottom_left = document.querySelector(".mapboxgl-ctrl-bottom-left");
-bottom_left.classList = 'mapboxgl-ctrl-top-left';
-
-const bottom_right = document.querySelector(".mapboxgl-ctrl-bottom-right");
-bottom_right.classList = 'mapboxgl-ctrl-top-right';
 
 // API functions
 const run_mapbox_page = async () => {
