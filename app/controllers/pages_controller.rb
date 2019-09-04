@@ -5,9 +5,18 @@ class PagesController < ApplicationController
   end
 
   def map
-    @point_of_interests = PointOfInterest.where(published: true)
-    # raise
+    @point_of_interests = PointOfInterest.published
+    @user = current_user
+    @user_pref = Preference.find_by(user_id: @user.id)
 
+    if @user_pref
+      @camping = @user_pref.camping ? @point_of_interests.camping : []
+      @landmark = @user_pref.landmark ? @point_of_interests.landmark : []
+      @water = @user_pref.water_refill ? @point_of_interests.water : []
+      @caution = @user_pref.caution ? @point_of_interests.caution : []
+
+      @point_of_interests = @camping + @landmark + @water + @caution
+    end
 
     @markers = @point_of_interests.map do |poi|
       {
@@ -33,9 +42,11 @@ class PagesController < ApplicationController
       }
     end
     @point_of_interest_new = PointOfInterest.new
-    @user = current_user
   end
 
+  def profile
+    @user = current_user
+  end
 
   def feed
   end

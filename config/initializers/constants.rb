@@ -46,6 +46,7 @@ ROUTES_NO_NAV = [
   { controller: 'bookmarks', action: 'create' },
   { controller: 'point_of_interests', action: 'new' },
   { controller: 'point_of_interests', action: 'show' },
+  { controller: 'preferences', action: 'edit' },
   { controller: 'reports', action: 'new' },
 ]
 
@@ -64,6 +65,5 @@ ROUTES_BACK_MAP = [
   { controller: 'likes', action: 'create'},
   { controller: 'downvotes', action: 'create' },
   { controller: 'bookmarks', action: 'create' },
-  { controller: 'preferences', action: 'update' },
-
+  { controller: 'preferences', action: 'edit' },
 ]

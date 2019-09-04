@@ -4,6 +4,7 @@ class PointOfInterestsController < ApplicationController
   def index
     @user_poi = PointOfInterest.order(updated_at: :desc)
     @user_poi = @user_poi.select { |poi| poi.user == current_user }
+    @user = current_user
   end
 
   def show

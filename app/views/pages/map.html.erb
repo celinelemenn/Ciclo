@@ -6,13 +6,17 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
+  <div class="btn-on-map-left" style="top: 95px !important; left: 317px !important;">
+    <a href="/filter/<%= @current_user.id %>">
+      <i class="fas fa-filter"></i></a>
+  </div>
 
   <div class="btn-on-map-left uni-box-shadow">
     <a href="/point_of_interests/new"><i class="fas fa-plus"></i></a>
   </div>
 
+  <div class="btn-on-map-right uni-box-shadow">
+    <button><i class="fas fa-location-arrow"></i>
+    </button>
+  </div>
 
-<div class="btn-on-map-right uni-box-shadow">
-  <button><i class="fas fa-location-arrow"></i>
-  </button>
-</div>
