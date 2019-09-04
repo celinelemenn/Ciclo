@@ -17,14 +17,15 @@ class ConversationsController < ApplicationController
 
   def create
     all_params = conversation_params.merge({ author_id: current_user.id })
-    @conversation = Conversation.new(all_params)
-
-    # byebug
-    raise
-    if @conversation.save
-      redirect_to new_conversation_personal_message_path(@conversation.id)
+    @conversation_between = Conversation.between(current_user.id, params[:conversation][:receiver_id])[0]
+    if !@conversation_between
+      @conversation = Conversation.new(all_params)
+      if @conversation.save
+        redirect_to new_conversation_personal_message_path(@conversation.id)
+      end
     else
-      redirect_back(fallback_location: homepage_path)
+      # raise
+      redirect_to conversation_path(@conversation_between)
     end
   end
 

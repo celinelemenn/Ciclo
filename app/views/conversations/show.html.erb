@@ -5,6 +5,7 @@
 <div id="conversation-main">
   <div id="conversation-body">
     <%= render @conversation.personal_messages %>
+    <%= render 'shared/messenger_flashes' %>
   </div>
 
 <!-- We need the hidden_field_tag in the form so that rails knows which conversation toupdate when someone rights a message -->

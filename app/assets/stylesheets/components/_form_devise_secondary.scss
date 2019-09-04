@@ -77,3 +77,21 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.form-input-new-message {
+  margin: 10px;
+  input {
+    background: transparent !important;
+    border: none;
+    border-bottom: 1px solid #ececec;
+    &:focus {
+      box-shadow: none;
+      border: none;
+      border-bottom: 1px solid $dark-blue;
+    }
+  }
+  label {
+    font-size: 14px;
+    color: $dark-blue;
+  }
+}
