@@ -25,3 +25,16 @@
     margin:0;
   }
 }
+
+.info-window-first-row {
+  display: flex;
+  align-items: center;
+
+}
+
+.distance_km {
+  p {
+    margin: 0;
+    font-size: 13px;
+  }
+}
