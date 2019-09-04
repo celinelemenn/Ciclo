@@ -1,5 +1,5 @@
-meta_product_name: "Ciclo APP"
-meta_title: "Ciclo - Get the best route with real time reports from other cyclists"
-meta_description: "he first Web-APP to find real time information about bike touring routes & see other touring cyclists around you. In one click you can easly reports new info on the map or contact with bikepackers."
+meta_product_name: "ciclo"
+meta_title: "ciclo - Get the best route with real time reports from other cyclists"
+meta_description: "The first web-app to find real time information about bike touring routes & see other touring cyclists around you. In one click you can easly reports new info on the map or contact with bikepackers."
 meta_image: "logo.png" # should exist in `app/assets/images/`
-# twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: ""   # required for Twitter Cards
