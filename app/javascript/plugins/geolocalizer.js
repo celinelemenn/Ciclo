@@ -16,11 +16,11 @@ const userCurrentPosition = [];
 // the getCurrentPosition function and returns a Position object
 // which contains a coordinates object.
 
-// if
-// (document.body.classList.contains( 'logged-in' );)
+
 const currentPosition = (position) => {
   const userCoordinates = position.coords;
 }
+
 
 // The function below is optional and holds an error message. It is an option
 // argument of the getCurrentPosition function.
@@ -109,11 +109,13 @@ const localize = () => {
 // geolocation.
 
 const geolocator = () => {
-  window.addEventListener("load", (event) => {
-    console.log("This works");
-    navigator.geolocation.getCurrentPosition(currentPosition, error, options);
-    navigator.geolocation.watchPosition(watchUserPosition, error, options);
-  });
+  if (mapElement) {
+    window.addEventListener("load", (event) => {
+      console.log("This works");
+      navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+      navigator.geolocation.watchPosition(watchUserPosition, error, options);
+    });
+  }
 }
 
 export { geolocator };
