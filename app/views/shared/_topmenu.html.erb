@@ -1,10 +1,10 @@
 <div class="top-menu uni-box-shadow">
   <div class="top-menu-item dropdown">
     <button  class="btn-drop"><i class="fas fa-bars"></i></button>
-    <div id="dropdown-items" class="dropdown-content">
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <div id="dropdown-items" class="dropdown-content text-left">
       <a href="#">About us</a>
       <a href="#">Contact</a>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
     </div>
   </div>
 
