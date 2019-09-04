@@ -2,6 +2,10 @@ import mapboxgl from 'mapbox-gl';
 
 const addCyslistToMap = (map, cyclists) => {
 
+const mapElement = document.getElementById('map');
+
+ if (mapElement) {
+
   cyclists.forEach((cyclist) => {
     const el = document.createElement('div');
     el.className = 'marker cyclist-avatar';
@@ -21,5 +25,7 @@ const addCyslistToMap = (map, cyclists) => {
       .addTo(map);
   });
 };
+
+}
 
 export { addCyslistToMap };
