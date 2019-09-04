@@ -16,6 +16,8 @@ const userCurrentPosition = [];
 // the getCurrentPosition function and returns a Position object
 // which contains a coordinates object.
 
+// if
+// (document.body.classList.contains( 'logged-in' );)
 const currentPosition = (position) => {
   const userCoordinates = position.coords;
 }
