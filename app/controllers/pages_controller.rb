@@ -42,7 +42,6 @@ class PagesController < ApplicationController
       }
     end
     @point_of_interest_new = PointOfInterest.new
-
   end
 
   def profile
