@@ -44,70 +44,69 @@ puts "Seeds Destroyed"
 puts "Creating test users"
 
 test_user = User.create(
-  email: "test_user@gmail.com",
+  email: "maria_lopez@gmail.com",
   password: "1234567",
-  full_name: "Test McTest",
-  remote_photo_url: 'https://i.pravatar.cc/60',
-  bio: "🚲Travelling half world by 🚲.
+  full_name: "Maria Lopez",
+  remote_photo_url: 'https://images.unsplash.com/photo-1567303314286-6735a4ad9d42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=703&q=80',
+  bio: "🚲Travelling half world by 🚲 and keep riding.
   25000KM | 20 MONTHS |
 📍current location: NORWAY",
-  description: "Being around the world with my bikie",
-  blog: "https://medium.com/",
+  description: "Being around the world with my bikie 🌏: I love travelling, bikes and cats.",
+  blog: "https://mariatravells.com/",
   terms: true,
 )
 
 puts "> test_user created"
 
 test_user2 = User.create(
-  email: "test_user2@gmail.com",
+  email: "johnTeagan2@gmail.com",
   password: "1234567",
-  full_name: "Test McTest2",
-  remote_photo_url: 'https://i.pravatar.cc/60',
+  full_name: "John McCallister",
+  remote_photo_url: 'https://images.unsplash.com/photo-1547404415-5eb20ddab016?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
   bio: "John and Teagan 🇦🇺Australians
 touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕.",
   description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
-📍: Currently in France 🥐🍷",
-  blog: "https://medium.com/",
+📍: Currently in Iran",
+  blog: "https://johnTeagan.com/",
   terms:true,
 )
 
 
 test_user3 = User.create(
-  email: "test_user3@gmail.com",
+  email: "fatima@gmail.com",
   password: "1234567",
-  full_name: "Test McTest2",
-  remote_photo_url: 'https://i.pravatar.cc/60',
-  bio: "John and Teagan 🇦🇺 Australians
-touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕.",
-  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
-📍: Currently in France 🥐🍷",
-  blog: "https://medium.com/",
+  full_name: "Fatima van Dyke",
+  remote_photo_url: "https://images.unsplash.com/photo-1510191240544-c9de9dd0baed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  bio: "I love being a nomad. Currently writing a book for my adventures in foreign lands." ,
+  description: " I did my cycling record in Norway, 16000kms.
+📍: Currently taking a break 😴",
+  blog: "https://fatimalog.com/",
   terms:true,
 )
 
 test_user4 = User.create(
-  email: "test_user4@gmail.com",
+  email: "johannes2@gmail.com",
   password: "1234567",
-  full_name: "Test McTest2",
-  remote_photo_url: 'https://i.pravatar.cc/60',
-  bio: "John and Teagan 🇦🇺 Australians
-touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕. ",
-  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
-📍: Currently in France 🥐🍷",
-  blog: "https://medium.com/",
+  full_name: "Johannes Smith",
+  remote_photo_url: "https://images.unsplash.com/photo-1566847773902-a9e01bdfb71b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+  bio: "Johannes: German traveller:
+touring by 🚴‍♂️🚴‍♀️.",
+  description: "My dream is to travel the world with my bike.
+📍: Currently in Greece 🌊",
+  blog: "https://johannesthegerman.com/",
   terms:true,
 )
 
 test_user5 = User.create(
-  email: "test_user5@gmail.com",
+  email: "teresa@gmail.com",
   password: "1234567",
-  full_name: "Test McTest2",
-  remote_photo_url: 'https://i.pravatar.cc/60',
-  bio: "John and Teagan 🇦🇺 Australians
-touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕. ",
-  description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
-📍: Currently in France 🥐🍷",
-  blog: "https://medium.com/",
+  full_name: "Teresa Mendossa",
+  remote_photo_url: "https://images.unsplash.com/photo-1533407411655-dcce1534c1a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  bio: "I am from Mexico and I love good food and good stories.
+touring by 🚴‍♂️🚴‍♀️ in warm exotic places.",
+  description: "Around the globe 🌏: My trip; 2 Countries, 14000kms.
+📍: Currently in Italy 🥐🍷",
+  blog: "https://teresita.com/",
   terms:true,
 )
 
@@ -147,7 +146,8 @@ puts "> We have now 1 location for each user. We have created #{UserPosition.cou
 # ----- Point of interest seedings for map----
 puts "creating PointOfInterest seeds..."
 
-set_of_geolocations = [
+set_of_geolocations_water_refill = [
+
 [4.65207310436278298, 52.29141180668530353],
 [4.68356031167621811, 52.38391429230023988],
 [4.86388983480058368, 52.30046259658358565],
@@ -158,10 +158,14 @@ set_of_geolocations = [
 [4.86457660305994466, 52.35196893253793604],
 [4.82310150454673181, 52.35732502875396221],
 [4.76874077326959966, 52.35784584369549322],
-[4.81633586203921382, 52.32995622436212102],
 [4.94489780514377664, 52.34239193155135439],
 [4.89550742510102577, 52.363194387901423],
-[4.916496752117677, 52.33673590780477269],
+[4.916496752117677, 52.33673590780477269]
+
+]
+
+set_of_geolocations_camping = [
+
 [4.87731917720219776, 52.31280284847873929],
 [5.0439565697980786, 52.33043925268320606],
 [4.95562037726580584, 52.30400233206035665],
@@ -175,7 +179,11 @@ set_of_geolocations = [
 [4.63037180942266247, 52.23778899898901074],
 [4.56900393092186707, 52.27620700091733852],
 [4.92595787795585061, 52.1802584499173463],
-[4.88581422977020541, 52.2455065521940369],
+[4.88581422977020541, 52.2455065521940369]
+
+]
+
+set_of_geolocations_caution = [
 [5.06325580736216452, 52.2679297193631669],
 [4.83576844797387384, 52.1435312545463602],
 [4.71341357789167059, 52.1622775857439435],
@@ -190,6 +198,10 @@ set_of_geolocations = [
 [4.52442657650137292, 51.9526862451945419],
 [4.57385843386091029, 52.0378368367808334],
 [4.31699019297709441, 51.9364439473919787],
+
+]
+
+set_of_geolocations_landmark = [
 [4.35837897597332535, 52.0119227152636227],
 [4.29968781740753414, 51.6794523786636617],
 [4.15029462176751274, 51.7264302469553172],
@@ -202,10 +214,10 @@ set_of_geolocations = [
 [4.85629135170671855, 52.0733669067316711],
 [4.80650354208736807, 51.9713766599526323],
 [4.81482543258788098, 52.5480070116680622],
-[4.76505802563431669, 52.6955275335201704],
 [4.79135602010192407, 52.8143590857821863],
 [4.73535425387907338, 52.5475972997628133],
-[5.07236926255011689, 52.0959464018374873]
+[5.07236926255011689, 52.0959464018374873],
+
 ]
 
 # set_of_poitypes = [1, 2, 3, 4, 5]
@@ -214,16 +226,59 @@ poi_types = POINT_OF_INTEREST.values.map { |poi| poi[:label] }
 # POINT_OF_INTEREST[poi2.poi_type.to_sym]
 
 
-set_of_geolocations.each_with_index do |item, index|
+set_of_geolocations_water_refill.each_with_index do |item, index|
+
   PointOfInterest.create!(
-    lat: set_of_geolocations[index][1], # set_of_geolocations[index_geolocation][lat]
-    long: set_of_geolocations[index][0], # set_of_geolocations[index_geolocation][long]
-    poi_type: poi_types.sample,
-    description: 'some poi description',
-    title: 'some title',
-    user: test_user,
+    lat: set_of_geolocations_water_refill[index][1], # set_of_geolocations[index_geolocation][lat]
+    long: set_of_geolocations_water_refill[index][0], # set_of_geolocations[index_geolocation][long]
+    poi_type: :water_refill,
+    description: "The fountain is behind a tree so it's not visible",
+    title: 'Water fountain',
+    user: users.sample,
     published: true,
-    remote_photo_url: 'https://source.unsplash.com/random/600x400'
+    remote_photo_url: 'https://i.imgur.com/RE3wGZn.jpg'
+    )
+  end
+
+
+set_of_geolocations_camping.each_with_index do |item, index|
+  PointOfInterest.create!(
+    lat: set_of_geolocations_camping[index][1], # set_of_geolocations[index_geolocation][lat]
+    long: set_of_geolocations_camping[index][0], # set_of_geolocations[index_geolocation][long]
+    poi_type: :camping,
+    description: "Nice campside not difficult to find. It's safe and other campers are always around",
+    title: 'Nice campside point',
+    user: users.sample,
+    published: true,
+    remote_photo_url: 'https://images.unsplash.com/photo-1511993807578-701168605ad3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80'
+    )
+  end
+
+set_of_geolocations_caution.each_with_index do |item, index|
+
+PointOfInterest.create!(
+    lat: set_of_geolocations_caution[index][1], # set_of_geolocations[index_geolocation][lat]
+    long: set_of_geolocations_caution[index][0], # set_of_geolocations[index_geolocation][long]
+    poi_type: :caution,
+    description: 'Some rocks fell from the cliff and the road is not save for cycling.',
+    title: 'Bad road',
+    user: users.sample,
+    published: true,
+    remote_photo_url: 'https://images.unsplash.com/photo-1501967111356-35219aeb2ea1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+    )
+end
+
+set_of_geolocations_landmark.each_with_index do |item, index|
+
+PointOfInterest.create!(
+    lat: set_of_geolocations_landmark[index][1], # set_of_geolocations[index_geolocation][lat]
+    long: set_of_geolocations_landmark[index][0], # set_of_geolocations[index_geolocation][long]
+    poi_type: :landmark,
+    description: 'Beautiful dutch windmill on the way',
+    title: 'Windmill',
+    user: users.sample,
+    published: true,
+    remote_photo_url: 'https://images.unsplash.com/photo-1563800037628-2b1bfb1876f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
     )
 end
 
@@ -234,26 +289,108 @@ puts "> #{PointOfInterest.count} PointOfInterest created "
 
 puts "Creating trips for test_user....."
 
-2.times do
-  trip1 = Trip.create(
-   start_date: DateTime.parse("09/01/2019 17:00"),
-   end_date: DateTime.parse("09/01/2020 19:00"),
-   name: "Cycling the South East of Asia",
-   km: 1000,
-   remote_photo_url: "https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-   blog: "www.mylife.com",
+
+# users.each do |user|
+
+#     trip1 = Trip.create(
+#      start_date: DateTime.parse("09/01/2019 17:00"),
+#      end_date: DateTime.parse("09/01/2020 19:00"),
+#      name: "Cycling the South East of Asia",
+#      km: 30022,
+#      remote_photo_url: "https://images.unsplash.com/photo-1494919027819-5b2cb8994d5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+#      blog: "www.mylife.com",
+#      user: test_user
+#      )
+
+# end
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/02/2019 17:00"),
+   end_date: DateTime.parse("09/03/2020 19:00"),
+   name: "Cycling through USA",
+   km: 20100,
+   remote_photo_url: "https://images.unsplash.com/photo-1530959106156-50f49c30932d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
    user: test_user
    )
-end
 
 trip1 = Trip.create(
    start_date: DateTime.parse("09/01/2019 17:00"),
-   end_date: DateTime.parse("09/01/2020 19:00"),
-   name: "Cycling the South East of Asia",
-   km: 1000,
-   remote_photo_url: "https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-   blog: "www.mylife.com",
+   end_date: DateTime.parse("16/02/2020 19:00"),
+   name: "Cycling through Southern France",
+   km: 12000,
+   remote_photo_url: "https://images.unsplash.com/photo-1459159104669-bdbee375caa7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=988&q=80",
+   user: test_user
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/11/2019 17:00"),
+   end_date: DateTime.parse("15/11/2020 19:00"),
+   name: "Cycling through Mexico",
+   km: 20100,
+   remote_photo_url: "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
    user: test_user2
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/01/2019 17:00"),
+   end_date: DateTime.parse("09/02/2020 19:00"),
+   name: "Cycling through Switzerland",
+   km: 12000,
+   remote_photo_url: "https://images.unsplash.com/photo-1527095655060-4026c4af2b25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+   user: test_user2
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/02/2019 17:00"),
+   end_date: DateTime.parse("09/03/2020 19:00"),
+   name: "Cycling through Norway",
+   km: 16000,
+   remote_photo_url: "https://images.unsplash.com/photo-1506701160839-34cfdecaf53c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+   user: test_user3
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/06/2019 17:00"),
+   end_date: DateTime.parse("09/08/2020 19:00"),
+   name: "Cycling through Colombia",
+   km: 12000,
+   remote_photo_url: "https://images.unsplash.com/photo-1536308037887-165852797016?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1012&q=80",
+   user: test_user3
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/02/2019 17:00"),
+   end_date: DateTime.parse("09/03/2020 19:00"),
+   name: "Cycling through Marocco",
+   km: 20100,
+   remote_photo_url: "https://images.unsplash.com/photo-1562790933-8ff229db810e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+   user: test_user4
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/01/2019 17:00"),
+   end_date: DateTime.parse("09/02/2020 19:00"),
+   name: "Cycling through Belgium",
+   km: 12000,
+   remote_photo_url: "https://images.unsplash.com/photo-1491557345352-5929e343eb89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+   user: test_user4
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/03/2019 17:00"),
+   end_date: DateTime.parse("01/05/2020 19:00"),
+   name: "Cycling through Cyprus",
+   km: 20100,
+   remote_photo_url: "https://images.unsplash.com/photo-1560860432-f5c0f302f20f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80",
+   user: test_user5
+   )
+
+trip1 = Trip.create(
+   start_date: DateTime.parse("09/04/2019 17:00"),
+   end_date: DateTime.parse("09/05/2020 19:00"),
+   name: "Cycling through Eastern Europe",
+   km: 12000,
+   remote_photo_url: "https://images.unsplash.com/photo-1551818176-60579e574b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+   user: test_user5
    )
 
 puts ">#{Trip.count} trips created"
@@ -282,12 +419,26 @@ puts " > #{Like.count} likes #{Downvote.count} downvotes created"
 
 puts "Creating comments for the last POI from test_user...."
 
-3.times do
-  Comment.create(
-    point_of_interest_id: PointOfInterest.last.id,
-    user_id: test_user.id,
-    content: 'this is an amazing content for this last POI of our database'
-    )
+pois = PointOfInterest.all
+
+pois.each do |poi|
+    Comment.create(
+      point_of_interest_id: poi.id,
+      user_id: users.sample.id,
+      content: 'This point is still up to date. Made our trip easier ✔️'
+      )
+
+    Comment.create(
+      point_of_interest_id: poi.id,
+      user_id: users.sample.id,
+      content: 'Very useful information for our long trip. Thanks to the community and Ciclo 😎'
+      )
+
+    Comment.create(
+      point_of_interest_id: poi.id,
+      user_id: users.sample.id,
+      content: 'Great info guys! Thanks for that 😊'
+      )
 end
 
 puts "> #{Comment.count} comments created"
