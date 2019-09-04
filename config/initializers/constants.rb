@@ -47,11 +47,13 @@ ROUTES_NO_NAV = [
   { controller: 'point_of_interests', action: 'new' },
   { controller: 'point_of_interests', action: 'show' },
   { controller: 'preferences', action: 'edit' },
+  { controller: 'reports', action: 'new' },
 ]
 
 ROUTES_NO_MENU = [
   { controller: 'registrations', action: 'edit' },
-  {controller: 'trips', action: 'new'}
+  {controller: 'trips', action: 'new'},
+  { controller: 'reports', action: 'new' },
 
 ]
 

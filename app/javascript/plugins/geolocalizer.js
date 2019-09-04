@@ -57,7 +57,7 @@ const localize = () => {
   if (mapElement && navigator.geolocation) {
 
     const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
-    console.log("User Current Position:", latitude, longitude)
+    // console.log("User Current Position:", latitude, longitude)
 
     // Below, we build the marker and add it to the
     map.loadImage('https://i.imgur.com/Vn4uERx.png', function(error, image) {
