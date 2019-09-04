@@ -1,12 +1,20 @@
 <div class="info_window_popdown">
       <div class="info_window_popdown_text">
         <div>
-          <div class="pb-2">
-            <img src=<%= poi.icon %> alt="" height=20>
-            <span><%= poi.name %></span>
+          <div class="info-window-first-row pb-2">
+            <div>
+              <img src=<%= poi.icon %> alt="" height=40>
+              <strong><span><%= poi.name %></span></strong>
+            </div>
+              <div class="distance_km uni-opacity40 pl-3">
+                <% coords_poi = [poi.lat, poi.long] %>
+                <% coords_user = [UserPosition.last[:lat], UserPosition.last[:long]] %>
+                <% distance =  Geocoder::Calculations.distance_between(coords_poi , coords_user, :units => :km ) %>
+                <p> <%= distance.round(2) %> km </p>
+              </div>
           </div>
           <div>
-            <p> <%= poi.description %> </p>
+            <div class="pl-2"><p> <%= poi.description %> </p></div>
           </div>
         </div>
         <div class="info_window_popdown_btn ">
@@ -14,6 +22,9 @@
             <p class="btn-main mr-3">View</p>
           <% end %>
           <a href="<%= "https://www.google.co.uk/maps?saddr=current+location&daddr="+"#{poi.lat}"+","+"#{poi.long}"%>" class="btn-simple" target="_blank">Direction</a>
+          <div class="closing-cross-popdown">
+            <i class="fa fa-times"></i>
+          </div>
         </div>
       </div>
 </div>

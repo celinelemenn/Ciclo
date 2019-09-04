@@ -16,11 +16,6 @@
     <% end %>
 
 
-    <% if @hide_menu %>
-        <input type="hidden" id="hidden-menu">
-        <%= render 'shared/topmenu_secondary' %>
-    <% end %>
-
   <% if @hide_menu || @show_page %>
       <input type="hidden" id="hidden-menu">
       <% if @show_page %>

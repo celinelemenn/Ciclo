@@ -62,7 +62,7 @@ const localize = () => {
   if (mapElement && navigator.geolocation) {
 
     const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
-    console.log("User Current Position:", latitude, longitude)
+    // console.log("User Current Position:", latitude, longitude)
 
     // Below, we build the marker and add it to the map. We use a png image which prevents the
     // marker from being propagated at one point. Check Add Icon to Map in Mpabox documentation.
@@ -115,11 +115,13 @@ const localize = () => {
 // AND the browser is capable of using geolocation through the localze() function above.
 
 const geolocator = () => {
-  window.addEventListener("load", (event) => {
-    console.log("This works");
-    navigator.geolocation.getCurrentPosition(currentPosition, error, options);
-    navigator.geolocation.watchPosition(watchUserPosition, error, options);
-  });
+  if (mapElement) {
+    window.addEventListener("load", (event) => {
+//       console.log("This works");
+      navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+      navigator.geolocation.watchPosition(watchUserPosition, error, options);
+    });
+  }
 }
 
 export { geolocator };

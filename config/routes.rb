@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers  => {
              :registrations => 'registrations',
            }
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
   get '/feed', to: 'pages#feed', as: :feed
+  get '/filter/:id', to: 'preferences#edit', as: :preferencesedit
+  patch '/filter/:id', to: 'preferences#update', as: :preferences
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do
@@ -26,9 +29,6 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :show, :create, :destroy] do
       resources :personal_messages, only: [:new, :create]
   end
-
-  # resources :conversations, only: [:index, :show, :destroy]
-  # resources :personal_messages, only: [:create]
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do

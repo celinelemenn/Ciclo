@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :personal_messages, dependent: :destroy
 
   validates :terms, presence: true
+  validates :full_name, presence: true
 
   mount_uploader :photo, PhotoUploader
 

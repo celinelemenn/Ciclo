@@ -34,9 +34,10 @@ const initMapbox = () => {
     addCyslistToMap(map, cyclists);
 
 
+
+
   }
 };
-
 
 // API functions
 const run_mapbox_page = async () => {

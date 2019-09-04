@@ -3,6 +3,10 @@ import mapboxgl from 'mapbox-gl';
 
 const addPoisToMap = (map, markers) => {
 
+const mapElement = document.getElementById('map');
+
+ if (mapElement) {
+
   markers.forEach((marker) => {
     const el = document.createElement('div');
     el.className = 'marker poi-icon';
@@ -21,6 +25,8 @@ const addPoisToMap = (map, markers) => {
       .addTo(map);
 
   });
+
+};
 
 };
 

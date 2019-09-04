@@ -4,6 +4,7 @@ class PointOfInterestsController < ApplicationController
   def index
     @user_poi = PointOfInterest.order(updated_at: :desc)
     @user_poi = @user_poi.select { |poi| poi.user == current_user }
+    @user = current_user
   end
 
   def show
@@ -18,13 +19,24 @@ class PointOfInterestsController < ApplicationController
   def create
     @point_of_interest = PointOfInterest.new(poi_params)
     @point_of_interest.user = current_user
-    @point_of_interest.lat = -29.4981176
-    @point_of_interest.long = -51.9925595
-    @point_of_interest.published = true
-    if @point_of_interest.save!
-      redirect_to map_path
+    @user_position = UserPosition.where(user_id: current_user.id).last
+    @point_of_interest.lat = @user_position.lat
+    @point_of_interest.long = @user_position.long
+    if params[:commit] == "Add"
+      @point_of_interest.published = true
+      if @point_of_interest.save
+        redirect_to map_path
+      else
+        render :new
+      end
+
     else
-      render :new
+      @point_of_interest.published = false
+      if @point_of_interest.save
+        redirect_to map_path
+      else
+        render :new
+      end
     end
   end
 

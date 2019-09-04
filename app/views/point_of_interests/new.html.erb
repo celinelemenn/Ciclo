@@ -1,6 +1,6 @@
-<h2 class="mt-5 ml-3">Add to the map</h2>
+<h2 class="row d-flex justify-content-center">Add to the map</h2>
 
-<div class="uni-page-container">
+<div class="uni-page-container mt-2">
   <div class="uni-page-container text-center">
        <% if
          @point_of_interest.photo.present? %>
@@ -14,11 +14,13 @@
      <div class="form-input">
         <%= f.input :photo %>
         <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST, prompt: "Select"%>
-        <div><%= f.input :description, placeholder: "Enter you description here" %>
-        </div>
+        <%= f.input :title, placeholder: "Enter your title here" %>
+        <%= f.input :description, placeholder: "Enter your description here" %>
+
      </div>
 
-   <div class="form-actions">
+   <div class="row d-flex justify-content-center">
+     <%= f.submit "Later", class: "btn-secondary"  %>
      <%= f.submit "Add", class: "btn-main" %>
    </div>
 
