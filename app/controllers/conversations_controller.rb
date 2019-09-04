@@ -1,8 +1,8 @@
 class ConversationsController < ApplicationController
   # We want to make sure that the user is logged in before they are able to create a conversation
   before_action :authenticate_user!
-  before_action :set_conversation, except: [:index]
-  before_action :check_participating!, except: [:index]
+  before_action :set_conversation, except: [:index, :create]
+  before_action :check_participating!, except: [:index, :create]
 
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
@@ -15,17 +15,14 @@ class ConversationsController < ApplicationController
     @personal_message = PersonalMessage.new
   end
 
-  def new
-    redirect_to conversation_path(@conversation) and return if @conversation
-    @personal_message = current_user.personal_message.build
-  end
-
   def create
     all_params = conversation_params.merge({ author_id: current_user.id })
-    @conversation = Conversation.new all_params
+    @conversation = Conversation.new(all_params)
 
+    # byebug
+    raise
     if @conversation.save
-      redirect_to conversation_path @conversation
+      redirect_to new_conversation_personal_message_path(@conversation.id)
     else
       redirect_back(fallback_location: homepage_path)
     end

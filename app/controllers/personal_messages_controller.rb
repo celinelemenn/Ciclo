@@ -4,7 +4,7 @@ class PersonalMessagesController < ApplicationController
   # Before any action, we find the conversation. If its found, the user can participate in it, build a message, and save it.
 
   def create
-    @conversation ||= Conversation.create(author_id: current_user.id, receiver_id: @receiver.id)
+    @conversation = Conversation.create(author_id: current_user.id, receiver_id: @conversation.receiver.id) unless Conversation.between(current_user.id, @conversation.receiver.id)[0]
     @personal_message = current_user.personal_messages.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
@@ -14,7 +14,8 @@ class PersonalMessagesController < ApplicationController
   end
 
   def new
-    @personal_message = current_user.personal_messages.build
+    redirect_to conversation_path(@conversation) && return if @conversation
+    @personal_message = current_user.personal_message.build
   end
 
   private
@@ -30,11 +31,9 @@ class PersonalMessagesController < ApplicationController
   def find_conversation!
     if params[:receiver_id]
       @receiver = User.find_by(id: params[:receiver_id])
-      redirect_to conversations_path and return unless @receiver
       @conversation = Conversation.between(current_user.id, @receiver.id)[0]
     else
-      @conversation = Conversation.find_by(id: params[:id])
-      redirect_to conversations_path and return unless @conversation && @conversation.participates?(current_user)
+      @conversation = Conversation.find(params[:conversation_id])
     end
   end
 end

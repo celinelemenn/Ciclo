@@ -1,7 +1,7 @@
-<h1>New message to <%= @receiver.name %></h1>
+<h1>New message to <%= @conversation.receiver.name %></h1>
 
-<%= form_for @personal_message do |f| %>
-  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+<%= form_for :personal_message, url: conversation_personal_messages_path(@conversation) do |f| %>
+  <%= hidden_field_tag 'receiver_id', @conversation.receiver.id %>
 
   <%= f.label :body %>
   <%= f.text_area :body %>

@@ -10,7 +10,10 @@
     <font size="+1"><p><%= @user.bio  %></p></font>
     <p><%= @user.description  %><p>
     <font size="+1"><h5><%= @user.blog  %></h5></font>
-    <%= link_to  "Send a message", conversations_path(conversation: { receiver_id: @user.id }), method: :post, class: "btn-main" %>
+    <%= form_for :conversation, url: conversations_path do |f| %>
+      <%= f.hidden_field :receiver_id, value: @user.id %>
+      <%= f.submit 'Send A Message', class: 'btn-main' %>
+    <% end %>
   </div>
 
   <% @user.trips.each do |trip| %>
