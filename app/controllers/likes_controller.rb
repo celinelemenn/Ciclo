@@ -12,10 +12,12 @@ class LikesController < ApplicationController
 
     if @existing_like.nil?
       @like.save
-      render 'point_of_interests/show', point_of_interest: @poi
+      redirect_to point_of_interest_path(@poi)
+      # render 'point_of_interests/show', point_of_interest: @poi
     else
       @existing_like.delete
-      render 'point_of_interests/show', point_of_interest: @poi
+      redirect_to point_of_interest_path(@poi)
+      # render 'point_of_interests/show', point_of_interest: @poi
     end
 
   end

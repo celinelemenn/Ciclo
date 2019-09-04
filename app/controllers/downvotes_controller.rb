@@ -12,10 +12,12 @@ class DownvotesController < ApplicationController
 
     if @existing_downvote.nil?
       @downvote.save
-      render 'point_of_interests/show', point_of_interest: @poi
+      redirect_to point_of_interest_path(@poi)
+      # render 'point_of_interests/show', point_of_interest: @poi
     else
       @existing_downvote.delete
-      render 'point_of_interests/show', point_of_interest: @poi
+      redirect_to point_of_interest_path(@poi)
+      # render 'point_of_interests/show', point_of_interest: @poi
     end
   end
 end
