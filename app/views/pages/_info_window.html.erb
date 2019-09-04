@@ -20,7 +20,9 @@
             <p> <%= distance.round(2) %> km </p>
           </div>
           <a href="<%= "https://www.google.co.uk/maps?saddr=current+location&daddr="+"#{poi.lat}"+","+"#{poi.long}"%>" class="btn-simple" target="_blank">Direction</a>
-
+          <div class="closing-cross-popdown">
+            <i class="fa fa-times"></i>
+          </div>
         </div>
       </div>
 </div>
