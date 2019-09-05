@@ -1,8 +1,41 @@
-// The styles below are for the conversations show page
+// The styles below are for the personal_messages new page
 
-#new-message-title {
-  color: #000;
+#new-personal-message {
+  padding: 10px 20px;
+  // margin-top: 50px;
 }
+
+.new-message-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 10px;
+  padding: 10px 20px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  h1 {
+    color: #000;
+    font-size: 30px;
+    padding-top: 0;
+    font-weight: 300;
+  }
+}
+
+.new-message-bottom {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+#new-message-body {
+  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// The styles below are for the conversations show page
 
 #convo {
   padding: 10px 20px;
@@ -63,6 +96,7 @@
   align-items: flex-end;
   font-size: 12px;
   padding: 5px 0;
+  justify-content: flex-end;
   p {
     margin-bottom: 0;
   }
@@ -73,7 +107,7 @@
     font-size: 14px;
     font-weight: lighter;
     margin-bottom: 0;
-    padding: 5px 0;
+    padding: 8px 0;
   }
 }
 
@@ -91,9 +125,13 @@
 }
 
 .conversations-title {
+  padding: 10px 20px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
   h1 {
     font-size: 30px;
     font-weight: 300;
+    margin-bottom: 0;
   }
 }
 
@@ -109,6 +147,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 3px;
+  margin-bottom: 15px;
 }
 
 .conversation-with {
@@ -140,8 +180,7 @@
     position: relative;
     bottom: 15px;
     right: -10px;
-    line-height: 40px;
-    padding: 0 5px;
+    line-height: 50px;
+    padding: 0px 10px;
   }
 }
-

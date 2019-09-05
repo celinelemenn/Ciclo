@@ -10,8 +10,8 @@ const hider = () => {
 };
 
 const menu_hider = () => {
+  const topmenu = document.querySelector('.top-menu');
   const element = document.querySelector('#hidden-menu');
-  const topmenu = document.querySelector('.top-menu')
 
   if (element) {
     topmenu.parentElement.removeChild(topmenu);

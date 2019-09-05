@@ -55,9 +55,11 @@ body {
      justify-content: space-between;
 }
 
-.form-control {
-    border: 0;
+.new_comment {
+  .form-control {
+    border: 1px solid white;
 
+}
 }
 
 .btn-poi {

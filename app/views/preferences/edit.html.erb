@@ -1,0 +1,42 @@
+<div class="">
+  <h1 class="my-5 ml-5">Filter</h1>
+
+
+  <%= form_tag(preferences_path, method: 'patch') do %>
+    <div class="mb-3 mx-5 d-flex justify-content-between align-items-center">
+      <div>
+        <img src=<%= @camping_icon %> alt="" height=50>
+        <span class="pl-3">Camping</span>
+      </div>
+      <%= check_box_tag :camping, params[:camping], @user_pref.camping, class: "filter-checkbox" %>
+    </div>
+
+    <div class="mb-3 mx-5 d-flex justify-content-between align-items-center">
+      <div>
+        <img src=<%= @caution_icon %> alt="" height=50>
+        <span class="pl-3">Caution</span>
+      </div>
+      <%= check_box_tag :caution, params[:caution], @user_pref.caution %>
+    </div>
+
+    <div class="mb-3 mx-5 d-flex justify-content-between align-items-center">
+      <div>
+        <img src=<%= @landmark_icon %> alt="" height=50>
+        <span class="pl-3">Landmark</span>
+      </div>
+      <%= check_box_tag :landmark, params[:landmark], @user_pref.landmark %>
+    </div>
+
+    <div class="mb-5 mx-5 d-flex justify-content-between align-items-center">
+      <div>
+        <img src=<%= @water_icon %> alt="" height=50>
+        <span class="pl-3">Water Refill</span>
+      </div>
+      <%= check_box_tag :water_refill, params[:water_refill], @user_pref.water_refill %>
+    </div>
+
+    <div >
+      <%= submit_tag "save", class: 'btn-main ml-5 font-weight-bold' %>
+    </div>
+  <% end %>
+</div>

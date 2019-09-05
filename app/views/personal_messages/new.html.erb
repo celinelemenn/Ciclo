@@ -1,0 +1,20 @@
+<div class="uni-page-container" id="new-personal-message">
+  <div class="new-message-title">
+    <h1>New message to <%= @conversation.receiver.name %></h1>
+    <%= cl_image_tag(@conversation.receiver.photo.url(:bright_face), fetch_format: :auto) %>
+  </div>
+
+  <div class="new-message-bottom">
+    <%= form_for :personal_message, url: conversation_personal_messages_path(@conversation) do |f| %>
+      <%= hidden_field_tag 'receiver_id', @conversation.receiver.id %>
+
+      <div class="form-input form-personal-message" id="new-message-body">
+        <%= f.text_area :body, placeholder: "Write your message..." %>
+      </div>
+
+      <div class="form-buttons">
+        <%= f.submit 'Send Message', class: 'btn-main uni-box-shadow' %>
+      </div>
+    </div>
+  <% end %>
+</div>

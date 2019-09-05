@@ -6,12 +6,20 @@ class PointOfInterest < ApplicationRecord
   has_many :comments
   has_many :reports
 
+  scope :published, -> { where(published: true) }
+  scope :camping, -> { where(poi_type: :camping) }
+  scope :caution, -> { where(poi_type: :caution) }
+  scope :landmark, -> { where(poi_type: :landmark) }
+  scope :water, -> { where(poi_type: :water_refill) }
+
+  validates :poi_type, :description, :title, presence: true, if: :published?
+
   mount_uploader :photo, PhotoUploader
 
   enum poi_type: [:water_refill, :camping, :caution, :landmark]
 
   def date
-    date = -(self.created_at - DateTime.now) / 60
+    date = -(self.updated_at - DateTime.now) / 60
 
     if date < 60
       date = "#{date.round} min ago"
@@ -24,10 +32,21 @@ class PointOfInterest < ApplicationRecord
     date
   end
 
-  def name
-    POINT_OF_INTEREST[self.poi_type.to_sym][:name]
+  def published?
+    self.published == true
   end
+
+  def name
+    if poi_type
+      POINT_OF_INTEREST[self.poi_type.to_sym][:name]
+    end
+  end
+
   def icon
-    POINT_OF_INTEREST[self.poi_type.to_sym][:marker_icon]
+    if poi_type
+      POINT_OF_INTEREST[self.poi_type.to_sym][:marker_icon]
+    else
+      'https://i.imgur.com/D7Zyk2z.png'
+    end
   end
 end

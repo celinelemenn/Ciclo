@@ -10,6 +10,10 @@
       <%= f.error_notification %>
 
       <div class="form-input">
+        <%= f.input :full_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -26,10 +30,9 @@
                     label: "T&C" %>
       </div>
 
-        <div class="form-buttons">
-          <%= f.button :submit, "Sign up", class: "btn-main", id: "sign-up-button" %>
+        <div class="form-buttons flex-column align-items-center">
+         <%= f.button :submit, "Sign up", class: "btn-main" %>
           <% end %>
-
           <%= render "devise/shared/links" %>
         </div>
     </div>

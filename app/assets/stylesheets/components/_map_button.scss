@@ -1,8 +1,6 @@
-// Add POI button
-
 .btn-on-map-left {
   position: absolute;
-  bottom: 85px;
+  bottom: 100px;
   left: 7px;
   background-color: #fff;
   height: 50px;
@@ -22,11 +20,9 @@
   }
 }
 
-// Location button
-
 .btn-on-map-right {
   position: absolute;
-  bottom: 85px;
+  bottom: 100px;
   right: 7px;
   background-color: #fff;
   height: 50px;
@@ -60,4 +56,24 @@
   }
 }
 
-
+.btn-on-map-top {
+  position: absolute;
+  top: 70px;
+  right: 7px;
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: $dark-blue;
+    background: none;
+    border: none;
+  }
+  a:focus {
+    outline: none;
+  }
+}

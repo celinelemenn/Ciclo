@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers  => {
              :registrations => 'registrations',
            }
   root to: 'pages#home', as: :homepage
-
   get '/profile', to: 'pages#profile', as: :profile
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
   get '/feed', to: 'pages#feed', as: :feed
+  get '/filter/:id', to: 'preferences#edit', as: :preferencesedit
+  patch '/filter/:id', to: 'preferences#update', as: :preferences
+  get "/404", to: "errors#not_found"
+  get "/500", to: "errors#internal_error"
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do
@@ -23,13 +27,14 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create]
   end
 
-  resources :conversations, only: [:index, :create, :destroy] do
-      resources :messages, only: [:index, :create]
+  resources :conversations, only: [:index, :show, :create, :destroy] do
+      resources :personal_messages, only: [:new, :create]
   end
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :point_of_interests, only: [ :index ]
+      resources :user_positions, only: [ :create ]
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

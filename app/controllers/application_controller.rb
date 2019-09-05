@@ -19,11 +19,15 @@ class ApplicationController < ActionController::Base
     @show_page = !!ROUTES_BACK_MAP.find { |route| route[:controller] == controller_name and route[:action] == action_name }
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   protected
 
   def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :bio, :blog, :description, :photo, :share_location, :terms])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :bio, :blog, :description, :photo, :share_location, :terms])
 
-   devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :bio, :blog, :description, :photo, :share_location, :terms])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :bio, :blog, :description, :photo, :share_location, :terms])
  end
 end

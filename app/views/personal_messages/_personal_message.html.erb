@@ -1,0 +1,12 @@
+<div class="personal-message-full">
+  <div class="personal-message-body">
+    <p>
+      <%= personal_message.body %>
+    </p>
+  </div>
+  <div class="personal-message-details">
+    <p><strong><%= personal_message.user.name %>,</strong>
+    <strong><%= personal_message.created_at.strftime("%H:%M%p") %></strong></p>
+  </div>
+</div>
+  <hr class="personal-message-divider">

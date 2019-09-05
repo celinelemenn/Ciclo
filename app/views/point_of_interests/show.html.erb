@@ -8,7 +8,7 @@
     <%= cl_image_tag @poi.photo %>
     <div class="bookmark-position">
       <%= link_to point_of_interest_bookmarks_path(@poi, user: current_user), method: :post do %>
-        <i class="fas fa-heart btn-bookmark btn-bookmark-active"></i>
+        <i class="far fa-star btn-bookmark btn-bookmark-active"></i>
         <p hidden><%= @poi.bookmarks.count %></p>
       <% end %>
     </div>
@@ -76,7 +76,7 @@
 
 <!-- comments block -->
 
-  <div id="new_comment">
+  <div class="new_comment">
     <%= simple_form_for([@poi, @comment]) do |f| %>
       <div class="d-flex margin20 mt-3 flex-just-betw">
         <div class="d-flex">
@@ -95,9 +95,9 @@
 
   <!-- last button -->
 
-  <div>
-    <p class="btn-poi">Something wrong ?</p>
-  </div>
+
+    <div><%= link_to "Something wrong?", new_point_of_interest_report_path(@poi, @report), class: "btn-poi" %></div>
+
 
   <!-- end of the page -->
 </div>
