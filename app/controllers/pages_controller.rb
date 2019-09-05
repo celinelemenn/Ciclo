@@ -34,9 +34,12 @@ class PagesController < ApplicationController
     last_user_positions = []
 
     other_cyclist.each do |cyclist|
-      cyclist_positions = UserPosition.where(user_id: cyclist.id)
-      cyclist_last_position = cyclist_positions.last
-      last_user_positions << cyclist_last_position
+
+      if UserPosition.where(user_id: cyclist.id).exists?
+        cyclist_positions = UserPosition.where(user_id: cyclist.id)
+        cyclist_last_position = cyclist_positions.last
+        last_user_positions << cyclist_last_position
+      end
     end
 
     @cyclist_avatars = last_user_positions.map do |cyclist_last_pos|

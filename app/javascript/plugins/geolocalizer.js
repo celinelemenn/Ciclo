@@ -8,7 +8,7 @@ const mapElement = document.getElementById("map");
 // The options below are passed to the
 
 const options = {
-  maximumAge: 120000,
+  maximumAge: 300000,
   enableHighAccuracy: true
 };
 const userCurrentPosition = [];
