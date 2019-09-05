@@ -7,10 +7,7 @@
               <strong><span><%= poi.name %></span></strong>
             </div>
               <div class="distance_km uni-opacity40 pl-3">
-                <% coords_poi = [poi.lat, poi.long] %>
-                <% coords_user = [UserPosition.last[:lat], UserPosition.last[:long]] %>
-                <% distance =  Geocoder::Calculations.distance_between(coords_poi , coords_user, :units => :km ) %>
-                <p> <%= distance.round(2) %> km </p>
+                <p> <%= poi.distance(current_user)%> </p>
               </div>
           </div>
           <div>

@@ -49,4 +49,16 @@ class PointOfInterest < ApplicationRecord
       'https://i.imgur.com/D7Zyk2z.png'
     end
   end
+
+  def distance(user)
+    if user.user_positions.last && !self.lat.nil?
+      coords_poi = [self.lat, self.long]
+      coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
+    distance = Geocoder::Calculations.distance_between(coords_poi, coords_user, :units => :km)
+    "#{distance.round(2)} km away"
+    else
+      "not applicable"
+    end
+  end
+
 end

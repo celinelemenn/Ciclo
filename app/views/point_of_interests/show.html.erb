@@ -36,7 +36,7 @@
     <h2> <%= @poi.title %></h2>
     <div class="poi-show-details-category mb-2">
       <img src=<%= @poi.icon %> alt="">
-      <div><%= @poi.name %></div>
+      <div class="pl-2"><%= @poi.name %> <span class=""> - <%= @poi.distance(current_user) %></span></div>
     </div>
     <div class="mb-3 uni-opacity40">
       Created by <%= @poi.user.full_name %>, <%= @poi.date %>
