@@ -50,7 +50,7 @@ class PointOfInterest < ApplicationRecord
     end
   end
 
-  def poi_distance(user)
+  def distance(user)
     if user.user_positions.last && !self.lat.nil?
       coords_poi = [self.lat, self.long]
       coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
