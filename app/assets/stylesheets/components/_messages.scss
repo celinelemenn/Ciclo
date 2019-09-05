@@ -1,3 +1,186 @@
-#new-message-title {
-  color: #000;
+// The styles below are for the personal_messages new page
+
+#new-personal-message {
+  padding: 10px 20px;
+  // margin-top: 50px;
+}
+
+.new-message-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 10px;
+  padding: 10px 20px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  h1 {
+    color: #000;
+    font-size: 30px;
+    padding-top: 0;
+    font-weight: 300;
+  }
+}
+
+.new-message-bottom {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+#new-message-body {
+  margin-bottom: 10px;
+  margin-top: 50px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// The styles below are for the conversations show page
+
+#convo {
+  padding: 10px 20px;
+}
+
+#conversation-body {
+  margin-top: 15px;
+}
+
+.chat-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 10px;
+  #chat-title-header {
+    padding-top: 0;
+    font-weight: 300;
+    font-size: 30px;
+  }
+}
+
+.form-personal-message {
+  textarea {
+    font-size: 14px;
+    width: 100%;
+    border: 2px solid rgba(0,0,0, 0.1);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  textarea::placeholder {
+    font-size: 14px;
+  }
+  textarea:focus {
+    border: 2px solid $ciclo-pink;
+    outline: none;
+  }
+}
+
+// The styles below are for the _personal_message partial which is rendered in
+// the conversation show page
+
+.personal-message-full {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  border-left: 2px solid $ciclo-pink;
+  padding: 0px 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 90px;
+}
+
+.personal-message-details {
+  display: flex;
+  text-align: end;
+  align-items: flex-end;
+  font-size: 12px;
+  padding: 5px 0;
+  justify-content: flex-end;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.personal-message-body {
+  p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-bottom: 0;
+    padding: 8px 0;
+  }
+}
+
+.personal-message-divider {
+  margin: 0;
+  height: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+// Below is the styling for the Conversations Index page
+
+#all-conversations {
+  padding: 10px 20px;
+}
+
+.conversations-title {
+  padding: 10px 20px;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+}
+
+#conversations {
+  margin-top: 25px;
+}
+
+// Below is the styling for the _conversations partial
+
+#conversation-list {
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.conversation-with {
+  p {
+    font-size: 14px;
+    color: gray;
+  }
+}
+
+.body-conversation {
+  p {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 0;
+  }
+}
+
+.conversation-list-btn {
+  display: flex;
+  justify-content: flex-end;
+  height: 25px;
+  a {
+    font-size: 14px;
+    padding: 5px 0px;
+    color: #fff;
+    text-decoration: none;
+    height: 50px;
+    background-color: $ciclo-pink;
+    position: relative;
+    bottom: 15px;
+    right: -10px;
+    line-height: 50px;
+    padding: 0px 10px;
+  }
 }
