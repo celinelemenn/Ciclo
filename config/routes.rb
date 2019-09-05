@@ -4,13 +4,14 @@ Rails.application.routes.draw do
              :registrations => 'registrations',
            }
   root to: 'pages#home', as: :homepage
-
   get '/profile', to: 'pages#profile', as: :profile
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
   get '/feed', to: 'pages#feed', as: :feed
   get '/filter/:id', to: 'preferences#edit', as: :preferencesedit
   patch '/filter/:id', to: 'preferences#update', as: :preferences
+  get "/404", to: "errors#not_found"
+  get "/500", to: "errors#internal_error"
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do
