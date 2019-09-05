@@ -29,16 +29,22 @@ class PagesController < ApplicationController
       }
     end
 
-    # poi.poi_type.to_sym
 
-    @cyclists = UserPosition.where.not(user_id: current_user.id)
-    @cyclist_avatars = @cyclists.map do |cyclist|
+    other_cyclist = User.where.not(id: current_user.id)
+    last_user_positions = []
+
+    other_cyclist.each do |cyclist|
+      cyclist_positions = UserPosition.where(user_id: cyclist.id)
+      cyclist_last_position = cyclist_positions.last
+      last_user_positions << cyclist_last_position
+    end
+
+    @cyclist_avatars = last_user_positions.map do |cyclist_last_pos|
       {
-        id: cyclist.user_id,
-        lat: cyclist.lat,
-        lng: cyclist.long,
-        user_link: userprofile_path(cyclist.user_id)
-
+        id: cyclist_last_pos.user_id,
+        lat: cyclist_last_pos.lat,
+        lng: cyclist_last_pos.long,
+        user_link: userprofile_path(cyclist_last_pos.user_id)
       }
     end
     @point_of_interest_new = PointOfInterest.new
