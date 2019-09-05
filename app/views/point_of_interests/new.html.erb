@@ -1,4 +1,4 @@
-<h2 class="row d-flex justify-content-center">Add to the map</h2>
+<h2 class="row d-flex justify-content-center mt-4">Add to the map</h2>
 
 <div class="uni-page-container mt-2">
   <div class="uni-page-container text-center">
@@ -12,7 +12,7 @@
   <div class="form-container">
     <%= simple_form_for(@point_of_interest) do |f| %>
      <div class="form-input">
-        <%= f.input :photo %>
+        <%= f.input :photo%>
         <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST, prompt: "Select"%>
         <%= f.input :title, placeholder: "Enter your title here" %>
         <%= f.input :description, placeholder: "Enter your description here" %>
