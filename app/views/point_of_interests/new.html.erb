@@ -12,7 +12,7 @@
   <div class="form-container">
     <%= simple_form_for(@point_of_interest) do |f| %>
      <div class="form-input">
-        <%= f.input :photo, class: "text-center" %>
+        <%= f.input :photo%>
         <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST, prompt: "Select"%>
         <%= f.input :title, placeholder: "Enter your title here" %>
         <%= f.input :description, placeholder: "Enter your description here" %>
