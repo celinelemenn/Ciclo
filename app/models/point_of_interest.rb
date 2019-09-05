@@ -57,7 +57,7 @@ class PointOfInterest < ApplicationRecord
     distance = Geocoder::Calculations.distance_between(coords_poi, coords_user, :units => :km)
     "#{distance.round(2)} km away"
     else
-      "not applicable"
+      ""
     end
   end
 
