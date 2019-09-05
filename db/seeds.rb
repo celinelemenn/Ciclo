@@ -44,10 +44,10 @@ puts "Seeds Destroyed"
 puts "Creating test users"
 
 test_user = User.create(
-  email: "maria_lopez@gmail.com",
+  email: "Celine_lemenn@gmail.com",
   password: "1234567",
-  full_name: "Maria Lopez",
-  remote_photo_url: 'https://images.unsplash.com/photo-1567303314286-6735a4ad9d42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=703&q=80',
+  full_name: "Celine Le Menn",
+  remote_photo_url: 'https://i.imgur.com/rd0QDvk.jpg',
   bio: "🚲Travelling half world by 🚲 and keep riding.
   25000KM | 20 MONTHS |
 📍current location: NORWAY",
@@ -262,11 +262,11 @@ PointOfInterest.create!(
     lat: set_of_geolocations_caution[index][1], # set_of_geolocations[index_geolocation][lat]
     long: set_of_geolocations_caution[index][0], # set_of_geolocations[index_geolocation][long]
     poi_type: :caution,
-    description: 'Some rocks fell from the cliff and the road is not save for cycling.',
-    title: 'Bad road',
+    description: 'Sandy road, hard to bike on and very muddy when it is raining',
+    title: 'Sandy road',
     user: users.sample,
     published: true,
-    remote_photo_url: 'https://images.unsplash.com/photo-1501967111356-35219aeb2ea1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+    remote_photo_url: 'https://i.imgur.com/AMtIuoZ.jpg'
     )
 end
 
@@ -423,22 +423,24 @@ puts "Creating comments for the last POI from test_user...."
 
 pois = PointOfInterest.all
 
+all_users_except_celine = User.where.not(full_name: "Celine Le Menn")
+
 pois.each do |poi|
     Comment.create(
       point_of_interest_id: poi.id,
-      user_id: users.sample.id,
+      user_id: all_users_except_celine.sample.id,
       content: 'This point is still up to date. Made our trip easier ✔️'
       )
 
     Comment.create(
       point_of_interest_id: poi.id,
-      user_id: users.sample.id,
+      user_id: all_users_except_celine.sample.id,
       content: 'Very useful information for our long trip. Thanks to the community and Ciclo 😎'
       )
 
     Comment.create(
       point_of_interest_id: poi.id,
-      user_id: users.sample.id,
+      user_id: all_users_except_celine.sample.id,
       content: 'Great info guys! Thanks for that 😊'
       )
 end
