@@ -1,0 +1,17 @@
+<div id="conversation-list">
+  <div class="conversation-with">
+    <p>Chatting with <%= conversation.with(current_user).name %></p>
+  </div>
+  <div class="body-conversation">
+    <p>
+      <% if conversation.personal_messages.size.positive? %>
+        <em>
+          <%= conversation.personal_messages.last.body.truncate(50) %>
+        </em>
+      <% end %>
+    </p>
+  </div>
+  <br>
+  <div class="conversation-list-btn"><%= link_to 'View conversation', conversation_path(conversation) %>
+  </div>
+</div>

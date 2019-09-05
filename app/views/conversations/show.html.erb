@@ -1,0 +1,27 @@
+<div class="uni-page-container" id="convo">
+  <div class="chat-title">
+    <h1 id="chat-title-header">Chatting with <%= @conversation.with(current_user).name %></h1>
+    <%= cl_image_tag(@conversation.with(current_user).photo.url(:bright_face), fetch_format: :auto) %>
+  </div>
+
+<!-- Quite a straigtforward view: in the body we render first the existing messages (which will be in ascending order), then we create a form for the user to send messages -->
+
+  <div id="conversation-main">
+    <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+      <%= render @conversation.personal_messages %>
+      <%= render 'shared/messenger_flashes' %>
+    </div>
+
+  <!-- We need the hidden_field_tag in the form so that rails knows which conversation toupdate when someone rights a message -->
+
+    <%= form_for @personal_message, url: conversation_personal_messages_path(@conversation) do |f| %>
+      <div class="form-input form-personal-message">
+        <%= hidden_field_tag 'conversation_id', @conversation.id%>
+        <%= f.text_area :body, placeholder: "Write your message..." %>
+      </div>
+      <div class="form-buttons">
+        <%= f.submit 'Send Message', class: "btn-main uni-box-shadow" %>
+      </div>
+    <% end %>
+  </div>
+</div>
