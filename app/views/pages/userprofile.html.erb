@@ -12,9 +12,10 @@
     <font size="+1"><h5><%= @user.blog  %></h5></font>
     <%= form_for :conversation, url: conversations_path do |f| %>
       <%= f.hidden_field :receiver_id, value: @user.id %>
-      <%= f.submit 'Send A Message', class: 'btn-main' %>
+        <div class="pt-7" style="display: inline-block;">
+          <%= f.submit 'Send A Message', class: 'btn-main' %>
+        </div>
     <% end %>
-     <h6><%= @user.blog  %></h6>
   </div>
 
   <div class="parent-card">
