@@ -19,7 +19,7 @@ class PointOfInterest < ApplicationRecord
   enum poi_type: [:water_refill, :camping, :caution, :landmark]
 
   def date
-    date = -(self.created_at - DateTime.now) / 60
+    date = -(self.updated_at - DateTime.now) / 60
 
     if date < 60
       date = "#{date.round} min ago"
