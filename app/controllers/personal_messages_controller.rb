@@ -4,7 +4,7 @@ class PersonalMessagesController < ApplicationController
   # Before any action, we find the conversation. If its found, the user can participate in it, build a message, and save it.
 
   def create
-    @conversation = Conversation.create(author_id: current_user.id, receiver_id: @conversation.receiver.id) unless Conversation.between(current_user.id, @conversation.receiver.id)[0]
+    @conversation ||= Conversation.create(author_id: current_user.id, receiver_id: @conversation.receiver.id) unless Conversation.between(current_user.id, @conversation.receiver.id)[0]
     @personal_message = current_user.personal_messages.build(personal_message_params)
     @personal_message.conversation_id = @conversation.id
     @personal_message.save!
