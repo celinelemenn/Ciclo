@@ -52,7 +52,7 @@
   margin-top: 10px;
   margin-bottom: 40px;
   padding: 10px 20px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   #chat-title-header {
     padding-top: 0;
@@ -82,7 +82,7 @@
 // the conversation show page
 
 .personal-message-full {
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
   border-left: 2px solid $ciclo-pink;
   padding: 0px 10px;
   border-top-right-radius: 10px;
@@ -130,7 +130,7 @@
 
 .conversations-title {
   padding: 10px 20px;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   margin-bottom: 50px;
   h1 {
@@ -147,7 +147,7 @@
 // Below is the styling for the _conversations partial
 
 #conversation-list {
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
   padding: 10px;
   display: flex;
   flex-direction: column;
