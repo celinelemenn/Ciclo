@@ -77,9 +77,9 @@ test_user3 = User.create(
   password: "1234567",
   full_name: "Fatima van Dyke",
   remote_photo_url: "https://images.unsplash.com/photo-1510191240544-c9de9dd0baed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  bio: "I love being a nomad. Currently writing a book for my adventures in foreign lands." ,
-  description: " I did my cycling record in Norway, 16000kms.
-📍: Currently taking a break 😴",
+  bio: "Currently cycling from Stockholm to Paris." ,
+  description: " I love being a nomad. I did my cycling record in Norway, 16000kms.
+📍: Currently taking on my bike, and loving every second of it 🚴‍♀️",
   blog: "https://fatimalog.com/",
   terms:true,
 )
@@ -248,8 +248,8 @@ set_of_geolocations_camping.each_with_index do |item, index|
     lat: set_of_geolocations_camping[index][1], # set_of_geolocations[index_geolocation][lat]
     long: set_of_geolocations_camping[index][0], # set_of_geolocations[index_geolocation][long]
     poi_type: :camping,
-    description: "Nice campside not difficult to find. It's safe and other campers are always around",
-    title: 'Nice campside point',
+    description: "The owner is super friendly, and the camping plots for bikepackers are well located with a beautiful view overlooking the river.",
+    title: 'Nice Campsite',
     user: users.sample,
     published: true,
     remote_photo_url: 'https://images.unsplash.com/photo-1511993807578-701168605ad3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80'
@@ -262,8 +262,8 @@ PointOfInterest.create!(
     lat: set_of_geolocations_caution[index][1], # set_of_geolocations[index_geolocation][lat]
     long: set_of_geolocations_caution[index][0], # set_of_geolocations[index_geolocation][long]
     poi_type: :caution,
-    description: 'Sandy road, hard to bike on and very muddy when it is raining',
-    title: 'Sandy road',
+    description: 'Sandy road, hard to bike on and very muddy when it is raining.',
+    title: 'Sandy Road',
     user: users.sample,
     published: true,
     remote_photo_url: 'https://i.imgur.com/AMtIuoZ.jpg'
