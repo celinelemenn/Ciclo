@@ -23,7 +23,7 @@ class PointOfInterest < ApplicationRecord
 
     if date < 60
       date = "#{date.round} min ago"
-    elsif date > 60 || date < 1440
+    elsif date > 60 && date < 1440
       date = "#{(date/60).round} hours ago"
     else
       date = (date / 1440).round
