@@ -21,6 +21,10 @@
         <%= f.input :bio, required: true %>
         <%= f.input :description, required: true %>
         <%= f.input :blog, required: true %>
+        <%= f.input :status,
+                  required: true,
+                  as: :radio_buttons,
+                  label: "Are you cycling right now?" %>
         <%= f.input :password,
                      hint: "leave it blank if you don't want to change it",
                      required: false,

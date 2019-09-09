@@ -25,6 +25,10 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+         <%= f.input :status,
+                    required: true,
+                    as: :radio_buttons,
+                    label: "Are you cycling right now?" %>
         <%= f.input :terms,
                     required: true,
                     label: "T&C" %>
