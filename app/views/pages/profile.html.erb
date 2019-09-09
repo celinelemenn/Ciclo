@@ -20,7 +20,7 @@
 
 
   <div class="parent-card">
-    <div class="card-trip-header"><h5>Your past trips </h5></div>
+    <div class="card-trip-header mt-5"><h5>Your past trips </h5></div>
 
     <% current_user.trips.each do |trip| %>
       <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
@@ -41,8 +41,8 @@
       </div>
       </div>
     <% end %>
-    <div class="card-trip-btn">
-      <%= link_to 'Add trip', new_trip_path, class: "btn-main" %>
+    <div class="card-trip-btn d-flex justify-content-center mt-3">
+      <%= link_to 'Add trip', new_trip_path, class: "btn-secondary" %>
 
     </div>
   </div>
