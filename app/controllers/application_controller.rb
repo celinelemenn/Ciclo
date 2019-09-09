@@ -32,7 +32,13 @@ class ApplicationController < ActionController::Base
  end
 
   def after_sign_in_path_for(resource)
-    profile_path
+    sign_up_url = user_registration_url
+    if url_for == sign_up_url
+    # if resource === new_user_registration_path
+      profile_path
+    else
+      map_path
+    end
     # return the path based on resource
   end
 end
