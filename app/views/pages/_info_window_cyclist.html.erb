@@ -3,8 +3,11 @@
         <div>
           <div class="info-window-first-row pb-2">
             <div>
-              <img src=<%= cl_image_path cyclist.photo.url(:avatar) %> alt="" height=40>
-
+               <% if cyclist.photo.url %>
+                <img src=<%= cl_image_path cyclist.photo.url(:avatar) %> alt="" height=40>
+              <% else %>
+                <img src='https://i.imgur.com/dEwa4Bt.png' alt="" height=40>
+              <% end %>
             </div>
             <div class="distance_km  pl-3">
                <strong><span><%= cyclist.full_name %></span></strong>
