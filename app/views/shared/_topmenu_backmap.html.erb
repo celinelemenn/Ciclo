@@ -1,7 +1,13 @@
   <div class="top-menu-back-map uni-box-shadow">
     <div class="top-menu-item justify-start">
-      <%= link_to map_path do %>
-        <i class="fas fa-chevron-left"></i>
+      <% if current_page?(controller: 'conversations', action: 'show') %>
+        <%= link_to conversations_path do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
+      <% else %>
+        <%= link_to map_path do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
