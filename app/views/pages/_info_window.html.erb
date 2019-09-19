@@ -4,10 +4,11 @@
           <div class="info-window-first-row pb-2">
             <div>
               <img src=<%= poi.icon %> alt="" height=40>
-              <strong><span><%= poi.title %></span></strong>
+
             </div>
-              <div class="distance_km uni-opacity40 pl-3">
-                <p> <%= poi.distance(current_user)%> </p>
+              <div class="distance_km  pl-3">
+                <strong><span><%= poi.title %></span></strong>
+                <p class="uni-opacity40"> <%= poi.distance(current_user)%> </p>
               </div>
           </div>
           <div>

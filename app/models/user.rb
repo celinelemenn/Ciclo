@@ -34,4 +34,16 @@ class User < ApplicationRecord
     name = self.full_name
     @username = name.split.first.capitalize
   end
+
+  def distance(user)
+    if user.user_positions.last && !self.user_positions.last.lat.nil?
+      coords_cyclist = [self.user_positions.last.lat, self.user_positions.last.long]
+      coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
+    distance = Geocoder::Calculations.distance_between(coords_cyclist, coords_user, :units => :km)
+    "#{distance.round(2)} km away"
+    else
+      ""
+    end
+  end
+
 end

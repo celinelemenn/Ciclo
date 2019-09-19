@@ -47,9 +47,11 @@ class PagesController < ApplicationController
         id: cyclist_last_pos.user_id,
         lat: cyclist_last_pos.lat,
         lng: cyclist_last_pos.long,
-        user_link: userprofile_path(cyclist_last_pos.user_id)
+        user_link: userprofile_path(cyclist_last_pos.user_id),
+        infoWindow: render_to_string(partial: "info_window_cyclist", locals: { cyclist: cyclist_last_pos.user })
       }
     end
+
     @point_of_interest_new = PointOfInterest.new
   end
 

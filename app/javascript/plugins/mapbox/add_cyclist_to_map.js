@@ -1,3 +1,4 @@
+import { createPopdown  } from '../../plugins/mapbox/create_popdown';
 import mapboxgl from 'mapbox-gl';
 
 const addCyslistToMap = (map, cyclists) => {
@@ -14,11 +15,16 @@ const mapElement = document.getElementById('map');
     el.style.width = '50px';
     el.style.height = '50px';
 
+
     el.addEventListener('click', function() {
-      const url = `${window.location.origin}${cyclist.user_link}`
-      console.log(url);
-      window.location = url
+      createPopdown(cyclist.infoWindow);
+      console.log(cyclist.infoWindow)
     });
+    // el.addEventListener('click', function() {
+    //   const url = `${window.location.origin}${cyclist.user_link}`
+    //   console.log(url);
+    //   window.location = url
+    // });
 
     new mapboxgl.Marker(el)
       .setLngLat([cyclist.lng, cyclist.lat])
