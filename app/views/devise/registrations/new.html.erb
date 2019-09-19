@@ -6,10 +6,13 @@
     </div>
   </div>
     <div class="form-bottom sign-up">
+
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-input">
+         <p>Sign up to get access to the Ciclo community, its useful tips or even contact any fellow Ciclo-ers in one click .</p>
+
         <%= f.input :full_name,
                     required: true,
                     autofocus: true,
