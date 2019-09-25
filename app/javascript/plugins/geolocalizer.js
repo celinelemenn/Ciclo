@@ -33,6 +33,11 @@ const error = (error) => {
      } else {
       message.innerHTML = "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p> "
      }
+
+    close = document.querySelector('.closing-geoloc-message')
+    close.addEventListener("click", (event)=> {
+      message.style.display = "none";
+    });
 }
 
 // Below is the function to watch a user's position. It is called as the first argument of the
