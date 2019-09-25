@@ -73,7 +73,14 @@
     background: none;
     border: none;
   }
+  &:hover {
+    background-color: $dark-blue;
+      a {
+      color: #fff;
+    }
+  }
   a:focus {
     outline: none;
   }
+
 }

@@ -6,15 +6,17 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
+  <%= link_to preferencesedit_path(@user) do %>
   <div class="btn-on-map-top">
-    <a href="/filter/<%= @current_user.id %>">
       <i class="fas fa-filter"></i></a>
   </div>
+  <% end %>
 
-
+  <%= link_to new_point_of_interest_path do %>
   <div class="btn-on-map-left uni-box-shadow">
-    <a href="/point_of_interests/new"><i class="fas fa-plus"></i></a>
+    <i class="fas fa-plus"></i></a>
   </div>
+  <% end %>
 
   <div class="btn-on-map-right uni-box-shadow">
     <button><i class="fas fa-location-arrow"></i>
