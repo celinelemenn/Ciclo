@@ -72,10 +72,13 @@
 
     <div class="uni-app-container">
       <div class="" id="geoloc-banner">
-      <%= render 'shared/geoloc_banner' %>
+        <%= render 'shared/geoloc_banner' %>
       </div>
+
       <%= yield %>
-      <div class="popdown" id="modify-popdown"> </div>
+
+      <div class="popdown" id="modify-popdown">
+      </div>
     </div>
 
     <%= render 'shared/navbar' if !devise_controller? %>

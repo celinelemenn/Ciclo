@@ -24,7 +24,10 @@ const currentPosition = (position) => {
 // getCurrentPosition/watchPosition functions.
 
 const error = (error) => {
-  console.warn(`ERROR(${error.code}): ${error.message}`);
+    console.warn(`ERROR(${error.code}): ${error.message}`);
+    const message = document.querySelector('#geoloc-banner');
+    message.style.display = "block"  ;
+
 }
 
 // Below is the function to watch a user's position. It is called as the first argument of the
@@ -37,6 +40,7 @@ const watchUserPosition = (position) => {
     latitude: watchedCoordinates.latitude,
     longitude: watchedCoordinates.longitude
   }
+    console.log(watchedCoordinates);
   userCurrentPosition.push(currentPosition);
 
   // The localize() function checks whether the map is present before running.
@@ -104,7 +108,7 @@ const localize = () => {
       }
     })
     .then((data) => {
-      console.log(data)
+      // console.log(data)
     })
 
     // API-build ends here (axios is an alternative to fetch, it is a package)
@@ -117,8 +121,8 @@ const localize = () => {
 const geolocator = () => {
   if (mapElement) {
     window.addEventListener("load", (event) => {
-//       console.log("This works");
-      navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+      console.log("This works");
+      // navigator.geolocation.getCurrentPosition(currentPosition, error, options);
       navigator.geolocation.watchPosition(watchUserPosition, error, options);
     });
   }
