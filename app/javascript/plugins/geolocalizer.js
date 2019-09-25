@@ -9,7 +9,8 @@ const mapElement = document.getElementById("map");
 
 const options = {
   maximumAge: 120000,
-  enableHighAccuracy: true
+  enableHighAccuracy: true,
+  timeout: 10 * 1000
 };
 const userCurrentPosition = [];
 
@@ -27,7 +28,11 @@ const error = (error) => {
     console.warn(`ERROR(${error.code}): ${error.message}`);
     const message = document.querySelector('#geoloc-banner');
     message.style.display = "block"  ;
-
+    if (error.code == 1) {
+    message.innerHTML = "<h5> <strong>WARNING:</strong> We don't have permission to use your localization. </h5>" + message.innerHTML;
+     } else {
+      message.innerHTML = "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p> "
+     }
 }
 
 // Below is the function to watch a user's position. It is called as the first argument of the
