@@ -72,4 +72,7 @@ class PagesController < ApplicationController
     @user = User.find(params[:id])
     @trips = Trip.where(user: @user)
   end
+
+  def help
+  end
 end

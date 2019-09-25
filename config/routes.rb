@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   patch '/filter/:id', to: 'preferences#update', as: :preferences
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_error"
+  get "/help", to: 'pages#help', as: :help
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do
