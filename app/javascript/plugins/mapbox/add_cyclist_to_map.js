@@ -18,8 +18,7 @@ const mapElement = document.getElementById('map');
 
     el.addEventListener('click', function() {
       createPopdown(cyclist.infoWindow);
-      console.log(cyclist.infoWindow)
-    });
+      });
     // el.addEventListener('click', function() {
     //   const url = `${window.location.origin}${cyclist.user_link}`
     //   console.log(url);
