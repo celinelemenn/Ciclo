@@ -54,12 +54,12 @@ ROUTES_NO_MENU = [
   {controller: 'trips', action: 'new'},
   { controller: 'reports', action: 'new' },
   { controller: 'personal_messages', action: 'new' },
+  { controller: 'point_of_interests', action: 'new' },
 
 ]
 
 ROUTES_BACK_MAP = [
   { controller: 'pages', action: 'userprofile' },
-  { controller: 'point_of_interests', action: 'new' },
   { controller: 'point_of_interests', action: 'show' },
   { controller: 'likes', action: 'create'},
   { controller: 'downvotes', action: 'create' },
