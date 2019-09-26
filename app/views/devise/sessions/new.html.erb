@@ -20,9 +20,13 @@
 
         <div class="form-buttons-login">
           <%= f.button :submit, "Log in", class: "btn-main" %>
-      <% end %>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn-minimal" %>
+          <% end %>
+          <hr class="line-divider mt-3">
 
-          <%= render "devise/shared/links" %>
+          <p class="mt-2" style="color:#6c757d"> Don't have a Ciclo account ?  <%= render "devise/shared/links" %></p>
         </div>
+      <% end %>
     </div>
 </div>

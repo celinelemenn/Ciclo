@@ -74,9 +74,10 @@
 .btn-link-blue {
   margin: 0px;
   font-size: 14px;
-  color: blue;
+  color: black;
   text-decoration-line: underline;
   font-size: 14px;
+  opacity: 0.5;
   &:hover {
     color: gray;
   }
