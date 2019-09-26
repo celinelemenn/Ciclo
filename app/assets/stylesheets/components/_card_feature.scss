@@ -21,13 +21,24 @@
   justify-content: center;
   position: relative;
   h4 {
-    color: #fff;
-    font-weight: 300;
     position: absolute;
     top: -35px;
     left: -15px;
-    background: #FE2A53;
-    /* box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.2); */
+
+    // font-weight: 300;
+    // color: #fff;
+    // background: rgb(38, 84, 124);
+    // background: #26547C;
+    // background: #FE2A53;
+
+
+    font-weight: 400;
+    opacity: 0.8;
+    color: black;;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+    border-right: 3px solid #FE2A53;
+    background: white;
+
     padding: 15px 20px;
     width: 275px;
     height: 65px;
@@ -36,7 +47,8 @@
   p {
     margin-bottom: 0;
     color: #919191;
-    font-weight: lighter;
+    // font-weight: lighter;
+    font-weight: 300;
   }
 }
 
@@ -47,7 +59,8 @@
 .uni-page-container {
   h2 {
     padding-top: 60px;
-    font-weight: lighter;
+    font-weight: 300;
+    opacity: 0.9;
   }
 }
 
