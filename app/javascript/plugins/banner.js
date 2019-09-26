@@ -4,11 +4,11 @@ const loadDynamicBannerTitle = () => {
   const banner = document.querySelector("#banner-typed-text")
   if (banner) {
     new Typed('#banner-typed-text', {
-      strings: ["Get real-time reports from fellow cyclists",
-                "Discover peer-reviewed hot-spots",
-                "Take the road less travelled, with confidence."],
-      typeSpeed: 50,
-      loop: false
+      strings: ["A map with real-time reports from fellow cyclists",
+                "Peer-reviewed roads condition, (wild) camping, hot-spots and many more",
+                "Contact any fellow cyclists in one click."],
+      typeSpeed: 70,
+      loop: true
     });
   }
 }
