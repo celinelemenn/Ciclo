@@ -1,46 +1,36 @@
 <div class="form-container uni-box-shadow">
   <div class="form-top">
     <div class="form-title">
-      <h2 class="uni-text-shadow">Sign up</h2>
+      <h2 class="uni-text-shadow">Get started</h2>
       <hr>
     </div>
   </div>
     <div class="form-bottom sign-up">
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+        <%= f.error_notification %>
 
-      <div class="form-input">
-         <p>Sign up to get access to the Ciclo community, its useful tips or even contact any fellow Ciclo-ers in one click .</p>
-
-        <%= f.input :full_name,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "name" }%>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-         <%= f.input :status,
-                    required: true,
-                    as: :radio_buttons,
-                    label: "Are you cycling right now?" %>
-        <%= f.input :terms,
-                    required: true,
-                    label: "T&C" %>
-      </div>
+        <div class="form-input">
+          <%= f.input :full_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "name" },
+                      label: 'Username' %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
 
         <div class="form-buttons flex-column align-items-center">
-         <%= f.button :submit, "Sign up", class: "btn-main" %>
-          <% end %>
+          <%= f.button :submit, "Sign up", class: "btn-main" %>
+          <p class="mt-3 uni-opacity40 font-14"> By signing up you agree to our <%= link_to 'Terms of services', terms_path, class: 'btn-link-blue'%></p>
           <%= render "devise/shared/links" %>
         </div>
+      <% end %>
     </div>
 </div>

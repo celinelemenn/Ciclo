@@ -71,6 +71,17 @@
   }
 }
 
+.btn-link-blue {
+  margin: 0px;
+  font-size: 14px;
+  color: blue;
+  text-decoration-line: underline;
+  font-size: 14px;
+  &:hover {
+    color: gray;
+  }
+}
+
 .btn-destroy {
   position: relative;
   left: 70px;

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/404", to: "errors#not_found"
   get "/500", to: "errors#internal_error"
   get "/help", to: 'pages#help', as: :help
+  get "/terms-of-services", to: 'pages#terms', as: :terms
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do
