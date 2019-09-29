@@ -25,6 +25,11 @@ const currentPosition = (position) => {
 // getCurrentPosition/watchPosition functions.
 
 const error = (error) => {
+
+    //  if(error.PERMISSION_DENIED) alert("This will not work without geolocation. Please accept geolocation")
+    // hideLoadingDiv()
+    // showError('Geolocation is not enabled. Please enable to use this feature')
+
     console.warn(`ERROR(${error.code}): ${error.message}`);
     const message = document.querySelector('#geoloc-banner');
     message.style.display = "block"  ;
@@ -58,19 +63,40 @@ const watchUserPosition = (position) => {
   localize();
 }
 
+/// know if geoloc access is granted or now
+
+const permission = () => {
+ navigator.permissions.query({ name: 'geolocation' })
+.then((data) => {
+      const d = data.state;
+      if (d == 'denied') {
+      // console.log('false');
+        return false
+      } else {
+        // console.log('true');
+        return true
+      }
+    })
+}
+
+const p = permission();
+if (p == false) { console.log('this is working')};
 // The if condition below implements the logic for the locate button on the map.
 
-if (locateButton) {
   locateButton.addEventListener("click", (event) => {
-    event.preventDefault();
+     if (userCurrentPosition.length == 0) {
+      window.alert("We need access to your location for this to work")
+    } else {
     const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
+    event.preventDefault();
     locateButton.classList.toggle("btn-on-map-right-rotate");
     map.flyTo({
       center: [longitude, latitude],
       zoom: 12
-    })
-  })
-}
+    });
+    }
+  });
+
 
 const localize = () => {
   if (mapElement && navigator.geolocation) {
