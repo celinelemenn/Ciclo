@@ -36,7 +36,7 @@ const error = (error) => {
     if (error.code == 1) {
     message.innerHTML = "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5>" + message.innerHTML;
      } else {
-      message.innerHTML = "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p> "
+      message.innerHTML = "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p> <div class='closing-geoloc-message'><i class='fa fa-times'></i>"
      }
 
     close = document.querySelector('.closing-geoloc-message')
