@@ -65,27 +65,31 @@ const watchUserPosition = (position) => {
 
 /// know if geoloc access is granted or now
 
-const permission = () => {
- navigator.permissions.query({ name: 'geolocation' })
-.then((data) => {
-      const d = data.state;
-      if (d == 'denied') {
-      // console.log('false');
-        return false
-      } else {
-        // console.log('true');
-        return true
-      }
-    })
-}
+// const permission = () => {
+//  navigator.permissions.query({ name: 'geolocation' })
+// .then((data) => {
+//       const d = data.state;
+//       // console.log(d);
+//       if (d == 'denied') {
+//       // console.log('false');
+//         return false;
+//       } else {
+//         // console.log('true');
+//         return true
+//       }
+//     })
+// }
 
-const p = permission();
-if (!p) { console.log('this is working')};
+// let p = permission();
+// if (p) { console.log('location working')};
+// if (!(p)) { console.log('location not working')};
+
 // The if condition below implements the logic for the locate button on the map.
 
 if (mapElement) {
   locateButton.addEventListener("click", (event) => {
-     if (!p) {
+     // if (!p) {
+    if (userCurrentPosition.length == 0) {
       window.alert("We need access to your location for this to work")
     } else {
     const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
