@@ -80,11 +80,12 @@ const permission = () => {
 }
 
 const p = permission();
-if (p == false) { console.log('this is working')};
+if (!p) { console.log('this is working')};
 // The if condition below implements the logic for the locate button on the map.
 
+if (mapElement) {
   locateButton.addEventListener("click", (event) => {
-     if (userCurrentPosition.length == 0) {
+     if (!p) {
       window.alert("We need access to your location for this to work")
     } else {
     const { latitude, longitude } = userCurrentPosition[userCurrentPosition.length-1]
@@ -96,7 +97,7 @@ if (p == false) { console.log('this is working')};
     });
     }
   });
-
+}
 
 const localize = () => {
   if (mapElement && navigator.geolocation) {
