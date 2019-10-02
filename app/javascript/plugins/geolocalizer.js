@@ -3,6 +3,7 @@ import mapboxgl from 'mapbox-gl';
 import { map } from './mapbox/init_mapbox.js';
 
 const locateButton = document.querySelector(".btn-on-map-right");
+const plusButton = document.querySelector(".btn-on-map-left a");
 const mapElement = document.getElementById("map");
 
 // The options below are passed to the
@@ -102,6 +103,18 @@ if (mapElement) {
     }
   });
 }
+
+// on click on plus - no page is no access to current location
+if (mapElement) {
+  plusButton.addEventListener("click", (event) => {
+     // if (!p) {
+    if (userCurrentPosition.length == 0) {
+      window.alert("We need access to your location for this to work");
+      event.preventDefault();
+    }
+  });
+}
+
 
 const localize = () => {
   if (mapElement && navigator.geolocation) {
