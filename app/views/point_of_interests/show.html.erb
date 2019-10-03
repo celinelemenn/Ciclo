@@ -5,7 +5,7 @@
 
 
   <div class="poi-show-top">
-    <%= cl_image_tag @poi.photo %>
+    <%= cl_image_tag(@poi.photo.url(:auto)) %>
     <div class="bookmark-position">
       <%= link_to point_of_interest_bookmarks_path(@poi, user: current_user), method: :post do %>
         <i class="far fa-star btn-bookmark btn-bookmark-active"></i>
@@ -62,7 +62,7 @@
       <% @poi.comments.each do |comment| %>
         <div class="comment-card">
           <div class="comment-card-image">
-            <%= cl_image_tag(comment.user.photo.url(:avatar), fetch_format: :auto) %>
+            <%= cl_image_tag(comment.user.photo.url(:avatar)) %>
           </div>
           <div class="comment-card-text">
             <h5><strong><%= comment.user.full_name %></strong></h5>
@@ -80,7 +80,7 @@
     <%= simple_form_for([@poi, @comment]) do |f| %>
       <div class="d-flex margin20 mt-3 flex-just-betw">
         <div class="d-flex">
-          <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto, class: "avatar-height") %>
+          <%= cl_image_tag(current_user.photo.url(:avatar), class: "avatar-height") %>
           <div>
             <%= f.input :content, placeholder: "Add your comment", label: false, class: "no-border" %>
             <%= f.input :user, :as => :hidden, input_html: { value: current_user.id } %>
