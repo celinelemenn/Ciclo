@@ -20,7 +20,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-
+    @trip.photo = trip_params['photo']
     if @trip.save
       redirect_to profile_path
     else
