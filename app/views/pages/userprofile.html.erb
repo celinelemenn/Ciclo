@@ -25,21 +25,24 @@
     <% else %>
       <% @user.trips.each do |trip| %>
         <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+         <% if trip.end_date > Date.today %>
+              <p class="travelling-tag">Now travelling</p>
+            <% end %>
           <strong><h3><%= trip.name %></h3></strong>
-           <div class="container-card">
-              <div>
-                <p><strong><%= trip.start_date.year %></strong></p>
-                <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
-              </div>
-              <div>
-                <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
-                <font size="1"><p>days</p></font>
-              </div>
-              <div>
-                <p><strong><%= trip.km %> </strong></p>
-                <font size="1"><p>kilometers</p></font>
-              </div>
-           </div>
+          <div class="container-card">
+            <div>
+              <p><strong><%= trip.start_date.year %></strong></p>
+              <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
+            </div>
+            <div>
+              <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
+              <font size="1"><p>days</p></font>
+            </div>
+            <div>
+              <p><strong><%= trip.km %> </strong></p>
+              <font size="1"><p>kilometers</p></font>
+            </div>
+          </div>
         </div>
       <% end %>
     <% end %>
