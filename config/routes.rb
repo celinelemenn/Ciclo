@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #     resources :comments, only: [:create]
   #   end
 
-  resources :trips, only: [:new, :create, :edit]
+  resources :trips, only: [:new, :create, :edit, :update]
   resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update] do
     resources :comments, only: [:new, :create]
     resources :likes, only: [:create]
