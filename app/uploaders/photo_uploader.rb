@@ -11,7 +11,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :avatar do
-    cloudinary_transformation transformation: [ { width: 400, height: 400, gravity: :face, radius: :max, crop: :thumb }, { width: 200, height: 200, crop: :thumb } ]
+    cloudinary_transformation transformation: [ { width: 400, height: 400, gravity: :face, radius: :max, crop: :thumb }, { width: 200, height: 200, crop: :thumb }, :quality=>"auto:best"]
   end
 
   version :bright_face do
@@ -19,6 +19,17 @@ class PhotoUploader < CarrierWave::Uploader::Base
       width: 50, height: 50, crop: :thumb, gravity: :face
   end
 
+  version :low do
+    cloudinary_transformation transformation: [:quality=>'auto:low']
+  end
+
+  version :auto do
+    cloudinary_transformation transformation: [:quality=>'auto']
+  end
+
+  version :best do
+    cloudinary_transformation transformation: [:quality=>'auto:best']
+  end
 end
 
  # Include RMagick or MiniMagick support:

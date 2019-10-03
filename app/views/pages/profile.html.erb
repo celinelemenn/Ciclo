@@ -23,7 +23,7 @@
     <div class="card-trip-header mt-5"><h5>Your past trips </h5></div>
 
     <% current_user.trips.each do |trip| %>
-      <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+      <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>) ; background-size: cover; background-repeat: no-repeat; background-position: center center;">
         <strong><h3><%= trip.name %></h3></strong>
          <div class="container-card">
             <div>
