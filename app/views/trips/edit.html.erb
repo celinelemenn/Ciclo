@@ -18,8 +18,9 @@
     <%= f.input :blog,  label: "Share your blog with the world"  %>
 
   </div>
-    <div class="form-buttons">
-      <%=f.submit :Submit, class: "btn-main mb-50" %>
-    </div>
+  <div class="form-buttons mb-50">
+    <%=f.submit :Submit, class: "btn-main" %>
+    <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
+  </div>
 <% end %>
 </div>
