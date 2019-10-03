@@ -7,7 +7,7 @@
     <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
   <% end %>
 <div class="info-card">
-  <strong><h5><%= current_user.full_name  %></h5></strong>
+  <strong><h5><%= current_user.full_name.capitalize  %></h5></strong>
   <p><%= current_user.bio  %></p>
   <p><%= current_user.description %><p>
   <h6><%= current_user.blog  %></h6>
@@ -20,26 +20,34 @@
 
 
   <div class="parent-card">
-    <div class="card-trip-header mt-5"><h5>Your past trips </h5></div>
-
-    <% current_user.trips.each do |trip| %>
-      <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>) ; background-size: cover; background-repeat: no-repeat; background-position: center center;">
-        <strong><h3><%= trip.name %></h3></strong>
-         <div class="container-card">
-            <div>
-              <p><strong><%= trip.start_date.year %></strong></p>
-              <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
+    <div class="card-trip-header mt-80"><h3>Your trips </h3></div>
+    <% if current_user.trips.empty? %>
+      <p class="uni-opacity40 my-4"> When you add trips, you will see them here </p>
+    <% else %>
+      <% current_user.trips.each do |trip| %>
+        <%= link_to edit_trip_path(trip) do %>
+          <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>) ; background-size: cover; background-repeat: no-repeat; background-position: center center;">
+            <% if trip.end_date > Date.today %>
+              <p class="travelling-tag">Now travelling</p>
+            <% end %>
+            <strong><h3><%= trip.name %></h3></strong>
+            <div class="container-card">
+              <div>
+                <p><strong><%= trip.start_date.year %></strong></p>
+                <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
+              </div>
+              <div>
+                <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
+                <font size="1"><p>days</p></font>
+              </div>
+              <div>
+                <p><strong><%= trip.km %> </strong></p>
+                <font size="1"><p>kilometers</p></font>
+              </div>
             </div>
-            <div>
-              <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
-              <font size="1"><p>days</p></font>
-            </div>
-            <div>
-              <p><strong><%= trip.km %> </strong></p>
-              <font size="1"><p>kilometers</p></font>
-            </div>
-      </div>
-      </div>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
     <div class="card-trip-btn d-flex justify-content-center mt-3 mb-5">
       <%= link_to 'Add trip', new_trip_path, class: "btn-secondary" %>

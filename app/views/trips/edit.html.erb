@@ -1,0 +1,26 @@
+<div class="form-container uni-box-shadow flex-center-col">
+  <div class="form-title">
+    <h1 class="ml-2 mt-2">Edit your trip</h1>
+  </div>
+
+<%= simple_form_for(@trip) do |f| %>
+  <div class="form-input">
+    <%= cl_image_tag(@trip.photo.url(:thumnail)) %>
+    <%= f.input :photo,  label: "Change your picture"  %>
+    <hr class="line-divider">
+    <br>
+    <%= f.input :name, label: "Where you were travelling?"%>
+    <br>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <br>
+    <%= f.input :km, label: "How long was the way(km)?"%>
+    <%= f.input :blog,  label: "Share your blog with the world"  %>
+
+  </div>
+  <div class="form-buttons mb-50">
+    <%=f.submit :Submit, class: "btn-main" %>
+    <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
+  </div>
+<% end %>
+</div>

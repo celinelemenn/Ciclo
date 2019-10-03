@@ -1,5 +1,12 @@
 .card-trip-header {
   margin-top: 30px;
+
+}
+
+.parent-card {
+    a:hover {
+    text-decoration: none;
+  }
 }
 .container-card {
   display:flex;
@@ -40,4 +47,11 @@
     display:inline-block;
     padding-top: 12px;
   }
+}
+
+.travelling-tag {
+  position: absolute;
+  top: 5px;
+  left: 18px;
+  font-size: 12px;
 }

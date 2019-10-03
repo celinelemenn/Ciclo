@@ -6,7 +6,7 @@
   <% end %>
 
   <div class="info-card">
-    <strong><h5><%= @user.full_name  %></h5></strong>
+    <strong><h5><%= @user.full_name.capitalize  %></h5></strong>
     <p><%= @user.bio  %></p>
     <p><%= @user.description  %><p>
     <font size="+1"><h5><%= @user.blog  %></h5></font>
@@ -19,11 +19,17 @@
   </div>
 
   <div class="parent-card">
-    <div class="card-trip-header"><h5>Your past trips </h5></div>
-  <% @user.trips.each do |trip| %>
-      <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
-        <strong><h3><%= trip.name %></h3></strong>
-         <div class="container-card">
+    <div class="card-trip-header mt-80"><h3>Cycling Trips </h3></div>
+    <% if @user.trips.empty? %>
+      <p class="uni-opacity40 my-4"> no cycling trips added by <%= @user.full_name.capitalize %> so far </p>
+    <% else %>
+      <% @user.trips.each do |trip| %>
+        <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+         <% if trip.end_date > Date.today %>
+              <p class="travelling-tag">Now travelling</p>
+            <% end %>
+          <strong><h3><%= trip.name %></h3></strong>
+          <div class="container-card">
             <div>
               <p><strong><%= trip.start_date.year %></strong></p>
               <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
@@ -36,8 +42,8 @@
               <p><strong><%= trip.km %> </strong></p>
               <font size="1"><p>kilometers</p></font>
             </div>
-         </div>
-      </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-
 </div>

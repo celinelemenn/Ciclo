@@ -6,11 +6,32 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
-    if @trip.save!
+    if @trip.save
       redirect_to profile_path
     else
-      render trips_new_path
+      render :new
     end
+  end
+
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    @trip.photo = trip_params['photo']
+    if @trip.save
+      redirect_to profile_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.delete
+    redirect_to profile_path
   end
 
   private
