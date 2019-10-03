@@ -2,9 +2,15 @@
   <div class="top-menu-item-icon dropdown ml-2">
     <button  class="btn-drop"><i class="fas fa-bars"></i></button>
     <div id="dropdown-items" class="dropdown-content">
+      <% if !current_user %>
+      <%= link_to 'Log in', new_user_session_path %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
       <%= link_to 'Help', help_path %>
       <a href="#">Contact</a>
+      <% if current_user %>
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% end %>
     </div>
   </div>
 
