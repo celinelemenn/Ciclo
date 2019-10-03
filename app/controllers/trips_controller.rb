@@ -19,7 +19,13 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip = @trip.update(trip_params)
+    @trip.update(trip_params)
+
+    if @trip.save
+      redirect_to profile_path
+    else
+      render :edit
+    end
   end
 
   private
