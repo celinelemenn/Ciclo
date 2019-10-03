@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, :controllers  => {
-             :registrations => 'registrations',
-           }
+  devise_for :users, :controllers  => {:registrations => 'registrations'}
+
   root to: 'pages#home', as: :homepage
   get '/profile', to: 'pages#profile', as: :profile
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   get "/500", to: "errors#internal_error"
   get "/help", to: 'pages#help', as: :help
   get "/terms-of-services", to: 'pages#terms', as: :terms
+
 
   # namespace :api, defaults: { format: :json } do
   #   namespace :v1 do

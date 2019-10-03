@@ -121,7 +121,9 @@
 }
 
 .btn-edit-profile {
-     margin-left: 107px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-bookmark {

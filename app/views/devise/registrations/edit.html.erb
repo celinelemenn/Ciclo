@@ -1,9 +1,9 @@
 <div class="form-container uni-box-shadow">
-  <div class="form-top">
-    <div class="form-title">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
-    </div>
-  </div>
+
+
+      <h2 class="text-center mt-4">Edit Profile</h2>
+
+
 
   <div class="form-bottom">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -14,7 +14,13 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-        <%= f.input :photo %>
+        <div class="text-center">
+          <% if current_user.photo.file %>
+            <%= cl_image_tag(current_user.photo.url(:avatar_small)) %>
+          <% end %>
+          <%= f.input :photo, label: 'Change Photo' %>
+        </div>
+        <hr>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :full_name, required: true %>
@@ -25,25 +31,12 @@
                   required: true,
                   as: :radio_buttons,
                   label: "Are you cycling right now?" %>
-        <%= f.input :password,
-                     hint: "leave it blank if you don't want to change it",
-                     required: false,
-                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                     required: false,
-                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                     hint: "we need your current password to confirm your changes",
-                     required: true,
-                     input_html: { autocomplete: "current-password" } %>
       </div>
       <div class="form-actions btn-edit-profile">
-        <%= f.button :submit, "Update", class: "btn-main"%>
-
-        <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-minimal" %>
-
-      <% end %>
-        <%= link_to "Back", :back, class: "btn-minimal" %>
+          <%= f.button :submit, "Update", class: "btn-main"%>
+          <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-minimal" %>
+          <%= link_to "Back", :back, class: "btn-minimal mb-4" %>
       </div>
+      <% end %>
   </div>
 </div>
