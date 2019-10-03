@@ -23,23 +23,25 @@
     <div class="card-trip-header mt-5"><h5>Your past trips </h5></div>
 
     <% current_user.trips.each do |trip| %>
+    <%= link_to edit_trip_path(trip) do %>
       <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>) ; background-size: cover; background-repeat: no-repeat; background-position: center center;">
         <strong><h3><%= trip.name %></h3></strong>
-         <div class="container-card">
-            <div>
-              <p><strong><%= trip.start_date.year %></strong></p>
-              <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
-            </div>
-            <div>
-              <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
-              <font size="1"><p>days</p></font>
-            </div>
-            <div>
-              <p><strong><%= trip.km %> </strong></p>
-              <font size="1"><p>kilometers</p></font>
-            </div>
+        <div class="container-card">
+          <div>
+            <p><strong><%= trip.start_date.year %></strong></p>
+            <font size="1"><p><%= trip.start_date.strftime("%B") %></p></font>
+          </div>
+          <div>
+            <p><strong><%= (trip.start_date.to_date..trip.end_date.to_date).to_a.size %> </strong></p>
+            <font size="1"><p>days</p></font>
+          </div>
+          <div>
+            <p><strong><%= trip.km %> </strong></p>
+            <font size="1"><p>kilometers</p></font>
+          </div>
+        </div>
       </div>
-      </div>
+    <% end %>
     <% end %>
     <div class="card-trip-btn d-flex justify-content-center mt-3 mb-5">
       <%= link_to 'Add trip', new_trip_path, class: "btn-secondary" %>
