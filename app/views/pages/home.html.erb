@@ -1,4 +1,5 @@
-<div class="banner text-center">
+<div class="banner text-center" style="background: linear-gradient(200deg, rgba(0, 0, 0, 0.5), rgba(105, 105, 105, 0.2)), url(<%= cl_image_path('banner-bg',:transformation=>[{:quality=>"auto:low"}]) %>);background-size: cover;
+  background-position: center;">
   <div class="banner-title">
     <h1>Cycle better</h1>
     <p><span id="banner-typed-text"></span></p>
@@ -20,7 +21,7 @@
     <h2>Why Ciclo?</h2>
     <hr class="line-divider">
     <div class="ciclo-image">
-      <%= cl_image_tag('o9o8iivj88hfkcywsoz9') %>
+      <%= cl_image_tag('ciclo_overview', :transformation=>[{:quality=>"auto:best"}]) %>
     </div>
     <div class="cards">
       <div class="col-sm-12 mt-4">
