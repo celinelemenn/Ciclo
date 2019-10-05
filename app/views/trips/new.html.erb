@@ -10,9 +10,11 @@
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <hr class="line-divider my-4">
-    <%= f.input :country_code, priority: ["FR", "DE","NL","GB", "US"], prompt: "Select a Country" %>
+    <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false %>
     <p style="color:#26547C;">OR</p>
-    <%= f.input :country_code, label: "Select a cycling route" %>
+    <div class="form-group">
+    <%= f.select :cycling_route, options_for_select(@cyling_routes), prompt: "Select a Cycling Route" %>
+    </div>
     <hr class="line-divider my-4">
     <%= f.input :km, label: "Kilometers achieved / planned "%>
     <%= f.input :blog,  label: "Blog of this trip"  %>
