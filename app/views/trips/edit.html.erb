@@ -7,7 +7,15 @@
   <div class="form-input">
     <%= cl_image_tag(@trip.photo.url(:thumnail)) %>
     <%= f.input :photo,  label: "Change your picture"  %>
-    <hr class="line-divider">
+
+    <hr class="line-divider my-4">
+    <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false %>
+    <p style="color:#26547C;">OR</p>
+    <div class="form-group">
+    <%= f.select :cycling_route, options_for_select(@cyling_routes), prompt: "Select a Cycling Route", include_blank: "Select Category"%>
+    </div>
+    <hr class="line-divider my-4">
+
     <br>
     <%= f.input :name, label: "Where you were travelling?"%>
     <br>

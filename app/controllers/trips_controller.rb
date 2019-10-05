@@ -1,12 +1,10 @@
 class TripsController < ApplicationController
+
+  before_action :set_cycling_route_array , only: [:edit, :update, :new, :create]
+
+
   def new
     @trip = Trip.new
-    @cyling_routes = [
-      'EuroVelo1', 'EuroVelo2', 'EuroVelo3', 'EuroVelo4', 'EuroVelo5', 'EuroVelo6',
-      'EuroVelo7', 'EuroVelo8', 'EuroVelo9', 'EuroVelo10', 'EuroVelo11', 'EuroVelo12',
-      'EuroVelo15', 'EuroVelo17', 'EuroVelo19',
-      'Silk Road', 'South East Asia', 'South America West Coast', 'US Pacific Coast', 'US East to West'
-    ]
   end
 
   def create
@@ -26,7 +24,8 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-    @trip.photo = trip_params['photo']
+    @trip.photo = trip_params['photo'] unless trip_params['photo'].nil?
+    # raise
     if @trip.save
       redirect_to profile_path
     else
@@ -43,6 +42,10 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache)
+    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache, :country_code, :cyling_routes)
+  end
+
+  def set_cycling_route_array
+    @cycling_routes = CYCLING_ROUTES
   end
 end
