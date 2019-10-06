@@ -2,18 +2,7 @@ class PointOfInterestsController < ApplicationController
   before_action :find_poi, only: [:show, :edit, :update]
 
   def index
-    @user = current_user
 
-    if params[:feed_type] == "all"
-
-      @user_poi_published = PointOfInterest.order(updated_at: :desc).select { |poi| poi.published == true }
-      @user_poi_unpublished = []
-    else
-      @user_poi = PointOfInterest.order(updated_at: :desc)
-      @user_poi_unpublished = @user_poi.select { |poi| poi.user == current_user && poi.published == false }
-      @user_poi_published = @user_poi.select { |poi| poi.user == current_user && poi.published == true }
-
-    end
   end
 
   def show
