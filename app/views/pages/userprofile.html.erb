@@ -20,10 +20,10 @@
 
   <div class="parent-card">
     <div class="card-trip-header mt-80"><h3>Cycling Trips </h3></div>
-    <% if @user.trips.empty? %>
+    <% if @trips.empty? %>
       <p class="uni-opacity40 my-4"> no cycling trips added by <%= @user.full_name.capitalize %> so far </p>
     <% else %>
-      <% @user.trips.each do |trip| %>
+      <% @trips.each do |trip| %>
         <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
          <% if trip.end_date > Date.today %>
               <p class="travelling-tag">Now travelling</p>

@@ -57,12 +57,14 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @trips = @user.trips.sort_by { |obj| obj.start_date }.reverse!
   end
 
   def feed
   end
 
   def userprofile
+    # this is the cycling profile (not user profile)
     if params[:receiver_id]
       @conversation = Conversation.find_by(recevier_id: params[:id])
     else
@@ -70,7 +72,7 @@ class PagesController < ApplicationController
       # binding.pry
     end
     @user = User.find(params[:id])
-    @trips = Trip.where(user: @user)
+    @trips = Trip.where(user: @user).sort_by { |obj| obj.start_date }.reverse!
   end
 
   def help
