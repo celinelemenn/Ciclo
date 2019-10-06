@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.tab {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  opacity: 0.3;
+  border-bottom: 5px solid transparent;
+  text-decoration: none;
+  color: black;
+}
+.tab:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $ciclo-pink;
+}
+.tab.active {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 5px solid $ciclo-pink;
+}

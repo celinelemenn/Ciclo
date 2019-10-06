@@ -1,10 +1,17 @@
-<h2 class="mt-3 mb-5 ml-3">My contribution to the Map</h2>
 
-<% @user_poi.each do |poi| %>
+  <div class="tabs">
+    <a href="/point_of_interests?feed_type=me" class="tab active" id="feed-me">You</a>
+    <a href="/point_of_interests?feed_type=all" class="tab" id="feed-all" >Ciclo-er</a>
+  </div>
 
-<!-- if the poi is unpublished / user clicked on later -->
 
-  <% if poi.published == false %>
+
+
+<div>
+  <% @user_poi_unpublished.each do |poi| %>
+
+  <!-- if the poi is unpublished / user clicked on later -->
+
     <%= link_to edit_point_of_interest_path(poi), class: "comment-link" do %>
       <div class="comment-card mx-3">
 
@@ -22,25 +29,22 @@
         </div>
       </div>
     <% end %>
-
+  <% end %>
+</div>
 <!-- if the poi is published / user clicked on submit -->
-
-  <% else %>
-
-      <%= link_to point_of_interest_path(poi), class: "comment-link" do %>
+<div>
+  <% @user_poi_published.each do |poi| %>
+    <%= link_to point_of_interest_path(poi), class: "comment-link" do %>
       <div class="comment-card mx-3">
-
         <div class="comment-card-image">
           <img src=<%= poi.icon %> alt="" height=20>
         </div>
-
         <div class="comment-card-text">
           <h5><strong><%= poi.title %></strong></h5>
           <p><%= poi.description %></p>
-          <p class= "uni-opacity40"><%= poi.date %></p>
+          <p class= "uni-opacity40"><%= poi.date %> by <%= poi.user.full_name %></p>
         </div>
       </div>
     <% end %>
-
   <% end %>
-<% end %>
+</div>

@@ -16,6 +16,9 @@ class PointOfInterest < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  reverse_geocoded_by :latitude, :longitude
+  # after_validation :reverse_geocode
+
   enum poi_type: [:water_refill, :camping, :caution, :landmark]
 
   def date

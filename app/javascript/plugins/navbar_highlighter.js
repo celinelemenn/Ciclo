@@ -3,6 +3,10 @@ const highlighter = () => {
   const linksPath = document.querySelectorAll('.anchor_link')
   const activeItems = document.querySelectorAll('.navbar-item.active')
 
+  // console.log(path)
+  // console.log(linksPath)
+  // console.log(activeItems)
+
   activeItems.forEach(item => item.classList.remove('active'))
 
   linksPath.forEach((link) => {
