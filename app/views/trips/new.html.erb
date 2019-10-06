@@ -8,7 +8,7 @@
     <%= f.input :photo,  label: "Upload your picture"  %>
     <%= f.input :name, label: "Title name", placeholder: 'From Hanoi to Siem Reap' %>
     <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%= f.input :end_date, include_blank: true %>
     <hr class="line-divider my-4">
     <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false %>
     <p style="color:#26547C;">OR</p>
