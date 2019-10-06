@@ -1,13 +1,19 @@
 
   <div class="tabs">
     <a href="/feed?feed_type=me" class="tab active" id="feed-me">You</a>
-    <a href="/feed?feed_type=all" class="tab" id="feed-all" >Ciclo-er</a>
+    <a href="/feed?feed_type=all" class="tab" id="feed-all" >Ciclo-ers</a>
   </div>
 
 
 
 
 <div>
+  <% if @user_poi_unpublished.empty? && @user_poi_published.empty? %>
+  <div class="empty-user-poi">
+  <p class="px-3"> You haven't added any report to the map yet. Click on the <i class="uni-box-shadow btn-on-map-left fas fa-plus"></i> on the map to start </p>
+  </div>
+  <% end %>
+
   <% @user_poi_unpublished.each do |poi| %>
 
   <!-- if the poi is unpublished / user clicked on later -->
@@ -43,6 +49,7 @@
           <h5><strong><%= poi.title %></strong></h5>
           <p><%= poi.description %></p>
           <p class= "uni-opacity40"><%= poi.date %> by <%= poi.user.full_name %></p>
+          <p class= "uni-opacity40"><%= Geocoder.search([poi.lat, poi.long]).first.country %> </p>
         </div>
       </div>
     <% end %>

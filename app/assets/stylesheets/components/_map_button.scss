@@ -20,6 +20,12 @@
   }
 }
 
+.empty-user-poi {
+  .btn-on-map-left {
+    position: unset;
+  }
+}
+
 .btn-on-map-right {
   position: absolute;
   bottom: 100px;

@@ -1,7 +1,7 @@
 .tabs {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 0px 5px 30px 5px;
 }
 .tab {
   font-size: 18px;
@@ -11,6 +11,8 @@
   border-bottom: 5px solid transparent;
   text-decoration: none;
   color: black;
+  width: 50vw;
+  text-align: center;
 }
 .tab:hover {
   opacity: 1;
