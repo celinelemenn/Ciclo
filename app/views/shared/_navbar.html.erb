@@ -1,10 +1,4 @@
 <div class="navbar">
-    <div class="navbar-item" id="navbar-map">
-      <%= link_to map_path, class: "anchor_link" do %>
-        <i class="fas fa-map-marked-alt"></i>
-        <p>Map</p>
-      <% end %>
-    </div>
     <div class="navbar-item">
       <%= link_to point_of_interests_path, class: "anchor_link" do %>
         <i class="far fa-bookmark"></i>
@@ -17,6 +11,12 @@
         <i class="fas fa-rss"></i>
       <% end %>
       <p>Feed</p>
+    </div>
+    <div class="navbar-item" id="navbar-map">
+      <%= link_to map_path, class: "anchor_link" do %>
+        <i class="fas fa-map-marked-alt"></i>
+        <p>Map</p>
+      <% end %>
     </div>
     <div class="navbar-item">
       <%= link_to conversations_path, class: "anchor_link" do %>
