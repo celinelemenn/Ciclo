@@ -1,8 +1,5 @@
 class TripsController < ApplicationController
 
-  before_action :set_cycling_route_array , only: [:edit, :update, :new, :create]
-
-
   def new
     @trip = Trip.new
   end
@@ -42,10 +39,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache, :country_code, :cyling_routes)
-  end
-
-  def set_cycling_route_array
-    @cycling_routes = CYCLING_ROUTES
+    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache, :country_code, :cycling_route)
   end
 end

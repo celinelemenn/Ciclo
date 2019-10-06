@@ -9,10 +9,10 @@
     <%= f.input :photo,  label: "Change your picture"  %>
 
     <hr class="line-divider my-4">
-    <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false %>
+    <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false, include_blank: true %>
     <p style="color:#26547C;">OR</p>
     <div class="form-group">
-    <%= f.select :cycling_route, options_for_select(@cyling_routes), prompt: "Select a Cycling Route", include_blank: "Select Category"%>
+    <%= f.input :cycling_route, collection: Trip::CYCLING_ROUTES, prompt: "Select a Cycling Route", label: false, include_blank: true %>
     </div>
     <hr class="line-divider my-4">
 
