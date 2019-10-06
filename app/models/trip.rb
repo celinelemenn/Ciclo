@@ -13,9 +13,7 @@ class Trip < ApplicationRecord
   end
 
    CYCLING_ROUTES = [
-      'EuroVelo1', 'EuroVelo2', 'EuroVelo3', 'EuroVelo4', 'EuroVelo5', 'EuroVelo6',
-      'EuroVelo7', 'EuroVelo8', 'EuroVelo9', 'EuroVelo10', 'EuroVelo11', 'EuroVelo12',
-      'EuroVelo15', 'EuroVelo17', 'EuroVelo19',
-      'Silk Road', 'South East Asia', 'South America West Coast', 'US Pacific Coast', 'US East to West'
+      'EuroVelo1 - Atlantic Coast Route', 'EuroVelo2 - Capitals Route', 'EuroVelo3 - Pilgrims Route', 'EuroVelo4 - Central Europe Route', 'EuroVelo5 - Via Romea (Francigena)', 'EuroVelo6 - Atlantic – Black Sea','EuroVelo7 - Sun Route', 'EuroVelo8 - Mediterranean Route', 'EuroVelo9 - Baltic – Adriatic', 'EuroVelo10 - Baltic Sea Cycle Route', 'EuroVelo11 - Baltic Sea Cycle Route', 'EuroVelo12 - North Sea Cycle Route', 'EuroVelo15 - Rhine Cycle Route', 'EuroVelo17 - Rhone Cycle Route', 'EuroVelo19 - Meuse Cycle Route',
+      'Silk Road', 'South East Asia', 'South America - West Coast', 'US - Pacific Coast', 'US - East to West', 'Africa - West Coast', 'Africa - East Coast'
     ]
 end

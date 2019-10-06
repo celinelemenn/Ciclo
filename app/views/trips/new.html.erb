@@ -6,7 +6,7 @@
 <%= simple_form_for @trip do |f| %>
   <div class="form-input">
     <%= f.input :photo,  label: "Upload your picture"  %>
-    <%= f.input :name, label: "Title name" %>
+    <%= f.input :name, label: "Title name", placeholder: 'From Hanoi to Siem Reap' %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <hr class="line-divider my-4">
@@ -16,8 +16,8 @@
     <%= f.input :cycling_route, collection: Trip::CYCLING_ROUTES, prompt: "Select a Cycling Route", label: false %>
     </div>
     <hr class="line-divider my-4">
-    <%= f.input :km, label: "Kilometers achieved / planned "%>
-    <%= f.input :blog,  label: "Blog of this trip"  %>
+    <%= f.input :km, label: "Kilometers achieved / planned ", placeholder: "1500"%>
+    <%= f.input :blog,  label: "Blog of this trip", placeholder: "www.ciclo-app.com"  %>
 
   </div>
     <div class="form-buttons">
