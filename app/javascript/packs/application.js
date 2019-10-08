@@ -11,6 +11,7 @@ import { addCampingsToMap } from '../plugins/mapbox/add_campsites_to_map';
 import { alert } from '../plugins/alert';
 import { tab } from '../plugins/tabs';
 import { goBack } from '../plugins/back_button';
+import '../plugins/poi_checkbox'
 
 run_mapbox_page();
 highlighter();

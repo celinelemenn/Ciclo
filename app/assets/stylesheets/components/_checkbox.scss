@@ -1,0 +1,29 @@
+.poi-type-choices {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5px 0px;
+
+  }
+
+.poi-type-choice  {
+  // it will not grow, not shrink and make 30% of the flex box
+  flex: 0 0 30%;
+  text-align: center;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.poi-type-choice-title {
+  font-size: 11px;
+  color:#495057;
+}
+
