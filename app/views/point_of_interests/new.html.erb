@@ -12,8 +12,26 @@
   <div class="form-container">
     <%= simple_form_for(@point_of_interest) do |f| %>
      <div class="form-input">
-        <%= f.input :photo%>
+        <%= f.input :photo %>
         <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST, prompt: "Select"%>
+
+        <div class="form-group">
+          <label class="form-control-label select optional" for="point_of_interest_poi_type">
+          What is it?
+          </label>
+          <input type="hidden" name="point_of_interest[poi_type]" id="point_of_interest_poi_type">
+
+            <% POINT_OF_INTEREST.each do |key, value| %>
+              <input class="hidden" type="checkbox" label="<%= value[:name] %>" name="<%= value[:name] %>" marker_icon="<%= value[:marker_icon] %>" color="<%= value[:color] %>" value="<%= value[:label] %>">
+
+              <label for="">
+                  <%= value[:name] %>
+              </label>
+            <% end %>
+         </div>
+
+
+
         <%= f.input :title, placeholder: "Enter your title here" %>
         <%= f.input :description, placeholder: "Enter your description here" %>
 
