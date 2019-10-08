@@ -15,7 +15,6 @@ class PointOfInterestsController < ApplicationController
   end
 
   def create
-    # raise
     @point_of_interest = PointOfInterest.new(poi_params)
     @point_of_interest.user = current_user
     @user_position = UserPosition.where(user_id: current_user.id).last

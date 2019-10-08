@@ -19,7 +19,7 @@ class PointOfInterest < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
   # after_validation :reverse_geocode
 
-  enum poi_type: [:water_refill, :camping, :caution, :landmark]
+  enum poi_type: POINT_OF_INTEREST.keys
 
   def date
     date = -(self.updated_at - DateTime.now) / 60

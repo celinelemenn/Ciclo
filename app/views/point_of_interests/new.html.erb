@@ -22,7 +22,7 @@
 
             <% POINT_OF_INTEREST.each do |key, value| %>
 
-              <input class="hidden" type="checkbox" name="point_of_interest[poi_type]" value="<%= value[:label] %>" id="poi_<%= value[:label] %>" style="display: none;">
+              <input class="hidden" type="checkbox" name="point_of_interest[poi_type]" value="<%= key %>" id="poi_<%= value[:label] %>" style="display: none;">
 
               <label for="poi_<%= value[:label] %>" class="poi-type-choice">
                 <img src="<%= value[:marker_icon] %>" alt="" height=70>
