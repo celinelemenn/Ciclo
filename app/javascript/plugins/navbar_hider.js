@@ -1,13 +1,13 @@
-const hider = () => {
+// const hider = () => {
 
-  const element = document.querySelector('#hidden-nav');
-  const navbar = document.querySelector('.navbar')
+//   const element = document.querySelector('#hidden-nav');
+//   const navbar = document.querySelector('.navbar')
 
-  if (element && navbar) {
-    navbar.parentElement.removeChild(navbar);
-    document.querySelector('.uni-app-container').classList.add('no-nav')
-  };
-};
+//   if (element && navbar) {
+//     navbar.parentElement.removeChild(navbar);
+//     document.querySelector('.uni-app-container').classList.add('no-nav')
+//   };
+// };
 
 const menu_hider = () => {
   const topmenu = document.querySelector('.top-menu');
@@ -19,7 +19,7 @@ const menu_hider = () => {
   };
 }
 
-export { hider, menu_hider };
+export { menu_hider };
 
 
 // /profiles/324324/edit
