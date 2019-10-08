@@ -22,15 +22,15 @@
         </div>
         <hr>
         <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :full_name, label: 'Username', required: true %>
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :full_name, required: true %>
         <%= f.input :bio, required: true %>
         <%= f.input :description, required: true %>
         <%= f.input :blog, required: true %>
         <%= f.input :status,
                   required: true,
                   as: :radio_buttons,
-                  label: "Are you cycling right now?" %>
+                  label: "Are you travelling by bicycle right now?" %>
       </div>
       <div class="form-actions btn-edit-profile">
           <%= f.button :submit, "Update", class: "btn-main"%>
