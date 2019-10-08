@@ -9,7 +9,7 @@
     <div class="navbar-item">
       <%= link_to feed_path, class: "anchor_link notif" do %>
         <i class="fas fa-rss"></i>
-        <% unless @badge_poi_unpublished.nil?  %>
+        <% unless @badge_poi_unpublished.zero? %>
           <p class="notif-badge"><%= @badge_poi_unpublished %></p>
         <% end %>
       <p>Feed</p>

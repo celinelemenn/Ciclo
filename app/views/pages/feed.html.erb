@@ -48,7 +48,15 @@
         <div class="comment-card-text">
           <h5><strong><%= poi.title %></strong></h5>
           <p><%= poi.description %></p>
-          <p class= "uni-opacity40"><%= poi.date %> by <%= poi.user.full_name %></p>
+          <p class= "uni-opacity40">
+            <%= poi.date %>
+            by
+            <% if poi.user == current_user %>
+              you
+            <% else %>
+              <%= poi.user.full_name %>
+            <% end %>
+          </p>
           <p class= "uni-opacity40"><%= Geocoder.search([poi.lat, poi.long]).first.country %> </p>
         </div>
       </div>
