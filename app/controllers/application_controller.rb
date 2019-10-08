@@ -4,19 +4,19 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :check_navbar_presence
-  before_action :check_topmenu_presence
-  before_action :check_on_show_poi
+  # before_action :check_topmenu_presence
+  before_action :show_secondary_menu
 
   # def check_navbar_presence
   #   @hide_nav = !!ROUTES_NO_NAV.find { |route| route[:controller] == controller_name and route[:action] == action_name }
   # end
 
-  def check_topmenu_presence
-    @hide_menu = !!ROUTES_NO_MENU.find { |route| route[:controller] == controller_name and route[:action] == action_name }
-  end
+  # def check_topmenu_presence
+  #   @hide_menu = !!ROUTES_NO_MENU.find { |route| route[:controller] == controller_name and route[:action] == action_name }
+  # end
 
-  def check_on_show_poi
-    @show_page = !!ROUTES_BACK_MAP.find { |route| route[:controller] == controller_name and route[:action] == action_name }
+  def show_secondary_menu
+    @show = !!MAIN_MENU_PAGES.find { |route| route[:controller] == controller_name and route[:action] == action_name }
   end
 
   def default_url_options

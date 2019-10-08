@@ -9,17 +9,17 @@
 //   };
 // };
 
-const menu_hider = () => {
-  const topmenu = document.querySelector('.top-menu');
-  const element = document.querySelector('#hidden-menu');
+// const menu_hider = () => {
+//   const topmenu = document.querySelector('.top-menu');
+//   const element = document.querySelector('#hidden-menu');
 
-  if (element) {
-    topmenu.parentElement.removeChild(topmenu);
+//   if (element) {
+//     topmenu.parentElement.removeChild(topmenu);
 
-  };
-}
+//   };
+// }
 
-export { menu_hider };
+// export { menu_hider };
 
 
 // /profiles/324324/edit

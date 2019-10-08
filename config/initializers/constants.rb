@@ -53,23 +53,31 @@ ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
 #   { controller: 'personal_messages', action: 'new' },
 # ]
 
-ROUTES_NO_MENU = [
-  { controller: 'registrations', action: 'edit' },
-  {controller: 'trips', action: 'new'},
-  {controller: 'trips', action: 'edit'},
-  { controller: 'reports', action: 'new' },
-  { controller: 'personal_messages', action: 'new' },
-  { controller: 'point_of_interests', action: 'new' },
+# ROUTES_NO_MENU = [
+#   { controller: 'registrations', action: 'edit' },
+#   {controller: 'trips', action: 'new'},
+#   {controller: 'trips', action: 'edit'},
+#   { controller: 'reports', action: 'new' },
+#   { controller: 'personal_messages', action: 'new' },
+#   { controller: 'point_of_interests', action: 'new' },
 
-]
+# ]
 
-ROUTES_BACK_MAP = [
-  { controller: 'pages', action: 'userprofile' },
-  { controller: 'point_of_interests', action: 'show' },
-  { controller: 'likes', action: 'create'},
-  { controller: 'downvotes', action: 'create' },
-  { controller: 'bookmarks', action: 'create' },
-  { controller: 'preferences', action: 'edit' },
+# ROUTES_BACK_MAP = [
+#   { controller: 'pages', action: 'userprofile' },
+#   { controller: 'point_of_interests', action: 'show' },
+#   { controller: 'likes', action: 'create'},
+#   { controller: 'downvotes', action: 'create' },
+#   { controller: 'bookmarks', action: 'create' },
+#   { controller: 'preferences', action: 'edit' },
 
-  { controller: 'conversations', action: 'show' },
+#   { controller: 'conversations', action: 'show' },
+# ]
+
+MAIN_MENU_PAGES = [
+   { controller: 'pages', action: 'profile' },
+   { controller: 'pages', action: 'feed' },
+   { controller: 'pages', action: 'map' },
+   { controller: 'trips', action: 'index' },
+   { controller: 'conversations', action: 'index' },
 ]

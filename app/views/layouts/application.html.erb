@@ -53,17 +53,10 @@
   <body>
 
 
-  <% if @hide_menu || @show_page %>
-      <input type="hidden" id="hidden-menu">
-      <% if @show_page %>
-        <%= render 'shared/topmenu_backmap' %>
-      <% else  %>
+  <% unless @show %>
         <%= render 'shared/topmenu_secondary' %>
-      <% end %>
   <% end %>
 
-
-    <%= render 'shared/topmenu' %>
 
     <%= render 'shared/flashes' %>
 
