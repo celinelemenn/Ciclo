@@ -9,8 +9,9 @@
     <%= f.input :title %>
     <%= f.input :description %>
   </div>
-  <div class="form-actions">
+  <div class="form-actions d-flex">
   <%= f.button :submit, "Update", class: "btn-main" %>
+  <%= link_to 'Delete', point_of_interest_path(@poi), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
   </div>
   <% end %>
 </div>

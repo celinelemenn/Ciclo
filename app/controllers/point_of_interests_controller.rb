@@ -1,5 +1,5 @@
 class PointOfInterestsController < ApplicationController
-  before_action :find_poi, only: [:show, :edit, :update]
+  before_action :find_poi, only: [:show, :edit, :update, :destroy]
 
   def index
 
@@ -54,6 +54,11 @@ class PointOfInterestsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @poi.delete
+    redirect_to feed_path
   end
 
   private

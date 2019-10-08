@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   #   end
 
   resources :trips, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]
     resources :likes, only: [:create]
     resources :downvotes, only: [:create]
