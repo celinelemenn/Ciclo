@@ -13,21 +13,25 @@
     <%= simple_form_for(@point_of_interest) do |f| %>
      <div class="form-input">
         <%= f.input :photo %>
-        <%= f.input :poi_type, label: "What is it?", collection: POINT_OF_INTEREST, prompt: "Select"%>
 
         <div class="form-group">
-          <label class="form-control-label select optional" for="point_of_interest_poi_type">
+          <label class="form-control-label" for="point_of_interest_poi_type">
           What is it?
           </label>
-          <input type="hidden" name="point_of_interest[poi_type]" id="point_of_interest_poi_type">
+            <div class="poi-type-choices">
 
             <% POINT_OF_INTEREST.each do |key, value| %>
-              <input class="hidden" type="checkbox" label="<%= value[:name] %>" name="<%= value[:name] %>" marker_icon="<%= value[:marker_icon] %>" color="<%= value[:color] %>" value="<%= value[:label] %>">
 
-              <label for="">
-                  <%= value[:name] %>
+              <input class="hidden" type="checkbox" name="point_of_interest[poi_type]" value="<%= value[:label] %>" id="poi_<%= value[:label] %>" style="display: none;">
+
+              <label for="poi_<%= value[:label] %>" class="poi-type-choice">
+                <img src="<%= value[:marker_icon] %>" alt="" height=70>
+                <p class="poi-type-choice-title"> <%= value[:name] %></p>
               </label>
+
             <% end %>
+
+            </div>
          </div>
 
 
