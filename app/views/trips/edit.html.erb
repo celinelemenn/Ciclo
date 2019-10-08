@@ -9,25 +9,30 @@
     <%= f.input :photo,  label: "Change your picture"  %>
 
     <hr class="line-divider my-4">
-    <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false, include_blank: true %>
-    <p style="color:#26547C;">OR</p>
-    <div class="form-group">
-    <%= f.input :cycling_route, collection: Trip::CYCLING_ROUTES, prompt: "Select a Cycling Route", label: false, include_blank: true %>
-    </div>
-    <hr class="line-divider my-4">
 
-    <br>
-    <%= f.input :name, label: "Where you were travelling?"%>
+     <br>
+    <%= f.input :name, label: "Title"%>
     <br>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <br>
-    <%= f.input :km, label: "How long was the way(km)?"%>
-    <%= f.input :blog,  label: "Share your blog with the world"  %>
+
+    <hr class="line-divider my-4">
+
+   <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false, include_blank: true %>
+    <p style="color:#26547C;">OR</p>
+    <div class="form-group">
+    <%= f.input :cycling_route, collection: Trip::CYCLING_ROUTES, prompt: "Select a Cycling Route", label: false, include_blank: true %>
+    </div>
+     <hr class="line-divider my-4">
+    <%= f.input :km, label: "Kilometers achieved / planned" %>
+    <%= f.input :blog,  label: "Blog of this trip"  %>
+
+
 
   </div>
   <div class="form-buttons mb-50">
-    <%=f.submit :Submit, class: "btn-main" %>
+    <%=f.submit "Update", class: "btn-main" %>
     <%= link_to 'Delete', trip_path(@trip), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
   </div>
 <% end %>
