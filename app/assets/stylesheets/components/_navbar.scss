@@ -10,6 +10,18 @@
 // .navbar-lewagon .navbar-brand img {
 //   width: 40px;
 // }
+.notif {
+  position:relative;
+}
+.notif-badge {
+    position: absolute;
+    top: -3px;
+    right: -8px;
+    background-color: $ciclo-pink;
+    padding: 4px 6px;
+    border-radius: 50%;
+    color: white;
+}
 
 .navbar {
   display: flex;

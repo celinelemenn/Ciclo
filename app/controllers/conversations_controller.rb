@@ -6,6 +6,7 @@ class ConversationsController < ApplicationController
 
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
+    @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
   end
 
   # Here we simply instantiate a personal message so we can use it in the view, nothing new.

@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
 
   def index
+        @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
   end
 
   def new

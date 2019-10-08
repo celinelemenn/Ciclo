@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :terms]
+  before_action :badge, only: [:map, :feed, :profile]
 
   def home
   end
@@ -61,6 +62,7 @@ class PagesController < ApplicationController
   end
 
   def feed
+
      @user = current_user
 
     if params[:feed_type] == "all"
@@ -91,5 +93,9 @@ class PagesController < ApplicationController
   end
 
   def terms
+  end
+
+  def badge
+    @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
   end
 end

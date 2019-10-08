@@ -7,10 +7,13 @@
     </div>
 
     <div class="navbar-item">
-      <%= link_to feed_path, class: "anchor_link" do %>
+      <%= link_to feed_path, class: "anchor_link notif" do %>
         <i class="fas fa-rss"></i>
-      <% end %>
+        <% unless @badge_poi_unpublished.nil?  %>
+          <p class="notif-badge"><%= @badge_poi_unpublished %></p>
+        <% end %>
       <p>Feed</p>
+      <% end %>
     </div>
     <div class="navbar-item" id="navbar-map">
       <%= link_to map_path, class: "anchor_link" do %>
