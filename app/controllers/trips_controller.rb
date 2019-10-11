@@ -11,6 +11,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
+    @trip.photo = trip_params['photo'] unless trip_params['photo'].nil?
     if @trip.save
       redirect_to profile_path
     else
