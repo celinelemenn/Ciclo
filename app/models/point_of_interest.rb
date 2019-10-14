@@ -21,6 +21,7 @@ class PointOfInterest < ApplicationRecord
   scope :repair, -> { where(poi_type: :repair) }
   scope :info_point, -> { where(poi_type: :info_point) }
   scope :electricity, -> { where(poi_type: :electricity) }
+  scope :resto, -> { where(poi_type: :resto) }
 
   validates :poi_type, :description, :title, presence: true, if: :published?
 

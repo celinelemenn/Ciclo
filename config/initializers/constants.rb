@@ -83,6 +83,12 @@ POINT_OF_INTEREST = {
     marker_icon: "https://i.imgur.com/JeCPtpf.png",
     color: "#F6CD03"
   },
+  resto: {
+    label: "restaurant",
+    name: "Restaurant",
+    marker_icon: "https://i.imgur.com/B1YLLX8.png",
+    color: "#F6CD03"
+  },
 }
 
 ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
