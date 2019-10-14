@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_05_154749) do
+ActiveRecord::Schema.define(version: 2019_10_14_142400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,14 @@ ActiveRecord::Schema.define(version: 2019_10_05_154749) do
     t.boolean "bookmarks", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "hotel", default: true
+    t.boolean "toilet", default: true
+    t.boolean "wild_camping", default: true
+    t.boolean "bar", default: true
+    t.boolean "shopping", default: true
+    t.boolean "wifi", default: true
+    t.boolean "picnic", default: true
+    t.boolean "repair", default: true
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 

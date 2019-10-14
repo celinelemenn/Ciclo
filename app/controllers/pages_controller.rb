@@ -15,8 +15,16 @@ class PagesController < ApplicationController
       @landmark = @user_pref.landmark ? @point_of_interests.landmark : []
       @water = @user_pref.water_refill ? @point_of_interests.water : []
       @caution = @user_pref.caution ? @point_of_interests.caution : []
+      @toilet = @user_pref.toilet ? @point_of_interests.toilet : []
+      @wild_camping = @user_pref.wild_camping ? @point_of_interests.wild_camping : []
+      @hotel = @user_pref.hotel ? @point_of_interests.hotel : []
+      @bar = @user_pref.bar ? @point_of_interests.bar : []
+      @shopping = @user_pref.shopping ? @point_of_interests.shopping : []
+      @wifi = @user_pref.wifi ? @point_of_interests.wifi : []
+      @picnic = @user_pref.picnic ? @point_of_interests.picnic : []
+      @repair = @user_pref.repair ? @point_of_interests.repair : []
 
-      @point_of_interests = @camping + @landmark + @water + @caution
+      @point_of_interests = @camping + @landmark + @water + @caution + @toilet + @wild_camping + @hotel + @bar + @shopping + @wifi + @picnic + @repair
     end
 
     @markers = @point_of_interests.map do |poi|
@@ -29,7 +37,6 @@ class PagesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
     end
-
 
     other_cyclist = User.where.not(id: current_user.id)
     last_user_positions = []
@@ -73,6 +80,7 @@ class PagesController < ApplicationController
       @user_poi = PointOfInterest.order(updated_at: :desc)
       @user_poi_unpublished = @user_poi.select { |poi| poi.user == current_user && poi.published == false }
       @user_poi_published = @user_poi.select { |poi| poi.user == current_user && poi.published == true }
+      # raise
 
     end
   end
