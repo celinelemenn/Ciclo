@@ -47,6 +47,12 @@ POINT_OF_INTEREST = {
     marker_icon: "https://i.imgur.com/5dmng0G.png",
     color: ""
   },
+  electricity: {
+    label: "electricity",
+    name: "Charging Point",
+    marker_icon: "https://i.imgur.com/5dmng0G.png",
+    color: ""
+  },
   camping: {
     label: "camping",
     name: "Camping ",

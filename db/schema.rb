@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_174145) do
     t.boolean "picnic", default: true
     t.boolean "repair", default: true
     t.boolean "info_point", default: true
+    t.boolean "electricity", default: true
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 

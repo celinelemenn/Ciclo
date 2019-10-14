@@ -24,8 +24,9 @@ class PagesController < ApplicationController
       @picnic = @user_pref.picnic ? @point_of_interests.picnic : []
       @repair = @user_pref.repair ? @point_of_interests.repair : []
       @info = @user_pref.info_point ? @point_of_interests.info_point : []
+      @elect = @user_pref.electricity ? @point_of_interests.electricity : []
 
-      @point_of_interests = @camping + @landmark + @water + @caution + @toilet + @wild_camping + @hotel + @bar + @shopping + @wifi + @picnic + @repair + @info
+      @point_of_interests = @camping + @landmark + @water + @caution + @toilet + @wild_camping + @hotel + @bar + @shopping + @wifi + @picnic + @repair + @info + @electricity
     end
 
     @markers = @point_of_interests.map do |poi|
