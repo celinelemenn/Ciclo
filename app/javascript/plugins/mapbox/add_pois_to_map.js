@@ -13,7 +13,7 @@ const mapElement = document.getElementById('map');
     const url = marker.marker_link;
     el.style.backgroundImage = `url(${url})`;
     el.style.width = '30px';
-    el.style.height = '30px';
+    el.style.height = '32px';
 
     // drop down
     el.addEventListener('click', function() {

@@ -1,16 +1,4 @@
 POINT_OF_INTEREST = {
-  water_refill: {
-    label: 'water_refill',
-    name: "Water Refill",
-    marker_icon: "https://i.imgur.com/HDEH5Mk.png",
-    color: "#41D5FF"
-  },
-  camping: {
-    label: "camping",
-    name: "Camping ",
-    marker_icon: "https://i.imgur.com/KRowqX7.png",
-    color: "#F6CD03"
-  },
   caution: {
     label: "caution",
     name: "Caution!",
@@ -23,16 +11,52 @@ POINT_OF_INTEREST = {
     marker_icon: "https://i.imgur.com/lBM5EDK.png",
     color: "#09D898"
   },
-   toilet: {
+  water_refill: {
+    label: 'water_refill',
+    name: "Water Refill",
+    marker_icon: "https://i.imgur.com/HDEH5Mk.png",
+    color: "#41D5FF"
+  },
+  toilet: {
     label: 'toilet',
     name: "Toilet",
-    marker_icon: "https://i.imgur.com/cuD31xy.png",
+    marker_icon: "https://res.cloudinary.com/dwkwy2q1n/image/upload/v1571052177/logos/toilet.png",
     color: "#41D5FF"
+  },
+  picnic: {
+    label: "picnic",
+    name: "Picnic Table",
+    marker_icon: "https://i.imgur.com/ijxY7ZC.png",
+    color: ""
+  },
+  repair: {
+    label: "repair",
+    name: "Bike Repair Shop",
+    marker_icon: "https://i.imgur.com/H0mw0d4.png",
+    color: ""
+  },
+  wifi: {
+    label: "wifi",
+    name: "Wifi zone",
+    marker_icon: "https://i.imgur.com/5dmng0G.png",
+    color: ""
+  },
+  camping: {
+    label: "camping",
+    name: "Camping ",
+    marker_icon: "https://i.imgur.com/KRowqX7.png",
+    color: "#F6CD03"
   },
   wild_camping: {
     label: "wild_camping",
     name: "Wild Camping ",
     marker_icon: "https://i.imgur.com/lyd4BAA.png",
+    color: "#F6CD03"
+  },
+  shopping: {
+    label: "shopping",
+    name: "Grocery Store",
+    marker_icon: "https://i.imgur.com/IbWzRwS.png",
     color: "#F6CD03"
   },
    hotel: {
@@ -47,30 +71,6 @@ POINT_OF_INTEREST = {
     marker_icon: "https://i.imgur.com/JeCPtpf.png",
     color: "#F6CD03"
   },
-  shopping: {
-    label: "shopping",
-    name: "Grocery Store",
-    marker_icon: "https://i.imgur.com/IbWzRwS.png",
-    color: "#F6CD03"
-  },
-  wifi: {
-    label: "wifi",
-    name: "Wifi zone",
-    marker_icon: "https://i.imgur.com/5dmng0G.png",
-    color: ""
-  },
-  picnic: {
-    label: "picnic",
-    name: "Picnic Table",
-    marker_icon: "https://i.imgur.com/ijxY7ZC.png",
-    color: ""
-  },
-  repair: {
-    label: "repair",
-    name: "Bike Repair Shop",
-    marker_icon: "https://i.imgur.com/H0mw0d4.png",
-    color: ""
-  }
 }
 
 ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
