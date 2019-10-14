@@ -11,6 +11,13 @@ class PointOfInterest < ApplicationRecord
   scope :caution, -> { where(poi_type: :caution) }
   scope :landmark, -> { where(poi_type: :landmark) }
   scope :water, -> { where(poi_type: :water_refill) }
+  scope :toilet, -> { where(poi_type: :toilet) }
+  scope :wild_camping, -> { where(poi_type: :wild_camping) }
+  scope :hotel, -> { where(poi_type: :hotel) }
+  scope :bar, -> { where(poi_type: :bar) }
+  scope :wifi, -> { where(poi_type: :wifi) }
+  scope :picnic, -> { where(poi_type: :picnic) }
+  scope :repair, -> { where(poi_type: :repair) }
 
   validates :poi_type, :description, :title, presence: true, if: :published?
 

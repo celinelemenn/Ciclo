@@ -2,7 +2,7 @@ POINT_OF_INTEREST = {
   water_refill: {
     label: 'water_refill',
     name: "Water Refill",
-    marker_icon: "https://i.imgur.com/LOnp8YJ.png",
+    marker_icon: "https://i.imgur.com/HDEH5Mk.png",
     color: "#41D5FF"
   },
   camping: {
@@ -20,59 +20,61 @@ POINT_OF_INTEREST = {
   landmark: {
     label: "landmark",
     name: "Landmark",
-    marker_icon: "https://i.imgur.com/mQDJNpw.png",
+    marker_icon: "https://i.imgur.com/lBM5EDK.png",
     color: "#09D898"
+  },
+  wild_camping: {
+    label: "wild_camping",
+    name: "Wild Camping ",
+    marker_icon: "https://i.imgur.com/lyd4BAA.png",
+    color: "#F6CD03"
+  },
+   toilet: {
+    label: 'toilet',
+    name: "Toilet",
+    marker_icon: "https://i.imgur.com/cuD31xy.png",
+    color: "#41D5FF"
+  },
+   hotel: {
+    label: "hotel",
+    name: "Ho(s)tel",
+    marker_icon: "https://i.imgur.com/SgAg1yF.png",
+    color: "#F6CD03"
+  },
+  bar: {
+    label: "bar",
+    name: "Bar",
+    marker_icon: "https://i.imgur.com/JeCPtpf.png",
+    color: "#F6CD03"
+  },
+  shopping: {
+    label: "shopping",
+    name: "Grocery Store",
+    marker_icon: "https://i.imgur.com/IbWzRwS.png",
+    color: "#F6CD03"
+  },
+  wifi: {
+    label: "wifi",
+    name: "Wifi zone",
+    marker_icon: "https://i.imgur.com/5dmng0G.png",
+    color: ""
+  },
+  picnic: {
+    label: "picnic",
+    name: "Picnic Table",
+    marker_icon: "https://i.imgur.com/ijxY7ZC.png",
+    color: ""
+  },
+  repair: {
+    label: "repair",
+    name: "Bike Repair Shop",
+    marker_icon: "https://i.imgur.com/H0mw0d4.png",
+    color: ""
   }
 }
 
 ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
 
-# ROUTES_NO_NAV = [
-#   { controller: 'registrations', action: 'new' },
-#   { controller: 'registrations', action: 'create' },
-#   { controller: 'registrations', action: 'cancel' },
-#   { controller: 'passwords', action: 'edit' },
-#   { controller: 'passwords', action: 'new' },
-#   { controller: 'sessions', action: 'new' },
-#   { controller: 'sessions', action: 'create' },
-#   { controller: 'pages', action: 'home' },
-#   { controller: 'pages', action: 'userprofile' },
-#   { controller: 'pages', action: 'terms' },
-#   { controller: 'pages', action: 'help' },
-#   { controller: 'likes', action: 'create' },
-#   { controller: 'downvotes', action: 'create' },
-#   { controller: 'bookmarks', action: 'create' },
-#   { controller: 'bookmarks', action: 'new' },
-#   { controller: 'point_of_interests', action: 'new' },
-#   { controller: 'point_of_interests', action: 'show' },
-#   { controller: 'preferences', action: 'edit' },
-#   { controller: 'trips', action: 'edit' },
-#   { controller: 'trips', action: 'new' },
-#   { controller: 'reports', action: 'new' },
-#   { controller: 'conversations', action: 'show' },
-#   { controller: 'personal_messages', action: 'new' },
-# ]
-
-# ROUTES_NO_MENU = [
-#   { controller: 'registrations', action: 'edit' },
-#   {controller: 'trips', action: 'new'},
-#   {controller: 'trips', action: 'edit'},
-#   { controller: 'reports', action: 'new' },
-#   { controller: 'personal_messages', action: 'new' },
-#   { controller: 'point_of_interests', action: 'new' },
-
-# ]
-
-# ROUTES_BACK_MAP = [
-#   { controller: 'pages', action: 'userprofile' },
-#   { controller: 'point_of_interests', action: 'show' },
-#   { controller: 'likes', action: 'create'},
-#   { controller: 'downvotes', action: 'create' },
-#   { controller: 'bookmarks', action: 'create' },
-#   { controller: 'preferences', action: 'edit' },
-
-#   { controller: 'conversations', action: 'show' },
-# ]
 
 MAIN_MENU_PAGES = [
    { controller: 'pages', action: 'home' },
