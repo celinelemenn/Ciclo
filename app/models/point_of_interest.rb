@@ -15,6 +15,7 @@ class PointOfInterest < ApplicationRecord
   scope :wild_camping, -> { where(poi_type: :wild_camping) }
   scope :hotel, -> { where(poi_type: :hotel) }
   scope :bar, -> { where(poi_type: :bar) }
+  scope :shopping, -> { where(poi_type: :shopping) }
   scope :wifi, -> { where(poi_type: :wifi) }
   scope :picnic, -> { where(poi_type: :picnic) }
   scope :repair, -> { where(poi_type: :repair) }
