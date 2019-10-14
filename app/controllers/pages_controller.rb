@@ -23,8 +23,9 @@ class PagesController < ApplicationController
       @wifi = @user_pref.wifi ? @point_of_interests.wifi : []
       @picnic = @user_pref.picnic ? @point_of_interests.picnic : []
       @repair = @user_pref.repair ? @point_of_interests.repair : []
+      @info = @user_pref.info_point ? @point_of_interests.info_point : []
 
-      @point_of_interests = @camping + @landmark + @water + @caution + @toilet + @wild_camping + @hotel + @bar + @shopping + @wifi + @picnic + @repair
+      @point_of_interests = @camping + @landmark + @water + @caution + @toilet + @wild_camping + @hotel + @bar + @shopping + @wifi + @picnic + @repair + @info
     end
 
     @markers = @point_of_interests.map do |poi|

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_142400) do
+ActiveRecord::Schema.define(version: 2019_10_14_174145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_142400) do
     t.boolean "wifi", default: true
     t.boolean "picnic", default: true
     t.boolean "repair", default: true
+    t.boolean "info_point", default: true
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 

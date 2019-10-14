@@ -19,6 +19,7 @@ class PointOfInterest < ApplicationRecord
   scope :wifi, -> { where(poi_type: :wifi) }
   scope :picnic, -> { where(poi_type: :picnic) }
   scope :repair, -> { where(poi_type: :repair) }
+  scope :info_point, -> { where(poi_type: :info_point) }
 
   validates :poi_type, :description, :title, presence: true, if: :published?
 

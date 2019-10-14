@@ -9,8 +9,8 @@ class PreferencesController < ApplicationController
       @user_pref.user = @user
     end
 
+    # raise
     POINT_OF_INTEREST.each { | key, v |  @user_pref[key] = params[key] == 'on' }
-
     @user_pref.save
     redirect_to map_path
 
@@ -28,6 +28,6 @@ class PreferencesController < ApplicationController
   end
 
   def preferences_params
-    params.require(:preference).permit(:camping)
+    # params.require(:preference).permit(:camping)
   end
 end
