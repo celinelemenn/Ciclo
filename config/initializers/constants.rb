@@ -23,17 +23,17 @@ POINT_OF_INTEREST = {
     marker_icon: "https://i.imgur.com/lBM5EDK.png",
     color: "#09D898"
   },
-  wild_camping: {
-    label: "wild_camping",
-    name: "Wild Camping ",
-    marker_icon: "https://i.imgur.com/lyd4BAA.png",
-    color: "#F6CD03"
-  },
    toilet: {
     label: 'toilet',
     name: "Toilet",
     marker_icon: "https://i.imgur.com/cuD31xy.png",
     color: "#41D5FF"
+  },
+  wild_camping: {
+    label: "wild_camping",
+    name: "Wild Camping ",
+    marker_icon: "https://i.imgur.com/lyd4BAA.png",
+    color: "#F6CD03"
   },
    hotel: {
     label: "hotel",
