@@ -17,10 +17,14 @@
 
   <!-- if the poi is unpublished / user clicked on later -->
 <div class="">
-  <div class="unpublished-stats">
-    <h5>You have <span class="color-pink "><%= @user_poi_unpublished.count%></span> unpublished reports</h5>
+  <% unless @user_poi_unpublished.count == 0%>
 
+  <div class="unpublished-stats">
+    <h5>
+      You have <span class="badge-unpublished-feed"><%= @user_poi_unpublished.count%></span> unpublished reports
+    </h5>
   </div>
+  <% end %>
 
   <div class="mt-4">
     <% @user_poi_unpublished.each do |poi| %>
