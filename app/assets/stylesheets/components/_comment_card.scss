@@ -1,3 +1,35 @@
+.comment-card-unpublished {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: baseline;
+}
+
+.comment-card-image-unpublished {
+  // display: flex;
+  // align-items:flex-start;
+  img {
+    height: 40px;
+  }
+}
+
+.comment-card-text-unpublished {
+  flex-grow: 1;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  border-bottom: 1px solid #ececec;
+  h5 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.comment-edit-icon {
+  color: $ciclo-pink;
+  font-size: 24px;
+}
+
 .comment-card {
   display: flex;
   margin-bottom: 20px;
@@ -32,11 +64,6 @@
 .comment-link:hover {
   text-decoration: none;
   color: $ciclo-pink;
-}
-
-.comment-edit-icon {
-  color: $ciclo-pink;
-  font-size: 24px;
 }
 
 .new-comment {

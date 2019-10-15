@@ -13,30 +13,40 @@
   <p class="px-3"> You haven't added any report to the map yet. Click on the <i class="uni-box-shadow btn-on-map-left fas fa-plus"></i> on the map to start </p>
   </div>
   <% end %>
-
-  <% @user_poi_unpublished.each do |poi| %>
+</div>
 
   <!-- if the poi is unpublished / user clicked on later -->
+<div class="">
+  <div class="unpublished-stats">
+    <h5>You have <span class="color-pink "><%= @user_poi_unpublished.count%></span> unpublished reports</h5>
 
-    <%= link_to edit_point_of_interest_path(poi), class: "comment-link" do %>
-      <div class="comment-card mx-3">
+  </div>
 
-        <div class="comment-card-image">
-          <img src=<%= poi.icon %> alt="" height=20>
-        </div>
+  <div class="mt-4">
+    <% @user_poi_unpublished.each do |poi| %>
 
-        <div class="comment-card-text">
-          <h5><strong><%= poi.title %></strong></h5>
-          <p><%= poi.description %></p>
-          <p class= "uni-opacity40">unpublished</p>
+
+      <%= link_to edit_point_of_interest_path(poi), class: "comment-link" do %>
+        <div class="comment-card-unpublished mx-3">
+
+          <div class="comment-card-image-unpublished">
+            <img src=<%= poi.icon %> alt="" height=20>
+          </div>
+
+          <div class="comment-card-text-unpublished">
+            <h5><strong><%= poi.title %></strong></h5>
+            <p><%= poi.description %></p>
+            <p class= "uni-opacity40">unpublished</p>
+          </div>
+          <div class="comment-edit-icon">
+            <i class="far fa-edit"></i>
+          </div>
         </div>
-        <div class="comment-edit-icon">
-          <i class="far fa-edit"></i>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
 <!-- if the poi is published / user clicked on submit -->
 <div>
   <% @user_poi_published.each do |poi| %>
