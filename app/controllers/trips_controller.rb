@@ -27,7 +27,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
     @trip.photo = trip_params['photo'] unless trip_params['photo'].nil?
-    # raise
+
     if @trip.save
       redirect_to profile_path
     else
@@ -36,6 +36,8 @@ class TripsController < ApplicationController
   end
 
   def show
+    @trip = Trip.find(params[:id])
+
   end
 
   def destroy

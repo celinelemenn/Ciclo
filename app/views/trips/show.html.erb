@@ -1,1 +1,38 @@
-<h1>this is the show page of trip</h1>
+<div class="uni-page-container">
+  <div class="trip-show-top-img">
+    <%= cl_image_tag @trip.photo.url(:low) %>
+  </div>
+
+  <div class="trip-stats">
+    <div class="trip-stat">
+      <i class="fas fa-stopwatch trip-stat-icon"></i>
+      <p><%=  @trip.trip_time%></p>
+    </div>
+    <div class="trip-stat">
+      <!-- <i class="fas fa-route"></i> -->
+      <i class="fas fa-arrows-alt-h trip-stat-icon"></i>
+      <p> <%= @trip.km %> km</p>
+    </div>
+    <div class="trip-stat">
+      <i class="fas fa-long-arrow-alt-up trip-stat-icon"></i>
+      <p>1000 m</p>
+    </div>
+    <div class="trip-stat">
+      <i class="fas fa-long-arrow-alt-down trip-stat-icon"></i>
+      <p>1000 m</p>
+    </div>
+  </div>
+
+
+  <div class="mx-3 mb-50">
+    <h3><%= @trip.name %></h3>
+    <p> by <%= @trip.user.full_name %> in <%= @trip.start_date.year  %></p>
+    <% unless @trip.blog.nil? %>
+      <a href="<%= @trip.blog %>" class="btn-simple"> view the blog </a>
+    <% end %>
+  </div>
+
+  <div class="trip-show-btn">
+    <%= link_to "See similar trips", trips_path, class: "btn-secondary" %>
+  </div>
+</div>

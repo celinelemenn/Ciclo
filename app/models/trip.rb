@@ -18,7 +18,7 @@ class Trip < ApplicationRecord
       'Silk Road', 'South East Asia', 'South America - West Coast', 'US - Pacific Coast', 'US - East to West', 'Africa - West Coast', 'Africa - East Coast'
     ]
 
-  def trip_time(start_date, end_date)
+  def trip_time
     self.end_date = Date.today if end_date.nil?
 
     (self.start_date.to_date..self.end_date.to_date).to_a.size
