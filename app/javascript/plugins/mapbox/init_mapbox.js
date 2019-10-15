@@ -14,8 +14,8 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/klingmap/ck027tg7x04481cmu8e9wvrud',
-    center: [4.925,52.375],
-    zoom: 10,
+    center: [4.807,45.197],
+    zoom: 8,
   });
 };
 
