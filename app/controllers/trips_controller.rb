@@ -35,6 +35,9 @@ class TripsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def destroy
     @trip = Trip.find(params[:id])
     @trip.delete

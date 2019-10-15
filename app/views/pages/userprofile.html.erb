@@ -1,3 +1,5 @@
+<!-- this is the page of a cyclist -->
+
 <div class="uni-page-container text-center p-3">
   <% if @user.photo.file %>
       <%= cl_image_tag @user.photo.url(:avatar) %>
@@ -24,6 +26,8 @@
       <p class="uni-opacity40 my-4"> no cycling trips added by <%= @user.full_name.capitalize %> so far </p>
     <% else %>
       <% @trips.each do |trip| %>
+
+        <%= link_to  %>
         <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
          <% if trip.end_date > Date.today %>
               <p class="travelling-tag">Now travelling</p>
@@ -44,6 +48,7 @@
             </div>
           </div>
         </div>
+
       <% end %>
     <% end %>
 </div>
