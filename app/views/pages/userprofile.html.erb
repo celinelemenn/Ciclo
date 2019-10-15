@@ -28,9 +28,9 @@
       <% @trips.each do |trip| %>
 
         <%= link_to trip_path(trip) do  %>
-          <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+          <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url.nil? ? "" : cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
 
-            <% if trip.end_date > Date.today %>
+            <% if trip.end_date.nil?  || trip.end_date > Date.today %>
               <p class="travelling-tag">Now travelling</p>
             <% end %>
 
@@ -46,8 +46,10 @@
                 <font size="1"><p>days</p></font>
               </div>
               <div>
+                <% unless trip.km.nil? %>
                 <p><strong><%= trip.km %> </strong></p>
                 <font size="1"><p>kilometers</p></font>
+                <% end %>
               </div>
             </div>
           </div>
