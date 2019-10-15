@@ -2,7 +2,14 @@ class TripsController < ApplicationController
 
   def index
     @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
-    @trips = Trip.order(start_date: :desc)
+    search_params
+
+    if params[:query].nil? || params[:query].empty?
+      @trips = Trip.order(start_date: :desc)
+    else
+      @params = params[:query]
+      @trips = Trip.order(start_date: :desc).where("name @@ ?", "%#{@params}%" )
+    end
   end
 
   def new
@@ -51,5 +58,9 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache, :country_code, :cycling_route)
+  end
+
+  def search_params
+    params.permit(:query)
   end
 end
