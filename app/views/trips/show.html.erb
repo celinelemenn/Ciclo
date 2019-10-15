@@ -8,19 +8,21 @@
       <i class="fas fa-stopwatch trip-stat-icon"></i>
       <p><%=  @trip.trip_time%> days</p>
     </div>
-    <div class="trip-stat">
-      <!-- <i class="fas fa-route"></i> -->
-      <i class="fas fa-arrows-alt-h trip-stat-icon"></i>
-      <p> <%= @trip.km %> km</p>
-    </div>
-    <div class="trip-stat">
+    <% unless @trip.km.nil? %>
+      <div class="trip-stat">
+        <!-- <i class="fas fa-route"></i> -->
+        <i class="fas fa-arrows-alt-h trip-stat-icon"></i>
+        <p> <%= @trip.km %> km</p>
+      </div>
+    <%end %>
+ <!--    <div class="trip-stat">
       <i class="fas fa-long-arrow-alt-up trip-stat-icon"></i>
       <p>1000 m</p>
     </div>
     <div class="trip-stat">
       <i class="fas fa-long-arrow-alt-down trip-stat-icon"></i>
       <p>1000 m</p>
-    </div>
+    </div> -->
   </div>
 
 

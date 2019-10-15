@@ -2,23 +2,23 @@
 
 <div class="uni-page-container text-center p-3">
 
-<% if current_user.present? %>
-  <% if current_user.photo.file %>
-    <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
-  <% else %>
-    <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
+  <% if current_user.present? %>
+    <% if current_user.photo.file %>
+      <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
+    <% else %>
+      <img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg" alt="Image not found" class="avatar-large">
   <% end %>
-<div class="info-card">
-  <strong><h5><%= current_user.full_name.capitalize  %></h5></strong>
-  <p><%= current_user.bio  %></p>
-  <p><%= current_user.description %><p>
-  <h6><%= current_user.blog  %></h6>
-<% end %>
-</div>
+  <div class="info-card">
+    <strong><h5><%= current_user.full_name.capitalize  %></h5></strong>
+    <p><%= current_user.bio  %></p>
+    <p><%= current_user.description %><p>
+    <h6><%= current_user.blog  %></h6>
+  <% end %>
+  </div>
 
-<div class="mt-3">
-  <i class="fas fa-pen pr-2"></i><%= link_to 'Edit', edit_user_registration_path, class: "btn-simple"%>
-</div>
+  <div class="mt-3">
+    <i class="fas fa-pen pr-2"></i><%= link_to 'Edit', edit_user_registration_path, class: "btn-simple"%>
+  </div>
 
 
   <div class="parent-card">

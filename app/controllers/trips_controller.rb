@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
 
   def index
-        @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
+    @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
+    @trips = Trip.order(start_date: :desc)
   end
 
   def new

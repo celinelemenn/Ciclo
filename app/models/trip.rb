@@ -23,4 +23,13 @@ class Trip < ApplicationRecord
 
     (self.start_date.to_date..self.end_date.to_date).to_a.size
   end
+
+  def country_name
+    if self.country_code.nil? || self.country_code.empty?
+      country = ""
+    else
+    country = ISO3166::Country[self.country_code.to_s]
+    country.translations[I18n.locale.to_s] || country.name
+    end
+  end
 end

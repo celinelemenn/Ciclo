@@ -38,6 +38,7 @@
 .comment-card-image {
   display: flex;
   align-items:flex-start;
+  min-width: 40px;
   img {
     height: 40px;
   }
@@ -71,4 +72,15 @@
     border: 1 solid white;
   }
 
+}
+
+.index-trips {
+    text-decoration: none;
+    color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: $ciclo-pink;
+    cursor: pointer;
+  }
 }
