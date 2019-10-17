@@ -146,3 +146,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.btn-search {
+    color: white;
+    background-color: $ciclo-pink;
+    border-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

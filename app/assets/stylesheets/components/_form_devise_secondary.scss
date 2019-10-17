@@ -97,6 +97,17 @@
   }
 }
 
+.search {
+  .form-container {
+    width: -webkit-fill-available;
+    margin: 0 10px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 36px
+  }
+}
+
 #trip_cycling_route {
   display: block;
     width: 100%;

@@ -4,20 +4,20 @@
   <h1 class="my-4 ml-3">All trips</h1>
 
 <!-- this is the search part -->
-  <div class="mb-50">
-    <%= form_tag trips_path, class: "form-container d-flex", method: :get do %>
+  <div class="mb-50 search">
+    <%= form_tag trips_path, class: "form-container", method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control form-input",
       placeholder: "Filter by keywords"
     %>
-    <%= submit_tag "Search", class: "btn-main" %>
+    <%= submit_tag "Search", class: "btn-search" %>
     <% end %>
   </div>
 
 <!-- this is the results listing all trips -->
   <% @trips.each do|trip|   %>
-    <div class="margin20">
+    <div class="margin20 mb-50">
       <%= link_to trip_path(trip), class: "index-trips" do %>
         <div class="comment-card">
           <div class="comment-card-image">
