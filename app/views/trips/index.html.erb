@@ -1,6 +1,6 @@
 <%= render 'shared/topmenu' %>
 
-<div class="uni-page-container mb-50">
+<div class="uni-page-container">
   <h1 class="my-4 ml-3">All trips</h1>
 
 <!-- this is the search part -->
@@ -16,7 +16,7 @@
   </div>
 
 <!-- this is the results listing all trips -->
-  <div class="mb-5">
+  <div class="mb-7rem">
     <% @trips.each do|trip|   %>
       <div class="margin20">
         <%= link_to trip_path(trip), class: "index-trips" do %>
