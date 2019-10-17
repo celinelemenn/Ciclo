@@ -4,8 +4,7 @@
   style="width: 100%; height: 100%;"
   data-markers="<%= @markers.to_json %>"
   data-cyclists="<%= @cyclist_avatars.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  class="uni-app-container"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"z
 ></div>
 
   <%= link_to preferencesedit_path(@user) do %>
