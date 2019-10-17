@@ -72,7 +72,6 @@ class PagesController < ApplicationController
   end
 
   def feed
-
      @user = current_user
 
     if params[:feed_type] == "all"
@@ -83,7 +82,6 @@ class PagesController < ApplicationController
       @user_poi = PointOfInterest.order(created_at: :desc)
       @user_poi_unpublished = @user_poi.select { |poi| poi.user == current_user && poi.published == false }
       @user_poi_published = @user_poi.select { |poi| poi.user == current_user && poi.published == true }
-      # raise
 
     end
   end
