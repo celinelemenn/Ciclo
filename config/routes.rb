@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers  => {:registrations => 'registrations'}
 
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   root to: 'pages#home', as: :homepage
   get '/profile', to: 'pages#profile', as: :profile
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
