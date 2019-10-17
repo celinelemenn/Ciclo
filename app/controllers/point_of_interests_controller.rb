@@ -20,9 +20,11 @@ class PointOfInterestsController < ApplicationController
     @user_position = UserPosition.where(user_id: current_user.id).last
     @point_of_interest.lat = @user_position.lat
     @point_of_interest.long = @user_position.long
+
     if params[:commit] == "Add"
       @point_of_interest.published = true
       if @point_of_interest.save
+        NewPoiCountryNameJob.perform_later(@point_of_interest.id)
         redirect_to map_path
       else
         render :new
@@ -31,6 +33,7 @@ class PointOfInterestsController < ApplicationController
     else
       @point_of_interest.published = false
       if @point_of_interest.save
+        NewPoiCountryNameJob.perform_later(@point_of_interest.id)
         redirect_to map_path
       else
         render :new
