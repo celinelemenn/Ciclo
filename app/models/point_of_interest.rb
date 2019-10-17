@@ -32,8 +32,9 @@ class PointOfInterest < ApplicationRecord
 
   enum poi_type: POINT_OF_INTEREST.keys
 
+
   def date
-    date = -(self.updated_at - DateTime.now) / 60
+    date = -(self.created_at - DateTime.now) / 60
 
     if date < 60
       date = "#{date.round} min ago"
@@ -74,5 +75,7 @@ class PointOfInterest < ApplicationRecord
       ""
     end
   end
+
+  private
 
 end

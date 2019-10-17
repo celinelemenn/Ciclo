@@ -71,7 +71,7 @@
               <%= poi.user.full_name %>
             <% end %>
           </p>
-          <p class= "uni-opacity40"><%= Geocoder.search([poi.lat, poi.long]).first.country %> </p>
+          <p class= "uni-opacity40"><%= poi.country_name %> </p>
         </div>
       </div>
     <% end %>
