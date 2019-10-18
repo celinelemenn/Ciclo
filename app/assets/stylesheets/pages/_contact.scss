@@ -1,7 +1,7 @@
 .contact-btn {
     display: flex;
     justify-content: space-around;
-    flex-direction:column;
+    flex-direction:row;
     align-items: center;
 }
 
@@ -29,4 +29,18 @@
       margin-bottom: 0;
     }
 
+}
+
+.new_feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback_comment {
+  margin-top:20px;
+}
+
+.feedback_rating {
+  margin-top:20px;
 }
