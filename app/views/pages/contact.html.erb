@@ -1,7 +1,7 @@
 <div class="">
 
-
-<h3 class="text-center mt-5"> Get in touch</h3>
+  <!-- get in touch part -->
+  <h3 class="text-center mt-5"> Get in touch</h3>
   <div class="contact-btn">
     <div>
       <%= form_for :conversation, url: conversations_path do |f| %>
@@ -9,8 +9,6 @@
         <div class="" >
           <button type="submit" name="commit" class="chat-contact-btn" ><i class="fas fa-comments contact-social-icon"></i></button>
         </div>
-
-
       <% end %>
     </div>
     <div>
@@ -20,7 +18,19 @@
       <a href="https://www.instagram.com/invites/contact/?i=1ck7nqlkrilgy&utm_content=a9ke8dg" class=""><i class="fab fa-instagram contact-social-icon"></i></a>
     </div>
   </div>
-<hr class="line-divider">
-<h3 class="text-center mt-5"> Give us your feedback</h3>
+  <hr class="line-divider">
+
+  <!-- NPS part -->
+
+  <h3 class="text-center mt-5 mb-3"> Give us your feedback</h3>
+
+<div class="px-3">
+    <%= simple_form_for [@feedback] do |f| %>
+      <%= f.input :rating, collection: (1..10).to_a, label: "How likely are you to recommend Cicloo to another touring cyclist ? (1=not at all, 10=extremely likely)"  %>
+      <%= f.input :comment, label: "Tell us why ?", placeholder: "Tell us more..." %>
+      <%= f.submit "Send", class: "btn-main"%>
+    <% end %>
+</div>
 
 </div>
+

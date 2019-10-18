@@ -111,6 +111,7 @@ class PagesController < ApplicationController
     else
       @conversation = Conversation.new
     end
+    @feedback = Feedback.new
   end
 
   def badge

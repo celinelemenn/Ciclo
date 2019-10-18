@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :downvotes
   has_many :comments
   has_many :user_positions
+  has_many :feedbacks
 
   # The below have been added for messaging. Again, both conditions belong to the same
   # "Conversation" model, so we need to add the class_name. WE specify the foreign-key name
