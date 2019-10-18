@@ -105,6 +105,12 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @user = User.find_by(admin: true)
+    if params[:receiver_id]
+      @conversation = Conversation.find_by(recevier_id: params[:id])
+    else
+      @conversation = Conversation.new
+    end
   end
 
   def badge
