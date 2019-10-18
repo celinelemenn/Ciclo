@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
   get '/feed', to: 'pages#feed', as: :feed
+  get '/contact', to: 'pages#contact', as: :contact
   get '/filter/:id', to: 'preferences#edit', as: :preferencesedit
   patch '/filter/:id', to: 'preferences#update', as: :preferences
   get "/404", to: "errors#not_found"

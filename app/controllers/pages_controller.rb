@@ -104,6 +104,9 @@ class PagesController < ApplicationController
   def terms
   end
 
+  def contact
+  end
+
   def badge
     @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
   end
