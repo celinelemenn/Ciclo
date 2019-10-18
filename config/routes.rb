@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'feedback/create'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers  => {:registrations => 'registrations'}
 
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   #   namespace :v1 do
   #     resources :comments, only: [:create]
   #   end
-
+  resources :feedbacks, only: [:create]
   resources :trips, only: [:index, :new, :create, :edit, :show, :update, :destroy]
   resources :point_of_interests, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]

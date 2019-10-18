@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_17_175056) do
+ActiveRecord::Schema.define(version: 2019_10_18_113809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 2019_10_17_175056) do
     t.datetime "updated_at", null: false
     t.index ["point_of_interest_id"], name: "index_downvotes_on_point_of_interest_id"
     t.index ["user_id"], name: "index_downvotes_on_user_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -172,6 +181,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_175056) do
   add_foreign_key "comments", "users"
   add_foreign_key "downvotes", "point_of_interests"
   add_foreign_key "downvotes", "users"
+  add_foreign_key "feedbacks", "users"
   add_foreign_key "likes", "point_of_interests"
   add_foreign_key "likes", "users"
   add_foreign_key "personal_messages", "conversations"
