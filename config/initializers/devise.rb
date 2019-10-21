@@ -292,6 +292,10 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
+  config.warden do |manager|
+  manager.failure_app = MyFailureApp
+end
+
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is
