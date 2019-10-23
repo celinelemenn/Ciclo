@@ -28,7 +28,9 @@
 
   <div class="mx-3 mb-50">
     <h3><%= @trip.name %></h3>
-    <p> by <%= @trip.user.full_name %> in <%= @trip.start_date.year  %></p>
+    <p> by <%= @trip.user.full_name %>, started in <%= @trip.start_date.strftime("%b %Y")  %></p>
+
+    <p class="mt-5"> <%= @trip.description %></p>
     <% unless @trip.blog.nil? || @trip.blog.empty? %>
       <a href="<%= @trip.blog %>" class="btn-simple"> view the blog </a>
     <% end %>

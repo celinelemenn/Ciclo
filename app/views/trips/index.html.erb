@@ -22,7 +22,7 @@
 
     <% unless @trips.where(cycling_route: cycling_route).empty? %>
 
-      <h5 class="ml-3 mb-4"><%= cycling_route %></h5>
+      <h5 class="ml-3 mt-5 mb-3"><%= cycling_route %></h5>
       <% @trips.where(cycling_route: cycling_route).each do|trip|   %>
         <%= render 'shared/trips_card', trip: trip %>
       <% end %>
@@ -30,7 +30,7 @@
 
     <% end %>
 
-    <h5 class="ml-3 mb-4">No Specific Cycling Route</h5>
+    <h5 class="ml-3 mt-5 mb-3">No Specific Cycling Route</h5>
     <% @trips_noroute.each do |trip| %>
       <%= render 'shared/trips_card', trip: trip %>
     <% end %>

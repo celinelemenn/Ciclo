@@ -20,13 +20,15 @@
     <hr class="line-divider my-4">
 
    <%= f.input :country_code, priority: ["FR", "DE","NL", "NO","GB", "US"], prompt: "Select a Country", label: false, include_blank: true %>
-    <p style="color:#26547C;">OR</p>
+    <p class="grey-text font-14">and / or </p>
     <div class="form-group">
     <%= f.input :cycling_route, collection: Trip::CYCLING_ROUTES, prompt: "Select a Cycling Route", label: false, include_blank: true %>
     </div>
-     <hr class="line-divider my-4">
-    <%= f.input :km, label: "Kilometers achieved / planned" %>
-    <%= f.input :blog,  label: "Blog of this trip"  %>
+    <hr class="line-divider my-4">
+    <%= f.input :description, label: "Description ", placeholder: "Tell other cicloo-ers the highlights ..."%>
+    <%= f.input :km, label: "Kilometers achieved / planned ", placeholder: "1500"%>
+    <%= f.input :blog,  label: "Blog of this trip", placeholder: "www.ciclo-app.com"  %>
+
 
 
 

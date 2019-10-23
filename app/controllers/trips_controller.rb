@@ -12,8 +12,8 @@ class TripsController < ApplicationController
     end
 
     @cycling_routes = Trip::CYCLING_ROUTES
-    @trips_noroute = Trip.where(country_code: nil).order(start_date: :desc)
-    # raise
+    @trips_noroute = Trip.where(country_code: nil).or(Trip.where(country_code: "")).order(start_date: :desc)
+
   end
 
   def new
@@ -49,7 +49,6 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-
   end
 
   def destroy
@@ -61,7 +60,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache, :country_code, :cycling_route)
+    params.require(:trip).permit(:start_date, :end_date, :name, :km, :blog, :photo, :photo_cache, :country_code, :cycling_route, :description)
   end
 
   def search_params
