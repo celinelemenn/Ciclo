@@ -44,13 +44,13 @@ POINT_OF_INTEREST = {
   info_point: {
     label: "info_point",
     name: "Info Point",
-    marker_icon: "https://i.imgur.com/5dmng0G.png",
+    marker_icon: "https://i.imgur.com/YaRaxIq.png",
     color: ""
   },
   electricity: {
     label: "electricity",
     name: "Charging Point",
-    marker_icon: "https://i.imgur.com/5dmng0G.png",
+    marker_icon: "https://i.imgur.com/tqhSZQI.png",
     color: ""
   },
   camping: {

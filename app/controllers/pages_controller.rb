@@ -39,8 +39,10 @@ class PagesController < ApplicationController
         marker_link: POINT_OF_INTEREST[poi.poi_type.to_sym][:marker_icon],
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
+
     end
 
+    # raise
     other_cyclist = User.where.not(id: current_user.id)
     last_user_positions = []
 
