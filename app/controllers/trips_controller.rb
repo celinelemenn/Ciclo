@@ -12,8 +12,8 @@ class TripsController < ApplicationController
     end
 
     @cycling_routes = Trip::CYCLING_ROUTES
-    @trips_noroute = Trip.where(country_code: nil).or(Trip.where(country_code: "")).order(start_date: :desc)
-
+    @trips_noroute = Trip.where(cycling_route: nil).or(Trip.where(cycling_route: "")).order(start_date: :desc)
+    raise
   end
 
   def new
