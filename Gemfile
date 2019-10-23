@@ -19,6 +19,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 gem 'country_select', '~> 4.0'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'omniauth-facebook'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
