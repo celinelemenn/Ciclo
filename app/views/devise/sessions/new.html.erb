@@ -6,6 +6,20 @@
     </div>
   </div>
     <div class="form-bottom">
+
+       <%= link_to user_facebook_omniauth_authorize_path do%>
+        <div class="facebook-btn mt-3">
+        <i class="fab fa-facebook-f"> </i>
+        <p>Log in with Facebook</p>
+        </div>
+      <% end %>
+
+      <div class="d-flex my-5">
+        <hr class="line-divider mt-3">
+        <p class="grey-text">or</p>
+        <hr class="line-divider mt-3">
+      </div>
+
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-input">
           <%= f.input :email,
