@@ -7,7 +7,7 @@
   </div>
 
     <div class="form-bottom sign-up">
-
+<!--
       <%= link_to user_facebook_omniauth_authorize_path do%>
         <div class="facebook-btn mt-3">
         <i class="fab fa-facebook-f"> </i>
@@ -20,6 +20,7 @@
         <p class="grey-text">or</p>
         <hr class="line-divider mt-3">
       </div>
+-->
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
