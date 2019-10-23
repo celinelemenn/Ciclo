@@ -98,7 +98,7 @@ if (mapElement) {
     locateButton.classList.toggle("btn-on-map-right-rotate");
     map.flyTo({
       center: [longitude, latitude],
-      zoom: 12
+      zoom: 10
     });
     }
   });
