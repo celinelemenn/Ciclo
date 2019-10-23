@@ -1,9 +1,9 @@
 <%= render 'shared/topmenu' %>
 
 <div class="uni-page-container">
-  <h1 class="my-4 ml-3">All trips</h1>
+  <h2 class="mb-5 mx-3">Trips from Cicloo-ers by routes</h2>
 
-<!-- this is the search part -->
+<!-- this is the search part
   <div class="mb-50 search">
     <%= form_tag trips_path, class: "form-container", method: :get do %>
     <%= text_field_tag :query,
@@ -14,41 +14,31 @@
     <%= submit_tag "Search", class: "btn-search" %>
     <% end %>
   </div>
+ -->
 
 <!-- this is the results listing all trips -->
   <div class="mb-7rem">
-    <% @trips.each do|trip|   %>
-      <div class="margin20">
-        <%= link_to trip_path(trip), class: "index-trips" do %>
-          <div class="comment-card">
-            <div class="comment-card-image">
-              <%= cl_image_tag(trip.user.photo.url(:avatar)) %>
-            </div>
-            <div class="comment-card-text">
-              <p>
-                <strong><%= trip.user.full_name %></strong>
-                <% unless trip.country_name.empty? %>
-                is travelling in <%= trip.country_name %>
-                <% end %>
-                "<%= trip.name %>"
-              </p>
-              <p class= "uni-opacity40">
-                from <%= trip.start_date.strftime("%b %Y") %>
-                <% if trip.end_date.nil? || trip.end_date > Date.today %>
-                until now
-                <% else %>
-                to <%= trip.end_date.strftime("%b %Y") %>
-                <% end %>
-              </p>
-              <%  unless trip.blog.nil? || trip.blog.empty?  %>
-              <a href='<%= trip.blog %>' class="btn-simple"> read the blog</a>
+    <% @cycling_routes.each do |cycling_route| %>
 
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <% unless @trips.where(cycling_route: cycling_route).empty? %>
+
+      <h5 class="ml-3 mb-4"><%= cycling_route %></h5>
+      <% @trips.where(cycling_route: cycling_route).each do|trip|   %>
+        <%= render 'shared/trips_card', trip: trip %>
+      <% end %>
     <% end %>
+
+    <% end %>
+
+    <h5 class="ml-3 mb-4">No Specific Cycling Route</h5>
+    <% @trips_noroute.each do |trip| %>
+      <%= render 'shared/trips_card', trip: trip %>
+    <% end %>
+
+  </div>
+
+  <div>
+
   </div>
 </div>
 <%= render 'shared/navbar' %>

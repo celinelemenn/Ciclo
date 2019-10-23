@@ -10,6 +10,10 @@ class TripsController < ApplicationController
       @params = params[:query]
       @trips = Trip.order(start_date: :desc).where("name @@ ?", "%#{@params}%" )
     end
+
+    @cycling_routes = Trip::CYCLING_ROUTES
+    @trips_noroute = Trip.where(country_code: nil).order(start_date: :desc)
+    # raise
   end
 
   def new

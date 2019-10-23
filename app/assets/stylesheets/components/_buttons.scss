@@ -103,6 +103,15 @@
   }
 }
 
+.btn-simple-light {
+  color: $ciclo-pink;
+  font-weight: 200;
+  &:hover {
+    text-decoration: none;
+    color: $ciclo-pink;
+  }
+}
+
 .btn-simple:active {
   text-decoration-line: underline;
   }

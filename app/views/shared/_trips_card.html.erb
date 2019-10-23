@@ -1,0 +1,29 @@
+        <div class="margin20">
+          <%= link_to trip_path(trip), class: "index-trips" do %>
+            <div class="comment-card">
+              <div class="comment-card-image">
+                <%= cl_image_tag(trip.user.photo.url(:avatar)) %>
+              </div>
+              <div class="comment-card-text">
+                <p>
+                  <strong><%= trip.user.full_name %></strong>
+                  <% unless trip.country_name.empty? %>
+                  is travelling in <%= trip.country_name %>
+                  <% end %>
+                  "<%= trip.name %>"
+                </p>
+                <p class= "uni-opacity40">
+                  from <%= trip.start_date.strftime("%b %Y") %>
+                  <% if trip.end_date.nil? || trip.end_date > Date.today %>
+                    until now
+                  <% else %>
+                    to <%= trip.end_date.strftime("%b %Y") %>
+                  <% end %>
+                </p>
+                <%  unless trip.blog.nil? || trip.blog.empty?  %>
+                  <a href='<%= trip.blog %>' class="btn-simple-light"> read the blog</a>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
