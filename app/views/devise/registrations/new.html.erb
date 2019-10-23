@@ -8,12 +8,19 @@
 
     <div class="form-bottom sign-up">
 
-      <%= link_to user_facebook_omniauth_authorize_path do %>
-    <fb:login-button class="fb_button" length="long" size="large" scope="public_profile,email" onlogin="checkLoginState();">
-      <span style= "margin-right: 10px;">Sign up with Facebook</span>
-    </fb:login-button>
+      <%= link_to user_facebook_omniauth_authorize_path, class: "" do%>
+        <div class="facebook-btn mt-3">
+        <i class="fab fa-facebook-f"> </i>
+        <p>Log in with Facebook</p>
+        </div>
       <% end %>
-      <hr class="line-divider mt-3">
+
+      <div class="d-flex my-5">
+        <hr class="line-divider mt-3">
+        <p class="grey-text">or</p>
+        <hr class="line-divider mt-3">
+      </div>
+
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
@@ -37,7 +44,7 @@
           <%= f.button :submit, "Sign up", class: "btn-main" %>
        <!--    <p class="mt-3" style="color:#6c757d; font-size:14px"> By signing up you agree to our <%= link_to 'Terms of services', terms_path, class: 'btn-link-blue'%></p> -->
           <hr class="line-divider mt-3">
-          <p class="mt-2" style="color:#6c757d">
+          <p class="mt-2 grey-text">
             Have an account ?  <%= render "devise/shared/links" %>
           </p>
         </div>
