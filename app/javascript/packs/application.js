@@ -23,7 +23,7 @@ bookmark_highlighter();
 geolocator();
 loadDynamicBannerTitle();
 dropdown();
-addCampingsToMap();
+// addCampingsToMap();
 
 /// other js
 tab();
