@@ -13,7 +13,7 @@ class TripsController < ApplicationController
 
     @cycling_routes = Trip::CYCLING_ROUTES
     @trips_noroute = Trip.where(cycling_route: nil).or(Trip.where(cycling_route: "")).order(start_date: :desc)
-    raise
+
   end
 
   def new
