@@ -5,7 +5,7 @@
 
 
 ## What is it ?
-> It is a web based app that helps touring cyclists to connect with a chat, organize their trip and travel.
+### It is a web based app that helps touring cyclists to connect with a chat, organize their trip and travel.
 - avoid unnecessary detour with the **latest reports that other cyclists added to the map** for instance bad road, construction work. (similar to waze)
 - **share the best spots** landmark, campsite, restaurants/shops on your route and **add comment** on the one your tested.
 - easly see the other cyclist around you and **connect thanks to a chat** to meet, share advices..
