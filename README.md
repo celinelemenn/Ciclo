@@ -17,8 +17,10 @@
   - geolocalisation
   - filtering function with scope
   - own API
+  - chat functionality 
+  - cloudinary integration
 - The front end
   - HTML
-  - CSS
+  - own CSS and also bootstrap
   - JavaScript 
 - It is hosted on Heroku
