@@ -1,4 +1,4 @@
- # :mountain_bicyclist: Check it out www.ciclooapp.com/ :mountain_bicyclist:
+ # :mountain_bicyclist: Check it out www.ciclooapp.com :mountain_bicyclist:
 
 
 ![alt text](https://res.cloudinary.com/dwkwy2q1n/image/upload/q_auto:best/ciclo_overview)
