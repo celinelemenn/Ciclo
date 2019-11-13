@@ -6,11 +6,10 @@
 
 ## What is it ?
 It is a web based app that helps touring cyclists to connect with a chat, organize their trip and travel.
-- get inpired by other trips
-- looking for fresh info ? checkout the latest blog of the cyclist that did a specific route that interest you
-- avoid bad encounter and unnecessary detour with the **latest reports that other cyclists added to the map** for instance bad road, construction work..
-- share the best spots to see, camp, eat on your route
-- **connect easly thanks to a chat**
+- avoid unnecessary detour with the **latest reports that other cyclists added to the map** for instance bad road, construction work. (similar to waze)
+- share the best spots to see, camp, eat on your route and add comment on the one your tested.
+- easly see the other cyclist around you and **connect thanks to a chat** to meet, share advices..
+- looking for fresh info ? checkout the latest blog that did a specific route that interest you
 
 ## What technology stacks ?
 - The backend is Ruby on Rails, using also sidekiq for some background jobs 
