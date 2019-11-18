@@ -14,7 +14,7 @@
 ## What technology stacks ?
 - The backend is Ruby on Rails
   - using sidekiq for some background jobs 
-  - geolocalisation
+  - localisation with mapbox
   - filtering function with scope
   - own API
   - chat functionality 
