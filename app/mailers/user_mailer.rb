@@ -5,6 +5,17 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
+
+  # default :from => MyApp::Application.config.postmark_signature
+
+
+   def reset_password_instructions(user)
+     @resource = user
+     mail(:to => @resource.email, :subject => "Reset password instructions", :tag => 'password-reset', :content_type => "text/html") do |format|
+       format.html { render "devise/mailer/reset_password_instructions" }
+     end
+   end
+
   def welcome
     @user = params[:user]
     @greeting = "Hi"
