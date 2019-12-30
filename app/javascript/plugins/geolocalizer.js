@@ -56,7 +56,7 @@ const watchUserPosition = (position) => {
     latitude: watchedCoordinates.latitude,
     longitude: watchedCoordinates.longitude
   }
-    console.log(watchedCoordinates);
+    // console.log(watchedCoordinates);
   userCurrentPosition.push(currentPosition);
 
   // center the map to this coordinate
@@ -181,7 +181,7 @@ const localize = () => {
 const geolocator = () => {
   if (mapElement) {
     window.addEventListener("load", (event) => {
-      console.log("This works");
+      // console.log("This works");
       // navigator.geolocation.getCurrentPosition(currentPosition, error, options);
       navigator.geolocation.watchPosition(watchUserPosition, error, options);
     });
