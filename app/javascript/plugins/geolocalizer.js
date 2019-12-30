@@ -59,6 +59,12 @@ const watchUserPosition = (position) => {
     console.log(watchedCoordinates);
   userCurrentPosition.push(currentPosition);
 
+  // center the map to this coordinate
+  map.flyTo({
+      center: [currentPosition.longitude, currentPosition.latitude],
+      zoom: 10
+    });
+
   // The localize() function checks whether the map is present before running.
 
   localize();
