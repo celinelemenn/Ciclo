@@ -101,5 +101,8 @@ MAIN_MENU_PAGES = [
   { controller: 'pages', action: 'map' },
   { controller: 'trips', action: 'index' },
   { controller: 'conversations', action: 'index' },
-  {controller: 'pages', action: 'welcomehome'}
+  {controller: 'pages', action: 'welcomehome'},
+  {controller: 'pages', action: 'welcomeprofile'},
+  {controller: 'pages', action: 'welcomeinspire'},
+  {controller: 'pages', action: 'welcomeplan'},
 ]
