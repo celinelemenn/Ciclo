@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home', as: :homepage
+  get '/welcome', to: 'pages#welcomehome', as: :welcomehome
   get '/profile', to: 'pages#profile', as: :profile
   get '/profile/:id', to: 'pages#userprofile', as: :userprofile
   get '/map', to: 'pages#map', as: :map
