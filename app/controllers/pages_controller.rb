@@ -116,6 +116,18 @@ class PagesController < ApplicationController
     @feedback = Feedback.new
   end
 
+  def welcomehome
+  end
+
+  def welcomeprofile
+  end
+
+  def welcomeinspire
+  end
+
+  def welcomeplan
+  end
+
   def badge
     @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
   end

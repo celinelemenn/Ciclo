@@ -95,10 +95,14 @@ ISSUE_TYPE = ["It doesn't appear to be here", "Report a problem"]
 
 
 MAIN_MENU_PAGES = [
-   { controller: 'pages', action: 'home' },
-   { controller: 'pages', action: 'profile' },
-   { controller: 'pages', action: 'feed' },
-   { controller: 'pages', action: 'map' },
-   { controller: 'trips', action: 'index' },
-   { controller: 'conversations', action: 'index' },
+  { controller: 'pages', action: 'home' },
+  { controller: 'pages', action: 'profile' },
+  { controller: 'pages', action: 'feed' },
+  { controller: 'pages', action: 'map' },
+  { controller: 'trips', action: 'index' },
+  { controller: 'conversations', action: 'index' },
+  {controller: 'pages', action: 'welcomehome'},
+  {controller: 'pages', action: 'welcomeprofile'},
+  {controller: 'pages', action: 'welcomeinspire'},
+  {controller: 'pages', action: 'welcomeplan'},
 ]

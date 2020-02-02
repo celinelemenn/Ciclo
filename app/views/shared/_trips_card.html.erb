@@ -2,14 +2,14 @@
           <%= link_to trip_path(trip), class: "index-trips" do %>
             <div class="comment-card">
               <div class="comment-card-image">
-                <%= cl_image_tag(trip.user.photo.url(:avatar)) %>
+                <%=  cl_image_tag(trip.user.photo.url(:avatar)) unless trip.user.nil?  %>
               </div>
               <div class="comment-card-text">
                 <p>
                   <strong><%= trip.user.full_name %></strong>
-                  <% unless trip.country_name.empty? %>
-                  is travelling in <%= trip.country_name %>
-                  <% end %>
+                  <%# unless trip.country_name.empty? %>
+<!--                  is travelling in <%#= trip.country_name %>-->
+                  <%# end %>
                   "<%= trip.name %>"
                 </p>
                 <p class= "uni-opacity40">

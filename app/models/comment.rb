@@ -10,10 +10,13 @@ class Comment < ApplicationRecord
     if date < 60
       date = "#{date.round} min ago"
     elsif date > 60 && date < 1440
-      date = "#{(date / 60).round} hours ago"
-    else
+      date = "#{(date/60).round} hours ago"
+    elsif date > 1440 && date < 43200
       date = (date / 1440).round
       date = "#{date} days ago"
+    else
+      date = (date / 43200).round
+      date = "#{date} months ago"
     end
     date
   end
