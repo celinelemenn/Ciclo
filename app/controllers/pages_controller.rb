@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :terms]
-  before_action :badge, only: [:map, :feed, :profile]
+  skip_before_action :authenticate_user!, only: %i[home terms]
+  before_action :badge, only: %i[map feed profile]
 
   def home
   end
@@ -39,7 +39,6 @@ class PagesController < ApplicationController
         marker_link: POINT_OF_INTEREST[poi.poi_type.to_sym][:marker_icon],
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
-
     end
 
     # raise
@@ -47,12 +46,11 @@ class PagesController < ApplicationController
     last_user_positions = []
 
     other_cyclist.each do |cyclist|
+      next unless UserPosition.where(user_id: cyclist.id).exists?
 
-      if UserPosition.where(user_id: cyclist.id).exists?
-        cyclist_positions = UserPosition.where(user_id: cyclist.id)
-        cyclist_last_position = cyclist_positions.last
-        last_user_positions << cyclist_last_position
-      end
+      cyclist_positions = UserPosition.where(user_id: cyclist.id)
+      cyclist_last_position = cyclist_positions.last
+      last_user_positions << cyclist_last_position
     end
 
     @cyclist_avatars = last_user_positions.map do |cyclist_last_pos|
@@ -70,11 +68,11 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @trips = @user.trips.sort_by { |obj| obj.start_date }.reverse!
+    @trips = @user.trips.sort_by(&:start_date).reverse!
   end
 
   def feed
-     @user = current_user
+    @user = current_user
 
     if params[:feed_type] == "all"
 
@@ -97,7 +95,7 @@ class PagesController < ApplicationController
       # binding.pry
     end
     @user = User.find(params[:id])
-    @trips = Trip.where(user: @user).sort_by { |obj| obj.start_date }.reverse!
+    @trips = Trip.where(user: @user).sort_by(&:start_date).reverse!
   end
 
   def help

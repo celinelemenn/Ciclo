@@ -7,10 +7,10 @@ class PersonalMessage < ApplicationRecord
   validates :body, presence: true
 
   def date
-    if self.created_at.to_date == Date.today
-    self.created_at.strftime("%H:%M%p today")
+    if created_at.to_date == Date.today
+      created_at.strftime("%H:%M%p today")
     else
-    self.created_at.strftime("%H:%M%p, %d %b")
+      created_at.strftime("%H:%M%p, %d %b")
     end
   end
 end

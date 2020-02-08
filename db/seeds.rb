@@ -53,7 +53,7 @@ test_user = User.create(
 📍current location: NORWAY",
   description: "Being around the world with my bikie 🌏: I love travelling, bikes and cats.",
   blog: "https://mariatravells.com/",
-  terms: true,
+  admin: true,
 )
 
 puts "> test_user created"
@@ -68,7 +68,6 @@ touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕.",
   description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
 📍: Currently in Iran",
   blog: "https://johnTeagan.com/",
-  terms:true,
 )
 
 
@@ -81,7 +80,6 @@ test_user3 = User.create(
   description: " I love being a nomad. I did my cycling record in Norway, 16000kms.
 📍: Currently taking on my bike, and loving every second of it 🚴‍♀️",
   blog: "https://fatimalog.com/",
-  terms:true,
 )
 
 test_user4 = User.create(
@@ -94,7 +92,6 @@ touring by 🚴‍♂️🚴‍♀️.",
   description: "My dream is to travel the world with my bike.
 📍: Currently in Greece 🌊",
   blog: "https://johannesthegerman.com/",
-  terms:true,
 )
 
 test_user5 = User.create(
@@ -107,7 +104,6 @@ touring by 🚴‍♂️🚴‍♀️ in warm exotic places.",
   description: "Around the globe 🌏: My trip; 2 Countries, 14000kms.
 📍: Currently in Italy 🥐🍷",
   blog: "https://teresita.com/",
-  terms:true,
 )
 
 puts "> Individual user created"
@@ -200,34 +196,7 @@ set_of_geolocations_caution = [
 [4.57385843386091029, 52.0378368367808334],
 [4.31699019297709441, 51.9364439473919787],
 
-]
-
-set_of_geolocations_landmark = [
-
-[4.20538171600009747, 51.8578402420556372],
-[4.24503269018832263, 51.9914941017116376],
-[4.66176821834636801, 51.9463452042970388],
-[4.65207310436278298, 52.29141180668530353],
-[4.68356031167621811, 52.38391429230023988],
-[4.86388983480058368, 52.30046259658358565],
-[4.76758457046679673, 52.20887410283720698],
-[4.74133384764018473, 52.32917439055052],
-[4.73080857548744582, 52.0509299998066197],
-[4.85629135170671855, 52.0733669067316711],
-[4.80650354208736807, 51.9713766599526323],
-[4.81482543258788098, 52.5480070116680622],
-[4.79135602010192407, 52.8143590857821863],
-[4.73535425387907338, 52.5475972997628133],
-[5.07236926255011689, 52.0959464018374873],
-
-]
-
-# set_of_poitypes = [1, 2, 3, 4, 5]
-poi_types = POINT_OF_INTEREST.values.map { |poi| poi[:label] }
-
-# POINT_OF_INTEREST[poi2.poi_type.to_sym]
-
-
+]welcome
 set_of_geolocations_water_refill.each_with_index do |item, index|
 
   PointOfInterest.create!(

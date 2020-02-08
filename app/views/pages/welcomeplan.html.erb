@@ -1,6 +1,6 @@
 <div class="welcome-pages">
   <h1 class="mb-30">Plan your next trip</h1>
-  <p class="mb-4">In the trip section, check the latest blogs or even contact directly the cicloo-ers to get the information you need for your future route</p>
-   <%= cl_image_tag('Plan_your_trip', :transformation=>[{:quality=>"auto:best"}]) %>
+  <p class="mb-4">In the trip section, <strong>check the latest blogs</strong> or even <strong>contact directly</strong> the cicloo-ers to get the information you need for your future route</p>
+   <%= cl_image_tag('Plan_your_trip',height: 300, :transformation=>[{:quality=>"auto:best", height: 200}]) %>
   <%= link_to "Next", profile_path, class: "btn-main uni-box-shadow mb-50" %>
 </div>

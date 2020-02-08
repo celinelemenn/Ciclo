@@ -1,8 +1,8 @@
 class ConversationsController < ApplicationController
   # We want to make sure that the user is logged in before they are able to create a conversation
   before_action :authenticate_user!
-  before_action :set_conversation, except: [:index, :create]
-  before_action :check_participating!, except: [:index, :create]
+  before_action :set_conversation, except: %i[index create]
+  before_action :check_participating!, except: %i[index create]
 
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
@@ -17,13 +17,11 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    all_params = conversation_params.merge({ author_id: current_user.id })
+    all_params = conversation_params.merge(author_id: current_user.id)
     @conversation_between = Conversation.between(current_user.id, params[:conversation][:receiver_id])[0]
     if !@conversation_between
       @conversation = Conversation.new(all_params)
-      if @conversation.save
-        redirect_to new_conversation_personal_message_path(@conversation.id)
-      end
+      redirect_to new_conversation_personal_message_path(@conversation.id) if @conversation.save
     else
       # raise
       redirect_to conversation_path(@conversation_between)
@@ -39,7 +37,6 @@ class ConversationsController < ApplicationController
     params.require(:conversation).permit(:receiver_id)
   end
 
-
   # The first private method simply returns the conversation based on the User's id
   # The second one checks if the current user is actually a participant in the given conversation
   # it calls on the participates method which is defined in the conversation model.
@@ -50,6 +47,6 @@ class ConversationsController < ApplicationController
   end
 
   def check_participating!
-    redirect_to conversations_path unless @conversation && @conversation.participates?(current_user)
+    redirect_to conversations_path unless @conversation&.participates?(current_user)
   end
 end

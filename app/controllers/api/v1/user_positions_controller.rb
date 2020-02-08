@@ -18,6 +18,6 @@ class Api::V1::UserPositionsController < Api::V1::BaseController
 
   def render_error
     render json: { errors: @user_position.errors.full_messages },
-    status: :unprocessable_entity
+           status: :unprocessable_entity
   end
 end
