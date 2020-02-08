@@ -1,8 +1,7 @@
 class PointOfInterestsController < ApplicationController
-  before_action :find_poi, only: [:show, :edit, :update, :destroy]
+  before_action :find_poi, only: %i[show edit update destroy]
 
   def index
-
   end
 
   def show

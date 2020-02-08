@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
   end
+
   # due the fact that we are creating the comment field in the same page as point of interest we need to access user in more specific way
   def create
     @comment = Comment.new(comment_params)

@@ -1,5 +1,4 @@
 class PreferencesController < ApplicationController
-
   def update
     @user = current_user
     @user_pref = Preference.find_by(user_id: @user.id)
@@ -10,10 +9,9 @@ class PreferencesController < ApplicationController
     end
 
     # raise
-    POINT_OF_INTEREST.each { | key, v |  @user_pref[key] = params[key] == 'on' }
+    POINT_OF_INTEREST.each { |key, _v| @user_pref[key] = params[key] == 'on' }
     @user_pref.save
     redirect_to map_path
-
   end
 
   def edit
@@ -24,7 +22,6 @@ class PreferencesController < ApplicationController
     else
       @user_pref = Preference.find_by(user_id: @user.id)
     end
-
   end
 
   def preferences_params

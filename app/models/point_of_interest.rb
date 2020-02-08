@@ -32,53 +32,49 @@ class PointOfInterest < ApplicationRecord
 
   enum poi_type: POINT_OF_INTEREST.keys
 
-
   def date
-    date = -(self.created_at - DateTime.now) / 60
+    date = -(created_at - DateTime.now) / 60
 
     if date < 60
       date = "#{date.round} min ago"
     elsif date > 60 && date < 1440
-      date = "#{(date/60).round} hours ago"
-    elsif date > 1440 && date < 43200
+      date = "#{(date / 60).round} hours ago"
+    elsif date > 1440 && date < 43_200
       date = (date / 1440).round
       date = "#{date} days ago"
     else
-      date = (date / 43200).round
+      date = (date / 43_200).round
       date = "#{date} months ago"
     end
     date
   end
 
   def published?
-    self.published == true
+    published == true
   end
 
   def name
-    if poi_type
-      POINT_OF_INTEREST[self.poi_type.to_sym][:name]
-    end
+    POINT_OF_INTEREST[poi_type.to_sym][:name] if poi_type
   end
 
   def icon
     if poi_type
-      POINT_OF_INTEREST[self.poi_type.to_sym][:marker_icon]
+      POINT_OF_INTEREST[poi_type.to_sym][:marker_icon]
     else
       'https://i.imgur.com/D7Zyk2z.png'
     end
   end
 
   def distance(user)
-    if user.user_positions.last && !self.lat.nil?
-      coords_poi = [self.lat, self.long]
+    if user.user_positions.last && !lat.nil?
+      coords_poi = [lat, long]
       coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
-    distance = Geocoder::Calculations.distance_between(coords_poi, coords_user, :units => :km)
-    "#{distance.round(2)} km away"
+      distance = Geocoder::Calculations.distance_between(coords_poi, coords_user, units: :km)
+      "#{distance.round(2)} km away"
     else
       ""
     end
   end
 
   private
-
 end

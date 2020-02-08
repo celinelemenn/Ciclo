@@ -1,5 +1,4 @@
 class Conversation < ApplicationRecord
-
   # Conversations should belong to an author and a reciever. Since they belong to
   # the same model, we have to give them a "class_name"
 
@@ -21,15 +20,15 @@ class Conversation < ApplicationRecord
   # we are making a subset of conversation called participating in which we associate a user ID with both receiver ID
   # and author ID. This link explains it well: https://stackoverflow.com/questions/4869994/what-is-scope-named-scope-in-rails
 
-  scope :participating, -> (user) do
+  scope :participating, lambda { |user|
     where("(conversations.author_id = ? OR conversations.receiver_id = ?)", user.id, user.id)
-  end
+  }
 
   # below we define a scope that returns a conversation of two users.
 
-  scope :between, -> (sender_id, receiver_id) do
+  scope :between, lambda { |sender_id, receiver_id|
     where(author_id: sender_id, receiver_id: receiver_id).or(where(author_id: receiver_id, receiver_id: sender_id)).limit(1)
-  end
+  }
 
   # The with method before is implemented in the shared view _conversation. It is a method which returns the OTHER
   # participant of a conversation. If you look at the if condition,

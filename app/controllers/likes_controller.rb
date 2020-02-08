@@ -19,6 +19,5 @@ class LikesController < ApplicationController
       redirect_to point_of_interest_path(@poi)
       # render 'point_of_interests/show', point_of_interest: @poi
     end
-
   end
 end
