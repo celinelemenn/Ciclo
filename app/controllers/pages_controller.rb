@@ -8,9 +8,10 @@ class PagesController < ApplicationController
   def map
     @point_of_interests = PointOfInterest.published
     @user = current_user
+    @user_last_position = @user.user_positions.exists? ? [{lat: @user.user_positions.last.lat, long: @user.user_positions.last.long}] : nil
     @user_pref = Preference.find_by(user_id: @user.id)
 
-    if @user_pref
+    if @user_prefcurrent_user
       @camping = @user_pref.camping ? @point_of_interests.camping : []
       @landmark = @user_pref.landmark ? @point_of_interests.landmark : []
       @water = @user_pref.water_refill ? @point_of_interests.water : []

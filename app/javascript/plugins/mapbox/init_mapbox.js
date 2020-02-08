@@ -9,12 +9,17 @@ import { processData } from '../../plugins/mapbox/api_functions';
 
 const mapElement = document.getElementById('map');
 
+
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  const userPositionElement = document.getElementById('map').dataset.userPosition;
+
+  let center = (JSON.parse(userPositionElement)) ? [JSON.parse(userPositionElement)[0].long, JSON.parse(userPositionElement)[0].lat] : [4.834277, 45.763420];
+
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/klingmap/ck027tg7x04481cmu8e9wvrud',
-    center: [4.807,45.197],
+    center: center,
     zoom: 8,
   });
 };
