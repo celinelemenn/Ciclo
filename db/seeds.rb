@@ -53,7 +53,6 @@ test_user = User.create(
 📍current location: NORWAY",
   description: "Being around the world with my bikie 🌏: I love travelling, bikes and cats.",
   blog: "https://mariatravells.com/",
-  terms: true,
 )
 
 puts "> test_user created"
@@ -68,7 +67,6 @@ touring by 🚴‍♂️🚴‍♀️ Malaysia to England🏕.",
   description: "Being around the world with my bikie 🌏: Our trip; 19 Countries, 14000kms.
 📍: Currently in Iran",
   blog: "https://johnTeagan.com/",
-  terms:true,
 )
 
 
@@ -81,7 +79,6 @@ test_user3 = User.create(
   description: " I love being a nomad. I did my cycling record in Norway, 16000kms.
 📍: Currently taking on my bike, and loving every second of it 🚴‍♀️",
   blog: "https://fatimalog.com/",
-  terms:true,
 )
 
 test_user4 = User.create(
@@ -94,7 +91,6 @@ touring by 🚴‍♂️🚴‍♀️.",
   description: "My dream is to travel the world with my bike.
 📍: Currently in Greece 🌊",
   blog: "https://johannesthegerman.com/",
-  terms:true,
 )
 
 test_user5 = User.create(
@@ -107,7 +103,6 @@ touring by 🚴‍♂️🚴‍♀️ in warm exotic places.",
   description: "Around the globe 🌏: My trip; 2 Countries, 14000kms.
 📍: Currently in Italy 🥐🍷",
   blog: "https://teresita.com/",
-  terms:true,
 )
 
 puts "> Individual user created"
