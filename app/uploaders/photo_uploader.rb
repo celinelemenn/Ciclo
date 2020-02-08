@@ -11,16 +11,16 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :avatar do
-    cloudinary_transformation transformation: [ { width: 400, height: 400, gravity: :face, radius: :max, crop: :thumb }, { width: 200, height: 200, crop: :thumb }, :quality=>"auto:best"]
+    cloudinary_transformation transformation: [ { width: 800, height: 800, radius: :max, crop: :thumb }, { width: 200, height: 200, crop: :thumb }, :quality=>"auto:best"]
   end
 
   version :avatar_small do
-    cloudinary_transformation transformation: [ { width: 400, height: 400, gravity: :face, radius: :max, crop: :thumb },{:width=> 100, :crop=>"scale"}, :quality=>"auto:best", fetch_format: :auto]
+    cloudinary_transformation transformation: [ { width: 800, height: 800, radius: :max, crop: :thumb },{:width=> 100, crop: :thumb}, :quality=>"auto:best", fetch_format: :auto]
   end
 
   version :bright_face do
     cloudinary_transformation radius: 100,
-      width: 50, height: 50, crop: :thumb, gravity: :face
+      width: 50, height: 50, crop: :thumb
   end
 
   version :low do
