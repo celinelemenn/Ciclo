@@ -37,7 +37,7 @@
         <div class="form-buttons-login">
           <%= f.button :submit, "Log in", class: "btn-main" %>
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn-minimal" %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name), id:"forget-password", class: "btn-minimal" %>
           <% end %>
           <hr class="line-divider mt-3">
 

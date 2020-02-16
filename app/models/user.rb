@@ -31,6 +31,9 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  # welcome email when user is created
+    after_create :send_welcome_email
+
   def name
     name = full_name
     @username = name.split.first.capitalize
@@ -69,4 +72,11 @@ class User < ApplicationRecord
       end
     end
   end
+
+private
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
 end
+
