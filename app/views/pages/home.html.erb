@@ -19,7 +19,8 @@
 
 <div class="banner-feature-section" id="features">
   <div class="uni-page-container text-center">
-    <h2>Why Cicloo?</h2>
+    <h2><%= t 'home.why_cicloo' %></h2>
+
     <hr class="line-divider">
     <div class="ciclo-image">
       <%= cl_image_tag('Welcome_Home_3', :transformation=>[{:quality=>"auto:best"}]) %>
@@ -27,8 +28,8 @@
     <div class="cards">
       <div class="col-sm-12 mt-4">
         <div class="card">
-          <h4>Goodbye Bad Roads</h4>
-          <p>Get the most up-to-date route information and never run into a bad road again. Follow the trail of fellow Cicloo-ers</p>
+           <h4><%= t 'home.card.bad_road.headline' %></h4>
+           <p><%= t 'home.card.bad_road.text' %></p>
         </div>
       </div>
       <div class="col-sm-12">
