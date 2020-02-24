@@ -12,3 +12,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+#Run the following command every time you have new translation in the .yml file
+#rake i18n:js:export
+Rails.application.config.assets.precompile += %w( i18n.js )

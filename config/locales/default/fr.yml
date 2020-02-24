@@ -33,4 +33,6 @@ fr:
   hello: "Hello world"
   button:
     sign_up: 'Connection default'
+  geolocalization:
+    message: "<h5> <strong>SVP allow location access:</strong> we don't have permission to use your localization. </h5>"
 

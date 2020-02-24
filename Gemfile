@@ -22,6 +22,7 @@ gem 'sidekiq-failures', '~> 1.0'
 gem 'omniauth-facebook'
 gem 'letter_opener', group: :development
 gem 'postmark-rails'
+gem "i18n-js"
 
 
 gem 'autoprefixer-rails'
