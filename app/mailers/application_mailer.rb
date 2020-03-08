@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'admin@ciclooapp.com'
+  default from: 'info@cycloapp.org'
   layout 'mailer'
 end

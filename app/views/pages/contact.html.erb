@@ -12,10 +12,10 @@
       <% end %>
     </div>
     <div>
-      <a href="https://www.facebook.com/ciclooapp" class=""><i class="fab fa-facebook-square contact-social-icon"></i></a>
+      <a href="https://www.facebook.com/cycloapp.org" class=""><i class="fab fa-facebook-square contact-social-icon"></i></a>
     </div>
     <div>
-      <a href="https://www.instagram.com/invites/contact/?i=1ck7nqlkrilgy&utm_content=a9ke8dg" class=""><i class="fab fa-instagram contact-social-icon"></i></a>
+      <a href="https://www.instagram.com/cyclo_app" class=""><i class="fab fa-instagram contact-social-icon"></i></a>
     </div>
   </div>
   <hr class="line-divider">
@@ -26,8 +26,8 @@
 
 <div class="px-3 text-center">
     <%= simple_form_for [@feedback] do |f| %>
-      <%= f.input :rating, collection: (1..10).to_a, label: "How likely are you to recommend Cicloo to another touring cyclist ?", prompt: " 1=not at all, 10=extremely likely"  %>
-      <%= f.input :comment, label: "What did you like most/least about Cicloo ?", placeholder: "Tell us more...", class: "mt-3" %>
+      <%= f.input :rating, collection: (1..10).to_a, label: "How likely are you to recommend Cyclo to another touring cyclist ?", prompt: " 1=not at all, 10=extremely likely"  %>
+      <%= f.input :comment, label: "What did you like most/least about Cyclo ?", placeholder: "Tell us more...", class: "mt-3" %>
       <%= f.submit "Send", class: "btn-main mb-5"%>
     <% end %>
 </div>

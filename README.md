@@ -1,4 +1,4 @@
- # :mountain_bicyclist: Check it out www.ciclooapp.com :mountain_bicyclist:
+ # :mountain_bicyclist: Check it out www.cycloapp.com :mountain_bicyclist:
 
 
 ![alt text](https://res.cloudinary.com/dwkwy2q1n/image/upload/q_auto:best/ciclo_overview)
@@ -13,14 +13,14 @@
 
 ## What technology stacks ?
 - The backend is Ruby on Rails
-  - using sidekiq for some background jobs 
+  - using sidekiq for some background jobs
   - localisation with mapbox
   - filtering function with scope
   - own API
-  - chat functionality 
+  - chat functionality
   - cloudinary integration
 - The front end
   - HTML
   - own CSS and also bootstrap
-  - JavaScript 
+  - JavaScript
 - It is hosted on Heroku

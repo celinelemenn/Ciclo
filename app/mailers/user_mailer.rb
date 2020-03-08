@@ -20,6 +20,6 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     @greeting = "Hi"
 
-    mail(to: @user.email, subject: 'Welcome to Cicloo')
+    mail(to: @user.email, subject: 'Welcome to Cyclo')
   end
 end
