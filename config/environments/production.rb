@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "https://cycloapp.orh" }
+  config.action_mailer.default_url_options = { host: "https://cycloapp.org" }
 
   # settings for Postmark
   config.action_mailer.delivery_method     = :postmark
