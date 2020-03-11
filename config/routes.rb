@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     get "/500", to: "errors#internal_error"
     get "/help", to: 'pages#help', as: :help
     get "/terms-of-services", to: 'pages#terms', as: :terms
+    get "/sitemap", to: 'pages#sitemap', as: :sitemap
 
     resources :feedbacks, only: [:create]
     resources :trips, only: [:index, :new, :create, :edit, :show, :update, :destroy]

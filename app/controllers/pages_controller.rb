@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home terms]
+  skip_before_action :authenticate_user!, only: %i[home terms sitemap contact]
   before_action :badge, only: %i[map feed profile]
 
   def home
@@ -129,5 +129,8 @@ class PagesController < ApplicationController
 
   def badge
     @badge_poi_unpublished = PointOfInterest.select { |poi| poi.user == current_user && poi.published == false }.count
+  end
+
+  def sitemap
   end
 end
