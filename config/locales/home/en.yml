@@ -1,7 +1,18 @@
 en:
   home:
-    why_cyclo: 'why cyclo file en?'
+    why_cyclo:
+      headline: "Why Cyclo?"
+      text: "The first app dedicated to touring cyclists."
+    button:
+      main: "Discover Cyclo"
     card:
-      bad_road:
-        headline: 'Goodbye Bad Road'
-        text: 'Get the most up-to-date route information and never run into a bad road again. Follow the trail of fellow Cyclo-ers'
+      one:
+        headline: "Latest blogs"
+        text: "Get the <strong>most up-to-date route information</strong>. Cyclo gives you access to the blogs of your fellow touring cyclists including the one traveling now."
+      two:
+        headline: "Your Community"
+        text: "See the <strong> cyclists around you</strong>. Got questions or just want to share experiences over a beer? Reach out through Cyclo."
+      three:
+        headline: 'Peer-reviewed tips'
+        text: 'Get useful tips from your community. Where are the bad roads to avoid ? Water fountains? Hidden gems? Cyclo got your back. See all info on the map.'
+

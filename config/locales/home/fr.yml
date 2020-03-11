@@ -1,8 +1,18 @@
 fr:
   home:
-    why_cyclo: "Pourquoi Cyclo right file fr?"
+    why_cyclo:
+      headline: "Pourquoi Cyclo?"
+      text: "La première application dédiée aux cyclotouristes."
+    button:
+      main: "Découvre Cyclo"
     card:
-      bad_road:
-        # headline: "Aurevoir les mauvais chemin"
-        text: "Obtenez les informations d'itinéraire les plus à jour et ne courez plus jamais sur une mauvaise route. Suivez les traces de vos collègues Cyclo-ers"
+      one:
+        headline: "Derniers blogs"
+        text: "Obtenez les <strong> informations d'itinéraire les plus récentes </strong>. Cyclo vous donne accès aux blogs d'autres cyclistes, y compris ceux qui voyage en ce moment."
+      two:
+        headline: "La communauté"
+        text: "Voyez les <strong> cyclistes autour de vous </strong>. Vous avez des questions ou souhaitez simplement partager des expériences autour d'une bière? Communiquez avec Cyclo."
+      three:
+        headline: 'Bons plans'
+        text: "Obtenez des conseils utiles de votre communauté. Où sont les mauvaises routes à éviter? Fontaines d'eau? bons plans cachés? Cyclo est là. Voyez toutes les informations sur la carte."
 

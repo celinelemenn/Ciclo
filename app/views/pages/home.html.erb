@@ -2,12 +2,12 @@
 <div class="banner text-center" style="background: linear-gradient(200deg, rgba(0, 0, 0, 0.5), rgba(105, 105, 105, 0.2)), url(<%= cl_image_path('banner-bg',:transformation=>[{:quality=>"auto:low"}]) %>);background-size: cover;
   background-position: center;">
   <div class="banner-title">
-    <h1>Cycle better</h1>
+    <h1>Cyclo</h1>
     <p><span id="banner-typed-text"></span></p>
     <!-- <hr> -->
   </div>
   <div class="banner-buttons">
-    <%= link_to "Discover Cyclo", map_path, class: "btn-main uni-box-shadow"  %>
+    <%= link_to t('home.button.main'), map_path, class: "btn-main uni-box-shadow"  %>
     <!-- The button below is commented out as it is not needed for now.
   In the future it could link to a demo video or other material. -->
     <!-- <a href="#features" class="btn-secondary uni-box-shadow">Learn More</a> -->
@@ -19,8 +19,7 @@
 
 <div class="banner-feature-section" id="features">
   <div class="uni-page-container text-center">
-    <h2><%= t 'home.why_cyclo' %></h2>
-
+    <h2><%= t 'home.why_cyclo.headline' %></h2>
     <hr class="line-divider">
     <div class="ciclo-image">
       <%= cl_image_tag('Welcome_Home_3', :transformation=>[{:quality=>"auto:best"}]) %>
@@ -28,24 +27,23 @@
     <div class="cards">
       <div class="col-sm-12 mt-4">
         <div class="card">
-           <h4><%= t 'home.card.bad_road.headline' %></h4>
-           <p><%= t 'home.card.bad_road.text' %></p>
+           <h4><%= t('home.card.one.headline').html_safe %></h4>
+           <p><%= t('home.card.one.text').html_safe %></p>
         </div>
       </div>
       <div class="col-sm-12">
         <div class="card">
-          <h4>Your Community</h4>
-          <p> Cyclo makes it very convenient to get in touch with fellow cyclists around you. Got questions or just want to share experiences over a beer? Reach out through Cyclo.</p>
+            <h4><%= t('home.card.two.headline').html_safe %></h4>
+            <p><%= t('home.card.two.text').html_safe %></p>
         </div>
       </div>
       <div class="col-sm-12">
         <div class="card">
-          <h4>Peer-reviewed tips</h4>
-          <p>Get useful tips from your community. Where are the landmarks? Water fountains? Hidden gems? Cyclo's got your back.</p>
+          <h4><%= t('home.card.three.headline').html_safe %></h4>
+          <p><%= t('home.card.three.text').html_safe %></p>
         </div>
       </div>
-
-        <%= link_to "Discover Cyclo", map_path, class: "btn-main uni-box-shadow"  %>
+        <%= link_to t('home.button.main'), map_path, class: "btn-main uni-box-shadow"  %>
     </div>
   </div>
 </div>
@@ -55,10 +53,14 @@
     <ul class="inline-list">
       <li class="inline-items mr-3"><a href="https://www.facebook.com/cycloapp.org" class=""><i class="fab fa-facebook-f"></i></a></li>
       <li class="inline-items"><a href="https://www.instagram.com/cyclo_app" class=""><i class="fab fa-instagram"></i></a></li>
-
     </ul>
     <p>Cyclo was coded with 💜 at Le Wagon.</p>
+     <div class="d-flex justify-content-center align-items-center">
+      <%= link_to "EN", homepage_path(locale: 'en'), class: "btn-minimal uni-box-shadow" %>
+      <p class='remove-p-margin'> | </p>
+      <%= link_to "FR", homepage_path(locale: 'fr'), class: "btn-minimal uni-box-shadow" %>
+     </div>
   </div>
 </div>
-
-
+ <%= javascript_include_tag "i18n" %>
+ <%= javascript_include_tag "translations", skip_pipeline: true %>

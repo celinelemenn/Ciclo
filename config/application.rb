@@ -26,7 +26,7 @@ module Ciclo
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:en, :fr]
     config.i18n.fallbacks = true
-
+    config.middleware.use I18n::JS::Middleware
 
     # config.force_ssl = true
     # Settings in config/environments/* take precedence over those specified here.
