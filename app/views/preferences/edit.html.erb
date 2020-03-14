@@ -1,5 +1,5 @@
 <div class="uni-page-container">
-  <h1 class="my-5 ml-5">Filter</h1>
+  <h1 class="my-5 ml-5"><%= t('map.filter') %></h1>
 
 
   <%= form_tag(preferences_path, method: 'patch') do %>
@@ -9,14 +9,14 @@
     <div class="mb-3 mx-5 d-flex justify-content-between align-items-center">
       <label for="<%= key %>">
         <img src=<%= v[:marker_icon] %> alt="" height=50>
-        <span class="pl-3"><%= v[:name] %></span>
+        <span class="pl-3"><%= t("point_of_interests.#{v[:label]}") %></span>
       </label>
       <%= check_box_tag key, params[key], @user_pref[key], class: "filter-checkbox" %>
     </div>
   <% end %>
 
     <div >
-      <%= submit_tag "save", class: 'btn-main ml-5 font-weight-bold' %>
+      <%= submit_tag  t('button.save'), class: 'btn-main ml-5 font-weight-bold' %>
     </div>
    <% end %>
 </div>

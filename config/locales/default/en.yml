@@ -33,6 +33,7 @@ en:
   hello: "Hello world"
   button:
     edit: "Edit"
+    save: "Save"
   geolocalization:
     message: "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5>"
   navigation:
@@ -118,6 +119,22 @@ en:
     not_found:
       title: "The page you are looking for doesn't exist."
       text: "Cycle the other way"
+  point_of_interests:
+    caution: "Caution!"
+    landmark: "Landmark"
+    water_refill: "Water Refill"
+    toilet: "Toilet"
+    picnic: "Picnic Table"
+    repair: "Bike repair shop"
+    wifi: "Wifi zone"
+    info_point: "Info point"
+    electricity: "Charging Point"
+    camping: "Camping"
+    wild_camping: "Wild camping"
+    shopping: "Grocery Store"
+    hotel: "Ho(s)tel"
+    bar: "Bar"
+    restaurant: "Restaurant"
 
 
 
