@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name), class: "btn-simple" %><br />
+  <%= link_to t('devise.registrations.new.go_to_sign_in.action'), new_session_path(resource_name), class: "btn-simple" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "btn-simple" %><br />
+  <%= link_to  t('devise.sessions.new.go_to_sign_up.action'), new_registration_path(resource_name), class: "btn-simple" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
