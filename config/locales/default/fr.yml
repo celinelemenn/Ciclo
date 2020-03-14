@@ -32,7 +32,74 @@
 fr:
   hello: "Hello world"
   button:
-    sign_up: 'Connection default'
+    edit: "Modifier"
   geolocalization:
     message: "<h5> <strong>SVP allow location access:</strong> we don't have permission to use your localization. </h5>"
+  navigation:
+    map: "Carte"
+    messages: "Messages"
+    profile: "Profil"
+    feed: "Feed"
+    trips: "Voyages"
+  map:
+    filter: "Filtre"
+  feed:
+    you: "Moi"
+    others: "Cyclo-ers"
+    default_message: "Vous n'avez encore ajouté de points d'intérêt à la carte. Cliquez sur le"
+    default_message_2: "dans la carte pour commencer"
+  message:
+    my_conversations: "Mes Conversations"
+  profile:
+    your_trips: "Mes Voyages"
+    empty_trip_section: "Lorsque vous ajouterez des voyages, vous les verrez ici"
+    add_a_trip: "Ajouter un voyage"
+  trip_card:
+    now_travelling: "Voyage en cours"
+    days: "jours"
+    kilometers: "kilomètres"
+  map_card:
+    view: "Voir"
+    direction: "Direction"
+    km_away: "À %{distance} km"
+  cyclist:
+    send_a_message: "Envoyer un message"
+    trip_section:
+      headline: "Voyages à vélo"
+      default_content: "Aucun voyage à vélo ajouté par %{username} pour l'instant"
+  contact:
+    get_in_touch: "Contactez-nous"
+    give_feedback: "Donnez-nous votre avis"
+    feedback_form:
+      rating:
+        question: "Quelle est la probabilité que vous recommandiez Cyclo à un autre cycliste en tournée?"
+        prompt: "1=pas du tout, 10=extrêmement probable"
+      comment:
+        question: "Qu'avez-vous le plus / moins apprécié de Cyclo?"
+        placeholder: "Dites nous en plus..."
+      action: "Envoyer"
+  help_page:
+    title: "<strong> Nous avons besoin d'accéder à votre emplacement pour que cette application fonctionne.</strong> "
+    text: "<strong>Pour modifier vos paramètres </strong> une fois que vous avez dit 'ne pas autoriser', ce n'est pas facile, en dessous de certains liens."
+    option_1: "- pour <strong> Google Chrome </strong> changer les paramètres d'un site spécifique:"
+    cta: "here"
+    option_2: "pour <strong> Iphone Safari: </strong> Ouvrir Safari> appuyez sur l'icône de livre ouvert dans la barre d'icônes en bas de l'écran> historique> effacer> la dernière heure. Ensuite, allez à nouveau sur l'application et sélectionnez 'OK' lorsque vous êtes invité à utiliser votre position actuelle."
+    option_3: "- pour <strong> Samsung Internet </strong> supprimez votre historique: ouvrez Internet> menu> paramètres> Confidentialité> Supprimer les données personnelles> Choisissez l'une des options suivantes: Cache. Cookies et données du site. Historique de navigation"
+  welcome_pages:
+    welcome:
+      title: "Bienvenue chez Cyclo"
+      first_app: "La première application dédiée aux cyclotouristes"
+    profile:
+      title: "Compléter votre profil"
+      what: "Ajouter une photo et une bio"
+      why: "<strong> Présentez-vous </strong> aux autres cyclistes afin qu'ils puissent voir vos coordonnées lorsqu'ils recherchent des cyclistes autour d'eux"
+    inspire:
+      title: "Partager votre aventure et inspirez les autres"
+      what: "<strong> Ajouter vos voyages passés ou présents </strong> dans votre section de profil </p>"
+      why: "Aidez la communauté à <strong> avoir accès aux derniers blogs et informations </strong> sur un itinéraire et incitez les autres cyclistes à suivre votre chemin"
+    plan:
+      title: "Planifier votre prochain voyage"
+      what: "Dans la section voyage, <strong> consultez les derniers blogs </strong> ou même <strong> contactez directement </strong> les cyclo-ers pour obtenir les informations dont vous avez besoin pour votre futur itinéraire"
+    next: "Next"
+
 

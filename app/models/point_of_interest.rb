@@ -70,7 +70,7 @@ class PointOfInterest < ApplicationRecord
       coords_poi = [lat, long]
       coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
       distance = Geocoder::Calculations.distance_between(coords_poi, coords_user, units: :km)
-      "#{distance.round(2)} km away"
+      "#{distance.round(2)}"
     else
       ""
     end

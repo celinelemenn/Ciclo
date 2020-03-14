@@ -3,11 +3,11 @@
 en:
   devise:
     form:
-      email: 'Email'
-      password: 'Password'
-      remember_me: 'Remember me'
-      username: 'Username'
-      character_minimum: '%{number} characters minimum'
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
+      username: "Username"
+      character_minimum: "%{number} characters minimum"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -70,14 +70,14 @@ en:
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       edit:
-        are_you_sure: Êtes-vous sûr ?
-        cancel_my_account: Supprimer mon compte
-        currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: laissez ce champ vide pour le laisser inchangé
-        title: Éditer %{resource}
-        unhappy: Pas content ?
-        update: Modifier
-        we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
+        are_you_sure: "Êtes-vous sûr ?"
+        cancel_my_account: "Supprimer mon compte"
+        currently_waiting_confirmation_for_email: "Confirmation en attente pour: %{email}"
+        leave_blank_if_you_don_t_want_to_change_it: "laissez ce champ vide pour le laisser inchangé"
+        title: "Éditer %{resource}"
+        unhappy: "Pas content ?"
+        update: "Modifier"
+        we_need_your_current_password_to_confirm_your_changes: "nous avons besoin de votre mot de passe actuel pour valider ces modifications"
       new:
         sign_up: "Sign up"
         headline: "Get started"

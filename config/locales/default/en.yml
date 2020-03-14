@@ -32,8 +32,79 @@
 en:
   hello: "Hello world"
   button:
-    sign_up: 'Sign up default'
+    edit: "Edit"
   geolocalization:
     message: "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5>"
+  navigation:
+    map: "Map"
+    messages: "Messages"
+    profile: "Profile"
+    feed: "Feed"
+    trips: "Trips"
+  map:
+    filter: "Filter"
+  feed:
+    you: "You"
+    others: "Cyclo-ers"
+    default_message: "You haven't added any report to the map yet. Click on the"
+    default_message_2: "on the map to start"
+  message:
+    my_conversations: "My Conversations"
+  profile:
+    your_trips: "Your Trips"
+    empty_trip_section: "When you add trips, you will see them here"
+    add_a_trip: "Add a trip"
+  trip_card:
+    now_travelling: "Now travelling"
+    days: "jours"
+    kilometers: "kilomètres"
+  map_card:
+    view: "View"
+    direction: "Direction"
+    km_away: "%{distance} km away"
+  cyclist:
+    send_a_message: "Send A Message"
+    trip_section:
+      headline: "Cycling Trips"
+      default_content: "no cycling trips added by %{username} so far"
+  contact:
+    get_in_touch: "Get in touch"
+    give_feedback: "Give us your feedback"
+    feedback_form:
+      rating:
+        question: "How likely are you to recommend Cyclo to another touring cyclist ?"
+        prompt: "1=not at all, 10=extremely likely"
+      comment:
+        question: "What did you like most/least about Cyclo ?"
+        placeholder: "Tell us more..."
+      action: "Send"
+  help_page:
+    title: "<strong> We need access to your location for this app to work.</strong> "
+    text: "<strong>To change your settings</strong> once you said 'don't allow', it is not easy, below some links."
+    option_1: "- for <strong>Google Chrome</strong> change settings for a specific site:"
+    cta: "here"
+    option_2: " - for <strong>Iphone Safari:</strong> Open Safari > tap the open book icon on the icon bar at the bottom of the screen > history > clear > the last hour. Then go on the app again and select 'OK' when you are asked to use your current location."
+    option_3: " - for <strong>Samsung internet</strong> delete your history: open internet > menu > settings > Privacy > Delete personal data >  Choose one of the following: Cache. Cookies and site data. Browsing history"
+  welcome_pages:
+    welcome:
+      title: "Welcome to Cyclo"
+      first_app: "The first app dedicated to touring cyclists"
+    profile:
+      title: "Complete your profile"
+      what: "Add a picture and a bio"
+      why: "<strong>Introduce yourself</strong> to the other cyclo-ers so they can see your details when they look for cyclists around them"
+    inspire:
+      title: "Share your adventure and inspire others"
+      what: "<strong>Add your past or present trips</strong> in your profile section</p>"
+      why: "Help the community to <strong>have access to the latest blogs and info</strong> about a route and inspire other cyclo-ers to follow your path"
+    plan:
+      title: "Plan your next trip"
+      what: "In the trip section, <strong>check the latest blogs</strong> or even <strong>contact directly</strong> the cyclo-ers to get the information you need for your future route"
+    next: "Next"
+  point_of_interest:
+    camping: 
+
+
+
 
 

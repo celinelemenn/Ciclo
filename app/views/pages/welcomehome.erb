@@ -1,9 +1,9 @@
 <div class="welcome-pages">
-  <h1 class="mb-50">Welcome to Cyclo</h1>
-  <p class="mb-30">The first app dedicated to touring cyclists</p>
+  <h1 class="mb-50"><%= t('welcome_pages.welcome.title') %></h1>
+  <p class="mb-30"><%= t('welcome_pages.welcome.first_app') %></p>
  <!--  <img src="https://icdn4.digitaltrends.com/image/digitaltrends/location-ios13-feature-image-1500x1000.jpg" alt="welcome to Cyclo" class="mb-50"> -->
    <%= cl_image_tag('Welcome_Home_3', :transformation=>[{:quality=>"auto:best"}]) %>
-  <%= link_to "Next", welcomeprofile_path, class: "btn-main uni-box-shadow mb-50" %>
+  <%= link_to  t('welcome_pages.next'), welcomeprofile_path, class: "btn-main uni-box-shadow mb-50" %>
 </div>
 
 <!-- Cycled for half a year, over 8000km in Europe and SEA and more trips to come -->

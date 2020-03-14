@@ -44,7 +44,7 @@ class User < ApplicationRecord
       coords_cyclist = [user_positions.last.lat, user_positions.last.long]
       coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
       distance = Geocoder::Calculations.distance_between(coords_cyclist, coords_user, units: :km)
-      "#{distance.round(2)} km away"
+      "#{distance.round(2)}"
     else
       ""
     end

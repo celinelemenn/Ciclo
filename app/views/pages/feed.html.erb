@@ -2,15 +2,15 @@
 
 <div class="uni-page-container">
   <div class="tabs">
-    <%= link_to 'You', feed_path(feed_type: 'me'), class: 'tab active', id: 'feed-me' %>
-    <%= link_to 'Cyclo-ers', feed_path(feed_type: 'all'), class: 'tab', id: 'feed-all' %>
+    <%= link_to  t('feed.you'), feed_path(feed_type: 'me'), class: 'tab active', id: 'feed-me' %>
+    <%= link_to t('feed.others'), feed_path(feed_type: 'all'), class: 'tab', id: 'feed-all' %>
   </div>
 
 
 <div>
   <% if @user_poi_unpublished.empty? && @user_poi_published.empty? %>
   <div class="empty-user-poi">
-  <p class="px-3"> You haven't added any report to the map yet. Click on the <i class="uni-box-shadow btn-on-map-left fas fa-plus"></i> on the map to start </p>
+  <p class="px-3 pt-3"> <%= t('feed.default_message') %> <i class="uni-box-shadow btn-on-map-left fas fa-plus"></i> <%= t('feed.default_message_2') %> </p>
   </div>
   <% end %>
 </div>

@@ -17,20 +17,20 @@
   </div>
 
   <div class="mt-3">
-    <i class="fas fa-pen pr-2"></i><%= link_to 'Edit', edit_user_registration_path, class: "btn-simple"%>
+    <i class="fas fa-pen pr-2"></i><%= link_to t('button.edit'), edit_user_registration_path, class: "btn-simple"%>
   </div>
 
 
   <div class="parent-card">
-    <div class="card-trip-header mt-80"><h3>Your trips </h3></div>
+    <div class="card-trip-header mt-80"><h3><%= t('profile.your_trips') %></h3></div>
     <% if @trips.empty? %>
-      <p class="uni-opacity40 my-4"> When you add trips, you will see them here </p>
+      <p class="uni-opacity40 my-4"> <%= t('profile.empty_trip_section') %> </p>
     <% else %>
       <% @trips.each do |trip| %>
         <%= link_to edit_trip_path(trip) do %>
           <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url.nil? ? "" : cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
             <% if trip.end_date.nil?  || trip.end_date > Date.today %>
-              <p class="travelling-tag">Now travelling</p>
+              <p class="travelling-tag"><%= t('trip_card.now_travelling') %></p>
             <% end %>
             <strong><h3><%= trip.name %></h3></strong>
             <div class="container-card">
@@ -40,12 +40,12 @@
               </div>
               <div>
                 <p><strong><%= trip.trip_time %> </strong></p>
-                <font size="1"><p>days</p></font>
+                <font size="1"><p><%= t('trip_card.days') %></p></font>
               </div>
               <div>
                 <% unless trip.km.nil? %>
                   <p><strong><%= trip.km %> </strong></p>
-                  <font size="1"><p>kilometers</p></font>
+                  <font size="1"><p><%= t('trip_card.kilometers') %></p></font>
                 <% end %>
               </div>
             </div>
@@ -54,7 +54,7 @@
       <% end %>
     <% end %>
     <div class="card-trip-btn d-flex justify-content-center mt-3 mb-5">
-      <%= link_to 'Add trip', new_trip_path, class: "btn-secondary" %>
+      <%= link_to t('profile.add_a_trip'), new_trip_path, class: "btn-secondary" %>
 
     </div>
   </div>

@@ -15,15 +15,15 @@
     <%= form_for :conversation, url: conversations_path do |f| %>
       <%= f.hidden_field :receiver_id, value: @user.id %>
         <div class="pt-7" style="display: inline-block;">
-          <%= f.submit 'Send A Message', class: 'btn-main' %>
+          <%= f.submit t('cyclist.send_a_message'), class: 'btn-main' %>
         </div>
     <% end %>
   </div>
 
   <div class="parent-card">
-    <div class="card-trip-header mt-80"><h3>Cycling Trips </h3></div>
+    <div class="card-trip-header mt-80"><h3><%= t('cyclist.trip_section.headline') %></h3></div>
     <% if @trips.empty? %>
-      <p class="uni-opacity40 my-4"> no cycling trips added by <%= @user.full_name.capitalize %> so far </p>
+      <p class="uni-opacity40 my-4"> <%= t('cyclist.trip_section.default_content', username: @user.full_name.capitalize ) %></p>
     <% else %>
       <% @trips.each do |trip| %>
 
@@ -31,7 +31,7 @@
           <div class="card-trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url.nil? ? "" : cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
 
             <% if trip.end_date.nil?  || trip.end_date > Date.today %>
-              <p class="travelling-tag">Now travelling</p>
+              <p class="travelling-tag"><%= t('trip_card.now_travelling') %></p>
             <% end %>
 
             <strong><h3><%= trip.name %></h3></strong>
@@ -43,12 +43,12 @@
               </div>
               <div>
                 <p><strong><%= trip.trip_time %> </strong></p>
-                <font size="1"><p>days</p></font>
+                <font size="1"><p><%= t('trip_card.days') %></p></font>
               </div>
               <div>
                 <% unless trip.km.nil? %>
                 <p><strong><%= trip.km %> </strong></p>
-                <font size="1"><p>kilometers</p></font>
+                <font size="1"><p><%= t('trip_card.kilometers') %></p></font>
                 <% end %>
               </div>
             </div>

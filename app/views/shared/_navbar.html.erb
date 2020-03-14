@@ -2,7 +2,7 @@
     <div class="navbar-item">
       <%= link_to trips_path, class: "anchor_link" do %>
         <i class="fas fa-route"></i>
-        <p>Trips</p>
+        <p><%= t('navigation.trips') %></p>
       <% end %>
     </div>
 
@@ -12,19 +12,19 @@
         <% unless @badge_poi_unpublished.zero? %>
           <p class="notif-badge"><%= @badge_poi_unpublished %></p>
         <% end %>
-      <p>Feed</p>
+      <p><%= t('navigation.feed') %></p>
       <% end %>
     </div>
     <div class="navbar-item" id="navbar-map">
       <%= link_to map_path, class: "anchor_link" do %>
         <i class="fas fa-map-marked-alt"></i>
-        <p>Map</p>
+        <p><%= t('navigation.map') %></p>
       <% end %>
     </div>
     <div class="navbar-item">
       <%= link_to conversations_path, class: "anchor_link" do %>
         <i class="far fa-comments"></i>
-        <p>Messages</p>
+        <p><%= t('navigation.messages') %></p>
       <% end %>
 
     </div>
@@ -32,7 +32,7 @@
     <div class="navbar-item">
       <%= link_to profile_path, class: "anchor_link" do %>
         <i class="fas fa-user"></i>
-        <p>Profile</p>
+        <p><%= t('navigation.profile') %></p>
       <% end %>
     </div>
 </div>

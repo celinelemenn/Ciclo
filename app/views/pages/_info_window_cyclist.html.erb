@@ -11,7 +11,7 @@
             </div>
             <div class="distance_km  pl-3">
                <strong><span><%= cyclist.full_name %></span></strong>
-              <p class="uni-opacity40"> <%= cyclist.distance(current_user)%> </p>
+              <p class="uni-opacity40"> <%= t('map_card.km_away', distance: cyclist.distance(current_user))%> </p>
             </div>
           </div>
           <div>
@@ -20,7 +20,7 @@
         </div>
         <div class="info_window_popdown_btn ">
           <%= link_to userprofile_path(cyclist) do %>
-            <p class="btn-main mr-3">View</p>
+            <p class="btn-main mr-3"><%= t('map_card.view') %></p>
           <% end %>
           <div class="closing-cross-popdown">
             <i class="fa fa-times"></i>
