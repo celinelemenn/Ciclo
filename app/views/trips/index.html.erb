@@ -1,7 +1,7 @@
 <%= render 'shared/topmenu' %>
 
 <div class="uni-page-container">
-  <h2 class="mb-5 mx-3">Trips from Cyclo-ers by routes</h2>
+  <h2 class="mb-5 mx-3"><%= t('trip_page.index.title_1') %></h2>
 
 <!-- this is the search part
   <div class="mb-50 search">
@@ -30,7 +30,7 @@
 
     <% end %>
 
-    <h5 class="ml-3 mt-5 mb-3">No Specific Cycling Route</h5>
+    <h5 class="ml-3 mt-5 mb-3"><%= t('trip_page.index.title_2') %></h5>
     <% @trips_noroute.each do |trip| %>
       <%= render 'shared/trips_card', trip: trip %>
     <% end %>

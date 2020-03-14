@@ -13,15 +13,15 @@
                   "<%= trip.name %>"
                 </p>
                 <p class= "uni-opacity40">
-                  from <%= trip.start_date.strftime("%b %Y") %>
+                 <%= t('trip_page.index.from', date: trip.start_date.strftime("%b %Y")) %>
                   <% if trip.end_date.nil? || trip.end_date > Date.today %>
-                    until now
+                    <%= t('trip_page.index.until_now') %>
                   <% else %>
-                    to <%= trip.end_date.strftime("%b %Y") %>
+                    <%= t('trip_page.index.to', date: trip.end_date.strftime("%b %Y")) %>
                   <% end %>
                 </p>
                 <%  unless trip.blog.nil? || trip.blog.empty?  %>
-                  <a href='<%= trip.blog %>' class="btn-simple-light"> read the blog</a>
+                  <a href='<%= trip.blog %>' class="btn-simple-light"> <%= t('trip_page.index.read_blog') %></a>
                 <% end %>
               </div>
             </div>

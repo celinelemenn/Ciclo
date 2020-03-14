@@ -6,13 +6,13 @@
   <div class="trip-stats">
     <div class="trip-stat">
       <i class="fas fa-stopwatch trip-stat-icon"></i>
-      <p><%=  @trip.trip_time%> days</p>
+      <p><%= t('trip_page.show.day', days: @trip.trip_time) %></p>
     </div>
     <% unless @trip.km.nil? %>
       <div class="trip-stat">
         <!-- <i class="fas fa-route"></i> -->
         <i class="fas fa-arrows-alt-h trip-stat-icon"></i>
-        <p> <%= @trip.km %> km</p>
+        <p> <%= t('trip_page.show.km', km: @trip.km) %></p>
       </div>
     <%end %>
  <!--    <div class="trip-stat">
@@ -28,15 +28,15 @@
 
   <div class="mx-3 mb-50">
     <h3><%= @trip.name %></h3>
-    <p> by <%= @trip.user.full_name %>, started in <%= @trip.start_date.strftime("%b %Y")  %></p>
+     <p> <%= t('trip_page.show.by', username: @trip.user.full_name ,date:@trip.start_date.strftime("%b %Y") ) %></p>
 
     <p class="mt-5"> <%= @trip.description %></p>
     <% unless @trip.blog.nil? || @trip.blog.empty? %>
-      <a href="<%= @trip.blog %>" class="btn-simple"> view the blog </a>
+      <a href="<%= @trip.blog %>" class="btn-simple"><%= t('trip_page.show.view_blog') %></a>
     <% end %>
   </div>
 
   <div class="trip-show-btn mb-50">
-    <%= link_to "See similar trips", trips_path, class: "btn-secondary" %>
+    <%= link_to t('trip_page.show.similar_trip'), trips_path, class: "btn-secondary" %>
   </div>
 </div>
