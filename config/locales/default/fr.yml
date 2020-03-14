@@ -110,5 +110,14 @@ fr:
       title: "Nouveau message à %{recipient}"
       form_placeholder: "Écrivez votre message..."
       action: "Envoyer"
+  error_page:
+    500_error:
+      title: "Ouch, error 500"
+      text: "Bien sûr, il n'y a pas de problème que nous ne pouvons pas résoudre."
+      action: "Revenir en arrière"
+    not_found:
+      title: "La page que vous recherchez n'existe pas."
+      text: "Faites du vélo dans l'autre sens"
+
 
 
