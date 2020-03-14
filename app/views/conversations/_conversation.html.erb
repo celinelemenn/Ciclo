@@ -1,6 +1,6 @@
 <div id="conversation-list">
   <div class="conversation-with">
-    <p>Chatting with <%= conversation.with(current_user).name %></p>
+    <p><%= t('conversations.view_conversation.title', recipient: conversation.with(current_user).name) %></p>
   </div>
   <div class="body-conversation">
     <p>
@@ -13,6 +13,6 @@
   </div>
   <br>
   <div class="conversation-list-btn">
-    <%= link_to 'View conversation', conversation_path(conversation) %>
+    <%= link_to t('conversations.view'), conversation_path(conversation) %>
   </div>
 </div>

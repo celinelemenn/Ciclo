@@ -101,8 +101,15 @@ en:
       title: "Plan your next trip"
       what: "In the trip section, <strong>check the latest blogs</strong> or even <strong>contact directly</strong> the cyclo-ers to get the information you need for your future route"
     next: "Next"
-  point_of_interest:
-    camping: 
+  conversations:
+    title: "My Conversations"
+    view: "View messages"
+    view_conversation:
+      title: "Chatting with %{recipient}"
+    new_message:
+      title: "New message to %{recipient}"
+      form_placeholder: "Write your message..."
+      action: "Send Message"
 
 
 

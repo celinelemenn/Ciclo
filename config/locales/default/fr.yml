@@ -101,5 +101,14 @@ fr:
       title: "Planifier votre prochain voyage"
       what: "Dans la section voyage, <strong> consultez les derniers blogs </strong> ou même <strong> contactez directement </strong> les cyclo-ers pour obtenir les informations dont vous avez besoin pour votre futur itinéraire"
     next: "Next"
+  conversations:
+    title: "Mes Messages"
+    view: "Voir les messages"
+    view_conversation:
+      title: "En discussion avec %{recipient}"
+    new_message:
+      title: "Nouveau message à %{recipient}"
+      form_placeholder: "Écrivez votre message..."
+      action: "Envoyer"
 
 

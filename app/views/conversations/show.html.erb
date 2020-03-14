@@ -1,6 +1,6 @@
 <div class="uni-page-container" id="convo">
   <div class="chat-title">
-    <h1 id="chat-title-header">Chatting with <%= @conversation.with(current_user).name %></h1>
+    <h1 id="chat-title-header"><%= t('conversations.view_conversation.title', recipient: @conversation.with(current_user).name) %></h1>
     <%= cl_image_tag(@conversation.with(current_user).photo.url(:bright_face), fetch_format: :auto) %>
   </div>
 
@@ -17,10 +17,10 @@
     <%= form_for @personal_message, url: conversation_personal_messages_path(@conversation) do |f| %>
       <div class="form-input form-personal-message">
         <%= hidden_field_tag 'conversation_id', @conversation.id%>
-        <%= f.text_area :body, placeholder: "Write your message..." %>
+        <%= f.text_area :body, placeholder: t('conversations.new_message.form_placeholder') %>
       </div>
       <div class="form-buttons">
-        <%= f.submit 'Send Message', class: "btn-main uni-box-shadow" %>
+        <%= f.submit t('conversations.new_message.action'), class: "btn-main uni-box-shadow" %>
       </div>
     <% end %>
   </div>
