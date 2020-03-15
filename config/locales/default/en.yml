@@ -38,6 +38,9 @@ en:
     update: "Update"
     delete: "Delete"
     delete_confirmation: "Are you sure?"
+    add: "Add"
+    send: "Send"
+    something_wrong: "Something wrong?"
   geolocalization:
     message: "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5>"
   navigation:

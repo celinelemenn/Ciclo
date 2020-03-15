@@ -57,6 +57,10 @@ class PointOfInterest < ApplicationRecord
     POINT_OF_INTEREST[poi_type.to_sym][:name] if poi_type
   end
 
+  def label
+    POINT_OF_INTEREST[poi_type.to_sym][:label] if poi_type
+  end
+
   def icon
     if poi_type
       POINT_OF_INTEREST[poi_type.to_sym][:marker_icon]

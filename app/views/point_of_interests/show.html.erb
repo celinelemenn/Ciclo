@@ -35,17 +35,19 @@
     <h2> <%= @poi.title %></h2>
     <div class="poi-show-details-category mb-2">
       <img src=<%= @poi.icon %> alt="">
-      <div class="pl-2"><%= @poi.name %> <span class=""> - <%= @poi.distance(current_user) %></span></div>
+      <div class="pl-2">
+        <%= t("point_of_interests.#{@poi.label}") %>
+        <%= t('poi_page.show.km_away', km:@poi.distance(current_user) ) %></div>
     </div>
     <div class="mb-3 uni-opacity40">
-      Created by <%= @poi.user.full_name %>, <%= @poi.date %>
+      <%= t('poi_page.show.created_by', creator: @poi.user.full_name,date: @poi.date) %>
     </div>
   </div>
 
 
 <!-- description block -->
   <div class="margin20">
-    <h4 class="mb-3">Comments</h4>
+    <h4 class="mb-3"><%= t('comment.title') %></h4>
     <div class="comment-card">
       <div class="comment-card-image">
         <%= cl_image_tag(@poi.user.photo.url(:avatar), fetch_format: :auto) %>
@@ -81,12 +83,12 @@
         <div class="d-flex">
           <%= cl_image_tag(current_user.photo.url(:avatar), class: "avatar-height") %>
           <div>
-            <%= f.input :content, placeholder: "Add your comment", label: false, class: "no-border" %>
+            <%= f.input :content, placeholder: t('comment.form.placeholder'), label: false, class: "no-border" %>
             <%= f.input :user, :as => :hidden, input_html: { value: current_user.id } %>
           </div>
         </div>
         <div class="btn-poi">
-          <%= f.submit "Add" %>
+          <%= f.submit t('button.send') %>
         </div>
       </div>
     <% end %>
@@ -95,7 +97,9 @@
   <!-- last button -->
 
 
-    <div><%= link_to "Something wrong?", new_point_of_interest_report_path(@poi, @report), class: "btn-poi" %></div>
+    <div>
+      <%# <%= link_to t('button.something_wrong), new_point_of_interest_report_path(@poi, @report), class: "btn-poi" %>
+    </div>
 
 
   <!-- end of the page -->

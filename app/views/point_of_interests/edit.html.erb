@@ -1,17 +1,17 @@
-<h1 class="mt-5 ml-3">Edit your contribution</h1>
+<h1 class="mt-5 ml-3"><%= t('poi_page.edit') %></h1>
 
 
 <div class="form-bottom ">
   <%= simple_form_for(@poi) do |f|%>
   <div class="form-inputs">
-    <%= f.input :photo %>
-    <%= f.input :poi_type, collection: POINT_OF_INTEREST %>
-    <%= f.input :title %>
-    <%= f.input :description %>
+    <%= f.input :photo, label: t('poi_page.form.photo') %>
+    <%= f.input :poi_type, collection: POINT_OF_INTEREST, label: t('poi_page.form.choose_type_dropdown') %>
+    <%= f.input :title, label: t("poi_page.form.title.field") %>
+    <%= f.input :description, label: t("poi_page.form.description.field") %>
   </div>
   <div class="form-actions d-flex">
-  <%= f.button :submit, "Update", class: "btn-main" %>
-  <%= link_to 'Delete', point_of_interest_path(@poi), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
+  <%= f.button :submit, t('button.update'), class: "btn-main" %>
+  <%= link_to  t('button.delete'), point_of_interest_path(@poi), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
   </div>
   <% end %>
 </div>

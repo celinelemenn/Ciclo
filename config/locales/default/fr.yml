@@ -38,6 +38,9 @@ fr:
     update: "Enregistrer"
     delete: "Supprimer"
     delete_confirmation: "Êtes-vous sûr?"
+    add: "Add"
+    send: "Envoyer"
+    something_wrong: "Incorrect ?"
   geolocalization:
     message: "<h5> <strong>SVP allow location access:</strong> we don't have permission to use your localization. </h5>"
   navigation:

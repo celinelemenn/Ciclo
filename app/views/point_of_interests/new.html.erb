@@ -1,4 +1,4 @@
-<h2 class="row d-flex justify-content-center mt-4">Add to the map</h2>
+<h2 class="row d-flex justify-content-center mt-4"><%= t('poi_page.new') %></h2>
 
 <div class="uni-page-container mt-2">
   <div class="uni-page-container text-center">
@@ -12,11 +12,11 @@
   <div class="form-container">
     <%= simple_form_for(@point_of_interest) do |f| %>
      <div class="form-input">
-        <%= f.input :photo %>
+        <%= f.input :photo, label: t('poi_page.form.photo') %>
 
         <div class="form-group">
           <label class="form-control-label" for="point_of_interest_poi_type">
-          What is it? (select 1 option only)
+          <%= t('poi_page.form.choose_type') %>
           </label>
             <div class="poi-type-choices">
 
@@ -26,7 +26,7 @@
 
               <label for="poi_<%= value[:label] %>" class="poi-type-choice">
                 <img src="<%= value[:marker_icon] %>" alt="" height=70>
-                <p class="poi-type-choice-title"> <%= value[:name] %></p>
+                <p class="poi-type-choice-title"> <%= t("point_of_interests.#{value[:label] }") %></p>
               </label>
 
             <% end %>
@@ -36,14 +36,14 @@
 
 
 
-        <%= f.input :title, placeholder: "Enter your title here" %>
-        <%= f.input :description, placeholder: "Enter your description here" %>
+        <%= f.input :title, label: t("poi_page.form.title.field"), placeholder: t("poi_page.form.title.placeholder") %>
+        <%= f.input :description, label: t("poi_page.form.description.field"), placeholder: t("poi_page.form.description.placeholder") %>
 
      </div>
 
    <div class="row d-flex justify-content-center">
-     <%= f.submit "Later", class: "btn-secondary"  %>
-     <%= f.submit "Add", class: "btn-main" %>
+     <%= f.submit t('poi_page.form.action.submit_later'), class: "btn-secondary"  %>
+     <%= f.submit t('poi_page.form.action.submit_now'), class: "btn-main" %>
    </div>
 
      <% end %>

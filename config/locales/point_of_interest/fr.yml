@@ -15,4 +15,29 @@ fr:
     hotel: "Ho(s)tel"
     bar: "Bar"
     restaurant: "Restaurant"
-  
+  poi_page:
+    new: "Ajouter à la carte"
+    edit: "Modifier votre contribution"
+    show:
+      km_away: " à %{km} km"
+      created_by: "Créé par %{creator}, %{date}"
+    form:
+      photo: "Photo"
+      choose_type: "Quel type de point d'intérêt? (sélectionnez 1 option seulement)"
+      choose_type_dropdown: "Type de point d'intérêt"
+      title:
+        field: "Titre"
+        placeholder: "Entrer votre titre ici"
+      description:
+        field: "Description"
+        placeholder: "Entrer votre description ici"
+      action:
+        submit_later: "Remplir plus tard"
+        submit_now: "Envoyer maintenant"
+  comment:
+    title: "Commentaires"
+    form:
+      placeholder: "Ajouter votre commentaire"
+
+
+

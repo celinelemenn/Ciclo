@@ -15,3 +15,26 @@ en:
     hotel: "Ho(s)tel"
     bar: "Bar"
     restaurant: "Restaurant"
+  poi_page:
+    new: "Add to the map"
+    edit: "Edit your contribution"
+    show:
+      km_away: " - %{km} km away."
+      created_by: "Created by %{creator}, %{date}"
+    form:
+      photo: "Photo"
+      choose_type: "What is it? (select 1 option only)"
+      choose_type_dropdown: "Point of interest type"
+      title:
+        field: "Title"
+        placeholder: "Enter your title here"
+      description:
+        field: "Description"
+        placeholder: "Enter your description here"
+      action:
+        submit_later: "Fill in later"
+        submit_now: "Send now"
+  comment:
+    title: "Comments"
+    form:
+      placeholder: "Add your comment"
