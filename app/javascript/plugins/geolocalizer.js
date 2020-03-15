@@ -33,13 +33,13 @@ const error = (error) => {
 
     console.warn(`ERROR(${error.code}): ${error.message}`);
     const message = document.querySelector('#geoloc-banner');
+    let locale = document.querySelector(".uni-app-container").dataset.locale
+
     message.style.display = "block"  ;
     if (error.code == 1) {
-      message.innerHTML = I18n.t("geolocalization.message") + message.innerHTML;
-
-    // message.innerHTML = "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5>" + message.innerHTML;
+      message.innerHTML = I18n.t("geolocalization.message", { locale: locale || navigator.languages[1] });
      } else {
-      message.innerHTML = "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p> <div class='closing-geoloc-message'><i class='fa fa-times'></i>"
+      message.innerHTML = I18n.t("geolocalization.message_3")
      }
 
     close = document.querySelector('.closing-geoloc-message')

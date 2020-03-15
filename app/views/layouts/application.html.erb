@@ -62,7 +62,7 @@
 
     <%= render 'shared/flashes' %>
 
-    <div class="uni-app-container">
+    <div class="uni-app-container" data-locale=<%= params[:locale]%>>
       <div  class="geoloc-message" id="geoloc-banner">
         <%= render 'shared/geoloc_banner' %>
       </div>
@@ -88,11 +88,6 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
 
-
-    <script type="text/javascript">
-     I18n.defaultLocale = "<%= I18n.default_locale %>";
-     I18n.locale = "<%= I18n.locale %>";
-    </script>
     <%= javascript_include_tag "i18n" %>
     <%= javascript_include_tag "translations", skip_pipeline: true %>
 

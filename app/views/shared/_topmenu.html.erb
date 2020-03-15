@@ -2,16 +2,16 @@
   <div class="top-menu-item-icon dropdown ml-1">
     <button  class="btn-drop"><i class="fas fa-bars"></i></button>
     <div id="dropdown-items" class="dropdown-content">
-      <%= link_to 'Home', homepage_path %>
-      <%= link_to 'Map', map_path %>
+      <%= link_to t('navigation.home'), homepage_path %>
+      <%= link_to t('navigation.map'), map_path %>
       <% if !current_user %>
-      <%= link_to 'Log in', new_user_session_path %>
-      <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to t('navigation.log_in'), new_user_session_path %>
+      <%= link_to t('navigation.sign_up'), new_user_registration_path %>
       <% end %>
-      <%= link_to 'Help', help_path %>
-      <%= link_to 'Contact', contact_path %>
+      <%= link_to t('navigation.help'), help_path %>
+      <%= link_to t('navigation.contact'), contact_path %>
       <% if current_user %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <%= link_to t('navigation.sign_out'), destroy_user_session_path, method: :delete %>
       <% end %>
     </div>
   </div>

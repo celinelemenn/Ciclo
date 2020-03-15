@@ -42,13 +42,21 @@ fr:
     send: "Envoyer"
     something_wrong: "Incorrect ?"
   geolocalization:
-    message: "<h5> <strong>SVP allow location access:</strong> we don't have permission to use your localization. </h5>"
+    message: "<h5> <strong> Autorisez l'accès aux données de localisation: </strong> nous ne sommes pas autorisés à utiliser votre localisation. </h5><p>Nous avons besoin d'accéder à votre emplacement pour que cette application fonctionne. Pour modifier vos paramètres une fois que vous avez dit 'ne pas autoriser', ce n'est pas facile. Voir la section aide pour plus de détails.</p><div class='closing-geoloc-message'><i class='fa fa-times'></i></div>"
+    message_3: "<h5> <strong> AVERTISSEMENT: </strong> Une erreur s'est produite et nous n'avons pas pu accéder à votre localisation. </h5><p>Veuillez recharger la page et réessayer. </p><div class = 'fermeture-geoloc -message'> <i class = 'fa fa-times'> </i> "
+    action: "Voici de l'aide"
   navigation:
     map: "Carte"
     messages: "Messages"
     profile: "Profil"
     feed: "Feed"
     trips: "Voyages"
+    home: "Accueil"
+    log_in: "Connexion"
+    sign_up: "Inscription"
+    help: "Aide"
+    contact: "Contact"
+    sign_out: "Déconnexion"
   map:
     filter: "Filtrer"
   feed:
@@ -126,5 +134,3 @@ fr:
     not_found:
       title: "La page que vous recherchez n'existe pas."
       text: "Faites du vélo dans l'autre sens"
-
-
