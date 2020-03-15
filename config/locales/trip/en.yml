@@ -1,0 +1,37 @@
+en:
+  trip_page:
+    edit: "Edit your trip"
+    add: "Add your trip"
+    form:
+      change_picture: "Change your picture"
+      upload_picture: "Upload your picture"
+      title:
+        field: "Title of the trip"
+        placeholder: "From Hanoi to Siem Reap"
+      start_date: "start date"
+      end_date: "end date"
+      select_country: "Select a Country"
+      and: "and / or"
+      select_route: "Select a Cycling Route"
+      description:
+        field: "Description"
+        placeholder: "Tell other cyclo-er some highlights ..."
+      km:
+        field: "Kilometers achieved / planned"
+        placeholder: "1500"
+      blog:
+        field: "Blog of this trip"
+        placeholder: "www.example.com"
+    show:
+      day: "%{days} days"
+      km: "%{km} km"
+      by: "by %{username}, started in %{date}"
+      view_blog: "View blog"
+      similar_trip: "See similar trips"
+    index:
+      title_1: "Trips from Cyclo-ers by routes"
+      title_2: "No Specific Cycling Route"
+      read_blog: "read the blog"
+      from: "from %{date}"
+      until_now: "until now"
+      to: "to %{date}"

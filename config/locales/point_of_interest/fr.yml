@@ -1,0 +1,18 @@
+fr:
+  point_of_interests:
+    caution: "Attention!"
+    landmark: "À voir"
+    water_refill: "Point d'eau"
+    toilet: "Toilette"
+    picnic: "Table de pique-nique"
+    repair: "Magasin réparation vélos"
+    wifi: "Zone Wifi"
+    info_point: "Point d'information"
+    electricity: "Point de recharge"
+    camping: "Camping"
+    wild_camping: "Camping sauvage"
+    shopping: "Épicerie"
+    hotel: "Ho(s)tel"
+    bar: "Bar"
+    restaurant: "Restaurant"
+  

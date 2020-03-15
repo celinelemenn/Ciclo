@@ -1,0 +1,17 @@
+en:
+  point_of_interests:
+    caution: "Caution!"
+    landmark: "Landmark"
+    water_refill: "Water Refill"
+    toilet: "Toilet"
+    picnic: "Picnic Table"
+    repair: "Bike repair shop"
+    wifi: "Wifi zone"
+    info_point: "Info point"
+    electricity: "Charging Point"
+    camping: "Camping"
+    wild_camping: "Wild camping"
+    shopping: "Grocery Store"
+    hotel: "Ho(s)tel"
+    bar: "Bar"
+    restaurant: "Restaurant"

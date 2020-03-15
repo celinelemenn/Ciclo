@@ -1,0 +1,37 @@
+fr:
+  trip_page:
+    edit: "Modifiez votre voyage"
+    add: "Ajouter un voyage"
+    form:
+      change_picture: "Modifier votre photo"
+      upload_picture: "Téléchargez votre photo"
+      title:
+        field: "Titre du voyage"
+        placeholder: "De Hanoi à Siem Reap"
+      start_date: "date de début"
+      end_date: "date de fin"
+      select_country: "Choisir un pays"
+      and: "et / ou"
+      select_route: "Choisir un itinéraire vélo"
+      description:
+        field: "Description"
+        placeholder: "Ajoutez des détails pour les autres cyclo-er..."
+      km:
+        field: "Kilomètres atteints / prévus"
+        placeholder: "1500"
+      blog:
+        field: "Blog de ce voyage"
+        placeholder: "www.example.com"
+    show:
+      day: "%{days} jours"
+      km: "%{km} km"
+      by: "de %{username}, commencé en %{date}"
+      view_blog: "Voir le blog"
+      similar_trip: "Voir des voyages similaires"
+    index:
+      title_1: "Voyages de Cyclo-ers par itinéraires vélo"
+      title_2: "Aucun itinéraires vélo spécifique"
+      read_blog: "lire le blog"
+      from: "de %{date}"
+      until_now: "jusqu'à aujourd'hui"
+      to: "à %{date}"
