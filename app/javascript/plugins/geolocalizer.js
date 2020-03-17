@@ -37,7 +37,7 @@ const error = (error) => {
 
     message.style.display = "block"  ;
     if (error.code == 1) {
-      message.innerHTML = I18n.t("geolocalization.message", { locale: locale || navigator.languages[1] });
+      message.innerHTML = I18n.t("geolocalization.message", { locale: locale || 'en' });
      } else {
       message.innerHTML = I18n.t("geolocalization.message_3")
      }
