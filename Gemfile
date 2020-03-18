@@ -9,7 +9,6 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 
-
 # our own gem added
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
@@ -23,7 +22,6 @@ gem 'omniauth-facebook'
 gem 'letter_opener', group: :development
 gem 'postmark-rails'
 gem "i18n-js"
-
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

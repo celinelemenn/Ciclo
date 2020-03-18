@@ -32,7 +32,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   # welcome email when user is created
-    # after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   def name
     name = full_name
@@ -44,7 +44,7 @@ class User < ApplicationRecord
       coords_cyclist = [user_positions.last.lat, user_positions.last.long]
       coords_user = [user.user_positions.last.lat, user.user_positions.last.long]
       distance = Geocoder::Calculations.distance_between(coords_cyclist, coords_user, units: :km)
-      "#{distance.round(2)}"
+      distance.round(2).to_s
     else
       ""
     end
@@ -73,10 +73,9 @@ class User < ApplicationRecord
     end
   end
 
-private
+  private
 
   def send_welcome_email
     UserMailer.with(user: self).welcome.deliver_now
   end
 end
-

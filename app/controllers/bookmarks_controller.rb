@@ -16,6 +16,6 @@ class BookmarksController < ApplicationController
     else
       @existing_bookmark.delete
       render 'point_of_interests/show', point_of_interest: @poi
+    end
   end
- end
 end

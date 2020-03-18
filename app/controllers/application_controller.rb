@@ -20,20 +20,18 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[full_name bio blog description photo share_location terms status])
  end
 
-
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
   end
 
-  def self.default_url_options(options={})
-    options.merge({ :locale => I18n.locale })
+  def self.default_url_options(options = {})
+    options.merge(locale: I18n.locale)
   end
 
   # def default_url_options
   # { locale: I18n.locale, host: ENV["DOMAIN"] || "localhost:3000" }
   # end
-
 
   def switch_locale(&action)
     if params[:locale]
@@ -49,7 +47,6 @@ class ApplicationController < ActionController::Base
     end
     I18n.with_locale(locale, &action)
   end
-
 
   def after_sign_in_path_for(resource)
     if resource.sign_in_count == 1
@@ -67,6 +64,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   def extract_locale_from_accept_language_header
     request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
   end
