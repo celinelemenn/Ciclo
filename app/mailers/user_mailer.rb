@@ -21,6 +21,6 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     @greeting = "Hi"
 
-    mail(to: @user.email, subject: 'Welcome to Cyclo', )
+    mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline') )
   end
 end

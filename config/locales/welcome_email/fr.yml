@@ -26,12 +26,12 @@ fr:
           button: "Voir les voyages des cyclo-ers"
       footer:
         headline: "Cette application est pour vous, <br> donc si vous avez des commentaires"
-        text: "pour améliorer Cyclo afin qu'il réponde mieux à vos besoins <br> signalez une fonctionnalité qui ne fonctionne pas <br> ou avez simplement une question,"
+        text: "pour améliorer Cyclo afin qu'il réponde mieux à vos besoins <br> ou signaler une fonctionnalité qui ne fonctionne pas <br> ou si vous avez simplement une question,"
         image_alt:
           facebook: "Facebook"
           instagram: "Instagram"
           chat: "Direct chat"
         callout: "N'hésitez pas à nous contacter, nous vous écoutons!"
-        signature: "Cyclement vôtre,l'équipe Cyclo"
+        signature: "Cyclement vôtre, l'équipe Cyclo"
 
 

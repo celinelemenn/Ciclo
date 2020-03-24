@@ -1,7 +1,7 @@
 <div>
   <div style="background-color: #26547C;color: white; display: flex;flex-direction: column; align-items: center; padding: 1em;">
     <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584900424/logos/Logo%20Cyclo.png" alt=<%= t('user_mailer.welcome.entete.image_alt') %>>
-    <h1 style="margin: 0.4em 0em 0.4em 0em;"> <%= t('user_mailer.welcome.entete.headline') %></h1>
+    <h1 style="margin: 0.4em 0em 0.4em 0em; text-align: center;"> <%= t('user_mailer.welcome.entete.headline') %></h1>
     <p style="margin: 0.2em 0em 0.4em 0em;text-align: center;"> <%= t('user_mailer.welcome.entete.text') %></p>
   </div>
   <div style="display: flex;flex-direction: column; align-items: center;">
@@ -96,9 +96,9 @@
 
   <div style="background-color: #26547C;color: white; display: flex;flex-direction: column; align-items: center; padding: 1em; margin-top: 1.5em; ">
     <div style="display: flex;flex-direction: column; align-items: center; ">
-      <h4 style="text-align: center;margin: 0.5em 0em;"><%= t('user_mailer.welcome.footer.headline').html_safe%></h4>
-      <p style="text-align: center;margin: 0.5em 0em;"><%= t('user_mailer.welcome.footer.text').html_safe%></p>
-      <p style="text-align: center; margin-bottom:0em; font-weight:600;"><%= t('user_mailer.welcome.footer.callout').html_safe%></p>
+      <h4 style="text-align: center;margin: 0.5em 0em;font-size: 0.9em;"><%= t('user_mailer.welcome.footer.headline').html_safe%></h4>
+      <p style="text-align: center;margin: 0.5em 0em;font-size: 0.8em;"><%= t('user_mailer.welcome.footer.text').html_safe%></p>
+      <p style="text-align: center; margin-bottom:0em; font-weight:600;font-size: 0.9em;"><%= t('user_mailer.welcome.footer.callout').html_safe%></p>
     </div>
     <div>
       <ul style="padding: 0;text-align: center;margin:0em; display: flex; align-items: center;">
@@ -113,11 +113,7 @@
           </a>
         </li>
          </li>
-         <li style="display: inline-block;list-style: none;padding: 10px;">
-          <a href="https://www.cycloapp.org/conversations"  style="color: #fff;">
-           <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584909993/logos/chat.png" style="height: 55px;display: flex;" alt=<%= t('user_mailer.welcome.footer.image_alt.chat') %>>
-          </a>
-        </li>
       </ul>
     </div>
-    <p style="margin-top: 0"><%= t('user_mailer.welcome.footer.signature') %></p>
+    <p style="margin-top: 0;font-size: 0.9em;"><%= t('user_mailer.welcome.footer.signature').html_safe %></p>
+
