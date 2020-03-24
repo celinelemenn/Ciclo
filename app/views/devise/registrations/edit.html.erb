@@ -1,7 +1,7 @@
 <div class="form-container">
 
 
-      <h2 class="text-center mt-4">Edit Profile</h2>
+      <h2 class="text-center mt-4"><%= t('devise.registrations.edit.headline') %></h2>
 
 
 
@@ -18,24 +18,24 @@
           <% if current_user.photo.file %>
             <%= cl_image_tag(current_user.photo.url(:avatar_small)) %>
           <% end %>
-          <%= f.input :photo, label: 'Change Photo' %>
+          <%= f.input :photo, label: t('devise.form.photo') %>
         </div>
         <hr>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.input :full_name, label: 'Username', required: true %>
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :bio, required: true %>
-        <%= f.input :description, required: true %>
-        <%= f.input :blog, required: true %>
+        <%= f.input :full_name, label: t('devise.form.username'), required: true %>
+        <%= f.input :email, required: true, autofocus: true,label: t('devise.form.email') %>
+        <%= f.input :bio, required: true,label: t('devise.form.bio') %>
+        <%= f.input :description, required: true,label: t('devise.form.description') %>
+        <%= f.input :blog, required: true,label: t('devise.form.blog') %>
         <%= f.input :status,
                   required: true,
                   as: :radio_buttons,
-                  label: "Are you travelling by bicycle right now?" %>
+                  label:t('devise.form.status') %>
       </div>
       <div class="form-actions btn-edit-profile">
-          <%= f.button :submit, "Update", class: "btn-main"%>
-          <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-minimal" %>
-          <%= link_to "Back", :back, class: "btn-minimal mb-4" %>
+          <%= f.button :submit, t('button.update'), class: "btn-main"%>
+          <%= link_to t('devise.registrations.edit.cancel_my_account'), registration_path(resource_name), data: { confirm: t('button.delete_confirmation')}, method: :delete, class: "btn-minimal" %>
+          <%= link_to t('button.back'), :back, class: "btn-minimal mb-4" %>
       </div>
       <% end %>
   </div>

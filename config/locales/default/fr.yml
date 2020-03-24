@@ -41,6 +41,7 @@ fr:
     add: "Add"
     send: "Envoyer"
     something_wrong: "Incorrect ?"
+    back: "retour"
   geolocalization:
     message: "<h5> <strong> Autorisez l'accès aux données de localisation: </strong> nous ne sommes pas autorisés à utiliser votre localisation. </h5><p>Nous avons besoin d'accéder à votre emplacement pour que cette application fonctionne. Pour modifier vos paramètres une fois que vous avez dit 'ne pas autoriser', ce n'est pas facile. Voir la section aide pour plus de détails.</p><div class='closing-geoloc-message'><i class='fa fa-times'></i></div>"
     message_3: "<h5> <strong> AVERTISSEMENT: </strong> Une erreur s'est produite et nous n'avons pas pu accéder à votre localisation. </h5><p>Veuillez recharger la page et réessayer. </p><div class = 'fermeture-geoloc -message'> <i class = 'fa fa-times'> </i> "
@@ -88,7 +89,7 @@ fr:
     give_feedback: "Donnez-nous votre avis"
     feedback_form:
       rating:
-        question: "Quelle est la probabilité que vous recommandiez Cyclo à un autre cycliste en tournée?"
+        question: "Quelle est la probabilité que vous recommandiez Cyclo à un autre cycliste touriste?"
         prompt: "1=pas du tout, 10=extrêmement probable"
       comment:
         question: "Qu'avez-vous le plus / moins apprécié de Cyclo?"
@@ -121,7 +122,7 @@ fr:
     title: "Mes Messages"
     view: "Voir les messages"
     view_conversation:
-      title: "En discussion avec %{recipient}"
+      title: "Discussion avec %{recipient}"
     new_message:
       title: "Nouveau message à %{recipient}"
       form_placeholder: "Écrivez votre message..."

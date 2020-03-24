@@ -15,9 +15,9 @@ fr:
       select_route: "Choisir un itinéraire vélo"
       description:
         field: "Description"
-        placeholder: "Ajoutez des détails pour les autres cyclo-er..."
+        placeholder: "Ajoutez des détails pour les autres cyclo-ers..."
       km:
-        field: "Kilomètres atteints / prévus"
+        field: "Kilomètres parcourus / prévus"
         placeholder: "1500"
       blog:
         field: "Blog de ce voyage"
@@ -30,7 +30,7 @@ fr:
       similar_trip: "Voir des voyages similaires"
     index:
       title_1: "Voyages de Cyclo-ers par itinéraires vélo"
-      title_2: "Aucun itinéraires vélo spécifique"
+      title_2: "Aucun itinéraire vélo spécifique"
       read_blog: "lire le blog"
       from: "de %{date}"
       until_now: "jusqu'à aujourd'hui"

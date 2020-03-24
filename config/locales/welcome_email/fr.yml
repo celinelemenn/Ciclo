@@ -12,8 +12,8 @@ fr:
         complete_profile:
           headline: "Présentez vous à la communauté"
           text: "Présentez-vous aux autres cyclo-ers en ajoutant une photo et une courte biographie afin qu'ils puissent voir vos coordonnées lorsqu'ils recherchent des cyclistes autour d'eux."
-          image_alt: "Completer mon profil"
-          button: "profil"
+          image_alt: "profil"
+          button: "Completer mon profil"
         share_trips:
           headline: "Partagez votre aventure avec les dernières informations"
           text: "Aidez la communauté à avoir un accès facile aux derniers blogs et informations sur un itinéraire en ajoutant vos voyages à vélo avec un lien vers votre blog dans votre section de profil ou en ajoutant des points d'information pertinents sur la carte comme mauvaise route, recharge d'eau .. ainsi cyclo-ers derrière vous le savez!"

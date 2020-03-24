@@ -8,6 +8,11 @@ en:
       remember_me: "Remember me"
       username: "Username"
       character_minimum: "%{number} characters minimum"
+      photo: "Change picture"
+      bio: "Bio"
+      description: "Description"
+      blog: "Blog"
+      status: "Are you travelling by bicycle right now?"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -70,6 +75,7 @@ en:
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       edit:
+        headline: "Edit Profile"
         are_you_sure: "Êtes-vous sûr ?"
         cancel_my_account: "Supprimer mon compte"
         currently_waiting_confirmation_for_email: "Confirmation en attente pour: %{email}"
