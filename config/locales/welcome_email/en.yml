@@ -1,0 +1,39 @@
+en:
+  user_mailer:
+    welcome:
+      entete:
+        headline: "Welcome to Cyclo"
+        text: "The first web app fully dedicated to touring cyclists"
+        image_alt: "cyclo"
+      intro:
+        hi: "Hi, %{username}"
+        text: "before starting your adventure"
+      paragraph:
+        complete_profile:
+          headline: "Introduce yourself to the community"
+          text: "Introduce yourself to the other cyclo-ers by adding a picture, and a short bio so they can see your details when they look for cyclists around them."
+          image_alt: "Complete Profile"
+          button: "Complete Profile"
+        share_trips:
+          headline: "Share your adventure with the latest info"
+          text: "Help the community to have an easy access to the latest blogs and info about a route by adding your cycling trips with link to your blog in your profile section or by adding relevant info points on the map like bad road, water refill.., so cyclo-ers behind you know about it !"
+          image_alt: "Add my trips"
+          button: "Add my trips"
+        inspire:
+          headline: "Get inspired and plan your next trip"
+          text: "All trips added in cyclo are easily accessible in the trips section. Looking for the latest blogs for a specific route, or just for inspiration for your next trip go check it out !"
+          image_alt: "inspire others"
+          button: "See Cyclo-ers trips"
+      footer:
+        headline: "This APP is for you, <br>so if you have any feedback"
+        text: "to improve Cyclo so it fits better your need <br>report a feature not working <br>or just have a question,"
+        image_alt:
+          facebook: "Facebook"
+          instagram: "Instagram"
+          chat: "Direct chat"
+        callout: "Feel free to contact us, we listen !"
+        signature: "Best cycling, the Cyclo Team"
+
+
+
+

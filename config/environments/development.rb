@@ -37,8 +37,10 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   #letter opener
-    config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener
 
+  # for preview of the emails
+  config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

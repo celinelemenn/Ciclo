@@ -32,7 +32,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   # welcome email when user is created
-  # after_create :send_welcome_email
+  after_create :send_welcome_email
 
   def name
     name = full_name

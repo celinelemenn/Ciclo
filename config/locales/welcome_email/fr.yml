@@ -1,0 +1,37 @@
+fr:
+  user_mailer:
+    welcome:
+      entete:
+        headline: "Bienvenue sur Cyclo"
+        text: "La première application web entièrement dédiée aux cyclotouristes"
+        image_alt: "cyclo"
+      intro:
+        hi: "Bonjour, %{username}"
+        text: "avant de commencer votre aventure"
+      paragraph:
+        complete_profile:
+          headline: "Présentez vous à la communauté"
+          text: "Présentez-vous aux autres cyclo-ers en ajoutant une photo et une courte biographie afin qu'ils puissent voir vos coordonnées lorsqu'ils recherchent des cyclistes autour d'eux."
+          image_alt: "Completer mon profil"
+          button: "profil"
+        share_trips:
+          headline: "Partagez votre aventure avec les dernières informations"
+          text: "Aidez la communauté à avoir un accès facile aux derniers blogs et informations sur un itinéraire en ajoutant vos voyages à vélo avec un lien vers votre blog dans votre section de profil ou en ajoutant des points d'information pertinents sur la carte comme mauvaise route, recharge d'eau .. ainsi cyclo-ers derrière vous le savez!"
+          image_alt: "Ajouter mes voyages"
+          button: "Ajouter mes voyages"
+        inspire:
+          headline: "Inspirez-vous et planifiez votre prochain voyage"
+          text: "Tous les voyages ajoutés dans cyclo sont facilement accessibles dans la section voyages. Vous cherchez les derniers blogs pour un itinéraire spécifique, ou tout simplement pour vous inspirer pour votre prochain voyage allez le vérifier!"
+          image_alt: "voyages"
+          button: "Voir les voyages des cyclo-ers"
+      footer:
+        headline: "Cette application est pour vous, <br> donc si vous avez des commentaires"
+        text: "pour améliorer Cyclo afin qu'il réponde mieux à vos besoins <br> signalez une fonctionnalité qui ne fonctionne pas <br> ou avez simplement une question,"
+        image_alt:
+          facebook: "Facebook"
+          instagram: "Instagram"
+          chat: "Direct chat"
+        callout: "N'hésitez pas à nous contacter, nous vous écoutons!"
+        signature: "Cyclement vôtre,l'équipe Cyclo"
+
+

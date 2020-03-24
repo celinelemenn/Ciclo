@@ -1,7 +1,123 @@
-<h1>Hi <%= @user.full_name %></h1>
+<div>
+  <div style="background-color: #26547C;color: white; display: flex;flex-direction: column; align-items: center; padding: 1em;">
+    <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584900424/logos/Logo%20Cyclo.png" alt=<%= t('user_mailer.welcome.entete.image_alt') %>>
+    <h1 style="margin: 0.4em 0em 0.4em 0em;"> <%= t('user_mailer.welcome.entete.headline') %></h1>
+    <p style="margin: 0.2em 0em 0.4em 0em;text-align: center;"> <%= t('user_mailer.welcome.entete.text') %></p>
+  </div>
+  <div style="display: flex;flex-direction: column; align-items: center;">
+    <h3 style="margin: 1.5em 0em 0.3em 0em;"><%= t('user_mailer.welcome.intro.hi', username: @user.full_name.capitalize) %>,</h3>
+    <h3 style="margin: 0.3em 0em 1em 0em;font-weight: 400"><%= t('user_mailer.welcome.intro.text') %></h3>
+  </div>
+
+  <hr style="width: 100px; background-color: #FE2A53; height: 2px; margin-top: 0; margin-bottom: 1.5em">
+
+  <div style="display: flex;justify-content: center;align-items: start; padding:0em 0.5em">
+    <div>
+      <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584901063/Email%20images/Complete_your_profile.png" alt=<%= t('user_mailer.welcome.paragraph.complete_profile.image_alt') %> style="max-width: 160px;">
+    </div>
+    <div>
+      <h4 style="margin: 0.1em 0em 0.3em 0em;"><%= t('user_mailer.welcome.paragraph.complete_profile.headline') %></h4>
+      <p style="margin: 0.5em 0em 1em 0em;font-size: 0.9em;"><%= t('user_mailer.welcome.paragraph.complete_profile.text') %></p>
+      <%= link_to t('user_mailer.welcome.paragraph.complete_profile.button'), profile_url, style: "background-color: #FE2A53;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border-style: none;
+    color: #fff;
+    margin: 25px 5px 5px 5px;
+    min-height: 25px;
+    min-width: 150px;
+    max-width: 200px;
+    display: flex;
+    font-size: 1em;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    font-weight: 550; text-decoration: none" =%>
+    </div>
+  </div>
+
+  <hr style="background-color: black;height: 0.5px;opacity: 0.1; margin: 1.5em 0.5em">
+
+   <div style="display: flex;justify-content: center;align-items: start; padding:0em 0.5em">
+    <div>
+      <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584911238/Email%20images/share_trip.png" alt=<%= t('user_mailer.welcome.paragraph.share_trips.image_alt') %> style="max-width: 150px; margin-right: 0.5em">
+    </div>
+    <div>
+      <h4 style="margin: 0.1em 0em 0.3em 0em;"><%= t('user_mailer.welcome.paragraph.share_trips.headline') %></h4>
+      <p style="margin: 0.5em 0em 1em 0em;font-size: 0.9em;"><%= t('user_mailer.welcome.paragraph.share_trips.text') %></p>
+
+      <%= link_to t('user_mailer.welcome.paragraph.share_trips.button'), new_trip_url, style: "background-color: #FE2A53;
+          padding: 5px 10px;
+          border-radius: 50px;
+          border-style: none;
+          color: #fff;
+          margin: 25px 5px 5px 5px;
+          min-height: 25px;
+          min-width: 150px;
+          max-width: 200px;
+          font-size: 1em;
+          font-weight: 600;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 550; text-decoration: none" =%>
+    </div>
+  </div>
+
+  <hr style="background-color: black;height: 0.5px;opacity: 0.1; margin: 1.5em 0.5em">
 
 
-<p>
-  Thanks for joining the Cyclo community !
+  <div style="display: flex;justify-content: center;align-items: start;  padding:0em 0.5em">
+    <div>
+      <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584911296/Email%20images/inspire.png" alt=<%= t('user_mailer.welcome.paragraph.inspire.image_alt') %> style="max-width: 150px;margin-right: 0.5em">
+    </div>
+    <div>
+      <h4 style="margin: 0.1em 0em 0.3em 0em;"><%= t('user_mailer.welcome.paragraph.inspire.headline') %></h4>
+      <p style="margin: 0.5em 0em 1em 0em;font-size: 0.9em;"><%= t('user_mailer.welcome.paragraph.inspire.text') %></p>
 
-</p>
+      <%= link_to t('user_mailer.welcome.paragraph.inspire.button'), trips_url, style: "background-color: #FE2A53;
+                padding: 5px 10px;
+                border-radius: 50px;
+                border-style: none;
+                color: #fff;
+                margin: 25px 5px 5px 5px;
+                min-height: 25px;
+                min-width: 150px;
+                max-width: 200px;
+                font-size: 1em;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 550; text-decoration: none" =%>
+
+    </div>
+  </div>
+
+  <div style="background-color: #26547C;color: white; display: flex;flex-direction: column; align-items: center; padding: 1em; margin-top: 1.5em; ">
+    <div style="display: flex;flex-direction: column; align-items: center; ">
+      <h4 style="text-align: center;margin: 0.5em 0em;"><%= t('user_mailer.welcome.footer.headline').html_safe%></h4>
+      <p style="text-align: center;margin: 0.5em 0em;"><%= t('user_mailer.welcome.footer.text').html_safe%></p>
+      <p style="text-align: center; margin-bottom:0em; font-weight:600;"><%= t('user_mailer.welcome.footer.callout').html_safe%></p>
+    </div>
+    <div>
+      <ul style="padding: 0;text-align: center;margin:0em; display: flex; align-items: center;">
+        <li style="display: inline-block;list-style: none;padding: 15px;">
+          <a href="https://www.facebook.com/cycloapp.org" style="color: #fff;">
+            <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584909213/logos/facebook.png" style="height: 20px" alt=<%= t('user_mailer.welcome.footer.image_alt.facebook') %>>
+          </a>
+        </li>
+         <li style="display: inline-block;list-style: none;padding: 15px;">
+          <a href="https://www.instagram.com/cyclo_app"  style="color: #fff;">
+           <img src="https://en.instagram-brand.com/wp-content/themes/ig-branding/prj-ig-branding/assets/images/ig-logo.svg" style="height: 22px;" alt=<%= t('user_mailer.welcome.footer.image_alt.instagram') %>>
+          </a>
+        </li>
+         </li>
+         <li style="display: inline-block;list-style: none;padding: 10px;">
+          <a href="https://www.cycloapp.org/conversations"  style="color: #fff;">
+           <img src="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1584909993/logos/chat.png" style="height: 55px;display: flex;" alt=<%= t('user_mailer.welcome.footer.image_alt.chat') %>>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p style="margin-top: 0"><%= t('user_mailer.welcome.footer.signature') %></p>
