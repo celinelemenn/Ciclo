@@ -42,6 +42,9 @@ Rails.application.configure do
   # for preview of the emails
   config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
 
+  # for cloudianry to works with action mailer ? tbc
+  # config.action_mailer.asset_host
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
   def reset_password_instructions(user)
     @resource = user
     mail(to: @resource.email,
-         subject: "Reset password instructions",
+         subject: t('devise.mailer.reset_password_instructions.subject'),
          tag: 'password-reset',
          content_type: "text/html") do |format|
       format.html { render "devise/mailer/reset_password_instructions" }
@@ -21,6 +21,14 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     @greeting = "Hi"
 
-    mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline') )
+    mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline'))
+  end
+
+  def chat
+    @user = params[:user]
+    @conversation = params[:conversation]
+    @receiver = params[:receiver]
+    mail(to: @receiver.email,
+         subject: 'You have a new message')
   end
 end

@@ -33,5 +33,9 @@ fr:
           chat: "Direct chat"
         callout: "N'hésitez pas à nous contacter, nous vous écoutons!"
         signature: "Cyclement vôtre, l'équipe Cyclo"
-
+    chat:
+      entete:
+        image_alt: "Cyclo"
+      headline: "vous avez un <strong>nouveau message</strong> !"
+      action: "Voir le message"
 

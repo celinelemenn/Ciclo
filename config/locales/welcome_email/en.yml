@@ -33,7 +33,11 @@ en:
           chat: "Direct chat"
         callout: "Feel free to contact us, we listen !"
         signature: "Best cycling, the Cyclo Team"
-
+    chat:
+      entete:
+        image_alt: "Cyclo"
+      headline: "you have a <strong>new message</strong> !"
+      action: "View message"
 
 
 
