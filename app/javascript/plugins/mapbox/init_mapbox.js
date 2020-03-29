@@ -17,10 +17,10 @@ const buildMap = () => {
   const center = (JSON.parse(userPositionElement)) ? [JSON.parse(userPositionElement)[0].long, JSON.parse(userPositionElement)[0].lat] : [4.807, 45.197];
 
   return new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/klingmap/ck027tg7x04481cmu8e9wvrud',
-    center: center,
-    zoom: 8,
+    container: "map",
+    style: "mapbox://styles/klingmap/ck027tg7x04481cmu8e9wvrud",
+    center: [4.807, 45.197],
+    zoom: 8
   });
 };
 
