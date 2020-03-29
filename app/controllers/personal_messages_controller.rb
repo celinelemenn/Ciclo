@@ -14,7 +14,7 @@ class PersonalMessagesController < ApplicationController
     redirect_to conversation_path(@conversation)
 
     if !request.url.include?('cicloo-staging')
-    UserMailer.with(user:current_user, conversation: @conversation, receiver: @conversation.with(current_user)).chat.deliver_later
+      UserMailer.with(user:current_user, conversation: @conversation, receiver: @conversation.with(current_user)).chat.deliver_later
     end
   end
 
