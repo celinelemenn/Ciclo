@@ -14,7 +14,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const userPositionElement = document.getElementById('map').dataset.userPosition;
 
-  let center = (JSON.parse(userPositionElement)) ? [JSON.parse(userPositionElement)[0].long, JSON.parse(userPositionElement)[0].lat] : [4.807, 45.197];
+  const center = (JSON.parse(userPositionElement)) ? [JSON.parse(userPositionElement)[0].long, JSON.parse(userPositionElement)[0].lat] : [4.807, 45.197];
 
   return new mapboxgl.Map({
     container: 'map',
