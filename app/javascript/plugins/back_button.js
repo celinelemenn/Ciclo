@@ -1,11 +1,11 @@
 const goBack = () => {
-  const back = document.querySelector('#go-back')
+  const back = document.querySelector("#go-back");
   if (back) {
-  back.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.history.back();
-  });
-}
-}
+    back.addEventListener("click", event => {
+      event.preventDefault();
+      window.history.back();
+    });
+  }
+};
 
 export { goBack };

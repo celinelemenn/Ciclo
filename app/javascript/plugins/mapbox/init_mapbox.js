@@ -1,20 +1,24 @@
-import mapboxgl from 'mapbox-gl';
-import { addPoisToMap } from '../../plugins/mapbox/add_pois_to_map';
-import { createPopdown  } from '../../plugins/mapbox/create_popdown';
-import { addCyslistToMap } from '../../plugins/mapbox/add_cyclist_to_map';
-import { api_execute } from '../../plugins/mapbox/api_functions';
-import { processData } from '../../plugins/mapbox/api_functions';
+import mapboxgl from "mapbox-gl";
+import { addPoisToMap } from "../../plugins/mapbox/add_pois_to_map";
+import { createPopdown } from "../../plugins/mapbox/create_popdown";
+import { addCyslistToMap } from "../../plugins/mapbox/add_cyclist_to_map";
+import { api_execute } from "../../plugins/mapbox/api_functions";
+import { processData } from "../../plugins/mapbox/api_functions";
 // import { addCurrentPositionToMap } from '../../plugins/mapbox/add_current_position_to_map';
 
-
-const mapElement = document.getElementById('map');
-
+const mapElement = document.getElementById("map");
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-  const userPositionElement = document.getElementById('map').dataset.userPosition;
+  const userPositionElement = document.getElementById("map").dataset
+    .userPosition;
 
-  const center = (JSON.parse(userPositionElement)) ? [JSON.parse(userPositionElement)[0].long, JSON.parse(userPositionElement)[0].lat] : [4.807, 45.197];
+  const center = JSON.parse(userPositionElement)
+    ? [
+        JSON.parse(userPositionElement)[0].long,
+        JSON.parse(userPositionElement)[0].lat
+      ]
+    : [4.807, 45.197];
 
   return new mapboxgl.Map({
     container: "map",
@@ -27,9 +31,7 @@ const buildMap = () => {
 export const map = mapElement ? buildMap() : null;
 
 const initMapbox = () => {
-
   if (mapElement) {
-
     //pois on map
     const markers = JSON.parse(mapElement.dataset.markers);
     addPoisToMap(map, markers);
@@ -37,10 +39,6 @@ const initMapbox = () => {
     //cyclist on map
     const cyclists = JSON.parse(mapElement.dataset.cyclists);
     addCyslistToMap(map, cyclists);
-
-
-
-
   }
 };
 
@@ -48,7 +46,6 @@ const initMapbox = () => {
 const run_mapbox_page = async () => {
   const poi_array = await processData();
   initMapbox(poi_array);
-}
+};
 
 export { run_mapbox_page };
-
