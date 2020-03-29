@@ -38,6 +38,7 @@ en:
         image_alt: "Cyclo"
       headline: "you have a <strong>new message</strong> !"
       action: "View message"
+      subject: "You have a new message"
 
 
 

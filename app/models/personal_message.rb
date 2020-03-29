@@ -16,6 +16,6 @@ class PersonalMessage < ApplicationRecord
   end
 
   def send_chat_email
-    UserMailer.with(user:user, conversation: conversation, receiver: conversation.receiver).chat.deliver_now
+    UserMailer.with(user:user, conversation: conversation, receiver: conversation.with(user)).chat.deliver_now
   end
 end

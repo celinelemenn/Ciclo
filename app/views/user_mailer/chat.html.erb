@@ -15,7 +15,7 @@
   <div style="display: flex;
     flex-direction: column;
     align-items: center;">
-    <% if @user.photo.nil? %>
+    <% if @user.photo.present? %>
     <%= cl_image_tag(@user.photo.url(:avatar), fetch_format: :auto, height: '70')%>
     <% else %>
       <%= cl_image_tag('logos/empty_profile.png', height: 100,
