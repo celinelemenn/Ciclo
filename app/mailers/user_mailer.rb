@@ -28,7 +28,7 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     @conversation = params[:conversation]
     @receiver = params[:receiver]
-    
+
     mail(to: @receiver.email,
          subject: t('user_mailer.chat.subject'))
 

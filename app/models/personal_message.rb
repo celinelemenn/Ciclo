@@ -5,7 +5,7 @@ class PersonalMessage < ApplicationRecord
   # Obviously, we don't want to send messages that are empty so:
 
   validates :body, presence: true
-  after_create :send_chat_email
+  # after_create :send_chat_email
 
   def date
     if created_at.to_date == Date.today
@@ -16,6 +16,6 @@ class PersonalMessage < ApplicationRecord
   end
 
   def send_chat_email
-    UserMailer.with(user:user, conversation: conversation, receiver: conversation.with(user)).chat.deliver_later
+    UserMailer.with(user:user, conversation: conversation, receiver: conversation.with(user)).chat.deliver_now
   end
 end
