@@ -39,6 +39,16 @@ const initMapbox = () => {
     //cyclist on map
     const cyclists = JSON.parse(mapElement.dataset.cyclists);
     addCyslistToMap(map, cyclists);
+
+    // add geoloc
+    // map.addControl(
+    //   new mapboxgl.GeolocateControl({
+    //     positionOptions: {
+    //       enableHighAccuracy: true
+    //     },
+    //     trackUserLocation: true
+    //   })
+    // );
   }
 };
 
