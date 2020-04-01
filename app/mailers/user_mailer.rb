@@ -24,6 +24,13 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline'))
   end
 
+  def welcome_2
+    @user = params[:user]
+    @greeting = "Hi"
+
+    mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline'))
+  end
+
   def chat
     @user = params[:user]
     @conversation = params[:conversation]
