@@ -17,14 +17,14 @@ class UserMailer < ApplicationMailer
     end
   end
 
+  # def welcome
+  #   @user = params[:user]
+  #   @greeting = "Hi"
+
+  #   mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline'))
+  # end
+
   def welcome
-    @user = params[:user]
-    @greeting = "Hi"
-
-    mail(to: @user.email, subject: t('user_mailer.welcome.entete.headline'))
-  end
-
-  def welcome_2
     @user = params[:user]
     @greeting = "Hi"
 
