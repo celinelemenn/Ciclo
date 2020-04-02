@@ -470,9 +470,9 @@ body{background-color:#fff}.logo a:hover,.logo a:focus{color:#859bb1 !important}
       <div style="mso-line-height-rule: exactly;line-height: 10px;font-size: 1px;">&nbsp;</div>
     </div>
 
-            <div style="Margin-left: 20px;Margin-right: 20px;">
-        <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;Margin-bottom: 20px;" align="center">
-          <img style="border: 0;display: block;height: auto;width: 50%;max-width: 900px;" alt="" width="560" src=<%= cl_image_path(@user.photo.url(:avatar), fetch_format: :auto) %> />
+        <div style="Margin-left: 20px;Margin-right: 20px;">
+          <div style="font-size: 12px;font-style: normal;font-weight: normal;line-height: 19px;Margin-bottom: 20px;" align="center">
+            <img style="border: 0;display: block;height: auto;width: 50%;max-width: 900px;" alt="" width="560" src=<%= @user.photo.present? ? cl_image_path(@user.photo.url(:avatar), fetch_format: :auto) : "https://res.cloudinary.com/dwkwy2q1n/image/upload/o_20/v1585486080/logos/empty_profile.png" %>>
 
         </div>
       </div>
