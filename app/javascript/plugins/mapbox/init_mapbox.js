@@ -1,10 +1,7 @@
 import mapboxgl from "mapbox-gl";
 import { addPoisToMap } from "../../plugins/mapbox/add_pois_to_map";
-import { createPopdown } from "../../plugins/mapbox/create_popdown";
 import { addCyslistToMap } from "../../plugins/mapbox/add_cyclist_to_map";
-import { api_execute } from "../../plugins/mapbox/api_functions";
 import { processData } from "../../plugins/mapbox/api_functions";
-// import { addCurrentPositionToMap } from '../../plugins/mapbox/add_current_position_to_map';
 
 const mapElement = document.getElementById("map");
 
@@ -40,15 +37,6 @@ const initMapbox = () => {
     const cyclists = JSON.parse(mapElement.dataset.cyclists);
     addCyslistToMap(map, cyclists);
 
-    // add geoloc
-    // map.addControl(
-    //   new mapboxgl.GeolocateControl({
-    //     positionOptions: {
-    //       enableHighAccuracy: true
-    //     },
-    //     trackUserLocation: true
-    //   })
-    // );
   }
 };
 

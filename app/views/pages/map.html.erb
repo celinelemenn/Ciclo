@@ -5,10 +5,7 @@
   data-markers="<%= @markers.to_json %>"
   data-cyclists="<%= @cyclist_avatars.to_json %>"
   data-user-position="<%= @user_last_position.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"z
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"zz
-
-></div>
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <%= link_to preferencesedit_path(@user) do %>
   <div class="btn-on-map-top">
