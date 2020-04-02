@@ -1,5 +1,12 @@
-meta_product_name: "Cyclo"
-meta_title: "Cyclo - Get the best route with real time reports from other cyclists"
-meta_description: "The first web-app to find real time information about bike touring routes & see other touring cyclists around you. In one click you can easly report new info on the map or contact bikepackers."
-meta_image: "og_image.png" # should exist in `app/assets/images/`
-twitter_account: ""   # required for Twitter Cards
+en:
+  meta_product_name: "Cyclo | Biketouring"
+  meta_title: "Cyclo - Get the best route with real time reports from other cyclists"
+  meta_description: "The first web-app to find real time information about bike touring routes & see other touring cyclists around you. In one click you can easly report new info on the map or contact bikepackers."
+  meta_image: "og_image.png" # should exist in `app/assets/images/`
+  twitter_account: ""   # required for Twitter Cards
+fr:
+  meta_product_name: "Cyclo | Biketouring"
+  meta_title: "Cyclo - Obtenez le meilleur itinéraire avec des rapports en temps réel d'autres cyclistes"
+  meta_description: "La première application Web pour trouver des informations en temps réel sur les itinéraires de cyclotourisme et voir d'autres cyclotouristes autour de vous. En un clic, vous pouvez facilement signaler de nouvelles informations sur la carte ou contacter les bikepackers."
+  meta_image: "og_image.png" # should exist in `app/assets/images/`
+  twitter_account: ""   # required for Twitter Cards
