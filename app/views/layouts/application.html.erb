@@ -6,24 +6,16 @@
 
     <!-- meta data -->
 
-    <title><%= meta_title %></title>
-    <meta name="description" content="<%= meta_description %>">
+    <title><%= t('meta_title') %></title>
+    <meta name="description" content="<%= t('meta_description') %>">
 
     <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:title" content="<%= t('meta_title') %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= request.original_url %>" />
-    <meta property="og:image" content="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1585858746/og_image_asmfps.png" />
-    <meta property="og:description" content="<%= meta_description %>" />
-    <meta property="og:site_name" content="<%= meta_title %>" />
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
-    <meta name="twitter:title" content="<%= meta_title %>">
-    <meta name="twitter:description" content="<%= meta_description %>">
-    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
-    <meta name="twitter:image:src" content="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1585858746/og_image_asmfps.png">
+    <meta property="og:image" content="https://res.cloudinary.com/dwkwy2q1n/image/upload/v1585858746/og_image.png" />
+    <meta property="og:description" content="<%= t('meta_description') %>" />
+    <meta property="og:site_name" content="<%= t('meta_title') %>" />
 
    <!-- meta data -->
 
