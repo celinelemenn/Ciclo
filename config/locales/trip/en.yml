@@ -31,6 +31,7 @@ en:
     index:
       title_1: "Trips from Cyclo-ers by routes"
       title_2: "No Specific Cycling Route"
+      see_all: "See all"
       read_blog: "read the blog"
       from: "from %{date}"
       until_now: "until now"

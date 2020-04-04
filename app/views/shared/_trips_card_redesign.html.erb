@@ -1,0 +1,31 @@
+        <div class="new_card_trip_card_container">
+          <%= link_to trip_path(trip), class: "index-trips" do %>
+            <div class="new_card_trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url.nil? ? "" : cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+              <div class="new_trip_card_top">
+                <strong><h3  class="new_trip_card_headline"><%= trip.name %></h3></strong>
+                <% if trip.end_date.nil?  || trip.end_date > Date.today %>
+                  <p class="new_trip_card_date"><%= t('trip_card.now_travelling') %></p>
+                <% else %>
+                  <p class="new_trip_card_date">
+                    <%= trip.start_date.strftime("%B") %>
+                    <%= trip.start_date.year %>
+                  </p>
+                <% end %>
+              </div>
+              <div class="new_trip_card_user_info">
+              <div>
+              <% if trip.user.photo.file %>
+                <%= cl_image_tag(trip.user.photo.url(:avatar), fetch_format: 'png', class: 'img') %>
+                  <% else %>
+                  <%= cl_image_tag('logos/empty_profile.png', {class: 'img', transformation: [{ width: 800, height: 800, radius: :max, crop: :thumb },
+                                               { width: 200, height: 200, crop: :thumb },
+                                               quality: "auto:best", opacity: 80]}) %>
+                <% end %>
+              </div>
+
+                <p class="username"><%= trip.user.full_name %></p>
+
+              </div>
+            </div>
+          <% end %>
+        </div>

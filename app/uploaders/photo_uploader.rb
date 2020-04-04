@@ -10,9 +10,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :avatar do
-    cloudinary_transformation transformation: [{ width: 800, height: 800, radius: :max, crop: :thumb },
-                                               { width: 200, height: 200, crop: :thumb },
-                                               quality: "auto:best"]
+    cloudinary_transformation :width=>200, :height=>200, :gravity=>"faces", :radius=>"max", :crop=> :thumb, fetch_format: 'png', :zoom=>0.50
+
   end
 
   version :avatar_small do

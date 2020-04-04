@@ -1,0 +1,62 @@
+.new_card_trip_container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1236px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.new_card_trip_card_container {
+  margin: 0 10px;
+}
+
+.new_card_trip {
+  height: 180px;
+  color: white;
+  box-shadow: -1px 0px 17px -1px rgba(0, 0, 0, 0.19);
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  text-align: left;
+  padding: 10px;
+  border-radius: 3%;
+  width: 140px;
+}
+
+.new_trip_card_headline {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.new_trip_card_date {
+  font-size: 0.7rem;
+}
+
+.new_trip_card_user_info {
+  display: flex;
+  align-content: center;
+
+  .img {
+    height: 20px;
+    margin-right: 5px;
+  }
+  .username {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.card_trip_all_button {
+  // height: 180px;
+  // width: 140px;
+  // margin: 0 10px;
+  // padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

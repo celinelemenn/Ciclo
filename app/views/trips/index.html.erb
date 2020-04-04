@@ -1,7 +1,7 @@
 <%= render 'shared/topmenu' %>
 
 <div class="uni-page-container">
-  <h2 class="mb-5 mx-3"><%= t('trip_page.index.title_1') %></h2>
+  <h2 class="mb-5 mx-3 text-center"><%= t('trip_page.index.title_1') %></h2>
 
 <!-- this is the search part
   <div class="mb-50 search">
@@ -17,23 +17,38 @@
  -->
 
 <!-- this is the results listing all trips -->
-  <div class="mb-7rem">
+  <div class="mb-7rem text-center">
     <% @cycling_routes.each do |cycling_route| %>
 
     <% unless @trips.where(cycling_route: cycling_route).empty? %>
 
       <h5 class="ml-3 mt-5 mb-3"><%= cycling_route %></h5>
-      <% @trips.where(cycling_route: cycling_route).each do|trip|   %>
-        <%= render 'shared/trips_card', trip: trip %>
+        <div class=" card_trip_all_button">
+          <div class=" mb-3">
+            <%= link_to  t('trip_page.index.see_all'), new_trip_path, class: "btn-simple" %>
+          </div> <%= t('trip_page.index.see_all') %>
+        </div>
+        <div class="new_card_trip_container">
+          <% @trips.where(cycling_route: cycling_route).each do|trip|   %>
+              <%= render 'shared/trips_card_redesign', trip: trip %>
+          <% end %>
+        </div>
+    <% end %>
+
+    <% end %>
+
+    <h5 class="ml-3 mt-5"><%= t('trip_page.index.title_2') %></h5>
+    <div class=" card_trip_all_button">
+      <div class=" mb-3">
+        <%= link_to  t('trip_page.index.see_all'), new_trip_path, class: "btn-simple" %>
+      </div>
+    </div>
+    <div class="new_card_trip_container">
+      <% @trips_noroute.take(4).each do |trip| %>
+          <%= render 'shared/trips_card_redesign', trip: trip %>
       <% end %>
-    <% end %>
+    </div>
 
-    <% end %>
-
-    <h5 class="ml-3 mt-5 mb-3"><%= t('trip_page.index.title_2') %></h5>
-    <% @trips_noroute.each do |trip| %>
-      <%= render 'shared/trips_card', trip: trip %>
-    <% end %>
 
   </div>
 

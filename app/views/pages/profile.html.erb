@@ -2,20 +2,18 @@
 
 <div class="uni-page-container text-center p-3">
 
-  <% if current_user.present? %>
     <% if current_user.photo.file %>
       <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
     <% else %>
       <%= cl_image_tag('logos/empty_profile.png', transformation: [{ width: 800, height: 800, radius: :max, crop: :thumb },
                                                { width: 200, height: 200, crop: :thumb },
                                                quality: "auto:best", opacity: 20]) %>
-  <% end %>
+    <% end %>
   <div class="info-card">
     <strong><h5><%= current_user.full_name.capitalize  %></h5></strong>
     <p><%= current_user.bio  %></p>
     <p><%= current_user.description %><p>
     <h6><%= current_user.blog  %></h6>
-  <% end %>
   </div>
 
   <div class="mt-3">
