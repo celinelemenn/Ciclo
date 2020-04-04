@@ -1,15 +1,14 @@
 .card-trip-header {
   margin-top: 30px;
-
 }
 
 .parent-card {
-    a:hover {
+  a:hover {
     text-decoration: none;
   }
 }
 .container-card {
-  display:flex;
+  display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   margin-left: -36px;
@@ -18,17 +17,17 @@
   // bottom: 0;
 
   p {
-  margin-bottom: 0px;
- }
+    margin-bottom: 0px;
+  }
 }
 
 .card-trip {
   min-height: 13rem;
   min-width: 10rem;
   color: white;
-  box-shadow: -1px 0px 17px -1px rgba(0,0,0,0.19);
+  box-shadow: -1px 0px 17px -1px rgba(0, 0, 0, 0.19);
   margin: 1rem;
-  position:relative;
+  position: relative;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -44,14 +43,16 @@
 
 .card-trip-btn {
   .btn-main {
-    display:inline-block;
+    display: inline-block;
     padding-top: 12px;
   }
 }
 
 .travelling-tag {
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: 18px;
   font-size: 12px;
+  display: flex;
+  align-items: center;
 }

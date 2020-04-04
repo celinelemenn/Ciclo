@@ -31,6 +31,7 @@
 
 .new_trip_card_date {
   font-size: 0.7rem;
+  margin: 0px;
 }
 
 .new_trip_card_user_info {
@@ -59,4 +60,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.dot {
+    background: $ciclo-pink;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: block;
+    margin-right: 4px;
+    
 }

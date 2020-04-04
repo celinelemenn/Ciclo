@@ -2,9 +2,18 @@
           <%= link_to trip_path(trip), class: "index-trips" do %>
             <div class="new_card_trip mb-3" style="background: linear-gradient(-225deg, rgba(30,30,30,0.4) 30%, rgba(46,46,46,0.5) 80%),url(<%= trip.photo_url.nil? ? "" : cl_image_path(trip.photo_url(:low)) %>); background-size: cover; background-repeat: no-repeat; background-position: center center;">
               <div class="new_trip_card_top">
-                <strong><h3  class="new_trip_card_headline"><%= trip.name %></h3></strong>
+                <strong>
+                  <h3  class="new_trip_card_headline">
+                    <%= trip.name %>
+                  </h3>
+                </strong>
                 <% if trip.end_date.nil?  || trip.end_date > Date.today %>
-                  <p class="new_trip_card_date"><%= t('trip_card.now_travelling') %></p>
+                  <div class="d-flex align-items-center">
+                    <div class="dot"></div>
+                    <p class="new_trip_card_date">
+                      <%= t('trip_card.now_travelling') %>
+                    </p>
+                  </div>
                 <% else %>
                   <p class="new_trip_card_date">
                     <%= trip.start_date.strftime("%B") %>
