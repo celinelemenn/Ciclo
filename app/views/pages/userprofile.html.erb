@@ -1,8 +1,8 @@
 <!-- this is the page of a cyclist -->
 
 <div class="uni-page-container text-center p-3">
-    <% if current_user.photo.file %>
-      <%= cl_image_tag(current_user.photo.url(:avatar), fetch_format: :auto) %>
+    <% if @user.photo.file %>
+      <%= cl_image_tag(@user.photo.url(:avatar), fetch_format: :auto) %>
     <% else %>
       <%= cl_image_tag('logos/empty_profile.png', transformation: [{ width: 800, height: 800, radius: :max, crop: :thumb }, { width: 200, height: 200, crop: :thumb }, quality: "auto:best", opacity: 20]) %>
     <% end %>
