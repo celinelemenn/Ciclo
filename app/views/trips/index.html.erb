@@ -23,11 +23,11 @@
     <% unless @trips.where(cycling_route: cycling_route).empty? %>
 
       <h5 class="ml-3 mt-5 mb-3"><%= cycling_route %></h5>
-        <div class=" card_trip_all_button">
+        <%# <div class=" card_trip_all_button">
           <div class=" mb-3">
             <%= link_to  t('trip_page.index.see_all'), new_trip_path, class: "btn-simple" %>
-          </div> <%= t('trip_page.index.see_all') %>
-        </div>
+          <%# </div> <%= t('trip_page.index.see_all') %>
+        <%# </div> %>
         <div class="new_card_trip_container">
           <% @trips.where(cycling_route: cycling_route).each do|trip|   %>
               <%= render 'shared/trips_card_redesign', trip: trip %>
@@ -37,14 +37,14 @@
 
     <% end %>
 
-    <h5 class="ml-3 mt-5"><%= t('trip_page.index.title_2') %></h5>
-    <div class=" card_trip_all_button">
+    <h5 class="ml-3 mt-5 mb-3"><%= t('trip_page.index.title_2') %></h5>
+    <%# <div class=" card_trip_all_button">
       <div class=" mb-3">
         <%= link_to  t('trip_page.index.see_all'), new_trip_path, class: "btn-simple" %>
-      </div>
-    </div>
+      <%# </div> %>
+    <%# </div> %>
     <div class="new_card_trip_container">
-      <% @trips_noroute.take(4).each do |trip| %>
+      <% @trips_noroute.each do |trip| %>
           <%= render 'shared/trips_card_redesign', trip: trip %>
       <% end %>
     </div>
