@@ -7,12 +7,12 @@
 
             </div>
               <div class="distance_km  pl-3">
-                <strong><span><%= poi.title %></span></strong>
+                <strong><span><%= poi.title&.truncate(55) %></span></strong>
                 <p class="uni-opacity40"> <%= t('map_card.km_away', distance: poi.distance(current_user))%> </p>
               </div>
           </div>
           <div>
-            <div class="pl-2"><p> <%= poi.description %> </p></div>
+            <div class="pl-2"><p> <%= poi.description&.truncate(130) %> </p></div>
           </div>
         </div>
         <div class="info_window_popdown_btn ">

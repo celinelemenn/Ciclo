@@ -16,20 +16,19 @@
 .info_window_popdown_btn {
   display: flex;
   align-items: center;
-    .btn-main {
-  min-height: 30px;
-  width: 100px;
-  font-weight: bold;
+  .btn-main {
+    min-height: 30px;
+    width: 100px;
+    font-weight: bold;
   }
   p {
-    margin:0;
+    margin: 0;
   }
 }
 
 .info-window-first-row {
   display: flex;
   align-items: center;
-
 }
 
 .distance_km {
@@ -37,4 +36,5 @@
     margin: 0;
     font-size: 13px;
   }
+  max-width: 280px;
 }

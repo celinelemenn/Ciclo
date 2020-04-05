@@ -10,12 +10,12 @@
               <% end %>
             </div>
             <div class="distance_km  pl-3">
-               <strong><span><%= cyclist.full_name %></span></strong>
+               <strong><span><%= cyclist.full_name.truncate(30) %></span></strong>
               <p class="uni-opacity40"> <%= t('map_card.km_away', distance: cyclist.distance(current_user))%> </p>
             </div>
           </div>
           <div>
-            <div class=""><p> <%= cyclist.bio %> </p></div>
+            <div class=""><p> <%= cyclist.bio&.truncate(130) %> </p></div>
           </div>
         </div>
         <div class="info_window_popdown_btn ">

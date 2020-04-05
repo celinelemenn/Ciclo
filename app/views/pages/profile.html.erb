@@ -31,8 +31,8 @@
                   <div class="dot"></div>
                   <div><%= t('trip_card.now_travelling') %></div>
                 </div>
-            <% end %>
-            <strong><h3><%= trip.name %></h3></strong>
+              <% end %>
+            <h3><%= trip.name.truncate(40) %></h3>
             <div class="container-card">
               <div>
                 <p><strong><%= trip.start_date.year %></strong></p>

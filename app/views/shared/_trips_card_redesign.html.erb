@@ -4,7 +4,7 @@
               <div class="new_trip_card_top">
                 <strong>
                   <h3  class="new_trip_card_headline">
-                    <%= trip.name %>
+                    <%= trip.name.truncate(40) %>
                   </h3>
                 </strong>
                 <% if trip.end_date.nil?  || trip.end_date > Date.today %>
