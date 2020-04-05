@@ -16,8 +16,7 @@
                   </div>
                 <% else %>
                   <p class="new_trip_card_date">
-                    <%= trip.start_date.strftime("%B") %>
-                    <%= trip.start_date.year %>
+                    <%= l(trip.start_date, :format => '%B %Y')%>
                   </p>
                 <% end %>
               </div>

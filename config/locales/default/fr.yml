@@ -135,3 +135,6 @@ fr:
     not_found:
       title: "La page que vous recherchez n'existe pas."
       text: "Faites du vélo dans l'autre sens"
+  time:
+    formats:
+      march: 'mars'
