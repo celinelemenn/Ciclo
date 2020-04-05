@@ -25,7 +25,7 @@ fr:
     show:
       day: "%{days} jours"
       km: "%{km} km"
-      by: "de %{username}, commencé en %{date}"
+      by: ", commencé en %{date}"
       view_blog: "Voir le blog"
       similar_trip: "Voir des voyages similaires"
     index:

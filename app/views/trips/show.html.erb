@@ -28,7 +28,10 @@
 
   <div class="mx-3 mb-50">
     <h3><%= @trip.name %></h3>
-     <p> <%= t('trip_page.show.by', username: @trip.user.full_name ,date:@trip.start_date.strftime("%b %Y") ) %></p>
+    <div class="d-flex mt-5">
+      <%= link_to @trip.user.full_name, userprofile_path(@trip.user.id), class: 'btn-simple' %>
+     <p> <%= t('trip_page.show.by', date: @trip.start_date.strftime("%b %Y") ) %></p>
+    </div>
 
     <p class="mt-5"> <%= @trip.description %></p>
     <% unless @trip.blog.nil? || @trip.blog.empty? %>
@@ -36,7 +39,7 @@
     <% end %>
   </div>
 
-  <div class="trip-show-btn mb-50">
+  <%# <div class="trip-show-btn mb-50">
     <%= link_to t('trip_page.show.similar_trip'), trips_path, class: "btn-secondary" %>
-  </div>
+  <%# </div> %>
 </div>
