@@ -1,7 +1,6 @@
 en:
-  meta_product_name: "Cyclo | Biketouring"
-  meta_title: "Cyclo - Get the best route with real time reports from other cyclists"
-  meta_description: "The first web-app to find real time information about bike touring routes & see other touring cyclists around you. In one click you can easly report new info on the map or contact bikepackers."
+  meta_title: "Cyclo | Live bicycle touring route advice by the cyclists community"
+  meta_description: "Find up to date information about cycling routes: blogs & a live map with road alerts powered by community. See cyclists around you in real time. Connect, share a ride together."
   meta_image: "og_image.png" # should exist in `app/assets/images/`
   twitter_account: ""   # required for Twitter Cards
 

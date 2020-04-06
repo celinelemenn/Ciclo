@@ -1,6 +1,5 @@
 fr:
-  meta_product_name: "Cyclo | Biketouring"
-  meta_title: "Cyclo - Obtenez le meilleur itinéraire avec des rapports en temps réel d'autres cyclistes"
-  meta_description: "La première application Web pour trouver des informations en temps réel sur les itinéraires de cyclotourisme et voir d'autres cyclotouristes autour de vous. En un clic, vous pouvez facilement signaler de nouvelles informations sur la carte ou contacter les bikepackers."
+  meta_title: "Cyclo | Information en temps réel de la communauté cyclotouriste"
+  meta_description: "Trouvez les dernières infos sur les itinéraires cyclables: blogs, carte, alertes en temps réel alimentés par la communauté. Découvrez les cyclistes autour de vous. Voyagez ensemble"
   meta_image: "og_image.png" # should exist in `app/assets/images/`
   twitter_account: ""   # required for Twitter Cards
