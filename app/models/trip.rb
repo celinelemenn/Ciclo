@@ -24,7 +24,7 @@ class Trip < ApplicationRecord
     'EuroVelo8 - Mediterranean Route',
     'EuroVelo9 - Baltic – Adriatic',
     'EuroVelo10 - Baltic Sea Cycle Route',
-    'EuroVelo11 - Baltic Sea Cycle Route',
+    'EuroVelo11 - East Europe Route',
     'EuroVelo12 - North Sea Cycle Route',
     'EuroVelo15 - Rhine Cycle Route',
     'EuroVelo17 - Rhone Cycle Route',
