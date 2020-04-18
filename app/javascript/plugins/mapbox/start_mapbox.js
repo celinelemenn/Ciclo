@@ -1,6 +1,7 @@
 import mapboxgl from "mapbox-gl";
 import { addPoisToMap } from "./add_pois_to_map";
 import { addCyslistToMap } from "./add_cyclist_to_map";
+import { getPosition } from "./get_current_position";
 
 export const startMap = () => {
   const mapElement = document.getElementById("map");
@@ -45,49 +46,6 @@ export const startMap = () => {
   const cyclists = JSON.parse(mapElement.dataset.cyclists);
   addCyslistToMap(map, cyclists);
 
-  // get position of the user
-  const currentPosition = (position) => {
-    // console.log('hola') - For testing
-    const watchedCoordinates = position.coords;
-    const currentPosition = {
-      latitude: watchedCoordinates.latitude,
-      longitude: watchedCoordinates.longitude,
-    };
-    userCurrentPosition.push(currentPosition);
-
-    // center the map to this coordinate
-    map.flyTo({
-      center: [currentPosition.longitude, currentPosition.latitude],
-      zoom: 10,
-    });
-  };
-
-  const options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
-
-  const error = (error) => {
-    const banner = document.querySelector("#geoloc-banner");
-    const message = document.querySelector(".geoloc-message");
-    let locale = document.querySelector(".uni-app-container").dataset.locale;
-
-    banner.style.display = "block";
-    if (error.code === 1) {
-
-    } else {
-      message.innerHTML = I18n.t("geolocalization.message_3", {
-        locale: locale || "en",
-      });
-    }
-
-    const close = document.querySelector(".closing-geoloc-message");
-    close.addEventListener("click", (event) => {
-      banner.style.display = "none";
-    });
-  };
-
-
-  navigator.geolocation.getCurrentPosition(currentPosition, error, options);
+ // ask for geoloc on load
+  getPosition()
 };
