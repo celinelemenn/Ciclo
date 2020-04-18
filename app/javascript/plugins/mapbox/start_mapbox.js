@@ -46,6 +46,22 @@ export const startMap = () => {
   const cyclists = JSON.parse(mapElement.dataset.cyclists);
   addCyslistToMap(map, cyclists);
 
- // ask for geoloc on load
-  getPosition()
+  // ask for geoloc on load
+  getPosition(map);
+
+  // alert raised if click on plus and no geolocation otherwise getPosition and direct to poi new
+  const plusButton = document.querySelector(".btn-on-map-left a");
+  const url = plusButton.href;
+  plusButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigator.permissions.query({ name: "geolocation" }).then((data) => {
+      const d = data.state;
+      if (d == "denied") {
+        window.alert("We need access to your location for this to work");
+      } else {
+        getPosition(map);
+        window.location.href = url;
+      }
+    });
+  });
 };

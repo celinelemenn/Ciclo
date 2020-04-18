@@ -8,46 +8,46 @@
 
 // // The options below are passed to the
 
-// const options = {
-//   maximumAge: 120000,
-//   // enableHighAccuracy: true,
-//   timeout: 10 * 1000
-// };
+// // const options = {
+// //   maximumAge: 120000,
+// //   // enableHighAccuracy: true,
+// //   timeout: 10 * 1000
+// // };
 // const userCurrentPosition = [];
 
 // // The currentPosition function is called as the first argument of the getCurrentPosition function
 // // and returns a Position object which contains a coordinates object.
 
-// const currentPosition = position => {
-//   const userCoordinates = position.coords;
-// };
+// // const currentPosition = position => {
+// //   const userCoordinates = position.coords;
+// // };
 
 // // The function below is optional and holds an error message. It is an optional argument of the
 // // getCurrentPosition/watchPosition functions.
 
-// const error = error => {
-//    if(error.PERMISSION_DENIED) alert("This will not work without geolocation. Please accept geolocation")
-//   hideLoadingDiv()
-//   showError('Geolocation is not enabled. Please enable to use this feature')
+// // const error = error => {
+// //    if(error.PERMISSION_DENIED) alert("This will not work without geolocation. Please accept geolocation")
+// //   hideLoadingDiv()
+// //   showError('Geolocation is not enabled. Please enable to use this feature')
 
-//   console.warn(`ERROR(${error.code}): ${error.message}`);
-//   const message = document.querySelector("#geoloc-banner");
-//   let locale = document.querySelector(".uni-app-container").dataset.locale;
+// //   console.warn(`ERROR(${error.code}): ${error.message}`);
+// //   const message = document.querySelector("#geoloc-banner");
+// //   let locale = document.querySelector(".uni-app-container").dataset.locale;
 
-//   message.style.display = "block";
-//   if (error.code == 1) {
-//     message.innerHTML = I18n.t("geolocalization.message", {
-//       locale: locale || "en"
-//     });
-//   } else {
-//     message.innerHTML = I18n.t("geolocalization.message_3");
-//   }
+// //   message.style.display = "block";
+// //   if (error.code == 1) {
+// //     message.innerHTML = I18n.t("geolocalization.message", {
+// //       locale: locale || "en"
+// //     });
+// //   } else {
+// //     message.innerHTML = I18n.t("geolocalization.message_3");
+// //   }
 
-//   close = document.querySelector(".closing-geoloc-message");
-//   close.addEventListener("click", event => {
-//     message.style.display = "none";
-//   });
-// };
+// //   close = document.querySelector(".closing-geoloc-message");
+// //   close.addEventListener("click", event => {
+// //     message.style.display = "none";
+// //   });
+// // };
 
 // // Below is the function to watch a user's position. It is called as the first argument of the
 // // watchPosition function.
@@ -74,24 +74,24 @@
 
 // /// know if geoloc access is granted or now
 
-// const permission = () => {
-//  navigator.permissions.query({ name: 'geolocation' })
-// .then((data) => {
-//       const d = data.state;
-//       // console.log(d);
-//       if (d == 'denied') {
-//       // console.log('false');
-//         return false;
-//       } else {
-//         // console.log('true');
-//         return true
-//       }
-//     })
-// }
+// // const permission = () => {
+// //  navigator.permissions.query({ name: 'geolocation' })
+// // .then((data) => {
+// //       const d = data.state;
+// //       // console.log(d);
+// //       if (d == 'denied') {
+// //       // console.log('false');
+// //         return false;
+// //       } else {
+// //         // console.log('true');
+// //         return true
+// //       }
+// //     })
+// // }
 
-// let p = permission();
-// if (p) { console.log('location working')};
-// if (!(p)) { console.log('location not working')};
+// // let p = permission();
+// // if (p) { console.log('location working')};
+// // if (!(p)) { console.log('location not working')};
 
 // // The if condition below implements the logic for the locate button on the map.
 

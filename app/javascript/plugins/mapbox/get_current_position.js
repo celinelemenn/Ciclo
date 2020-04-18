@@ -1,14 +1,21 @@
 // function for sucess getCurrentPosition
-const success = (position) => {
-  const watchedCoordinates = position.coords;
-  const currentPosition = {
-    latitude: watchedCoordinates.latitude,
-    longitude: watchedCoordinates.longitude,
-  };
-  userCurrentPosition.push(currentPosition);
+const success = (position, map) => {
+  const coordinates = position.coords;
+  const axios = require("axios");
+
+  axios
+    .post("/api/v1/user_positions", {
+      user_position: {
+        lat: coordinates.latitude,
+        long: coordinates.longitude,
+      },
+    })
+    .then((data) => {
+      // console.log(data);
+    });
 
   map.flyTo({
-    center: [currentPosition.longitude, currentPosition.latitude],
+    center: [coordinates.longitude, coordinates.latitude],
     zoom: 10,
   });
 };
@@ -27,7 +34,7 @@ const error = (error) => {
   let locale = document.querySelector(".uni-app-container").dataset.locale;
 
   banner.style.display = "block";
-  
+
   if (error.code !== 1) {
     message.innerHTML = I18n.t("geolocalization.message_3", {
       locale: locale || "en",
@@ -40,7 +47,12 @@ const error = (error) => {
   });
 };
 
-export const getPosition = () => {
-navigator.geolocation.getCurrentPosition(success, error, options);
-
-}
+export const getPosition = (map) => {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      success(position, map);
+    },
+    error,
+    options
+  );
+};
