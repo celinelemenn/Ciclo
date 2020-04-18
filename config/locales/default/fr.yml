@@ -43,8 +43,8 @@ fr:
     something_wrong: "Incorrect ?"
     back: "retour"
   geolocalization:
-    message: "<h5> <strong> Autorisez l'accès aux données de localisation: </strong> nous ne sommes pas autorisés à utiliser votre localisation. </h5><p>Nous avons besoin d'accéder à votre emplacement pour que cette application fonctionne. Pour modifier vos paramètres une fois que vous avez dit 'ne pas autoriser', ce n'est pas facile. Voir la section aide pour plus de détails.</p><div class='closing-geoloc-message'><i class='fa fa-times'></i></div>"
-    message_3: "<h5> <strong> AVERTISSEMENT: </strong> Une erreur s'est produite et nous n'avons pas pu accéder à votre localisation. </h5><p>Veuillez recharger la page et réessayer. </p><div class = 'fermeture-geoloc -message'> <i class = 'fa fa-times'> </i> "
+    message: "<h5> <strong> Autorisez l'accès aux données de localisation: </strong> nous ne sommes pas autorisés à utiliser votre localisation. </h5><p>Nous avons besoin d'accéder à votre emplacement pour que cette application fonctionne. Pour modifier vos paramètres une fois que vous avez dit 'ne pas autoriser', ce n'est pas facile. Voir la section aide pour plus de détails.</p>"
+    message_3: "<h5> <strong> AVERTISSEMENT: </strong> Une erreur s'est produite et nous n'avons pas pu accéder à votre localisation. </h5><p>Veuillez recharger la page et réessayer. </p>"
     action: "Voici de l'aide"
   navigation:
     map: "Carte"

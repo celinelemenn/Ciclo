@@ -1,9 +1,11 @@
 <div>
-  <p>
-    We need access to your location for this app to work. To change your settings once you said "don't allow", it is not easy.
-    <%= link_to "Here some help", help_path %>
-  </p>
-  <div class="closing-geoloc-message">
-     <i class="fa fa-times"></i>
+  <div class="geoloc-message">
+    <%= t('geolocalization.message').html_safe %>
+    <%= link_to t('geolocalization.action'), help_path %>
+  </div>
+
+<div class='closing-geoloc-message'>
+  <i class='fa fa-times'></i>
   </div>
 </div>
+

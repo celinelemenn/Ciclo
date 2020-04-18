@@ -43,8 +43,8 @@ en:
     something_wrong: "Something wrong?"
     back: "Back"
   geolocalization:
-    message: "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5><p>We need access to your location for this app to work. To change your settings once you said 'don't allow', it is not easy. See the help section.</p><div class='closing-geoloc-message'><i class='fa fa-times'></i></div>"
-    message_3: "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p> <div class='closing-geoloc-message'><i class='fa fa-times'></i>"
+    message: "<h5> <strong>Please allow location access:</strong> we don't have permission to use your localization. </h5><p>We need access to your location for this app to work. To change your settings once you said 'don't allow', it is not easy. See the help section.</p>"
+    message_3: "<h5> <strong>WARNING:</strong> An error occured and we could not access your localization.</h5> <p>Please reload the page and try again.</p>"
     action: "Here some help"
   navigation:
     map: "Map"

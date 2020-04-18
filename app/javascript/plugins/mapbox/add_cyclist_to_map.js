@@ -16,11 +16,6 @@ const addCyslistToMap = (map, cyclists) => {
       el.addEventListener("click", function() {
         createPopdown(cyclist.infoWindow);
       });
-      // el.addEventListener('click', function() {
-      //   const url = `${window.location.origin}${cyclist.user_link}`
-      //   console.log(url);
-      //   window.location = url
-      // });
 
       new mapboxgl.Marker(el).setLngLat([cyclist.lng, cyclist.lat]).addTo(map);
     });

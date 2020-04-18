@@ -20,7 +20,7 @@ class PointOfInterestsController < ApplicationController
     @point_of_interest.lat = @user_position.lat
     @point_of_interest.long = @user_position.long
 
-    if params[:commit] == "Add"
+    if params[:commit] == t('poi_page.form.action.submit_now', locale: set_locale)
       @point_of_interest.published = true
       if @point_of_interest.save
         NewPoiCountryNameJob.perform_later(@point_of_interest.id)
