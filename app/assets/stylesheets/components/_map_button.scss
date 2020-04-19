@@ -1,6 +1,6 @@
 .btn-on-map-left {
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   left: 7px;
   background-color: #fff;
   height: 50px;
@@ -14,7 +14,7 @@
   }
   &:hover {
     background-color: $dark-blue;
-      a {
+    a {
       color: #fff;
     }
   }
@@ -81,12 +81,11 @@
   }
   &:hover {
     background-color: $dark-blue;
-      a {
+    a {
       color: #fff;
     }
   }
   a:focus {
     outline: none;
   }
-
 }

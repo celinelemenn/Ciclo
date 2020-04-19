@@ -13,8 +13,8 @@
 .popdown {
   position: absolute;
   bottom: 60px;
-  background: #F7F7F7;
-  border-bottom:black solid 0.5px;
+  background: #f7f7f7;
+  border-bottom: black solid 0.5px;
   width: 100vw;
   min-height: 140px;
   display: none;
@@ -25,29 +25,26 @@
   z-index: 3;
 }
 
-
 .distance_km {
-  padding: 5px
+  padding: 5px;
 }
 
 .closing-cross-popdown {
   font-size: 24px;
-  padding:10px;
+  padding: 10px;
   position: absolute;
   right: 10px;
   top: 5px;
-
 }
 
 .mapboxgl-ctrl-bottom-right {
-    right: 0 !important ;
-    bottom: 60px !important ;
+  right: 0 !important ;
+  bottom: 60px !important ;
 }
 
 .mapboxgl-ctrl-bottom-left {
-   left: unset !important ;
-     right: 0 !important ;
-    bottom: 60px !important ;
-    margin-right: 40px !important ;
+  left: unset !important ;
+  right: 0 !important ;
+  bottom: 60px !important ;
+  margin-right: 40px !important ;
 }
-
