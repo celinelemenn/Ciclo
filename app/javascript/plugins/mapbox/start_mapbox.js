@@ -51,17 +51,7 @@ export const startMap = () => {
 
   // alert raised if click on plus and no geolocation otherwise getPosition and direct to poi new
   const plusButton = document.querySelector(".btn-on-map-left a");
-  const url = plusButton.href;
   plusButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    navigator.permissions.query({ name: "geolocation" }).then((data) => {
-      const d = data.state;
-      if (d == "denied") {
-        window.alert("We need access to your location for this to work");
-      } else {
-        getPosition(map);
-        window.location.href = url;
-      }
-    });
+    getPosition(map);
   });
 };

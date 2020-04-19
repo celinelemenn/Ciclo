@@ -28,12 +28,20 @@ const options = {
 };
 
 // errors for getCurrentPosition
-const error = (error) => {
+const errorfunction = (error) => {
   const banner = document.querySelector("#geoloc-banner");
   const message = document.querySelector(".geoloc-message");
   let locale = document.querySelector(".uni-app-container").dataset.locale;
 
   banner.style.display = "block";
+
+  if (error.code === 1) {
+    const plusButton = document.querySelector(".btn-on-map-left a");
+    plusButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      banner.style.display = "block";
+    });
+  }
 
   if (error.code !== 1) {
     message.innerHTML = I18n.t("geolocalization.message_3", {
@@ -47,12 +55,14 @@ const error = (error) => {
   });
 };
 
-export const getPosition = (map) => {
+export const getPosition = (map, event) => {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       success(position, map);
     },
-    error,
+    (error) => {
+      errorfunction(error);
+    },
     options
   );
 };
