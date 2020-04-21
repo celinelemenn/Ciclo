@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_01_172406) do
+ActiveRecord::Schema.define(version: 2020_04_21_072202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2020_01_01_172406) do
     t.string "country_code"
     t.string "cycling_route"
     t.text "description"
+    t.boolean "moderation", default: true
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
