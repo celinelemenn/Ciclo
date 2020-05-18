@@ -17,8 +17,8 @@ class PointOfInterestsController < ApplicationController
     @point_of_interest = PointOfInterest.new(poi_params)
     @point_of_interest.user = current_user
     @user_position = UserPosition.where(user_id: current_user.id).last
-    @point_of_interest.lat = @user_position.lat
-    @point_of_interest.long = @user_position.long
+    @point_of_interest.lat = @user_position.lat if poi_params['lat'].blank?
+    @point_of_interest.long = @user_position.long  if poi_params['long'].blank?
 
     if params[:commit] == t('poi_page.form.action.submit_now', locale: set_locale)
       @point_of_interest.published = true
@@ -66,7 +66,7 @@ class PointOfInterestsController < ApplicationController
   private
 
   def poi_params
-    params.require(:point_of_interest).permit(:poi_type, :title, :description, :photo, :title)
+    params.require(:point_of_interest).permit(:poi_type, :title, :description, :photo, :title, :lat, :long)
   end
 
   def find_poi

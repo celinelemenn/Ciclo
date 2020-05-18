@@ -1,0 +1,27 @@
+<div class="info_window_popdown">
+      <div class="info_window_popdown_text">
+        <div>
+          <div class="info-window-first-row pb-2">
+            <div>
+            </div>
+              <div class="distance_km  pl-3">
+                     <strong><span><%= t('map_card.position_selected') %></span></strong>
+              <p class="uni-opacity40 detail"> </p>
+              </div>
+          </div>
+          <div>
+          </div>
+        </div>
+        <div class="info_window_popdown_btn ">
+          <%= link_to new_point_of_interest_path do %>
+            <p class="btn-main mr-3"><%= t('map_card.add_report') %></p>
+          <% end %>
+          <p  class="btn-simple cancel"><%= t("map_card.cancel") %></p>
+          <div class="closing-cross-popdown">
+            <i class="fa fa-times"></i>
+          </div>
+        </div>
+      </div>
+</div>
+
+

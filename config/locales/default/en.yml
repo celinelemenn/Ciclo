@@ -79,6 +79,9 @@ en:
     view: "View"
     direction: "Direction"
     km_away: "%{distance} km away"
+    add_report: "Add a report"
+    cancel: "Cancel"
+    position_selected: "Position selected"
   cyclist:
     send_a_message: "Send A Message"
     trip_section:

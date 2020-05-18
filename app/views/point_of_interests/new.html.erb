@@ -35,7 +35,8 @@
          </div>
 
 
-
+        <%= f.hidden_field :lat, :value => params['lat'] %>
+        <%= f.hidden_field :long, :value => params['lng'] %>
         <%= f.input :title, label: t("poi_page.form.title.field"), placeholder: t("poi_page.form.title.placeholder") %>
         <%= f.input :description, label: t("poi_page.form.description.field"), placeholder: t("poi_page.form.description.placeholder") %>
 

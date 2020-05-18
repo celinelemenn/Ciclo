@@ -41,8 +41,8 @@ class PagesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { poi: poi })
       }
     end
+    @pop_up_html = render_to_string(partial: "info_window_add_poi")
 
-    # raise
     other_cyclist = User.where.not(id: current_user.id)
     last_user_positions = []
 

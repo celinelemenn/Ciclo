@@ -2,6 +2,7 @@ import mapboxgl from "mapbox-gl";
 import { addPoisToMap } from "./add_pois_to_map";
 import { addCyslistToMap } from "./add_cyclist_to_map";
 import { getPosition } from "./get_current_position";
+import { createPopdown } from "./create_popdown";
 
 export const startMap = () => {
   const mapElement = document.getElementById("map");
@@ -36,6 +37,42 @@ export const startMap = () => {
     },
   });
 
+  // add on click on the map > create POI
+    map.on("click", (event) => {
+        const popdown = document.querySelector(".popdown");
+        if (!popdown.classList.value.includes('popdown-visible')) {
+
+          // add market where clicked
+          const marker = new mapboxgl.Marker()
+            .setLngLat([event.lngLat.lng, event.lngLat.lat])
+            .addTo(map);
+
+          // add pop up
+          const info_window = JSON.parse(mapElement.dataset.popUpAddPoi);
+          createPopdown(info_window, marker);
+
+          // add lat - long in pop up info and link params
+          const text = document.querySelector(".distance_km .detail");
+          text.innerText =
+            text.innerText +
+            " lat " +
+            Math.round(event.lngLat.lat * 100) / 100 +
+            "- long " +
+            Math.round(event.lngLat.lng * 100) / 100;
+            
+          const link = document.querySelector(".info_window_popdown_btn a");
+          link.href =
+            link.href +
+            "?" +
+            "lat=" +
+            event.lngLat.lat +
+            "&lng=" +
+            event.lngLat.lng;
+        }
+    });
+
+
+// add geolocate button on map
   map.addControl(geolocate, "bottom-right");
 
   // add poi to the map
