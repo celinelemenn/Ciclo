@@ -4,7 +4,7 @@
   </div>
 
 <%= simple_form_for(@trip) do |f| %>
-  <div class="form-input">
+  <div class="form-bottom">
     <%= cl_image_tag(@trip.photo.url(:thumnail)) %>
     <%= f.input :photo,  label: t('trip_page.form.change_picture')  %>
 

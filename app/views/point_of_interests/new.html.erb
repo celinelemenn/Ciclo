@@ -1,17 +1,19 @@
-<h2 class="row d-flex justify-content-center mt-4"><%= t('poi_page.new') %></h2>
 
-<div class="uni-page-container mt-2">
-  <div class="uni-page-container text-center">
-       <% if
-         @point_of_interest.photo.present? %>
-       <% else %>
-         <img src="https://image.flaticon.com/icons/png/512/3/3901.png" class="avatar-large">
-       <% end %>
-     </div>
 
-  <div class="form-container">
+
+<div class="form-container mb-5">
+  <h2 class="row d-flex justify-content-center mt-4"><%= t('poi_page.new') %></h2>
+
+  <div class="text-center">
+    <% if
+      @point_of_interest.photo.present? %>
+    <% else %>
+      <img src="https://image.flaticon.com/icons/png/512/3/3901.png" class="avatar-large">
+    <% end %>
+  </div>
+
     <%= simple_form_for(@point_of_interest) do |f| %>
-     <div class="form-input">
+     <div class="form-bottom">
         <%= f.input :photo, label: t('poi_page.form.photo') %>
 
         <div class="form-group">
@@ -38,15 +40,14 @@
         <%= f.hidden_field :lat, :value => params['lat'] %>
         <%= f.hidden_field :long, :value => params['lng'] %>
         <%= f.input :title, label: t("poi_page.form.title.field"), placeholder: t("poi_page.form.title.placeholder") %>
-        <%= f.input :description, label: t("poi_page.form.description.field"), placeholder: t("poi_page.form.description.placeholder") %>
+        <%= f.input :description, as: :text, label: t("poi_page.form.description.field"), placeholder: t("poi_page.form.description.placeholder") %>
 
      </div>
 
-   <div class="row d-flex justify-content-center">
+   <div class="row d-flex justify-content-center ">
      <%= f.submit t('poi_page.form.action.submit_later'), class: "btn-secondary"  %>
      <%= f.submit t('poi_page.form.action.submit_now'), class: "btn-main" %>
    </div>
 
      <% end %>
-  </div>
 </div>

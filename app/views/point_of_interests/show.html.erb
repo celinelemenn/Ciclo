@@ -97,8 +97,9 @@
   <!-- last button -->
 
 
-    <div>
+    <div class="show-poi-buttons mb-5" >
       <%# <%= link_to t('button.something_wrong), new_point_of_interest_report_path(@poi, @report), class: "btn-poi" %>
+       <%= link_to t('button.edit'), edit_point_of_interest_path(@poi), class: "btn-secondary"  %>
     </div>
 
 

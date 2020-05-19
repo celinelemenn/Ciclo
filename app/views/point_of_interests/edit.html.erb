@@ -4,10 +4,12 @@
 <div class="form-bottom ">
   <%= simple_form_for(@poi) do |f|%>
   <div class="form-inputs">
+   <%= cl_image_tag(@poi.photo.url(:thumnail)) %>
     <%= f.input :photo, label: t('poi_page.form.photo') %>
+    <p class="poi-edit-position" style="color: #6c757d"> Position lat: <%= @poi.lat.round(2) %>, long <%= @poi.lat.round(2) %></p>
     <%= f.input :poi_type, collection: POINT_OF_INTEREST, label: t('poi_page.form.choose_type_dropdown') %>
     <%= f.input :title, label: t("poi_page.form.title.field") %>
-    <%= f.input :description, label: t("poi_page.form.description.field") %>
+    <%= f.input :description,  as: :text, label: t("poi_page.form.description.field") %>
   </div>
   <div class="form-actions d-flex">
   <%= f.button :submit, t('button.update'), class: "btn-main" %>

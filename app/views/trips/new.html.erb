@@ -1,10 +1,11 @@
 <div class="form-container">
   <div class="form-title">
-    <h1 class="ml-2 mt-2"><%= t('trip_page.add') %></h1>
+    <h1 class="" style='text-align: center; margin: 30px 0 30px 0 ;'><%= t('trip_page.add') %></h1>
+      <%# <hr class="line-divider my-4"> %>
   </div>
 
 <%= simple_form_for @trip do |f| %>
-  <div class="form-input">
+  <div class="form-bottom">
     <%= f.input :photo, label: t('trip_page.form.upload_picture') %>
     <%= f.input :name,label: t('trip_page.form.title.field'), placeholder: t('trip_page.form.title.placeholder') %>
     <%= f.input :start_date, label: t('trip_page.form.start_date') %>
@@ -19,7 +20,7 @@
     </div>
 
     <hr class="line-divider my-4">
-    
+
     <%= f.input :description, label: t('trip_page.form.description.field'), placeholder: t('trip_page.form.description.placeholder')%>
     <%= f.input :km, label: t('trip_page.form.km.field'), placeholder: t('trip_page.form.km.placeholder')%>
     <%= f.input :blog, label: t('trip_page.form.blog.field'), placeholder: t('trip_page.form.blog.placeholder') %>
