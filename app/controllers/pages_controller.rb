@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def map
-    @point_of_interests = PointOfInterest.published
+    @point_of_interests = PointOfInterest.published.not_deleted.approved
     @user = current_user
     @user_last_position = @user.user_positions.exists? ? [{ lat: @user.user_positions.last.lat, long: @user.user_positions.last.long }] : nil
     @user_pref = Preference.find_by(user_id: @user.id)
@@ -69,7 +69,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @trips = @user.trips.sort_by(&:start_date).reverse!
+    @trips = @user.trips.not_deleted.sort_by(&:start_date).reverse!
   end
 
   def feed
@@ -77,12 +77,12 @@ class PagesController < ApplicationController
 
     if params[:feed_type] == "all"
 
-      @user_poi_published = PointOfInterest.order(created_at: :desc).select { |poi| poi.published == true }
+      @user_poi_published = PointOfInterest.published.not_deleted.approved.order(created_at: :desc)
       @user_poi_unpublished = []
     else
       @user_poi = PointOfInterest.order(created_at: :desc)
-      @user_poi_unpublished = @user_poi.select { |poi| poi.user == current_user && poi.published == false }
-      @user_poi_published = @user_poi.select { |poi| poi.user == current_user && poi.published == true }
+      @user_poi_unpublished = @user_poi.not_published.not_deleted.approved.select { |poi| poi.user == current_user }
+      @user_poi_published = @user_poi.published.not_deleted.approved.select { |poi| poi.user == current_user }
 
     end
   end

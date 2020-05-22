@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_072202) do
+ActiveRecord::Schema.define(version: 2020_05_22_101235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 2020_04_21_072202) do
     t.string "photo"
     t.string "title"
     t.string "country_name"
+    t.boolean "soft_deleted", default: false
+    t.boolean "moderation", default: true
     t.index ["user_id"], name: "index_point_of_interests_on_user_id"
   end
 
@@ -144,6 +146,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_072202) do
     t.string "country_code"
     t.string "cycling_route"
     t.text "description"
+    t.boolean "soft_deleted", default: false
     t.boolean "moderation", default: true
     t.index ["user_id"], name: "index_trips_on_user_id"
   end

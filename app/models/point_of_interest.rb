@@ -6,7 +6,6 @@ class PointOfInterest < ApplicationRecord
   has_many :comments
   has_many :reports
 
-  scope :published, -> { where(published: true) }
   scope :camping, -> { where(poi_type: :camping) }
   scope :caution, -> { where(poi_type: :caution) }
   scope :landmark, -> { where(poi_type: :landmark) }
@@ -22,6 +21,11 @@ class PointOfInterest < ApplicationRecord
   scope :info_point, -> { where(poi_type: :info_point) }
   scope :electricity, -> { where(poi_type: :electricity) }
   scope :resto, -> { where(poi_type: :resto) }
+  
+  scope :not_deleted, -> { where(soft_deleted: false)}
+  scope :approved, -> {where(moderation: true)}
+  scope :published, -> { where(published: true) }
+  scope :not_published, -> { where(published: false) }
 
   validates :poi_type, :description, :title, presence: true, if: :published?
 

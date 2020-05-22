@@ -6,6 +6,9 @@ class Trip < ApplicationRecord
 
   validate :deadline_is_possible?
 
+  scope :not_deleted, -> { where(soft_deleted: false)}
+  scope :approved, -> { where(moderation: true)}
+
   def deadline_is_possible?
     # return if end_date.blank? || start_date.blank?
     end_date = Date.today if end_date.nil?

@@ -5,8 +5,13 @@ class PointOfInterestsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
-    @report = Report.new
+    @poi = PointOfInterest.find_by(id: params['id'])
+    if @poi.soft_deleted == true
+      redirect_to feed_path
+    else
+      @comment = Comment.new
+      @report = Report.new
+    end
   end
 
   def new
@@ -41,6 +46,10 @@ class PointOfInterestsController < ApplicationController
   end
 
   def edit
+    @poi = PointOfInterest.find_by(id: params['id'])
+    if @poi.soft_deleted == true
+      redirect_to feed_path
+    end
   end
 
   def update
@@ -59,7 +68,8 @@ class PointOfInterestsController < ApplicationController
   end
 
   def destroy
-    @poi.delete
+    @poi.soft_deleted = true
+    @poi.save
     redirect_to feed_path
   end
 
