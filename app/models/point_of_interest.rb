@@ -21,7 +21,7 @@ class PointOfInterest < ApplicationRecord
   scope :info_point, -> { where(poi_type: :info_point) }
   scope :electricity, -> { where(poi_type: :electricity) }
   scope :resto, -> { where(poi_type: :resto) }
-  
+
   scope :not_deleted, -> { where(soft_deleted: false)}
   scope :approved, -> {where(moderation: true)}
   scope :published, -> { where(published: true) }
@@ -83,6 +83,4 @@ class PointOfInterest < ApplicationRecord
       ""
     end
   end
-
-  private
 end
