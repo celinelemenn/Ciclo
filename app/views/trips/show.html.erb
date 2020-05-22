@@ -34,12 +34,12 @@
     </div>
 
     <p class="mt-5 "> <%= @trip.description %></p>
-    <% unless @trip.blog.nil? || @trip.blog.empty? %>
-      <a href="<%= @trip.blog %>" class="btn-simple"><%= t('trip_page.show.view_blog') %></a>
+    <% if @trip.blog.present? %>
+      <a href="<%= 'http//' + @trip.blog %>" class="btn-simple"><%= t('trip_page.show.view_blog') %></a>
     <% end %>
   </div>
 
    <div class="trip-show-btn mb-50">
-    <%# <%= link_to t('trip_page.show.similar_trip'), trips_path, class: "btn-secondary" %> 
+    <%# <%= link_to t('trip_page.show.similar_trip'), trips_path, class: "btn-secondary" %>
   </div>
 </div>

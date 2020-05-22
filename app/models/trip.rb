@@ -6,6 +6,9 @@ class Trip < ApplicationRecord
 
   validate :deadline_is_possible?
 
+  validates :blog, format: URI::regexp(%w[http https]), :allow_blank => true
+
+
   scope :not_deleted, -> { where(soft_deleted: false)}
   scope :approved, -> { where(moderation: true)}
 

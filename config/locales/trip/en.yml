@@ -21,7 +21,7 @@ en:
         placeholder: "1500"
       blog:
         field: "Blog of this trip"
-        placeholder: "www.example.com"
+        placeholder: "http://example.com"
     show:
       day: "%{days} days"
       km: "%{km} km"
@@ -36,3 +36,10 @@ en:
       from: "from %{date}"
       until_now: "until now"
       to: "to %{date}"
+  activerecord:
+    errors:
+      models:
+        trip:
+          attributes:
+            blog:
+              invalid: "url format should be http://example.com or https://example.com"
