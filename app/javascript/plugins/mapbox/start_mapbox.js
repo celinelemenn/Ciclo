@@ -31,10 +31,7 @@ export const startMap = () => {
     positionOptions: {
       enableHighAccuracy: true,
     },
-    trackUserLocation: false,
-    fitBoundsOptions: {
-      maxZoom: 13,
-    },
+    trackUserLocation: true,
   });
 
   // add on click on the map > create POI
@@ -59,7 +56,7 @@ export const startMap = () => {
             Math.round(event.lngLat.lat * 100) / 100 +
             "- long " +
             Math.round(event.lngLat.lng * 100) / 100;
-            
+
           const link = document.querySelector(".info_window_popdown_btn a");
           link.href =
             link.href +
