@@ -43,6 +43,8 @@ class PagesController < ApplicationController
     end
     @pop_up_html = render_to_string(partial: "info_window_add_poi")
 
+    @instruction_report_html = render_to_string(partial: "info_window_instruction_report")
+
     other_cyclist = User.where.not(id: current_user.id)
     last_user_positions = []
 

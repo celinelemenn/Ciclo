@@ -6,22 +6,18 @@
   data-cyclists="<%= @cyclist_avatars.to_json %>"
   data-user-position="<%= @user_last_position.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-pop-up-add-poi="<%=@pop_up_html.to_json%>"></div>
-
-  <%= link_to preferencesedit_path(@user) do %>
+  data-pop-up-add-poi="<%=@pop_up_html.to_json%>"
+  data-pop-up-instruction-report="<%=@instruction_report_html.to_json%>"></div>
+<%= link_to preferencesedit_path(@user) do %>
   <div class="btn-on-map-top">
-      <i class="fas fa-filter"></i></a>
-  </div>
-  <% end %>
-
-  <%= link_to new_point_of_interest_path, class: 'plus' do %>
-  <div class="btn-on-map-left uni-box-shadow">
-    <i class="fas fa-plus"></i></a>
-  </div>
-  <% end %>
-
-  <%# <div class="btn-on-map-right uni-box-shadow">
+    <i class="fas fa-filter"></i></a>
+</div>
+<% end %>
+<div class="btn-on-map-left uni-box-shadow">
+  <i class="fas fa-plus"></i></a>
+</div>
+<%# <div class="btn-on-map-right uni-box-shadow">
     <button><i class="fas fa-location-arrow"></i>
     </button>
   </div> %>
-  <%= render 'shared/navbar' if !devise_controller? %>
+<%= render 'shared/navbar' if !devise_controller? %>

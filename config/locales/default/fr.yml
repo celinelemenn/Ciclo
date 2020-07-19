@@ -82,6 +82,10 @@ fr:
     add_report: "Ajouter une alerte"
     cancel: "Annuler"
     position_selected: "Position selectionée"
+  report_instruction:
+    title: "Clique n'importe où sur la carte pour ajouter un point"
+    text: "Aide la communauté cyclotouriste et ajoute: <strong>tes alertes</strong> (route fermée, dangereuse...), mais aussi les <strong>bons plans</strong> (campings, point d'eau...), les <strong>endroits à ne pas manquer</strong> (point de vue, visites...) <strong></strong> ou juste une <strong>info utile</strong> (au passage de frontière...). <br><br>N'hésite pas à essayer la fonctionalité pour voir, tu peux supprimer tes essais dans 'feed'."
+    button: "ok"
   cyclist:
     send_a_message: "Envoyer un message"
     trip_section:
@@ -140,4 +144,4 @@ fr:
       text: "Faites du vélo dans l'autre sens"
   time:
     formats:
-      march: 'mars'
+      march: "mars"
