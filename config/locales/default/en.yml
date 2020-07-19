@@ -85,14 +85,15 @@ en:
   report_instruction:
     title: "Click anywhere on the map to add a point."
     text:
-      intro: "Help the cyclotourism community and add reports along the way: "
+      intro: "Help the cyclo-ers behind you and add reports on your way: "
       warnings_title: "Warnings: "
       warnings: "temporarily closed, bad road"
       landmark_title: "Landmarks: "
       landmark: "view point, must seen..."
       good_tips: "Good tips: "
       info_point: "useful info (for border crossings...) "
-      finish: "On the go? Click on 'Fill in later' to bookmark the position and later add the details. <br><br>Don't hesitate to try it out, you can always edit or delete your reports in 'feed'."
+      # finish: "On the go? Click on 'Fill in later' to bookmark the position and later add the details. <br><br>Don't hesitate to try it out, you can always edit or delete your reports in 'feed'."
+      finish: "Don't hesitate to try it out, you can always edit or delete your reports in 'feed'."
     button: "ok"
   cyclist:
     send_a_message: "Send A Message"

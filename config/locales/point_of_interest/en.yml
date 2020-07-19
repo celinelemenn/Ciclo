@@ -17,7 +17,12 @@ en:
     restaurant: "Restaurant"
   poi_page:
     new: "Add to the map"
-    edit: "Edit your contribution"
+    edit:
+      title: "Edit your contribution"
+      action:
+        publish: "Save and publish"
+        deleted:
+
     show:
       km_away: " - %{km} km away."
       created_by: "Created by %{creator}, %{date}"
@@ -33,7 +38,7 @@ en:
         placeholder: "Enter your description here"
       action:
         submit_later: "Fill in later"
-        submit_now: "Send now"
+        submit_now: "Publish now"
   comment:
     title: "Comments"
     form:

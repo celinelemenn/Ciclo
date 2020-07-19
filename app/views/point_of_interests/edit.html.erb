@@ -1,4 +1,4 @@
-<h1 class="mt-5 ml-3"><%= t('poi_page.edit') %></h1>
+<h1 class="mt-5 ml-3"><%= t('poi_page.edit.title') %></h1>
 
 
 <div class="form-bottom ">
@@ -11,9 +11,9 @@
     <%= f.input :title, label: t("poi_page.form.title.field") %>
     <%= f.input :description,  as: :text, label: t("poi_page.form.description.field") %>
   </div>
-  <div class="form-actions d-flex">
-  <%= f.button :submit, t('button.update'), class: "btn-main" %>
-  <%= link_to  t('button.delete'), point_of_interest_path(@poi), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
+  <div class="form-actions d-flex mb-5">
+  <%= f.button :submit, t('poi_page.edit.action.publish'), class: "btn-main" %>
+  <%= link_to  t('poi_page.edit.action.delete'), point_of_interest_path(@poi), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-secondary' %>
   </div>
   <% end %>
 </div>

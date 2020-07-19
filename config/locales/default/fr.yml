@@ -92,7 +92,8 @@ fr:
       landmark_title: "A voir: "
       landmark: "endroits à visiter, point de vue..."
       info_point: "infos utiles (au passage de frontière....) "
-      finish: "En train de rouler? Clique sur 'Remplir plus tard': la position est enregistrée et tu peux ajouter les details plus tard.<br><br>N'hésite pas à essayer la fonctionalité, tu peux éditer ou supprimer tes alertes dans 'feed'."
+      # finish: "En train de rouler? Clique sur 'Remplir plus tard': la position est enregistrée et tu peux ajouter les details plus tard.<br><br>N'hésite pas à essayer la fonctionalité, tu peux éditer ou supprimer tes alertes dans 'feed'."
+      finish: "N'hésite pas à essayer la fonctionalité, tu peux éditer ou supprimer tes alertes dans 'feed'."
     button: "ok"
   cyclist:
     send_a_message: "Envoyer un message"

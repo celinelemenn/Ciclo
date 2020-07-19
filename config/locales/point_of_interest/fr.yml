@@ -17,7 +17,11 @@ fr:
     restaurant: "Restaurant"
   poi_page:
     new: "Ajouter à la carte"
-    edit: "Modifier votre contribution"
+    edit:
+      title: "Modifier votre contribution"
+      action:
+        publish: "Sauvegarder et publier"
+        delete: "Supprimer"
     show:
       km_away: " à %{km} km"
       created_by: "Créé par %{creator}, %{date}"
@@ -32,8 +36,8 @@ fr:
         field: "Description"
         placeholder: "Entrer votre description ici"
       action:
-        submit_later: "Remplir plus tard"
-        submit_now: "Envoyer maintenant"
+        submit_later: "Sauvegarder"
+        submit_now: "Publier maintenant"
   comment:
     title: "Commentaires"
     form:
