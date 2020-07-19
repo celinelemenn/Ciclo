@@ -91,7 +91,7 @@ fr:
       warnings_title: "Alertes: "
       warnings: "route fermée, dangereuse..."
       landmark_title: "A voir: "
-      landmark: "endroits à visiter point de vue..."
+      landmark: "endroits à visiter, point de vue..."
       info_point: "infos utiles (au passage de frontière....) "
       finish: "En train de rouler? Clique sur 'Remplir plus tard', tu enregistres la position et tu pourras remplir les details plus tard.<br><br>N'hésite pas à essayer la fonctionalité, tu peux éditer ou supprimer tes alertes dans 'feed'."
     button: "ok"

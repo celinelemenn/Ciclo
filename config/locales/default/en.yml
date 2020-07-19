@@ -87,7 +87,8 @@ en:
     text:
       intro: "Help the cyclotourism community and add reports along the way: "
       warnings_title: "Warnings: "
-      warnings: "temporaly closed, bad road"
+      warnings: "temporarily closed, bad road"
+      landmark_title: "Landmarks: "
       landmark: "view point, must seen..."
       good_tips: "Good tips: "
       info_point: "useful info (for border crossings...) "
