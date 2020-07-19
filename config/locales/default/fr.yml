@@ -85,6 +85,15 @@ fr:
   report_instruction:
     title: "Clique n'importe où sur la carte pour ajouter un point"
     text: "Aide la communauté cyclotouriste et ajoute: <strong>tes alertes</strong> (route fermée, dangereuse...), mais aussi les <strong>bons plans</strong> (campings, point d'eau...), les <strong>endroits à ne pas manquer</strong> (point de vue, visites...) <strong></strong> ou juste une <strong>info utile</strong> (au passage de frontière...). <br><br>En train de rouler? Clique sur 'Remplir plus tard', tu enregistres la position et tu pourras remplir les details plus tard.<br><br>N'hésite pas à essayer la fonctionalité, tu peux éditer ou supprimer tes alertes dans 'feed'."
+    text:
+      intro: "Aide la communauté cyclotouriste et ajoute des alertes: "
+      good_tips: "Bons plans: "
+      warnings_title: "Alertes: "
+      warnings: "route fermée, dangereuse..."
+      landmark_title: "A voir: "
+      landmark: "endroits à visiter point de vue..."
+      info_point: "infos utiles (au passage de frontière....) "
+      finish: "En train de rouler? Clique sur 'Remplir plus tard', tu enregistres la position et tu pourras remplir les details plus tard.<br><br>N'hésite pas à essayer la fonctionalité, tu peux éditer ou supprimer tes alertes dans 'feed'."
     button: "ok"
   cyclist:
     send_a_message: "Envoyer un message"

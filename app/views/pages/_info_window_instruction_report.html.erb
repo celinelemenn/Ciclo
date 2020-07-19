@@ -12,8 +12,33 @@
         <div>
         </div>
       </div>
-      <div class="">
-        <p class="pl-3"><%= t('report_instruction.text').html_safe %> </p>
+      <div class="font-size-smaller">
+        <p class="pl-3"><%= t('report_instruction.text.intro').html_safe %> </p>
+        <div class="pl-3">
+             <span><strong><%= t('report_instruction.text.warnings_title') %></strong></span>
+        <img src=<%= POINT_OF_INTEREST[:caution][:marker_icon] %> alt="" height=30>
+        <span class="pl-1"><%= t('report_instruction.text.warnings') %></span>
+        <br>
+        <span><strong><%= t('report_instruction.text.good_tips') %></strong></span>
+        <img src=<%= POINT_OF_INTEREST[:camping][:marker_icon] %> alt="" height=30>
+        <img src=<%= POINT_OF_INTEREST[:wild_camping][:marker_icon] %> alt="" height=30>
+        <img src=<%= POINT_OF_INTEREST[:water_refill][:marker_icon] %> alt="" height=30>
+        <img src=<%= POINT_OF_INTEREST[:toilet][:marker_icon] %> alt="" height=28>
+        <img src=<%= POINT_OF_INTEREST[:wifi][:marker_icon] %> alt="" height=28>
+        <img src=<%= POINT_OF_INTEREST[:picnic][:marker_icon] %> alt="" height=28>
+        <img src=<%= POINT_OF_INTEREST[:repair][:marker_icon] %> alt="" height=28>
+        <br>
+        <span><strong><%= t('report_instruction.text.landmark_title') %></strong></span>
+        <img src=<%= POINT_OF_INTEREST[:landmark][:marker_icon] %> alt="" height=30>
+        <span class="pl-1"><%= t('report_instruction.text.landmark') %></span>
+        <br>
+        <span><strong>Info: </strong></span>
+        <img src=<%= POINT_OF_INTEREST[:info_point][:marker_icon] %> alt="" height=30>
+        <span class="pl-1"><%= t('report_instruction.text.info_point') %> </span>
+        </div>
+        <br>
+        <p class="pl-3"><%= t('report_instruction.text.finish').html_safe %> </p>
+
       </div>
       <div class="info_window_popdown_btn ">
         <p class="btn-main mr-3 cancel"><%= t('report_instruction.button') %></p>
