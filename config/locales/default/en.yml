@@ -85,7 +85,7 @@ en:
   report_instruction:
     title: "Click anywhere on the map to add a point."
     text:
-      intro: "Help the cyclo-ers behind you and add reports on your way: "
+      intro: "Help the cyclo-ers behind you and add reports:"
       warnings_title: "Warnings: "
       warnings: "temporarily closed, bad road"
       landmark_title: "Landmarks: "
