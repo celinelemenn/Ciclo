@@ -84,7 +84,7 @@ en:
     position_selected: "Position selected"
   report_instruction:
     title: "Click anywhere on the map to add a point."
-    text: "Help the cyclotourism community and add reports: <strong>good tips</strong> (campsite, water fountain...), <strong>landmarks</strong> (view point, places to visit...),<strong> warnings</strong> (closed road, dangerous..) or just <strong>useful info</strong> (e.g. to cross borders... ). <br><br>Don't hesitate to try it out, you can always delete your test in 'feed'."
+    text: "Help the cyclotourism community and add reports along the way: <strong> warnings</strong> (closed road, dangerous..), <strong>good tips</strong> (campsite, water fountain...), <strong>landmarks</strong> (view point, places to visit...), or just <strong>useful info</strong> (e.g. to cross borders... ). <br><br>On the go? Click on 'Fill in later' to bookmark the position and later you can add the details. <br><br>Don't hesitate to try it out, you can always edit or delete your reports in 'feed'."
     button: "ok"
   cyclist:
     send_a_message: "Send A Message"
